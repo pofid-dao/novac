@@ -1,0 +1,14 @@
+
+.pfid-balance{
+  background: #3A3F44;
+  height: 60px;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.pfid-balance span{
+  color: #fff;
+}
+

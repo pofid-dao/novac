@@ -1,0 +1,50 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 48px;
+  /*background: rgba(255, 255, 255, 0.2);*/
+  margin: 10px 0 24px 16px;
+}
+
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.layout{
+  /*max-width: 1140px;*/
+}
+
+.ant-layout.ant-layout-has-sider{
+  /*width: 100%;*/
+  /*margin-right: auto;*/
+  /*margin-left: auto;*/
+}
+
+div{
+  /*display: block;*/
+}
+
+.ant-menu-item span{
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+*{
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: .02rem;
+}
+

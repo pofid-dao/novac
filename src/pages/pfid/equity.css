@@ -1,0 +1,35 @@
+
+.pfid-balance{
+  background: #3A3F44;
+  height: 60px;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.pfid-balance span{
+  color: #fff;
+}
+
+.tag-cst{
+  padding: 8px !important;
+  border-radius: 5px !important;
+  background-color: #3A3F44;
+  color: #f7f7f7;
+  font-weight: 600;
+}
+
+
+.pfid-title{
+  height: 60px;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.equity-span{
+  color: rgba(0, 0, 0, 0.65) !important;
+  font-size: 18px;
+  font-weight: 600;
+}
