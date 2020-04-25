@@ -1,28 +1,28 @@
-import * as React from "react";
+import * as React from 'react';
 
 export default (props: any) => {
   const href: string = document.location.href;
-  console.log("hash>>> ", href)
-  let ifmodel = document.getElementById("popupModel");
+  let ifmodel = document.getElementById('popupModel');
   if (ifmodel) {
     // @ts-ignore
-    if (href.indexOf("/wallet") > -1 || href.endsWith("#/")) {
-      ifmodel.style.height = document.documentElement.clientHeight * 0.8 + "px";
+    if (href.indexOf('/wallet') > -1 || href.endsWith('#/')) {
+      ifmodel.style.height = document.documentElement.clientHeight * 0.8 + 'px';
     } else {
-      ifmodel.style.height = "0px";
+      ifmodel.style.height = '0px';
     }
   } else {
-    setTimeout(function () {
-      ifmodel = document.getElementById("popupModel");
+    setTimeout(function() {
+      ifmodel = document.getElementById('popupModel');
       if (ifmodel) {
         // @ts-ignore
-        if (href.indexOf("/wallet") > -1 ||  href.endsWith("#/")) {
-          ifmodel.style.height = document.documentElement.clientHeight * 0.8 + "px";
+        if (href.indexOf('/wallet') > -1 || href.endsWith('#/')) {
+          ifmodel.style.height =
+            document.documentElement.clientHeight * 0.8 + 'px';
         } else {
-          ifmodel.style.height = "0px";
+          ifmodel.style.height = '0px';
         }
       }
-    }, 100)
+    }, 100);
   }
-  return <div>{props.children}</div>
-}
+  return <div>{props.children}</div>;
+};

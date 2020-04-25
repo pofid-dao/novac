@@ -13,28 +13,21 @@ interface CollectionCreateFormProps {
   onCreate: (values: Values) => void;
   onCancel: () => void;
 
-  mintCoin: any;
-  backedCoin: any;
-  amountEstimate: any;
-  fee: any;
-  estimate: (amount: any) => void;
+  params: any;
 }
 
-const BorrowForm: React.FC<CollectionCreateFormProps> = ({
+const DealForm: React.FC<CollectionCreateFormProps> = ({
   visible,
   onCreate,
   onCancel,
-  mintCoin,
-  backedCoin,
-  amountEstimate,
-  fee,
-  estimate,
+  params,
 }) => {
   const [form] = Form.useForm();
+  form.setFieldsValue({ amountes: params.mintValue });
   return (
     <Modal
       visible={visible}
-      title={i18n.t('button_borrow')}
+      title={i18n.t('button_deal')}
       okText={i18n.t('button_ok')}
       cancelText={i18n.t('button_cancel')}
       onCancel={onCancel}
@@ -58,50 +51,23 @@ const BorrowForm: React.FC<CollectionCreateFormProps> = ({
       >
         <Form.Item
           name="amountes"
-          label={`${i18n.t('form_lable_amount')}(${backedCoin})`}
+          label={`${i18n.t('form_lable_amount')}(${params.mintCoin})`}
           rules={[{ required: true, message: i18n.t('form_input_amount') }]}
           className="collection-create-form_last-form-item"
         >
-          <Input
-            onBlur={v => {
-              estimate(v.target.value);
-            }}
-          />
+          <Input defaultValue={params.mintValue} disabled={true} />
         </Form.Item>
         <Form.Item
           name="password"
           label={i18n.t('form_lable_password')}
-          rules={[{ required: true, message: i18n.t('form_input_password') }]}
+          rules={[{ required: true, message: i18n.t('form_input_amount') }]}
           className="collection-create-form_last-form-item"
         >
-          <Input
-            type={'password'}
-            onBlur={v => {
-              form
-                .validateFields()
-                .then((values: any) => {
-                  estimate(values['amountes']);
-                })
-                .catch(info => {
-                  console.log('Validate Failed:', info);
-                });
-            }}
-          />
+          <Input type={'password'} />
         </Form.Item>
-
-        <Descriptions column={1}>
-          <Descriptions.Item
-            label={`${i18n.t('form_lable_estimate')}(${mintCoin})`}
-          >
-            {amountEstimate}
-          </Descriptions.Item>
-          <Descriptions.Item label={`${i18n.t('form_lable_fee')}(${mintCoin})`}>
-            {fee}
-          </Descriptions.Item>
-        </Descriptions>
       </Form>
     </Modal>
   );
 };
 
-export default BorrowForm;
+export default DealForm;

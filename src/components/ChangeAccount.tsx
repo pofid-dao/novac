@@ -1,6 +1,5 @@
-import React from "react";
-import {Form, Modal, Select} from "antd";
-import {utils} from "@/common/utils";
+import React from 'react';
+import { Form, Modal, Select } from 'antd';
 
 interface Values {
   title: string;
@@ -10,18 +9,33 @@ interface Values {
 
 interface CollectionCreateFormProps {
   visible: boolean;
+  accounts: Array<any>;
   onCreate: (values: Values) => void;
   onCancel: () => void;
+  selectAccount: (mainPKr: string) => void;
 }
 
-const {Option} = Select;
+const { Option } = Select;
 
 const ChangeAccountCreateForm: React.FC<CollectionCreateFormProps> = ({
-                                                                        visible,
-                                                                        onCreate,
-                                                                        onCancel,
-                                                                      }) => {
+  visible,
+  accounts,
+  onCreate,
+  onCancel,
+  selectAccount,
+}) => {
   const [form] = Form.useForm();
+  let options: Array<any> = [];
+  if (accounts) {
+    for (let i = 0; i < accounts.length; i++) {
+      const account: any = accounts[i];
+      options.push(
+        <Option value={account.MainPKr}>
+          {account.Name} {account.MainPKr}
+        </Option>,
+      );
+    }
+  }
 
   return (
     <Modal
@@ -42,21 +56,17 @@ const ChangeAccountCreateForm: React.FC<CollectionCreateFormProps> = ({
           });
       }}
     >
-      <Form
-        form={form}
-        layout="vertical"
-        name="form_in_modal"
-        initialValues={{modifier: 'public'}}
-      >
+      <Form form={form} layout="vertical" name="form_in_modal">
         <Form.Item
-          name="account"
           label="Accounts"
-          rules={[{required: true, message: 'Please select account!'}]}
-          className="collection-create-form_last-form-item">
-          <Select>
-            <Option value="30">Test (tUfRVSDf4Q...qHg5V7K7qqohx2)</Option>
-            <Option value="30">Test (tUfRVSDf4Q...qHg5V7K7qqohx2)</Option>
-            <Option value="30">Test (tUfRVSDf4Q...qHg5V7K7qqohx2)</Option>
+          className="collection-create-form_last-form-item"
+        >
+          <Select
+            onChange={(v: any) => {
+              selectAccount(v);
+            }}
+          >
+            {options}
           </Select>
         </Form.Item>
       </Form>
@@ -64,4 +74,4 @@ const ChangeAccountCreateForm: React.FC<CollectionCreateFormProps> = ({
   );
 };
 
-export default ChangeAccountCreateForm
+export default ChangeAccountCreateForm;

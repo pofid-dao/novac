@@ -1,234 +1,560 @@
-import React,{Component} from 'react';
-import {Card,Button,Row,Col,Divider,Table,Modal, Form, Input, Select} from 'antd'
-import {PlusOutlined,UserSwitchOutlined} from '@ant-design/icons';
-import ChangeAccountCreateForm from "@/components/ChangeAccount";
+import React, { Component } from 'react';
+import {
+  Card,
+  Button,
+  Row,
+  Col,
+  Divider,
+  Table,
+  Statistic,
+  Descriptions,
+  message,
+  Spin,
+  Pagination,
+  notification,
+} from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import './my.css';
+import staking from '@/service/staking';
+import utils from '@/common/utils';
+import BigNumber from 'bignumber.js';
+import { popup } from '@/service/popup';
+import account from '@/service/account';
+import { AccountInfo } from '@/model/account';
+import PFIDForm from '@/components/PFID';
+import PasswordForm from '@/components/Password';
+import i18n from '../../i18n';
 
-const {Option} = Select
-const dataSource = [
-  {
-    key: '1',
-    hash: <a href={"http://cn.seroscan.com/txsInfo.html?hash=0x513462580e5d4d7d0e55d13bef47edd23e9d34d5d373f32dd17e586bb120a474"} target={"_blank"}>0x4a14b0329cad38b6c04ba297d8a82ac9e54f6ffd297c27e66279dc379ec520dd</a>,
-    cycle: '1 month',
-    state: 'Finished',
-    staking: '1000',
-    received: '1088',
-    fee: '5',
-    time: new Date().toDateString(),
-    operation:<Button type={"link"}>Withdraw</Button>
-  },
-  {
-    key: '2',
-    hash: <a href={"http://cn.seroscan.com/txsInfo.html?hash=0x513462580e5d4d7d0e55d13bef47edd23e9d34d5d373f32dd17e586bb120a474"} target={"_blank"}>0x4a14b0329cad38b6c04ba297d8a82ac9e54f6ffd297c27e66279dc379ec520dd</a>,
-    cycle: '1 month',
-    state: 'Finished',
-    staking: '1000',
-    received: '1088',
-    fee: '5',
-    time: new Date().toDateString(),
-    operation:<Button type={"link"}>Withdraw</Button>
-  },
-  {
-    key: '3',
-    hash: <a href={"http://cn.seroscan.com/txsInfo.html?hash=0x513462580e5d4d7d0e55d13bef47edd23e9d34d5d373f32dd17e586bb120a474"} target={"_blank"}>0x4a14b0329cad38b6c04ba297d8a82ac9e54f6ffd297c27e66279dc379ec520dd</a>,
-    cycle: '2 month',
-    state: 'Finished',
-    staking: '1000',
-    received: '1088',
-    fee: '5',
-    time: new Date().toDateString(),
-    operation:<Button type={"link"}>Withdraw</Button>
-  },
-];
-
-const columns = [
-  {
-    title: 'Tx',
-    dataIndex: 'hash',
-    key: 'hash',
-    width:'20%'
-  },
-  {
-    title: 'Cycle',
-    dataIndex: 'cycle',
-    key: 'cycle',
-    width:'11%'
-  },
-  {
-    title: 'State',
-    dataIndex: 'state',
-    key: 'state',
-    width:'11%'
-  },
-  {
-    title: 'Staking',
-    dataIndex: 'staking',
-    key: 'staking',
-    width:'11%'
-  },
-  {
-    title: 'Received',
-    dataIndex: 'received',
-    key: 'received',
-    width:'11%'
-  },
-  {
-    title: 'Fee',
-    dataIndex: 'fee',
-    key: 'fee',
-    width:'11%'
-  },
-  {
-    title: 'Time',
-    dataIndex: 'time',
-    key: 'time',
-    width:'15%'
-  },
-  {
-    title: 'Operation',
-    dataIndex: 'operation',
-    key: 'operation',
-    width:'10%'
-  },
-];
-
-interface Values {
-  title: string;
-  description: string;
-  modifier: string;
-}
-
-interface CollectionCreateFormProps {
-  visible: boolean;
-  onCreate: (values: Values) => void;
-  onCancel: () => void;
-}
-
-const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
-                                                                     visible,
-                                                                     onCreate,
-                                                                     onCancel,
-                                                                   }) => {
-  const [form] = Form.useForm();
-  return (
-    <Modal
-      visible={visible}
-      title="Staking"
-      okText="Commit"
-      cancelText="Cancel"
-      onCancel={onCancel}
-      onOk={() => {
-        form
-          .validateFields()
-          .then((values:any) => {
-            form.resetFields();
-            onCreate(values);
-          })
-          .catch(info => {
-            console.log('Validate Failed:', info);
-          });
-      }}
-    >
-      <Form
-        form={form}
-        layout="vertical"
-        name="form_in_modal"
-        initialValues={{ modifier: 'public' }}
+const notify = (type: string, message: string, desc: string) => {
+  let d = 4.5;
+  if (type == 'success' && desc && !desc.startsWith('0x')) {
+    type = 'error';
+    message = 'Error';
+  }
+  // @ts-ignore
+  notification[type]({
+    message: message,
+    description: (
+      <p
+        style={{
+          wordBreak: 'normal',
+          whiteSpace: 'pre-wrap',
+          wordWrap: 'break-word',
+        }}
       >
-        <Form.Item
-          name="amount"
-          label="Amount"
-          rules={[{ required: true, message: 'Please input amount!' }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="cycle"
-          label="Cycle"
-          rules={[{ required: true, message: 'Please select Cycle!' }]}
-          className="collection-create-form_last-form-item">
-          <Select>
-            <Option value="30">30 Days</Option>
-            <Option value="60">60 Days</Option>
-            <Option value="90">90 Days</Option>
-          </Select>
-        </Form.Item>
-        <Form.Item>
-          <span>Expect: 35 PFID</span>
-        </Form.Item>
-      </Form>
-    </Modal>
-  );
+        {desc}
+      </p>
+    ),
+    duration: d,
+    // placement: 'bottomRight',
+    // bottom: 50,
+  });
 };
 
-class MyPfid extends Component{
+const { Countdown } = Statistic;
+const columns = [
+  {
+    title: i18n.t('pages_pfid_my_index'),
+    dataIndex: 'index',
+    key: 'index',
+    width: '10%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_cycle'),
+    dataIndex: 'cycle',
+    key: 'cycle',
+    width: '15%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_state'),
+    dataIndex: 'state',
+    key: 'state',
+    width: '15%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_staking'),
+    dataIndex: 'staking',
+    key: 'staking',
+    width: '15%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_received'),
+    dataIndex: 'received',
+    key: 'received',
+    width: '15%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_time'),
+    dataIndex: 'time',
+    key: 'time',
+    width: '20%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_operation'),
+    dataIndex: 'operation',
+    key: 'operation',
+    width: '10%',
+  },
+];
 
+let myPfidTimerId: any = null;
+class MyPfid extends Component {
   state = {
-    visible:false,
-    showSelectAccount:false
-  }
+    visible: false,
+    datasource: [],
+    total: 0,
+    pageNo: 1,
+    pageSize: 5,
+    stakingBalance: 0,
+    balance: 0,
+    expect: 0,
+    loading: false,
+    fee: 0,
 
-  onCreate = (values:any) => {
-    this.setState({
-      visible:false
-    })
+    visiblePassword: false,
+    index: 0,
+    editAmount: false,
+    amount: 0,
+    minStakingValue: 0,
   };
 
-  setVisible=(f:boolean)=>{
-    this.setState({
-      visible:f
-    })
+  componentDidMount(): void {
+    const that = this;
+    that.setState({
+      loading: true,
+    });
+    that
+      .getShareList(that)
+      .then(() => {})
+      .catch(e => {
+        that.setState({
+          loading: false,
+        });
+        const err = typeof e === 'string' ? e : e.message;
+        notify('error', 'Error', err);
+      });
+    that.getStakingBalance();
+    that.devidendList();
+    that.minStakingValue();
+
+    if (myPfidTimerId == null) {
+      myPfidTimerId = setInterval(function() {
+        that
+          .getShareList(that)
+          .then(() => {})
+          .catch(e => {
+            const err = typeof e === 'string' ? e : e.message;
+            notify('error', 'Error', err);
+          });
+        that.getStakingBalance();
+        that.devidendList();
+        that.minStakingValue();
+      }, 10 * 1000);
+    }
   }
 
-  onSelectCreate = (values:any) => {
-    this.setState({
-      showSelectAccount:false
-    })
+  minStakingValue() {
+    const that = this;
+    staking.minStakingValue().then(rest => {
+      console.log('rest>>> ', rest);
+      that.setState({
+        minStakingValue: utils.toValue(rest, 18).toString(10),
+      });
+    });
+  }
+
+  getStakingBalance() {
+    const that = this;
+    staking.stakingBalance().then((balance: BigNumber) => {
+      that.setState({
+        stakingBalance: utils.toValue(balance.toString(10), 18).toString(10),
+      });
+    });
+
+    const act: AccountInfo = account.getCurrent();
+    popup.getAccount(act.PK).then((rest: any) => {
+      if (rest && rest.Balance && rest.Balance.get('PFID')) {
+        that.setState({
+          balance: utils.toValue(rest.Balance.get('PFID'), 18).toString(10),
+        });
+      }
+    });
+  }
+
+  expect = (phase: number, amount: any) => {
+    const that = this;
+    staking.getInterest(phase).then(rest => {
+      that.setState({
+        expect: new BigNumber(rest)
+          .multipliedBy(new BigNumber(amount))
+          .dividedBy(new BigNumber(10).pow(10))
+          .toString(10),
+      });
+    });
   };
 
-  setVisibleAccount=(f:boolean)=>{
-    this.setState({
-      showSelectAccount:f
-    })
+  devidendList() {
+    staking.allSSC().then(rest => {
+      console.log(rest);
+    });
   }
+
+  async getShareList(that: any): Promise<any> {
+    let tmp = [];
+    const offset = (that.state.pageNo - 1) * that.state.pageSize;
+    const rest: any = await staking.myPageShare(offset, that.state.pageSize);
+    console.log('rest>>>>> ', rest);
+    const total = rest.total;
+    if (total > 0) {
+      let i = 0;
+      for (let data of rest.data) {
+        // const sscs:Array<any> = data.sscs;
+        // let sscArr = [];
+        // for(let i=0;i<sscs.length;i++){
+        //   const ssc = sscs[i];
+        //   const amount = ssc.amount;
+        //   const sscName = ssc.sscName;
+        //   const decimal = await utils.getDecimal(sscName)
+        //   sscArr.push(<div><Statistic title={sscName} value={utils.toValue(amount,decimal).toString(10)}/></div>)
+        // }
+
+        const reStakingAmount = utils.toValue(
+          new BigNumber(data.value)
+            .plus(
+              new BigNumber(data.value)
+                .multipliedBy(new BigNumber(data.interest))
+                .dividedBy(new BigNumber(10).pow(data.interestDecimals)),
+            )
+            .toString(10),
+          18,
+        );
+        const btns = (
+          <div>
+            <Button
+              type={'link'}
+              onClick={() => that.onWithdraw(data.shareIndex)}
+            >
+              {i18n.t('button_withdraw')}
+            </Button>
+            <Button
+              type={'link'}
+              onClick={() =>
+                that.onReStaking(data.shareIndex, reStakingAmount.toString(10))
+              }
+            >
+              {i18n.t('button_reinvet')}
+            </Button>
+          </div>
+        );
+
+        let opHtml: any = '';
+        if (new Date().getTime() / 1000 > data.endTime && data.valid) {
+          opHtml = btns;
+        } else {
+          if (data.valid) {
+            opHtml = (
+              <Countdown
+                title={i18n.t('button_withdraw')}
+                value={data.endTime * 1000}
+              />
+            );
+          } else {
+            opHtml = i18n.t('state_finished');
+          }
+        }
+
+        tmp.push({
+          index: ++i,
+          cycle: data.stakingDays,
+          state: data.valid ? i18n.t('state_valid') : i18n.t('state_finished'),
+          staking: utils.toValue(data.value, 18).toString(10),
+          received: utils
+            .toValue(
+              new BigNumber(data.value)
+                .multipliedBy(new BigNumber(data.interest))
+                .dividedBy(new BigNumber(10).pow(data.interestDecimals))
+                .toString(10),
+              18,
+            )
+            .toString(10),
+          fee: new BigNumber(data.fee)
+            .multipliedBy(new BigNumber(data.value))
+            .multipliedBy(new BigNumber(data.interest))
+            .dividedBy(new BigNumber(10).pow(18 + data.interestDecimals))
+            .dividedBy(100)
+            .toString(10),
+          // ssc:sscArr,
+          time: (
+            <Descriptions column={1}>
+              <Descriptions.Item label={i18n.t('pages_pfid_started_at')}>
+                {utils.formatTime(data.startTime * 1000)}
+              </Descriptions.Item>
+              {data.withDrawTime == 0 ? (
+                ''
+              ) : (
+                <Descriptions.Item label={i18n.t('pages_pfid_withdraw_at')}>
+                  {utils.formatTime(data.withDrawTime * 1000)}
+                </Descriptions.Item>
+              )}
+            </Descriptions>
+          ),
+          operation: opHtml,
+        });
+      }
+      that.setState({
+        datasource: tmp,
+        total: total,
+        loading: false,
+      });
+    }
+    that.setState({
+      loading: false,
+    });
+    return new Promise(resolve => resolve);
+  }
+
+  onStaking() {
+    const that = this;
+    that.setState({
+      editAmount: false,
+      amount: 0,
+      visible: true,
+    });
+  }
+
+  onReStaking(index: number, amount: any) {
+    const that = this;
+    that.setState({
+      editAmount: true,
+      amount: amount,
+      index: index,
+      visible: true,
+    });
+  }
+
+  onWithdraw(index: number) {
+    this.setState({
+      index: index,
+      visiblePassword: true,
+    });
+  }
+
+  onCreateWithdraw = (values: any) => {
+    const that = this;
+    that.setState({
+      visiblePassword: false,
+      loading: true,
+    });
+    staking
+      .withDrawShare(that.state.index, values['password'])
+      .then(rest => {
+        that.setState({
+          loading: false,
+        });
+        notify('success', 'SUCCESS', rest);
+      })
+      .catch(e => {
+        that.setState({
+          loading: false,
+        });
+        const err = typeof e === 'string' ? e : e.message;
+        notify('error', 'Error', err);
+      });
+  };
+
+  onCreate = (values: any) => {
+    const that = this;
+    const { index, editAmount } = this.state;
+    const cycle = values['cycle'];
+    that.setState({
+      visible: false,
+      loading: true,
+    });
+
+    if (!!editAmount) {
+      staking
+        .reStaking(index, cycle, values['password'])
+        .then(rest => {
+          notify('success', 'SUCCESS', rest);
+          that.setState({
+            loading: false,
+          });
+        })
+        .catch(e => {
+          that.setState({
+            loading: false,
+          });
+          const err = typeof e === 'string' ? e : e.message;
+          notify('error', 'Error', err);
+        });
+    } else {
+      const amount = values['amount'];
+      staking
+        .staking(
+          parseInt(cycle),
+          utils.fromValue(amount, 18),
+          values['password'],
+        )
+        .then(rest => {
+          console.log(rest);
+          that.setState({
+            loading: false,
+          });
+          notify('success', 'SUCCESS', rest);
+        })
+        .catch(e => {
+          that.setState({
+            loading: false,
+          });
+          const err = typeof e === 'string' ? e : e.message;
+          notify('error', 'Error', err);
+        });
+    }
+  };
+
+  setVisible = (f: boolean) => {
+    const that = this;
+    if (f) {
+      staking.fee().then((rest: any) => {
+        that.setState({
+          visible: f,
+          fee: rest.toString(10),
+        });
+      });
+    } else {
+      that.setState({
+        visible: f,
+      });
+    }
+  };
+
+  setVisiblePassword = (f: boolean) => {
+    const that = this;
+    that.setState({
+      visiblePassword: f,
+    });
+  };
+
+  pageChange = (no: number) => {
+    const that = this;
+    that.setState({
+      pageNo: no,
+      loading: true,
+    });
+    setTimeout(function() {
+      that
+        .getShareList(that)
+        .then()
+        .catch(() => {
+          that.setState({
+            loading: false,
+          });
+        });
+    }, 10);
+  };
 
   render() {
-    const {visible,showSelectAccount} =  this.state;
+    const {
+      visible,
+      datasource,
+      stakingBalance,
+      balance,
+      expect,
+      fee,
+      total,
+      pageNo,
+      pageSize,
+      visiblePassword,
+      editAmount,
+      amount,
+      minStakingValue,
+    } = this.state;
 
+    const params = {
+      editAmount: editAmount,
+      amount: amount,
+      minStakingValue: minStakingValue,
+      balance: balance,
+    };
     return (
       <div>
-        <Row className={"pfid-title"}>
-          <Col span={12}><span>5i52s5qoD4a...f2A1pCMVtKeAzSW</span></Col>
-          <Col span={12} style={{textAlign:'right'}}><Button type={"primary"} onClick={()=>{this.setVisibleAccount(true)}}><UserSwitchOutlined />Change Account</Button></Col>
-        </Row>
-        <p/>
-        <Row className={"pfid-balance"}>
-          <Col span={12}><span>PFID</span></Col>
-          <Col span={6}><span>Balance: </span><span>1000.000</span></Col>
-          <Col span={6} style={{textAlign:'right'}}><span>Staking Pool: </span><span>800</span></Col>
-        </Row>
-        <Divider dashed/>
-        <Card title="Staking Record" extra={<Button type={"primary"} onClick={()=>{this.setVisible(true)}}><PlusOutlined />Go Staking</Button>} style={{ width: '100%' }}>
-          <Table dataSource={dataSource} columns={columns} />
-        </Card>
-        <CollectionCreateForm
-          visible={visible}
-          onCreate={this.onCreate}
-          onCancel={() => {
-            this.setVisible(false)
-          }}
-        />
-        <ChangeAccountCreateForm
-          visible={showSelectAccount}
-          onCreate={this.onSelectCreate}
-          onCancel={() => {
-            this.setVisibleAccount(false)
-          }}
-        />
+        <Spin spinning={this.state.loading}>
+          <p />
+          <Row className={'pfid-balance'}>
+            <Col span={6}>
+              <span>PFID</span>
+            </Col>
+            <Col span={10}>
+              <span>{i18n.t('pages_pfid_balance')}: </span>
+              <span>{balance}</span>
+            </Col>
+            <Col span={8} style={{ textAlign: 'right' }}>
+              <span>{i18n.t('pages_pfid_stakingPool')}: </span>
+              <span>{stakingBalance}</span>
+            </Col>
+          </Row>
+          <Divider dashed />
+          <Card
+            title={i18n.t('pages_pfid_my_stakingRecord')}
+            extra={
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  this.onStaking();
+                }}
+              >
+                <PlusOutlined />
+                {i18n.t('button_goStaking')}
+              </Button>
+            }
+            style={{ width: '100%' }}
+          >
+            <Table
+              dataSource={datasource}
+              columns={columns}
+              pagination={false}
+            />
+            <div
+              style={{ position: 'relative', float: 'right', padding: '15px' }}
+            >
+              <Pagination
+                size="small"
+                total={total}
+                defaultCurrent={1}
+                current={pageNo}
+                pageSize={pageSize}
+                onChange={this.pageChange}
+                showTotal={showTotal}
+              />
+            </div>
+          </Card>
+          <PFIDForm
+            visible={visible}
+            onCreate={this.onCreate}
+            onCancel={() => {
+              this.setVisible(false);
+            }}
+            onExpect={this.expect}
+            expect={expect}
+            fee={fee}
+            params={params}
+          />
+          <PasswordForm
+            visible={visiblePassword}
+            onCreate={this.onCreateWithdraw}
+            onCancel={() => {
+              this.setVisiblePassword(false);
+            }}
+            title={i18n.t('button_withdraw')}
+          />
+        </Spin>
       </div>
     );
   }
 }
 
-export default MyPfid
+function showTotal(total: any) {
+  return `Total ${total} items`;
+}
 
+export default MyPfid;

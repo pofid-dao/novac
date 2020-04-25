@@ -1,0 +1,28 @@
+.pfid-title{
+  height: 60px;
+  border-radius: 5px;
+  padding: 15px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.card-bg{
+  background: #3A3F44;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  color: rgb(170,170,170) !important;
+}
+
+.pfid-balance{
+  background: #3A3F44;
+  height: 60px;
+  border-radius: 5px 5px 0 0;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.pfid-balance span{
+  color: #fff;
+}
