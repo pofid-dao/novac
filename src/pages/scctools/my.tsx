@@ -59,10 +59,16 @@ const columns = [
     width: '5%',
   },
   {
+    title: i18n.t('pages_myssc_no'),
+    dataIndex: 'no',
+    key: 'no',
+    width: '5%',
+  },
+  {
     title: i18n.t('pages_myssc_pledged'),
     dataIndex: 'backedValue',
     key: 'backedValue',
-    width: '20%',
+    width: '15%',
   },
   {
     title: i18n.t('pages_myssc_mintCoins'),
@@ -460,6 +466,7 @@ class MySSC extends Component {
         }
         datasource.push({
           index: i + 1,
+          no: d.contractIndex + 100000,
           backedValue:
             utils.toValue(d.backedValue, decimal).toFixed(4) +
             ' ' +

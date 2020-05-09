@@ -1,7 +1,7 @@
 class Config {
   staking = {
     address:
-      'NmFB4TWZpAr6FsVdF8DqjHN7KsfLtZMkWxHGcm7yKg1rrkmMeXpjvGXG1ALYLx7vCwSraCfuqpDGqCr5eK7xVhQ',
+      '58kDZXKhr9UBBqydbQL2Pz3nBhZBfZpC7r3Y5Qgze6natVUnz6SScsKGvn7KX8Tdy8rF9smUwjfSxLC4UQx2JneW',
     abi: [
       {
         constant: true,

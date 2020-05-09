@@ -59,10 +59,16 @@ const columns = [
     width: '5%',
   },
   {
+    title: i18n.t('pages_myssc_no'),
+    dataIndex: 'no',
+    key: 'no',
+    width: '5%',
+  },
+  {
     title: i18n.t('pages_myssc_pledged'),
     dataIndex: 'backedValue',
     key: 'backedValue',
-    width: '20%',
+    width: '15%',
   },
   {
     title: i18n.t('pages_myssc_mintCoins'),
@@ -419,7 +425,6 @@ class SSCTools extends Component {
           pageSize,
         );
         const datas = JSON.parse(records);
-        console.log('datas>>>', datas);
         if (panes[backeCoin]) {
           let org: Array<any> = panes[backeCoin];
           panes[backeCoin] = org.concat([data]);
@@ -520,7 +525,6 @@ class SSCTools extends Component {
           .multipliedBy(100)
           .toFixed(2);
 
-        console.log('currentRate>>>>> ', currentRate);
         if (d.status == 1) {
           // buttons.push(<Button type={"primary"} onClick={()=>{that.borrow(backeCoin,mintCoin)}} block style={{marginTop:'5px'}}>Borrow</Button>);
           if (d.owns) {
@@ -545,18 +549,40 @@ class SSCTools extends Component {
             );
           }
         } else if (d.status == 2) {
-          buttons.push(
-            <Button
-              type={'primary'}
-              onClick={() => {
-                that.auction(d.contractIndex);
-              }}
-              block
-              style={{ marginTop: '5px' }}
-            >
-              {i18n.t('button_createAuction')}
-            </Button>,
-          );
+          if (d.owns) {
+            buttons.push(
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  // @ts-ignore
+                  const dcmls = decimals[mintCoin];
+                  that.deal(
+                    backeCoin,
+                    mintCoin,
+                    utils.toValue(d.mintValue, dcmls).toString(10),
+                    d.contractIndex,
+                  );
+                }}
+                block
+                style={{ marginTop: '5px' }}
+              >
+                {i18n.t('button_repay')}
+              </Button>,
+            );
+          } else {
+            buttons.push(
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  that.auction(d.contractIndex);
+                }}
+                block
+                style={{ marginTop: '5px' }}
+              >
+                {i18n.t('button_createAuction')}
+              </Button>,
+            );
+          }
         } else if (d.status == 3) {
           buttons.push(
             <Button
@@ -589,6 +615,7 @@ class SSCTools extends Component {
         const decima2 = decimals[data.mintCoin];
         datasource.push({
           index: i + 1,
+          no: d.contractIndex + 100000,
           backedValue:
             utils.toValue(d.backedValue, decimal).toFixed(4) +
             ' ' +
@@ -614,12 +641,17 @@ class SSCTools extends Component {
             overflowY: 'scroll',
           }}
         >
-          <Descriptions column={3}>
+          <Descriptions column={3} column={4}>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_collateralizationRatio')}
             >
-              {collateralRate}% ({data.currentRateNumerator} {data.backeCoin} ={' '}
-              {data.currentRateDenominator} {mintCoin})
+              {collateralRate}%
+            </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_exchangeRatio')}
+            >
+              {data.currentRateNumerator} {data.backeCoin} ={' '}
+              {data.currentRateDenominator} {mintCoin}
             </Descriptions.Item>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_liquidationRatio')}
@@ -669,12 +701,21 @@ class SSCTools extends Component {
             overflowY: 'scroll',
           }}
         >
-          <Descriptions>
-            <Descriptions.Item label={'Collateralization Ratio'}>
-              {collateralRate}% ({data.currentRateNumerator} {data.backeCoin} ={' '}
-              {data.currentRateDenominator} {mintCoin})
+          <Descriptions column={4}>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_collateralizationRatio')}
+            >
+              {collateralRate}%
             </Descriptions.Item>
-            <Descriptions.Item label={'Liquidation Ratio'}>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_exchangeRatio')}
+            >
+              {data.currentRateNumerator} {data.backeCoin} ={' '}
+              {data.currentRateDenominator} {mintCoin}
+            </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_liquidationRatio')}
+            >
               {thresholdRate}%
             </Descriptions.Item>
             <Descriptions.Item label={''}>

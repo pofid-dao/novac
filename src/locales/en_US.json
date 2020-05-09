@@ -11,7 +11,7 @@
   "button_withdraw": "Withdraw",
   "button_reinvet": "Re Staking",
   "button_createAuction": "Create Auction",
-  "button_bidding": "Go Auction",
+  "button_bidding": "Go Bid",
   "button_bid": "BID",
   "menus_wallet": "Wallet",
   "menus_pfid": "PFID",
@@ -61,8 +61,10 @@
   "pages_ssctools_list_title": "SSC LIST",
   "pages_ssctools_list_collateralizationRatio": "Collateralization Ratio",
   "pages_ssctools_list_liquidationRatio": "Liquidation Ratio",
+  "pages_ssctools_list_exchangeRatio": "Exchange Ratio",
   "pages_myssc_title": "MY SSC",
   "pages_myssc_index": "Index",
+  "pages_myssc_no": "No",
   "pages_myssc_pledged": "Pledged Coins",
   "pages_myssc_mintCoins": "Mint Coins",
   "pages_myssc_fee": "Fee",
@@ -98,5 +100,7 @@
 
   "chrome_down": "https://www.google.com/chrome/",
   "chrome_down_tip": "NOVAC works best on Chrome browser.",
-  "chrome_down_btn": "Click to download Chrome browser."
+  "chrome_down_btn": "Click to download Chrome browser.",
+
+  "help": "https://pofid.com/Tech_guide.html#top0"
 }

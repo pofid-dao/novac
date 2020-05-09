@@ -22,6 +22,7 @@ import {
   ToolOutlined,
   CheckCircleOutlined,
   LoadingOutlined,
+  CloseCircleOutlined,
 } from '@ant-design/icons';
 import './index.css';
 import logo from '../img/logo.png';
@@ -162,6 +163,14 @@ class SiderMenus extends React.Component {
               16,
             ).toNumber();
             tx.update(txInfo).then();
+          } else {
+            if (
+              Math.ceil(new Date().getTime() - txInfo.timestamp) / 1000 >
+              5 * 60
+            ) {
+              txInfo.state = 'failed';
+              tx.update(txInfo).then();
+            }
           }
         }
         if (txInfo.state == 'pending') {
@@ -344,9 +353,23 @@ class SiderMenus extends React.Component {
     if (txDatas && txDatas.length > 0) {
       for (let i = 0; i < txDatas.length; i++) {
         const tx: TxInfo = txDatas[i];
-        const icon =
-          tx.state == 'pending' ? <LoadingOutlined /> : <CheckCircleOutlined />;
-        const color = tx.state == 'pending' ? '#ffcd00' : '#87d068';
+        let icon: any = <CheckCircleOutlined />;
+        if (tx.state == 'pending') {
+          icon = <LoadingOutlined />;
+        } else if (tx.state == 'success') {
+          icon = <CheckCircleOutlined />;
+        } else if (tx.state == 'failed') {
+          icon = <CloseCircleOutlined />;
+        }
+        let color: any = '#87d068';
+        if (tx.state == 'pending') {
+          color = '#ffcd00';
+        } else if (tx.state == 'success') {
+          color = '#87d068';
+        } else if (tx.state == 'failed') {
+          color = '#f81d22';
+        }
+
         datasource.push({
           tx_hash: tx.tx_hash,
           avatar: <Avatar icon={icon} style={{ backgroundColor: color }} />,
@@ -548,7 +571,9 @@ class SiderMenus extends React.Component {
                       </Badge>
                     </Dropdown>
                     <Divider dashed type={'vertical'} />
-                    <QuestionCircleOutlined style={{ fontSize: '20px' }} />
+                    <a href={i18n.t('help')} target="_blank">
+                      <QuestionCircleOutlined style={{ fontSize: '20px' }} />
+                    </a>
                     <Divider dashed type={'vertical'} />
                     <Dropdown overlay={languageList}>
                       <GlobalOutlined style={{ fontSize: '20px' }} />

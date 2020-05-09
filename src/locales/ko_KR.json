@@ -15,7 +15,7 @@
   "button_bid": "비드",
   "menus_wallet": "지갑",
   "menus_pfid": "PFID",
-  "menus_mypfid": "나의 PFID",
+  "menus_mypfid": "나의PFID",
   "menus_equity": "자산",
   "menus_dmw": " DMW",
   "menus_ssctools": "스테이블 코인 도구",
@@ -58,8 +58,10 @@
   "pages_ssctools_list_title": "SSC 리스트",
   "pages_ssctools_list_collateralizationRatio": "저당율",
   "pages_ssctools_list_liquidationRatio": "블라스팅 웨어하우스 율",
+  "pages_ssctools_list_exchangeRatio": "교환 비율",
   "pages_myssc_title": " 나의 SSC",
   "pages_myssc_index": "순번",
+  "pages_myssc_no": "번호",
   "pages_myssc_pledged": "저당 수량",
   "pages_myssc_mintCoins": "주화 수량",
   "pages_myssc_fee": "비용",
@@ -90,5 +92,6 @@
   "state_biding": "비드중",
   "chrome_down": "https://www.google.com/chrome/",
   "chrome_down_tip": "NOVAC는 Chrome 브라우저에서 가장 잘 작동합니다.",
-  "chrome_down_btn": "Chrome 브라우저를 다운로드하려면 클릭하십시오."
+  "chrome_down_btn": "Chrome 브라우저를 다운로드하려면 클릭하십시오.",
+  "help": "https://pofid.com/Tech_guide.html#top0"
 }

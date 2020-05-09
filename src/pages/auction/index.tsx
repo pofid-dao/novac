@@ -40,7 +40,13 @@ const columns = [
     title: i18n.t('pages_auction_index'),
     dataIndex: 'index',
     key: 'index',
-    width: '10%',
+    width: '5%',
+  },
+  {
+    title: i18n.t('pages_myssc_no'),
+    dataIndex: 'no',
+    key: 'no',
+    width: '5%',
   },
   {
     title: i18n.t('pages_auction_assets'),
@@ -359,6 +365,7 @@ class Auction extends Component {
 
         datasorce.push({
           index: i + 1,
+          no: data.contractIndex + 100000,
           backedValue:
             utils.toValue(data.backedValue, decimal).toFixed(4) +
             ' ' +

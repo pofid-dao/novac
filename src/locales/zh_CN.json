@@ -15,7 +15,7 @@
   "button_bid": "竞拍",
   "menus_wallet": "钱包",
   "menus_pfid": "PFID",
-  "menus_mypfid": "我的 PFID",
+  "menus_mypfid": "我的PFID",
   "menus_equity": "资产",
   "menus_dmw": "DMW",
   "menus_ssctools": "稳定币工具",
@@ -61,8 +61,10 @@
   "pages_ssctools_list_title": "SSC LIST",
   "pages_ssctools_list_collateralizationRatio": "质押比例",
   "pages_ssctools_list_liquidationRatio": "爆仓比例",
+  "pages_ssctools_list_exchangeRatio": "兑换比例",
   "pages_myssc_title": "我的SSC",
   "pages_myssc_index": "序号",
+  "pages_myssc_no": "编号",
   "pages_myssc_pledged": "质押数量",
   "pages_myssc_mintCoins": "铸币数量",
   "pages_myssc_fee": "费用",
@@ -97,5 +99,6 @@
   "state_biding": "竞拍中",
   "chrome_down": "https://www.google.cn/intl/zh-CN/chrome/",
   "chrome_down_tip": "NOVAC在Chrome浏览器上效果最佳。",
-  "chrome_down_btn": "点击下载"
+  "chrome_down_btn": "点击下载",
+  "help": "https://pofid.com/Tech_guide.html#top0"
 }

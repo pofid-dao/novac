@@ -57,7 +57,13 @@ const columns = [
     title: i18n.t('pages_pfid_my_index'),
     dataIndex: 'index',
     key: 'index',
-    width: '10%',
+    width: '5%',
+  },
+  {
+    title: i18n.t('pages_myssc_no'),
+    dataIndex: 'no',
+    key: 'no',
+    width: '5%',
   },
   {
     title: i18n.t('pages_pfid_my_cycle'),
@@ -264,7 +270,8 @@ class MyPfid extends Component {
         }
 
         tmp.push({
-          index: ++i,
+          index: i + 1,
+          no: data.shareIndex + 100000,
           cycle: data.stakingDays,
           state: data.valid ? i18n.t('state_valid') : i18n.t('state_finished'),
           staking: utils.toValue(data.value, 18).toString(10),
