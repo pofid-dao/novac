@@ -351,32 +351,6 @@ class MySSC extends Component {
       });
   };
 
-  onSetAuctionPrice = (values: any) => {
-    const that = this;
-    that.setState({
-      visibleAuctionPrice: false,
-      loading: true,
-    });
-    const { contractIndex } = that.state;
-
-    dmw
-      .setAuctionPrice(contractIndex, values['password'])
-      .then(rest => {
-        notify('success', 'SUCCESS', rest);
-        that.setState({
-          loading: false,
-          visibleAuctionPrice: false,
-        });
-      })
-      .catch((e: any) => {
-        that.setState({
-          loading: false,
-        });
-        const err = typeof e === 'string' ? e : e.message;
-        notify('error', 'Error', err);
-      });
-  };
-
   async list() {
     const that = this;
     const { pageNo, pageSize } = this.state;
@@ -405,7 +379,6 @@ class MySSC extends Component {
         const decimal = await utils.getDecimal(d.backedCoin);
         const decimal2 = await utils.getDecimal(d.mintCoin);
         if (d.status == 1) {
-          // buttons.push(<Button type={"primary"} onClick={()=>{that.borrow(backeCoin,mintCoin)}} block style={{marginTop:'5px'}}>Borrow</Button>);
           if (d.owns) {
             buttons.push(
               <Button
@@ -426,18 +399,27 @@ class MySSC extends Component {
             );
           }
         } else if (d.status == 2) {
-          buttons.push(
-            <Button
-              type={'primary'}
-              onClick={() => {
-                that.auction(d.contractIndex);
-              }}
-              block
-              style={{ marginTop: '5px' }}
-            >
-              {i18n.t('button_createAuction')}
-            </Button>,
-          );
+          if (d.owns) {
+            buttons.push(
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  // @ts-ignore
+                  const dcmls = decimals[mintCoin];
+                  that.deal(
+                    backedCoin,
+                    mintCoin,
+                    utils.toValue(d.mintValue, dcmls).toString(10),
+                    d.contractIndex,
+                  );
+                }}
+                block
+                style={{ marginTop: '5px' }}
+              >
+                {i18n.t('button_repay')}
+              </Button>,
+            );
+          }
         } else if (d.status == 3) {
           buttons.push(
             <Button
@@ -563,7 +545,7 @@ class MySSC extends Component {
         <Spin spinning={this.state.loading}>
           <Row className={'pfid-title'}>
             <Col span={12}>
-              <span>MY SSC</span>
+              <span>{i18n.t('pages_myssc_title')}</span>
             </Col>
             <Col span={12} style={{ textAlign: 'right' }}></Col>
           </Row>
@@ -571,19 +553,6 @@ class MySSC extends Component {
           {tabs}
           <p />
         </Spin>
-
-        <BorrowForm
-          visible={visible}
-          onCreate={this.onBorrow}
-          onCancel={() => {
-            this.setVisible(false);
-          }}
-          mintCoin={mintCoin}
-          amountEstimate={amount}
-          fee={fee}
-          backedCoin={backedCoin}
-          estimate={this.estimate}
-        />
 
         <DealForm
           visible={visibleDeal}
@@ -598,14 +567,6 @@ class MySSC extends Component {
           onCreate={this.onCreateAuction}
           onCancel={() => {
             this.setVisibleAuction(false);
-          }}
-          title={i18n.t('button_createAuction')}
-        />
-        <PasswordForm
-          visible={visibleAuctionPrice}
-          onCreate={this.onSetAuctionPrice}
-          onCancel={() => {
-            this.setVisibleAuctionPrice(false);
           }}
           title={i18n.t('button_createAuction')}
         />

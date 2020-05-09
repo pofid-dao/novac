@@ -373,32 +373,6 @@ class SSCTools extends Component {
       });
   };
 
-  onSetAuctionPrice = (values: any) => {
-    const that = this;
-    that.setState({
-      visibleAuctionPrice: false,
-      loading: true,
-    });
-    const { contractIndex } = that.state;
-
-    dmw
-      .setAuctionPrice(contractIndex, values['password'])
-      .then(rest => {
-        notify('success', 'SUCCESS', rest);
-        that.setState({
-          loading: false,
-          visibleAuctionPrice: false,
-        });
-      })
-      .catch((e: any) => {
-        that.setState({
-          loading: false,
-        });
-        const err = typeof e === 'string' ? e : e.message;
-        notify('error', 'Error', err);
-      });
-  };
-
   async list(that: any) {
     const { pageNo, pageSize } = that.state;
     const rest: any = await dmwBase.getTradingPairs();
@@ -645,7 +619,7 @@ class SSCTools extends Component {
             overflowY: 'scroll',
           }}
         >
-          <Descriptions column={3} column={4}>
+          <Descriptions column={4}>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_collateralizationRatio')}
             >
@@ -804,7 +778,7 @@ class SSCTools extends Component {
         <Spin spinning={this.state.loading}>
           <Row className={'pfid-title'}>
             <Col span={12}>
-              <span>SSC List</span>
+              <span>{i18n.t('pages_ssctools_list_title')}</span>
             </Col>
             <Col span={12} style={{ textAlign: 'right' }}></Col>
           </Row>
@@ -842,14 +816,6 @@ class SSCTools extends Component {
           onCreate={this.onCreateAuction}
           onCancel={() => {
             this.setVisibleAuction(false);
-          }}
-          title={i18n.t('button_createAuction')}
-        />
-        <PasswordForm
-          visible={visibleAuctionPrice}
-          onCreate={this.onSetAuctionPrice}
-          onCancel={() => {
-            this.setVisibleAuctionPrice(false);
           }}
           title={i18n.t('button_createAuction')}
         />

@@ -7,6 +7,7 @@ import BigNumber from 'bignumber.js';
 import utils from '@/common/utils';
 import tx from '@/service/tx';
 import gerorpc from '@/common/gerorpc';
+import { storage } from '@/common/storage';
 
 class DmwBase {
   callContract: any = null;
@@ -20,7 +21,8 @@ class DmwBase {
 
   async getTradingPairs(): Promise<any> {
     const act: AccountInfo = account.getCurrent();
-    return this.callMethod('getTradingPairs', act.MainPKr, ['en']);
+    const lang = storage.get(storage.keys.language);
+    return this.callMethod('getTradingPairs', act.MainPKr, [lang]);
   }
 
   async getProxyAddress(backedCoin: string, mintCoin: string): Promise<any> {
@@ -29,6 +31,41 @@ class DmwBase {
       backedCoin,
       mintCoin,
     ]);
+  }
+
+  async addDescription(
+    backedCoin: string,
+    language: string,
+    description: string,
+    password: string,
+  ): Promise<any> {
+    const act: AccountInfo = account.getCurrent();
+    return this.executeMethod(
+      'addDescription',
+      act.PK,
+      act.MainPKr,
+      [backedCoin, language, description],
+      new BigNumber(0),
+      'SERO',
+      password,
+    );
+  }
+
+  async addExchange(
+    backedCoin: string,
+    name: string,
+    password: string,
+  ): Promise<any> {
+    const act: AccountInfo = account.getCurrent();
+    return this.executeMethod(
+      'addExchange',
+      act.PK,
+      act.MainPKr,
+      [backedCoin, name],
+      new BigNumber(0),
+      'SERO',
+      password,
+    );
   }
 
   now(): any {

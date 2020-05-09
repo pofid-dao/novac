@@ -87,12 +87,15 @@
   "form_input_password": "Please Input Password!",
   "form_input_markup": "Please Input Markup multiple!",
   "form_input_cycle": "Please Select Cycle!",
+  "form_input_desc": "Please Input Description!",
+  "form_input_name": "Please Input Name!",
 
   "form_lable_amount": "Amount",
   "form_lable_password": "Password",
   "form_lable_markup": "Markup multiple",
   "form_lable_estimate": "Estimate",
   "form_lable_fee": "Fee",
+  "form_lable_exchange_name": "Exchange Name",
 
   "state_finished": "Finished",
   "state_valid": "Valid",
@@ -102,5 +105,10 @@
   "chrome_down_tip": "NOVAC works best on Chrome browser.",
   "chrome_down_btn": "Click to download Chrome browser.",
 
-  "help": "https://pofid.com/Tech_guide.html#top0"
+  "help": "https://pofid.com/Tech_guide.html#top0",
+  "en_US": "English",
+  "ko_KR": "Korean",
+  "zh_CN": "Simplified Chinese",
+  "updateDesc": "Update Description",
+  "addExchange": "Add Exchange"
 }

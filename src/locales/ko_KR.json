@@ -82,16 +82,28 @@
   "form_input_password": "비밀 번호를 입력해 주세요!",
   "form_input_markup": "올린 가격의 배수를 입력해 주세요!",
   "form_input_cycle": "주기를 선택해 주세요!",
+  "form_input_desc": "설명을 입력하십시오!",
+  "form_input_name": "이름을 입력하십시오1!",
+
   "form_lable_amount": "금액",
   "form_lable_password": "비밀 번호",
   "form_lable_markup": "올린 가격의 배수",
   "form_lable_estimate": "추산",
   "form_lable_fee": "비용",
+  "form_lable_exchange_name": "교환 명",
+
   "state_finished": "종료",
   "state_valid": "유효",
   "state_biding": "비드중",
   "chrome_down": "https://www.google.com/chrome/",
   "chrome_down_tip": "NOVAC는 Chrome 브라우저에서 가장 잘 작동합니다.",
   "chrome_down_btn": "Chrome 브라우저를 다운로드하려면 클릭하십시오.",
-  "help": "https://pofid.com/Tech_guide.html#top0"
+  "help": "https://pofid.com/Tech_guide.html#top0",
+
+  "en_US": "영어",
+  "ko_KR": "한국어",
+  "zh_CN": "중국어 간체",
+
+  "updateDesc": "업데이트 설명",
+  "addExchange": "교환 추가"
 }

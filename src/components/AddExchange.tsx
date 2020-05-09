@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Modal, Select, Input } from 'antd';
 import i18n from '@/i18n';
-import { storage } from '@/common/storage';
 
 interface Values {
   title: string;
@@ -17,29 +16,16 @@ interface CollectionCreateFormProps {
 
 const { Option } = Select;
 const { TextArea } = Input;
-const CreateSSCForm: React.FC<CollectionCreateFormProps> = ({
+const AddExchangeForm: React.FC<CollectionCreateFormProps> = ({
   visible,
   onCreate,
   onCancel,
 }) => {
   const [form] = Form.useForm();
-
-  const lang = storage.get(storage.keys.language);
-  let descriptions: any = (
-    <Form.Item
-      name={'description'}
-      label={i18n.t(lang)}
-      rules={[{ required: true, message: i18n.t('form_input_desc') }]}
-      className="collection-create-form_last-form-item"
-    >
-      <TextArea />
-    </Form.Item>
-  );
-
   return (
     <Modal
       visible={visible}
-      title={i18n.t('updateDesc')}
+      title={i18n.t('addExchange')}
       okText={i18n.t('button_ok')}
       cancelText={i18n.t('button_cancel')}
       onCancel={onCancel}
@@ -61,7 +47,14 @@ const CreateSSCForm: React.FC<CollectionCreateFormProps> = ({
         name="form_in_modal"
         initialValues={{ modifier: 'public' }}
       >
-        {descriptions}
+        <Form.Item
+          name="name"
+          label={i18n.t('form_lable_exchange_name')}
+          rules={[{ required: true, message: i18n.t('form_input_name') }]}
+          className="collection-create-form_last-form-item"
+        >
+          <Input />
+        </Form.Item>
         <Form.Item
           name="password"
           label={i18n.t('form_lable_password')}
@@ -75,4 +68,4 @@ const CreateSSCForm: React.FC<CollectionCreateFormProps> = ({
   );
 };
 
-export default CreateSSCForm;
+export default AddExchangeForm;
