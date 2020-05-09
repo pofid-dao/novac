@@ -219,7 +219,9 @@ class SSCTools extends Component {
         backedCoin: backedCoin,
         mintCoin: mintCoin,
         proxy: proxy,
-        minBorrowValue: new BigNumber(rest).toString(10),
+        minBorrowValue: utils
+          .toValue(new BigNumber(rest).toString(10), decimal)
+          .toString(10),
       });
       that.setVisible(true);
     });

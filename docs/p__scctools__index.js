@@ -7691,14 +7691,16 @@
               });
         }
         borrow(e, t, n) {
-          var r = this;
-          v['a'].getDecimalCache(e);
-          h['a'].getMinBackedAmount(e).then(o => {
+          var r = this,
+            o = v['a'].getDecimalCache(e);
+          h['a'].getMinBackedAmount(e).then(a => {
             r.setState({
               backedCoin: e,
               mintCoin: t,
               proxy: n,
-              minBorrowValue: new M.a(o).toString(10),
+              minBorrowValue: v['a']
+                .toValue(new M.a(a).toString(10), o)
+                .toString(10),
             }),
               r.setVisible(!0);
           });
