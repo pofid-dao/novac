@@ -16,6 +16,21 @@
       gtag("js", new Date());
 
       gtag("config", "UA-165993751-2");
+
+      function initConsole() {
+        if (process.env.NODE_ENV !== "production") {
+          return;
+        }
+        console.log = function (message) {};
+
+        console.debug = function (message) {};
+
+        console.info = function (message) {};
+
+        console.warn = function (message) {};
+
+        console.trace = function (message) {};
+      }
     </script>
 
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />

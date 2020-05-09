@@ -385,11 +385,11 @@
           t
         );
       }
-      function T(t, e) {
+      function A(t, e) {
         if (!(t instanceof e))
           throw new TypeError('Cannot call a class as a function');
       }
-      function A(t, e) {
+      function T(t, e) {
         for (var n = 0; n < e.length; n++) {
           var a = e[n];
           (a.enumerable = a.enumerable || !1),
@@ -399,7 +399,7 @@
         }
       }
       function D(t, e, n) {
-        return e && A(t.prototype, e), n && A(t, n), t;
+        return e && T(t.prototype, e), n && T(t, n), t;
       }
       function R(t, e) {
         if ('function' !== typeof e && null !== e)
@@ -467,7 +467,7 @@
           H(t)
         );
       }
-      var V = function(t, e) {
+      var K = function(t, e) {
         var n = {};
         for (var a in t)
           Object.prototype.hasOwnProperty.call(t, a) &&
@@ -482,16 +482,16 @@
         }
         return n;
       };
-      function K(t) {
+      function V(t) {
         return -1 !== j['a'].indexOf(t);
       }
-      var F = (function(t) {
+      var Y = (function(t) {
         R(n, t);
         var e = q(n);
         function n() {
           var t;
           return (
-            T(this, n),
+            A(this, n),
             (t = e.apply(this, arguments)),
             (t.renderBadge = function(e) {
               var n,
@@ -504,7 +504,7 @@
                 m = o.status,
                 d = o.text,
                 y = o.color,
-                g = V(o, [
+                g = K(o, [
                   'prefixCls',
                   'scrollNumberPrefixCls',
                   'children',
@@ -530,11 +530,11 @@
                   ((n = {}),
                   I(n, ''.concat(b, '-status-dot'), t.hasStatus()),
                   I(n, ''.concat(b, '-status-').concat(m), !!m),
-                  I(n, ''.concat(b, '-status-').concat(y), K(y)),
+                  I(n, ''.concat(b, '-status-').concat(y), V(y)),
                   n),
                 ),
                 x = {};
-              if ((y && !K(y) && (x.background = y), !f && t.hasStatus())) {
+              if ((y && !V(y) && (x.background = y), !f && t.hasStatus())) {
                 var C = t.getStyleWithOffset(),
                   O = C && C.color;
                 return i['createElement'](
@@ -724,12 +724,12 @@
                       !u && o && o.toString && o.toString().length > 1,
                     ),
                     I(n, ''.concat(t, '-status-').concat(r), !!r),
-                    I(n, ''.concat(t, '-status-').concat(c), K(c)),
+                    I(n, ''.concat(t, '-status-').concat(c), V(c)),
                     n),
                   ),
                   m = this.getStyleWithOffset();
                 return (
-                  c && !K(c) && ((m = m || {}), (m.background = c)),
+                  c && !V(c) && ((m = m || {}), (m.background = c)),
                   l
                     ? null
                     : i['createElement'](E, {
@@ -755,19 +755,19 @@
           n
         );
       })(i['Component']);
-      F.defaultProps = {
+      Y.defaultProps = {
         count: null,
         showZero: !1,
         dot: !1,
         overflowCount: 99,
       };
       n('/zsF');
-      var Y = n('PArb'),
-        $ = (n('+L6B'), n('2/Rp')),
-        U = (n('3wW7'), n('R9oj'), n('T2oS'), n('DjyN'), n('1GLa'), n('17x9')),
-        Z = n('W9HT'),
+      var F = n('PArb'),
+        U = (n('+L6B'), n('2/Rp')),
+        $ = (n('3wW7'), n('R9oj'), n('T2oS'), n('DjyN'), n('1GLa'), n('17x9')),
+        G = n('W9HT'),
         Q = n('NUBc'),
-        G = n('qrJ5'),
+        Z = n('qrJ5'),
         X = n('/kpp');
       function J(t) {
         if (!i['isValidElement'](t)) return t;
@@ -1225,7 +1225,7 @@
         return function() {
           var e,
             n = Dt(t);
-          if (At()) {
+          if (Tt()) {
             var a = Dt(this).constructor;
             e = Reflect.construct(n, arguments, a);
           } else e = n.apply(this, arguments);
@@ -1234,17 +1234,17 @@
       }
       function It(t, e) {
         return !e || ('object' !== ht(e) && 'function' !== typeof e)
-          ? Tt(t)
+          ? At(t)
           : e;
       }
-      function Tt(t) {
+      function At(t) {
         if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
         return t;
       }
-      function At() {
+      function Tt() {
         if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
         if (Reflect.construct.sham) return !1;
         if ('function' === typeof Proxy) return !0;
@@ -1270,7 +1270,7 @@
         );
       }
       (gt.Meta = dt),
-        (gt.contextTypes = { grid: U['any'], itemLayout: U['string'] });
+        (gt.contextTypes = { grid: $['any'], itemLayout: $['string'] });
       var Rt = function(t, e) {
           var n = {};
           for (var a in t)
@@ -1379,7 +1379,7 @@
                   default:
                     break;
                 }
-                var T = p()(
+                var A = p()(
                     j,
                     g,
                     ((e = {}),
@@ -1397,7 +1397,7 @@
                     Ot(e, ''.concat(j, '-rtl'), 'rtl' === o),
                     e),
                   ),
-                  A = Ct(
+                  T = Ct(
                     Ct(Ct({}, a.defaultPaginationProps), {
                       total: x.length,
                       current: s,
@@ -1405,8 +1405,8 @@
                     }),
                     _ || {},
                   ),
-                  D = Math.ceil(A.total / A.pageSize);
-                A.current > D && (A.current = D);
+                  D = Math.ceil(T.total / T.pageSize);
+                T.current > D && (T.current = D);
                 var R,
                   z = _
                     ? i['createElement'](
@@ -1414,7 +1414,7 @@
                         { className: ''.concat(j, '-pagination') },
                         i['createElement'](
                           Q['a'],
-                          Ct({}, A, {
+                          Ct({}, T, {
                             onChange: a.onPaginationChange,
                             onShowSizeChange: a.onPaginationShowSizeChange,
                           }),
@@ -1424,10 +1424,10 @@
                   q = bt(x);
                 if (
                   (_ &&
-                    x.length > (A.current - 1) * A.pageSize &&
+                    x.length > (T.current - 1) * T.pageSize &&
                     (q = bt(x).splice(
-                      (A.current - 1) * A.pageSize,
-                      A.pageSize,
+                      (T.current - 1) * T.pageSize,
+                      T.pageSize,
                     )),
                   (R =
                     N &&
@@ -1442,18 +1442,18 @@
                     L.push(i['cloneElement'](t, { key: a.keys[e] }));
                   }),
                     (R = w
-                      ? i['createElement'](G['a'], { gutter: w.gutter }, L)
+                      ? i['createElement'](Z['a'], { gutter: w.gutter }, L)
                       : i['createElement'](
                           'ul',
                           { className: ''.concat(j, '-items') },
                           L,
                         ));
                 } else h || N || (R = a.renderEmpty(j, r));
-                var W = A.position || 'bottom';
+                var W = T.position || 'bottom';
                 return i['createElement'](
                   'div',
                   Ct(
-                    { className: T },
+                    { className: A },
                     Object(u['a'])(E, ['rowKey', 'renderItem', 'locale']),
                   ),
                   ('top' === W || 'both' === W) && z,
@@ -1463,7 +1463,7 @@
                       { className: ''.concat(j, '-header') },
                       O,
                     ),
-                  i['createElement'](Z['a'], M, R, h),
+                  i['createElement'](G['a'], M, R, h),
                   P &&
                     i['createElement'](
                       'div',
@@ -1526,7 +1526,7 @@
           );
         })(i['Component']);
       (zt.Item = gt),
-        (zt.childContextTypes = { grid: U['any'], itemLayout: U['string'] }),
+        (zt.childContextTypes = { grid: $['any'], itemLayout: $['string'] }),
         (zt.defaultProps = {
           dataSource: [],
           bordered: !1,
@@ -1586,7 +1586,7 @@
         if (!(t instanceof e))
           throw new TypeError('Cannot call a class as a function');
       }
-      function Vt(t, e) {
+      function Kt(t, e) {
         for (var n = 0; n < e.length; n++) {
           var a = e[n];
           (a.enumerable = a.enumerable || !1),
@@ -1595,10 +1595,10 @@
             Object.defineProperty(t, a.key, a);
         }
       }
-      function Kt(t, e, n) {
-        return e && Vt(t.prototype, e), n && Vt(t, n), t;
+      function Vt(t, e, n) {
+        return e && Kt(t.prototype, e), n && Kt(t, n), t;
       }
-      function Ft(t, e) {
+      function Yt(t, e) {
         if ('function' !== typeof e && null !== e)
           throw new TypeError(
             'Super expression must either be null or a function',
@@ -1606,35 +1606,35 @@
         (t.prototype = Object.create(e && e.prototype, {
           constructor: { value: t, writable: !0, configurable: !0 },
         })),
-          e && Yt(t, e);
+          e && Ft(t, e);
       }
-      function Yt(t, e) {
+      function Ft(t, e) {
         return (
-          (Yt =
+          (Ft =
             Object.setPrototypeOf ||
             function(t, e) {
               return (t.__proto__ = e), t;
             }),
-          Yt(t, e)
+          Ft(t, e)
         );
       }
-      function $t(t) {
+      function Ut(t) {
         return function() {
           var e,
-            n = Gt(t);
+            n = Zt(t);
           if (Qt()) {
-            var a = Gt(this).constructor;
+            var a = Zt(this).constructor;
             e = Reflect.construct(n, arguments, a);
           } else e = n.apply(this, arguments);
-          return Ut(this, e);
+          return $t(this, e);
         };
       }
-      function Ut(t, e) {
+      function $t(t, e) {
         return !e || ('object' !== Bt(e) && 'function' !== typeof e)
-          ? Zt(t)
+          ? Gt(t)
           : e;
       }
-      function Zt(t) {
+      function Gt(t) {
         if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
@@ -1656,14 +1656,14 @@
           return !1;
         }
       }
-      function Gt(t) {
+      function Zt(t) {
         return (
-          (Gt = Object.setPrototypeOf
+          (Zt = Object.setPrototypeOf
             ? Object.getPrototypeOf
             : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
               }),
-          Gt(t)
+          Zt(t)
         );
       }
       var Xt = function(t, e) {
@@ -1682,8 +1682,8 @@
           return n;
         },
         Jt = (function(t) {
-          Ft(n, t);
-          var e = $t(n);
+          Yt(n, t);
+          var e = Ut(n);
           function n() {
             var t;
             return (
@@ -1829,7 +1829,7 @@
             );
           }
           return (
-            Kt(n, [
+            Vt(n, [
               {
                 key: 'componentDidMount',
                 value: function() {
@@ -2036,8 +2036,8 @@
           );
         };
       Ie.displayName = 'ToolOutlined';
-      var Te = i['forwardRef'](Ie),
-        Ae = {
+      var Ae = i['forwardRef'](Ie),
+        Te = {
           name: 'unordered-list',
           theme: 'outlined',
           icon: {
@@ -2054,7 +2054,7 @@
             ],
           },
         },
-        De = Ae,
+        De = Te,
         Re = function(t, e) {
           return i['createElement'](
             pe['a'],
@@ -2113,21 +2113,21 @@
             ],
           },
         },
-        Ve = He,
-        Ke = function(t, e) {
+        Ke = He,
+        Ve = function(t, e) {
           return i['createElement'](
             pe['a'],
-            Object.assign({}, t, { ref: e, icon: Ve }),
+            Object.assign({}, t, { ref: e, icon: Ke }),
           );
         };
-      Ke.displayName = 'GlobalOutlined';
-      var Fe = i['forwardRef'](Ke),
-        Ye = (n('A0qh'), n('fARU')),
-        $e = n.n(Ye),
-        Ue = n('VBU/'),
-        Ze = n.n(Ue),
+      Ve.displayName = 'GlobalOutlined';
+      var Ye = i['forwardRef'](Ve),
+        Fe = (n('A0qh'), n('fARU')),
+        Ue = n.n(Fe),
+        $e = n('VBU/'),
+        Ge = n.n($e),
         Qe = n('blP1'),
-        Ge = n('t06s'),
+        Ze = n('t06s'),
         Xe = n('Z6iu'),
         Je = n('DUDt'),
         tn = n('l04A'),
@@ -2443,9 +2443,9 @@
             '\u7b80\u4f53\u4e2d\u6587',
           ),
         ),
-        Tn = null,
-        An = 'http://popup-github.sero.cash/?language=',
-        Dn = An + yn['a'].get(yn['a'].keys.language);
+        An = null,
+        Tn = 'http://popup-github.sero.cash/?language=',
+        Dn = Tn + yn['a'].get(yn['a'].keys.language);
       function Rn(t) {
         yn['a'].set(yn['a'].keys.language, t),
           wn['a'].changeLanguage(t).then(() => {
@@ -2512,8 +2512,8 @@
             setTimeout(function() {
               t.walletTips();
             }, 3e3),
-            null == Tn &&
-              (Tn = setInterval(function() {
+            null == An &&
+              (An = setInterval(function() {
                 t.startSyncTime(), t.syncTxState().then(), t.initWalletInfo();
               }, 5e3)),
             this.onlyChrome();
@@ -2715,7 +2715,7 @@
                     i['createElement'](
                       'span',
                       null,
-                      Ge['a'].formatTime(1e3 * m.timestamp),
+                      Ze['a'].formatTime(1e3 * m.timestamp),
                     ),
                   ),
                 });
@@ -2746,7 +2746,7 @@
                         ),
                         target: '_blank',
                       },
-                      Ge['a'].ellipsis(t.tx_hash),
+                      Ze['a'].ellipsis(t.tx_hash),
                     ),
                     description: t.description,
                   }),
@@ -2779,7 +2779,7 @@
                         'a',
                         { href: '/#/' },
                         i['createElement']('img', {
-                          src: $e.a,
+                          src: Ue.a,
                           className: 'logo',
                         }),
                       ),
@@ -2860,7 +2860,7 @@
                           title: i['createElement'](
                             'span',
                             null,
-                            i['createElement'](Te, null),
+                            i['createElement'](Ae, null),
                             i['createElement'](
                               'span',
                               null,
@@ -2911,7 +2911,7 @@
                         'div',
                         { style: { float: 'right', marginRight: '24px' } },
                         i['createElement'](
-                          $['a'],
+                          U['a'],
                           {
                             type: 'link',
                             onClick: () => this.setVisibleAccount(!0),
@@ -2919,24 +2919,24 @@
                           i['createElement'](
                             'span',
                             { className: 'head-account' },
-                            Ge['a'].ellipsis(c.Name),
+                            Ze['a'].ellipsis(c.Name),
                             i['createElement'](
                               'small',
                               null,
                               c.MainPKr
-                                ? ['(', Ge['a'].ellipsis(c.MainPKr), ')'].join(
+                                ? ['(', Ze['a'].ellipsis(c.MainPKr), ')'].join(
                                     '',
                                   )
                                 : '',
                             ),
                           ),
                           i['createElement'](
-                            $['a'],
+                            U['a'],
                             { size: 'small', type: 'primary' },
                             wn['a'].t('button_changeAccount'),
                           ),
                         ),
-                        i['createElement'](Y['a'], {
+                        i['createElement'](F['a'], {
                           dashed: !0,
                           type: 'vertical',
                         }),
@@ -2944,14 +2944,14 @@
                           o['a'],
                           { overlay: g },
                           i['createElement'](
-                            F,
+                            Y,
                             { count: l },
                             i['createElement'](ze, {
                               style: { fontSize: '20px' },
                             }),
                           ),
                         ),
-                        i['createElement'](Y['a'], {
+                        i['createElement'](F['a'], {
                           dashed: !0,
                           type: 'vertical',
                         }),
@@ -2962,14 +2962,14 @@
                             style: { fontSize: '20px' },
                           }),
                         ),
-                        i['createElement'](Y['a'], {
+                        i['createElement'](F['a'], {
                           dashed: !0,
                           type: 'vertical',
                         }),
                         i['createElement'](
                           o['a'],
                           { overlay: In },
-                          i['createElement'](Fe, {
+                          i['createElement'](Ye, {
                             style: { fontSize: '20px' },
                           }),
                         ),
@@ -3010,7 +3010,7 @@
                         'a',
                         { href: '#' },
                         i['createElement']('img', {
-                          src: Ze.a,
+                          src: Ge.a,
                           style: { height: '25px' },
                         }),
                       ),
@@ -3801,10 +3801,10 @@
         (N.getTwoToneColors = M),
         (N.setTwoToneColors = j);
       var I = N;
-      function T(t, e) {
-        return q(t) || z(t, e) || D(t, e) || A();
+      function A(t, e) {
+        return q(t) || z(t, e) || D(t, e) || T();
       }
-      function A() {
+      function T() {
         throw new TypeError(
           'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
         );
@@ -3859,7 +3859,7 @@
       }
       function B(t) {
         var e = v(t),
-          n = T(e, 2),
+          n = A(e, 2),
           a = n[0],
           r = n[1];
         return I.setTwoToneColors({ primaryColor: a, secondaryColor: r });
@@ -3871,16 +3871,16 @@
           : t.primaryColor;
       }
       function W(t, e) {
-        return Y(t) || F(t, e) || V(t, e) || H();
+        return F(t) || Y(t, e) || K(t, e) || H();
       }
       function H() {
         throw new TypeError(
           'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
         );
       }
-      function V(t, e) {
+      function K(t, e) {
         if (t) {
-          if ('string' === typeof t) return K(t, e);
+          if ('string' === typeof t) return V(t, e);
           var n = Object.prototype.toString.call(t).slice(8, -1);
           return (
             'Object' === n && t.constructor && (n = t.constructor.name),
@@ -3888,17 +3888,17 @@
               ? Array.from(n)
               : 'Arguments' === n ||
                 /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-              ? K(t, e)
+              ? V(t, e)
               : void 0
           );
         }
       }
-      function K(t, e) {
+      function V(t, e) {
         (null == e || e > t.length) && (e = t.length);
         for (var n = 0, a = new Array(e); n < e; n++) a[n] = t[n];
         return a;
       }
-      function F(t, e) {
+      function Y(t, e) {
         if ('undefined' !== typeof Symbol && Symbol.iterator in Object(t)) {
           var n = [],
             a = !0,
@@ -3923,10 +3923,10 @@
           return n;
         }
       }
-      function Y(t) {
+      function F(t) {
         if (Array.isArray(t)) return t;
       }
-      function $(t, e, n) {
+      function U(t, e, n) {
         return (
           e in t
             ? Object.defineProperty(t, e, {
@@ -3939,11 +3939,11 @@
           t
         );
       }
-      function U(t, e) {
+      function $(t, e) {
         if (null == t) return {};
         var n,
           a,
-          r = Z(t, e);
+          r = G(t, e);
         if (Object.getOwnPropertySymbols) {
           var o = Object.getOwnPropertySymbols(t);
           for (a = 0; a < o.length; a++)
@@ -3954,7 +3954,7 @@
         }
         return r;
       }
-      function Z(t, e) {
+      function G(t, e) {
         if (null == t) return {};
         var n,
           a,
@@ -3973,7 +3973,7 @@
           s = t.tabIndex,
           u = t.onClick,
           l = t.twoToneColor,
-          p = U(t, [
+          p = $(t, [
             'className',
             'icon',
             'spin',
@@ -3984,7 +3984,7 @@
           ]),
           f = i()(
             'anticon',
-            $({}, 'anticon-'.concat(r.name), Boolean(r.name)),
+            U({}, 'anticon-'.concat(r.name), Boolean(r.name)),
             n,
           ),
           m = i()({ 'anticon-spin': !!o || 'loading' === r.name }),
@@ -4211,7 +4211,7 @@
         constructor() {
           (this.staking = {
             address:
-              '7vYvTXoZEigEZj7vZkHHdy4A88chGXkztaq2qQgWahvsrqTLUdxQBvXjzepTFadgowVUwNFiELNvZHk75x7nV6u',
+              '2FiVcKhkPpf9N5zyBKCaMF6Tp5TBVgrtM191ZmACdZXGpYQBmvKcdYKtjpXEkrKvjWEyGKWy33RTRTKFkf1qtiBo',
             abi: [
               {
                 constant: !0,
@@ -4340,7 +4340,7 @@
           }),
             (this.auction = {
               address:
-                '34esrhiuhqC9zQt4PSkHGQMFQBBhbYK5QHcrbtiqM621BWJ6ZkLTWZEqHpXoFhKkPexeiCFztPBPB29eHDqkD4er',
+                '5A1TkMf9ZkZabBRYRQSusGnshqduo8RiytktqTmQMVSsSoHU8yFq4Dx5EjZ1GM7GbG4aiTYsANFiVG9U6pUiF1V',
               abi: [
                 {
                   constant: !1,
@@ -4428,7 +4428,7 @@
             }),
             (this.dmw = {
               address:
-                '54CG4EkCoU8cYvER9AKAGigXYf9SJ7rjKdVDaigLDjE17Pc2afHS1c3DBEZEddds9WWLZVSpKiJpbseudBM57v7Q',
+                '5RyUgPb8tWLqkp8YKHahbzUC7rmDHYFTbNdNf2M83T5Ms2hyouJZhP3yGxY6gMX7zDB7jRo7AjNaeo1owKY2rsPY',
               abi: [
                 {
                   constant: !1,
@@ -4486,7 +4486,7 @@
             }),
             (this.dmwBase = {
               address:
-                '54CpSM8xptrnuM5RugRdEULu6rnSDV1Wm9BHzbuNYp6GRS7eVWxe5fMv8jzfK5tmoUzDjoswru1F9CzHf8EHnyDF',
+                'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
               abi: [
                 {
                   constant: !0,
@@ -4559,7 +4559,7 @@
             }),
             (this.dmwInfo = {
               address:
-                '3tLZtpnEPd5Cf2th6j1S2aSfDLZeZmDoGTV2ZoJThESPVe7XCGVQsSBR24HGPBTMnxtbXJr3aKZeCWzPqTHuxbCd',
+                '2XcFCFRiq4CcxdRDmMoHk3iyLssGLUPnqbkuUgqNAs7mQyyR93p56He1RAWWSPFEYHzhxCWkR6ezLKpvWGqKXnpx',
               abi: [
                 {
                   constant: !0,
@@ -5237,7 +5237,7 @@
         M = 24,
         N = 24,
         I = 'topRight';
-      function T(t) {
+      function A(t) {
         var e = t.duration,
           n = t.placement,
           a = t.bottom,
@@ -5251,7 +5251,7 @@
           void 0 !== o && (P = o),
           void 0 !== i && (k = i);
       }
-      function A(t) {
+      function T(t) {
         var e,
           n =
             arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : M,
@@ -5304,7 +5304,7 @@
               {
                 prefixCls: m,
                 className: ''.concat(m, '-').concat(o),
-                style: A(o, c, s),
+                style: T(o, c, s),
                 getContainer: l,
                 closeIcon: h,
               },
@@ -5386,7 +5386,7 @@
             });
           });
         },
-        config: T,
+        config: A,
         destroy: function() {
           Object.keys(E).forEach(function(t) {
             Promise.resolve(E[t]).then(function(t) {
@@ -5410,7 +5410,7 @@
     },
     Wcjj: function(t) {
       t.exports = JSON.parse(
-        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Borrow","button_repay":"Repay","button_deal":"Repay","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Go Bid","button_bid":"BID","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"SSC TOOLS","menus_ssclist":"SSC LIST","menus_sscmy":"MY SSC","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle(Days)","pages_pfid_my_state":"State","pages_pfid_my_staking":"Staking","pages_pfid_my_received":"Received","pages_pfid_my_time":"Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect Receive","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"SSC","pages_equity_amount":"Amount","pages_equity_time":"Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Collateralization Ratio","pages_dmw_liquidationRatio":"Liquidation Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"SSC LIST","pages_ssctools_list_collateralizationRatio":"Collateralization Ratio","pages_ssctools_list_liquidationRatio":"Liquidation Ratio","pages_ssctools_list_exchangeRatio":"Exchange Ratio","pages_myssc_title":"MY SSC","pages_myssc_index":"Index","pages_myssc_no":"No","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Mint Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Bid","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Bid Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_input_desc":"Please Input Description!","form_input_name":"Please Input Name!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","form_lable_exchange_name":"Exchange Name","state_finished":"Finished","state_valid":"Valid","state_biding":"biding","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC works best on Chrome browser.","chrome_down_btn":"Click to download Chrome browser.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"English","ko_KR":"Korean","zh_CN":"Simplified Chinese","updateDesc":"Update Description","addExchange":"Add Exchange"}',
+        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Borrow","button_repay":"Repay","button_deal":"Repay","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Go Bid","button_bid":"BID","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"SSC TOOLS","menus_ssclist":"SSC LIST","menus_sscmy":"MY SSC","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle(Days)","pages_pfid_my_state":"State","pages_pfid_my_staking":"Staking","pages_pfid_my_received":"Received","pages_pfid_my_time":"Create Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect Receive","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"SSC","pages_equity_amount":"Amount","pages_equity_time":"Create Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Collateralization Ratio","pages_dmw_liquidationRatio":"Liquidation Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"SSC LIST","pages_ssctools_list_collateralizationRatio":"Collateralization Ratio","pages_ssctools_list_liquidationRatio":"Liquidation Ratio","pages_ssctools_list_exchangeRatio":"Exchange Ratio","pages_myssc_title":"MY SSC","pages_myssc_index":"Index","pages_myssc_no":"No","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Mint Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Bid","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Bid Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_input_desc":"Please Input Description!","form_input_name":"Please Input Name!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","form_lable_exchange_name":"Exchange Name","state_finished":"Finished","state_valid":"Valid","state_biding":"biding","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC works best on Chrome browser.","chrome_down_btn":"Click to download Chrome browser.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"English","ko_KR":"Korean","zh_CN":"Simplified Chinese","updateDesc":"Update Description","addExchange":"Add Exchange"}',
       );
     },
     Z6iu: function(t, e, n) {
@@ -5573,22 +5573,22 @@
         i = n('Wcjj'),
         c = n('dSv/'),
         s = n('1C8T'),
-        u = n('QSL9');
-      r['a']
-        .use(a['a'])
-        .use(u['b'])
-        .init({
-          resources: {
-            en_US: { translation: i },
-            zh_CN: { translation: c },
-            ko_KR: { translation: s },
-          },
-          fallbackLng: o['a'].get(o['a'].keys.language)
-            ? o['a'].get(o['a'].keys.language)
-            : 'en_US',
-          debug: !1,
-          interpolation: { escapeValue: !1 },
-        }),
+        u = n('QSL9'),
+        l = o['a'].get(o['a'].keys.language);
+      l || ((l = 'en_US'), o['a'].set(o['a'].keys.language, 'en_US')),
+        r['a']
+          .use(a['a'])
+          .use(u['b'])
+          .init({
+            resources: {
+              en_US: { translation: i },
+              zh_CN: { translation: c },
+              ko_KR: { translation: s },
+            },
+            fallbackLng: l,
+            debug: !1,
+            interpolation: { escapeValue: !1 },
+          }),
         (e['a'] = r['a']);
     },
     ifDB: function(t, e, n) {},
@@ -5743,7 +5743,6 @@
             t &&
               t.length > 8 &&
               (t = t.substr(0, 8) + '...' + t.substr(t.length - 8)),
-            console.log('str>>', t),
             t
           );
         }
@@ -6210,13 +6209,13 @@
             var a = R(this).constructor;
             e = Reflect.construct(n, arguments, a);
           } else e = n.apply(this, arguments);
-          return T(this, e);
+          return A(this, e);
         };
       }
-      function T(t, e) {
-        return !e || ('object' !== O(e) && 'function' !== typeof e) ? A(t) : e;
+      function A(t, e) {
+        return !e || ('object' !== O(e) && 'function' !== typeof e) ? T(t) : e;
       }
-      function A(t) {
+      function T(t) {
         if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",

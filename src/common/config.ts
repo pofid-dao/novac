@@ -1,7 +1,7 @@
 class Config {
   staking = {
     address:
-      '7vYvTXoZEigEZj7vZkHHdy4A88chGXkztaq2qQgWahvsrqTLUdxQBvXjzepTFadgowVUwNFiELNvZHk75x7nV6u',
+      '2FiVcKhkPpf9N5zyBKCaMF6Tp5TBVgrtM191ZmACdZXGpYQBmvKcdYKtjpXEkrKvjWEyGKWy33RTRTKFkf1qtiBo',
     abi: [
       {
         constant: true,
@@ -223,7 +223,7 @@ class Config {
 
   auction = {
     address:
-      '34esrhiuhqC9zQt4PSkHGQMFQBBhbYK5QHcrbtiqM621BWJ6ZkLTWZEqHpXoFhKkPexeiCFztPBPB29eHDqkD4er',
+      '5A1TkMf9ZkZabBRYRQSusGnshqduo8RiytktqTmQMVSsSoHU8yFq4Dx5EjZ1GM7GbG4aiTYsANFiVG9U6pUiF1V',
     abi: [
       {
         constant: false,
@@ -376,7 +376,7 @@ class Config {
 
   dmw = {
     address:
-      '54CG4EkCoU8cYvER9AKAGigXYf9SJ7rjKdVDaigLDjE17Pc2afHS1c3DBEZEddds9WWLZVSpKiJpbseudBM57v7Q',
+      '5RyUgPb8tWLqkp8YKHahbzUC7rmDHYFTbNdNf2M83T5Ms2hyouJZhP3yGxY6gMX7zDB7jRo7AjNaeo1owKY2rsPY',
     abi: [
       {
         constant: false,
@@ -475,7 +475,7 @@ class Config {
 
   dmwBase = {
     address:
-      '54CpSM8xptrnuM5RugRdEULu6rnSDV1Wm9BHzbuNYp6GRS7eVWxe5fMv8jzfK5tmoUzDjoswru1F9CzHf8EHnyDF',
+      'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
     abi: [
       {
         constant: true,
@@ -601,7 +601,7 @@ class Config {
 
   dmwInfo = {
     address:
-      '3tLZtpnEPd5Cf2th6j1S2aSfDLZeZmDoGTV2ZoJThESPVe7XCGVQsSBR24HGPBTMnxtbXJr3aKZeCWzPqTHuxbCd',
+      '2XcFCFRiq4CcxdRDmMoHk3iyLssGLUPnqbkuUgqNAs7mQyyR93p56He1RAWWSPFEYHzhxCWkR6ezLKpvWGqKXnpx',
     abi: [
       {
         constant: true,
