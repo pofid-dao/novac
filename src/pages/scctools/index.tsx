@@ -21,6 +21,7 @@ import DealForm from '@/components/Deal';
 import PasswordForm from '@/components/Password';
 import BigNumber from 'bignumber.js';
 import i18n from '@/i18n';
+import { url } from '@/common/url';
 
 const { TabPane } = Tabs;
 
@@ -107,7 +108,7 @@ function convertStatus(status: number) {
   } else if (status === 2) {
     return 'Liquidation';
   } else if (status === 3) {
-    return 'Biding';
+    return 'Auction created';
   } else if (status === 4) {
     return 'Unsold';
   } else if (status === 0) {
@@ -169,14 +170,14 @@ class SSCTools extends Component {
         notify('error', 'Error', err);
       });
 
-    if (sscTimerId == null) {
-      sscTimerId = setInterval(function() {
-        that
-          .list(that)
-          .then(() => {})
-          .catch(e => {});
-      }, 10 * 1000);
-    }
+    // if (sscTimerId == null) {
+    //   sscTimerId = setInterval(function() {
+    //     that
+    //       .list(that)
+    //       .then(() => {})
+    //       .catch(e => {});
+    //   }, 10 * 1000);
+    // }
   }
 
   setVisible = (f: boolean) => {
@@ -388,6 +389,7 @@ class SSCTools extends Component {
     const { pageNo, pageSize } = that.state;
     const rest: any = await dmwBase.getTradingPairs();
     const arr = JSON.parse(rest);
+    console.log('arrarrarrarr =>>> ', arr);
     let decimals: any = {};
     if (arr.length > 0) {
       let subPanes: any = {};
@@ -557,7 +559,13 @@ class SSCTools extends Component {
           );
         } else if (d.status == 3) {
           buttons.push(
-            <Button disabled={true} block>
+            <Button
+              block
+              type={'primary'}
+              onClick={() => {
+                url.goPage(url.path.auction);
+              }}
+            >
               {i18n.t('button_bidding')}
             </Button>,
           );

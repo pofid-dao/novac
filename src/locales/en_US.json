@@ -11,7 +11,7 @@
   "button_withdraw": "Withdraw",
   "button_reinvet": "Re Staking",
   "button_createAuction": "Create Auction",
-  "button_bidding": "Bidding",
+  "button_bidding": "Go Auction",
   "button_bid": "BID",
   "menus_wallet": "Wallet",
   "menus_pfid": "PFID",
@@ -94,5 +94,9 @@
 
   "state_finished": "Finished",
   "state_valid": "Valid",
-  "state_biding": "biding"
+  "state_biding": "biding",
+
+  "chrome_down": "https://www.google.com/chrome/",
+  "chrome_down_tip": "NOVAC works best on Chrome browser.",
+  "chrome_down_btn": "Click to download Chrome browser."
 }

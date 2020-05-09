@@ -93,6 +93,7 @@ class Auction extends Component {
     index: 0,
     datasource: [],
     visibleWithdraw: false,
+    visibleUnsold: false,
     total: 0,
     currentPrice: '0.00',
     cut: '0.00',
@@ -205,6 +206,38 @@ class Auction extends Component {
     });
   }
 
+  unsold(index: any) {
+    this.setState({
+      visibleUnsold: true,
+      index: index,
+    });
+  }
+
+  onUnsold(values: any) {
+    const that = this;
+    const { index } = this.state;
+    that.setState({
+      visibleUnsold: false,
+      loading: true,
+    });
+
+    auction
+      .setAuctionPrice(index, values['password'])
+      .then(rest => {
+        that.setState({
+          loading: false,
+        });
+        notify('success', 'SUCCESS', rest);
+      })
+      .catch(e => {
+        that.setState({
+          loading: false,
+        });
+        const err = typeof e == 'string' ? e : e.message;
+        notify('error', 'Error', err);
+      });
+  }
+
   onCreateWithdraw = (values: any) => {
     const that = this;
     const { index } = this.state;
@@ -233,6 +266,12 @@ class Auction extends Component {
   setVisibleWithdraw = (f: boolean) => {
     this.setState({
       visibleWithdraw: f,
+    });
+  };
+
+  setVisibleUnsold = (f: boolean) => {
+    this.setState({
+      visibleUnsold: f,
     });
   };
 
@@ -267,34 +306,47 @@ class Auction extends Component {
         const idOver = timer >= deadline;
         let btn: any = '';
         if (!data.invalid) {
-          if (data.onAuction) {
+          if (data.unSold) {
             btn = (
               <Button
                 type={'primary'}
                 onClick={() => {
-                  this.bid(
-                    data.contractIndex,
-                    data.mintCoin,
-                    utils.toValue(data.currentPrice, decimal2).toString(10),
-                    utils.toValue(data.cut, decimal2).toString(10),
-                  );
+                  this.unsold(data.contractIndex);
                 }}
               >
                 {i18n.t('button_bid')}
               </Button>
             );
           } else {
-            if (data.owns) {
+            if (data.onAuction) {
               btn = (
                 <Button
                   type={'primary'}
                   onClick={() => {
-                    this.withdraw(data.contractIndex);
+                    this.bid(
+                      data.contractIndex,
+                      data.mintCoin,
+                      utils.toValue(data.currentPrice, decimal2).toString(10),
+                      utils.toValue(data.cut, decimal2).toString(10),
+                    );
                   }}
                 >
-                  {i18n.t('button_withdraw')}
+                  {i18n.t('button_bid')}
                 </Button>
               );
+            } else {
+              if (data.owns) {
+                btn = (
+                  <Button
+                    type={'primary'}
+                    onClick={() => {
+                      this.withdraw(data.contractIndex);
+                    }}
+                  >
+                    {i18n.t('button_withdraw')}
+                  </Button>
+                );
+              }
             }
           }
         }
@@ -338,6 +390,7 @@ class Auction extends Component {
       currentPrice,
       cut,
       totalCut,
+      visibleUnsold,
     } = this.state;
 
     const params = {
@@ -388,6 +441,14 @@ class Auction extends Component {
           onCreate={this.onCreateWithdraw}
           onCancel={() => {
             this.setVisibleWithdraw(false);
+          }}
+          title={i18n.t('menus_auction')}
+        />
+        <PasswordForm
+          visible={visibleUnsold}
+          onCreate={this.onUnsold}
+          onCancel={() => {
+            this.setVisibleUnsold(false);
           }}
           title={i18n.t('menus_auction')}
         />

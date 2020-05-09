@@ -41,7 +41,7 @@
     },
     '1C8T': function(e) {
       e.exports = JSON.parse(
-        '{"button_changeAccount":"\uacc4\uc815 \uc804\ud658","button_goStaking":"\uc800\ub2f9","button_cancel":"\ucde8\uc18c","button_ok":"\ud655\uc815","button_commit":"\uc81c\ucd9c","button_confirm":"\ud655\uc778","button_borrow":"\ub300\ucd9c","button_repay":"\uc0c1\ud658","button_deal":"\ubc18\ud658","button_withdraw":"\ud604\uae08\uc778\ucd9c","button_reinvet":"\ubcf5\ud22c","button_createAuction":"\ud06c\ub9ac\uc5d0\uc787 \uc625\uc158","button_bidding":"\ube44\ub4dc\uc911","button_bid":"\ube44\ub4dc","menus_wallet":"\uc9c0\uac11","menus_pfid":"PFID","menus_mypfid":"\ub098\uc758 PFID","menus_equity":"\uc790\uc0b0","menus_dmw":" DMW","menus_ssctools":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778 \ub3c4\uad6c","menus_ssclist":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778  \ub9ac\uc2a4\ud2b8","menus_sscmy":"\ub098\uc758 \uc548\uc815 \ud654\ud3d0","menus_auction":"\uacbd\ub9e4","menus_dapps":"DAPPS","pages_pfid_balance":"\uc794\uace0","pages_pfid_stakingPool":"\uc800\ub2f9\uc9c0","pages_pfid_my_stakingRecord":"\uc800\ub2f9 \uae30\ub85d","pages_pfid_my_index":"\uc21c\ubc88","pages_pfid_my_cycle":"\uc8fc\uae30(\uc77c )","pages_pfid_my_state":"\uc0c1\ud0dc","pages_pfid_my_staking":"\uc800\ub2f9\ud55c","pages_pfid_my_received":"\ubc1b\uc740","pages_pfid_my_time":"\uc2dc\uac04","pages_pfid_my_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_pfid_my_amount":"\uae08\uc561","pages_pfid_my_password":"\ube44\ubc00 \ubc88\ud638","pages_pfid_my_expect":"\uc608\uc0c1 \uc0b0\ucd9c","pages_pfid_my_expect_received":" \uc608\uc0c1 \uc218\uc775","pages_pfid_started_at":"\uc2dc\uc791 \uc2dc\uac04","pages_pfid_withdraw_at":"\ud604\uae08\uc778\ucd9c \uc2dc\uac04","pages_equity_dividendList":"\ud604\uc2dc\uc810\uc5d0\uc11c \ubc1b\uc744\uc218 \uc788\ub294 \ubc30\ub2f9\uae08","pages_equity_dividendRecords":"\ubc30\ub2f9\uae08 \uae30\ub85d","pages_equity_index":"\uc21c\ubc88","pages_equity_ssc":"\ucf54\uc778 \uc774\ub984","pages_equity_amount":"\uae08\uc561","pages_equity_time":"\uc2dc\uac04","pages_equity_state":"\uc0c1\ud0dc","pages_equity_withdraw":"\ud604\uae08\uc778\ucd9c \ub9ac\uc2a4\ud2b8","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO\ub294 \uc138\uacc4\uc5d0\uc11c \ucd5c\ucd08\ub85c \ud1a0\ub9c1 \uc644\uc804 \uc2a4\ub9c8\ud2b8 \uac8c\uc57d\ub97c \uc9c0\uc9c0\ud558\ub294 \ud68c\uc0ac\ub2e4 . \uc774\uac83\uc740 \ubb34\uc9c0\uc2dd\uc99d\uba85\uc73c\ub85c  \uc790\uc0b0\uc758 \uacf5\uacf5 \uc0ac\uc2ac\uacfc \uac70\ub798 \ud504\ub77c\uc774\ubc84\uc2dc\ub97c \ubcf4\ud638\ud55c\ub2e4.","pages_dmw_collateralizationRatio":"\uc800\ub2f9 \ube44\uc728","pages_dmw_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \ube44\uc728","pages_dmw_vmDataSource":"\ub370\uc774\ud2b8 \uc18c\uc2a4","pages_dmw_dmwSource":"DMW \uacc4\uc57d \uc8fc\uc18c","pages_dmw_vmSource":"VM \uacc4\uc57d \uc8fc\uc18c","pages_dmw_stableCoin":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778","pages_ssctools_list_title":"SSC \ub9ac\uc2a4\ud2b8","pages_ssctools_list_collateralizationRatio":"\uc800\ub2f9\uc728","pages_ssctools_list_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \uc728","pages_myssc_title":" \ub098\uc758 SSC","pages_myssc_index":"\uc21c\ubc88","pages_myssc_pledged":"\uc800\ub2f9 \uc218\ub7c9","pages_myssc_mintCoins":"\uc8fc\ud654 \uc218\ub7c9","pages_myssc_fee":"\ube44\uc6a9","pages_myssc_currentRatio":"\ud604\uc7ac \ube44\uc728","pages_myssc_status":"\uc0c1\ud0dc","pages_myssc_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_auction_title":"\uc625\uc158 \ud0c0\uc774\ud2c0","pages_auction_index":"\uc21c\ubc88","pages_auction_assets":"\uc790\uc0b0","pages_auction_currentPrice":"\ud604\uc7ac\uac00\uaca9","pages_auction_singleBid":"\ub2e8\ucc28\ucd9c\uac00","pages_auction_status":"\uc0c1\ud0dc","pages_auction_countDown":"\uce74\uc6b4\ud2b8\ub2e4\uc6b4","pages_auction_operation":"\uc624\ud37c\ub808\uc774\uc158","form_note":"\uc124\uba85","form_bid_total":"\uacbd\ub9e4 \ucd1d\uc561","form_input_amount":"\uae08\uc561\uc744 \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_password":"\ube44\ubc00 \ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_cycle":"\uc8fc\uae30\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694!","form_lable_amount":"\uae08\uc561","form_lable_password":"\ube44\ubc00 \ubc88\ud638","form_lable_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218","form_lable_estimate":"\ucd94\uc0b0","form_lable_fee":"\ube44\uc6a9","state_finished":"\uc885\ub8cc","state_valid":"\uc720\ud6a8","state_biding":"\ube44\ub4dc\uc911"}',
+        '{"button_changeAccount":"\uacc4\uc815 \uc804\ud658","button_goStaking":"\uc800\ub2f9","button_cancel":"\ucde8\uc18c","button_ok":"\ud655\uc815","button_commit":"\uc81c\ucd9c","button_confirm":"\ud655\uc778","button_borrow":"\ub300\ucd9c","button_repay":"\uc0c1\ud658","button_deal":"\ubc18\ud658","button_withdraw":"\ud604\uae08\uc778\ucd9c","button_reinvet":"\ubcf5\ud22c","button_createAuction":"\ud06c\ub9ac\uc5d0\uc787 \uc625\uc158","button_bidding":"\uacbd\ub9e4\ub85c \uc774\ub3d9","button_bid":"\ube44\ub4dc","menus_wallet":"\uc9c0\uac11","menus_pfid":"PFID","menus_mypfid":"\ub098\uc758 PFID","menus_equity":"\uc790\uc0b0","menus_dmw":" DMW","menus_ssctools":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778 \ub3c4\uad6c","menus_ssclist":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778  \ub9ac\uc2a4\ud2b8","menus_sscmy":"\ub098\uc758 \uc548\uc815 \ud654\ud3d0","menus_auction":"\uacbd\ub9e4","menus_dapps":"DAPPS","pages_pfid_balance":"\uc794\uace0","pages_pfid_stakingPool":"\uc800\ub2f9\uc9c0","pages_pfid_my_stakingRecord":"\uc800\ub2f9 \uae30\ub85d","pages_pfid_my_index":"\uc21c\ubc88","pages_pfid_my_cycle":"\uc8fc\uae30(\uc77c )","pages_pfid_my_state":"\uc0c1\ud0dc","pages_pfid_my_staking":"\uc800\ub2f9\ud55c","pages_pfid_my_received":"\ubc1b\uc740","pages_pfid_my_time":"\uc2dc\uac04","pages_pfid_my_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_pfid_my_amount":"\uae08\uc561","pages_pfid_my_password":"\ube44\ubc00 \ubc88\ud638","pages_pfid_my_expect":"\uc608\uc0c1 \uc0b0\ucd9c","pages_pfid_my_expect_received":" \uc608\uc0c1 \uc218\uc775","pages_pfid_started_at":"\uc2dc\uc791 \uc2dc\uac04","pages_pfid_withdraw_at":"\ud604\uae08\uc778\ucd9c \uc2dc\uac04","pages_equity_dividendList":"\ud604\uc2dc\uc810\uc5d0\uc11c \ubc1b\uc744\uc218 \uc788\ub294 \ubc30\ub2f9\uae08","pages_equity_dividendRecords":"\ubc30\ub2f9\uae08 \uae30\ub85d","pages_equity_index":"\uc21c\ubc88","pages_equity_ssc":"\ucf54\uc778 \uc774\ub984","pages_equity_amount":"\uae08\uc561","pages_equity_time":"\uc2dc\uac04","pages_equity_state":"\uc0c1\ud0dc","pages_equity_withdraw":"\ud604\uae08\uc778\ucd9c \ub9ac\uc2a4\ud2b8","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO\ub294 \uc138\uacc4\uc5d0\uc11c \ucd5c\ucd08\ub85c \ud1a0\ub9c1 \uc644\uc804 \uc2a4\ub9c8\ud2b8 \uac8c\uc57d\ub97c \uc9c0\uc9c0\ud558\ub294 \ud68c\uc0ac\ub2e4 . \uc774\uac83\uc740 \ubb34\uc9c0\uc2dd\uc99d\uba85\uc73c\ub85c  \uc790\uc0b0\uc758 \uacf5\uacf5 \uc0ac\uc2ac\uacfc \uac70\ub798 \ud504\ub77c\uc774\ubc84\uc2dc\ub97c \ubcf4\ud638\ud55c\ub2e4.","pages_dmw_collateralizationRatio":"\uc800\ub2f9 \ube44\uc728","pages_dmw_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \ube44\uc728","pages_dmw_vmDataSource":"\ub370\uc774\ud2b8 \uc18c\uc2a4","pages_dmw_dmwSource":"DMW \uacc4\uc57d \uc8fc\uc18c","pages_dmw_vmSource":"VM \uacc4\uc57d \uc8fc\uc18c","pages_dmw_stableCoin":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778","pages_ssctools_list_title":"SSC \ub9ac\uc2a4\ud2b8","pages_ssctools_list_collateralizationRatio":"\uc800\ub2f9\uc728","pages_ssctools_list_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \uc728","pages_myssc_title":" \ub098\uc758 SSC","pages_myssc_index":"\uc21c\ubc88","pages_myssc_pledged":"\uc800\ub2f9 \uc218\ub7c9","pages_myssc_mintCoins":"\uc8fc\ud654 \uc218\ub7c9","pages_myssc_fee":"\ube44\uc6a9","pages_myssc_currentRatio":"\ud604\uc7ac \ube44\uc728","pages_myssc_status":"\uc0c1\ud0dc","pages_myssc_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_auction_title":"\uc625\uc158 \ud0c0\uc774\ud2c0","pages_auction_index":"\uc21c\ubc88","pages_auction_assets":"\uc790\uc0b0","pages_auction_currentPrice":"\ud604\uc7ac\uac00\uaca9","pages_auction_singleBid":"\ub2e8\ucc28\ucd9c\uac00","pages_auction_status":"\uc0c1\ud0dc","pages_auction_countDown":"\uce74\uc6b4\ud2b8\ub2e4\uc6b4","pages_auction_operation":"\uc624\ud37c\ub808\uc774\uc158","form_note":"\uc124\uba85","form_bid_total":"\uacbd\ub9e4 \ucd1d\uc561","form_input_amount":"\uae08\uc561\uc744 \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_password":"\ube44\ubc00 \ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_cycle":"\uc8fc\uae30\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694!","form_lable_amount":"\uae08\uc561","form_lable_password":"\ube44\ubc00 \ubc88\ud638","form_lable_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218","form_lable_estimate":"\ucd94\uc0b0","form_lable_fee":"\ube44\uc6a9","state_finished":"\uc885\ub8cc","state_valid":"\uc720\ud6a8","state_biding":"\ube44\ub4dc\uc911","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC\ub294 Chrome \ube0c\ub77c\uc6b0\uc800\uc5d0\uc11c \uac00\uc7a5 \uc798 \uc791\ub3d9\ud569\ub2c8\ub2e4.","chrome_down_btn":"Chrome \ube0c\ub77c\uc6b0\uc800\ub97c \ub2e4\uc6b4\ub85c\ub4dc\ud558\ub824\uba74 \ud074\ub9ad\ud558\uc2ed\uc2dc\uc624."}',
       );
     },
     '1R0B': function(e, t, n) {
@@ -783,7 +783,7 @@
       })(r['Component']);
       U.defaultProps = { type: 'text' };
       var H = U;
-      function Q(e, t, n) {
+      function Y(e, t, n) {
         return (
           t in e
             ? Object.defineProperty(e, t, {
@@ -796,7 +796,7 @@
           e
         );
       }
-      var Y = function(e) {
+      var Q = function(e) {
           return r['createElement'](P['a'], null, function(t) {
             var n,
               o = t.getPrefixCls,
@@ -808,10 +808,10 @@
               f = a()(
                 s,
                 ((n = {}),
-                Q(n, ''.concat(s, '-lg'), 'large' === e.size),
-                Q(n, ''.concat(s, '-sm'), 'small' === e.size),
-                Q(n, ''.concat(s, '-compact'), e.compact),
-                Q(n, ''.concat(s, '-rtl'), 'rtl' === i),
+                Y(n, ''.concat(s, '-lg'), 'large' === e.size),
+                Y(n, ''.concat(s, '-sm'), 'small' === e.size),
+                Y(n, ''.concat(s, '-compact'), e.compact),
+                Y(n, ''.concat(s, '-rtl'), 'rtl' === i),
                 n),
                 l,
               );
@@ -829,7 +829,7 @@
             );
           });
         },
-        G = Y,
+        G = Q,
         Z = n('w6Tc'),
         X = n.n(Z),
         J = n('gZBC'),
@@ -1592,7 +1592,7 @@
       function He(e, t, n) {
         return t && Ue(e.prototype, t), n && Ue(e, n), e;
       }
-      function Qe(e, t) {
+      function Ye(e, t) {
         if ('function' !== typeof t && null !== t)
           throw new TypeError(
             'Super expression must either be null or a function',
@@ -1600,16 +1600,16 @@
         (e.prototype = Object.create(t && t.prototype, {
           constructor: { value: e, writable: !0, configurable: !0 },
         })),
-          t && Ye(e, t);
+          t && Qe(e, t);
       }
-      function Ye(e, t) {
+      function Qe(e, t) {
         return (
-          (Ye =
+          (Qe =
             Object.setPrototypeOf ||
             function(e, t) {
               return (e.__proto__ = t), e;
             }),
-          Ye(e, t)
+          Qe(e, t)
         );
       }
       function Ge(e) {
@@ -1661,7 +1661,7 @@
         );
       }
       var et = (function(e) {
-          Qe(n, e);
+          Ye(n, e);
           var t = Ge(n);
           function n(e) {
             var o;
@@ -2566,7 +2566,7 @@
       function H(e) {
         if (Array.isArray(e)) return e;
       }
-      function Q(e, t, n) {
+      function Y(e, t, n) {
         return (
           t in e
             ? Object.defineProperty(e, t, {
@@ -2579,7 +2579,7 @@
           e
         );
       }
-      function Y(e, t) {
+      function Q(e, t) {
         if (null == e) return {};
         var n,
           r,
@@ -2613,7 +2613,7 @@
           u = e.tabIndex,
           l = e.onClick,
           s = e.twoToneColor,
-          f = Y(e, [
+          f = Q(e, [
             'className',
             'icon',
             'spin',
@@ -2624,7 +2624,7 @@
           ]),
           p = i()(
             'anticon',
-            Q({}, 'anticon-'.concat(o.name), Boolean(o.name)),
+            Y({}, 'anticon-'.concat(o.name), Boolean(o.name)),
             n,
           ),
           d = i()({ 'anticon-spin': !!a || 'loading' === o.name }),
@@ -2962,7 +2962,7 @@
                         (n = d['a'].getCurrent()),
                         t.abrupt(
                           'return',
-                          e.callMethod('stakingBalance', n.MainPKr, []),
+                          e.callMethod('stakingPoolBalance', n.MainPKr, []),
                         )
                       );
                     case 2:
@@ -3293,7 +3293,7 @@
         constructor() {
           (this.staking = {
             address:
-              '4NHALHzxjwWefkhaTtQjEBjUAtHWesErUCvx8QT9wuDETrYE6BWFo6xoJM6ogaV55DbjVu6NqFypppvgPCZSjpbA',
+              '52JAzozCtrWhns5vS7XXEoYCKDdfze7dsYVQzTgq4vn47vmcFYB8jdKeGrucbskvJvxJcNdkTxizj7rvbM5PThMJ',
             abi: [
               {
                 constant: !0,
@@ -3412,7 +3412,7 @@
               {
                 constant: !0,
                 inputs: [],
-                name: 'stakingBalance',
+                name: 'stakingPoolBalance',
                 outputs: [{ name: '', type: 'uint256' }],
                 payable: !1,
                 stateMutability: 'view',
@@ -3422,7 +3422,7 @@
           }),
             (this.auction = {
               address:
-                '4QULo2qSpAeo5Zm7AhFBepJHq3p2ASDT4hnwgeg16eqM9BFbtwpLeTym5TCVj8uPXQWRcK2vNDrgpV4xRrSc2XRF',
+                '32ikcVxFyct9pVeEsAVxgTbUX1ueorxAoxJBAssQ14P9FwKBm6ZBSz7ZbqXxmswa7P11ziCNFunHufRYDvsWRYkC',
               abi: [
                 {
                   constant: !1,
@@ -3444,10 +3444,7 @@
                 },
                 {
                   constant: !1,
-                  inputs: [
-                    { name: '_contractIndex', type: 'uint256' },
-                    { name: '_marketValue', type: 'uint256' },
-                  ],
+                  inputs: [{ name: '_contractIndex', type: 'uint256' }],
                   name: 'setAuctionPrice',
                   outputs: [],
                   payable: !1,
@@ -3513,7 +3510,7 @@
             }),
             (this.dmw = {
               address:
-                '5FDwcpimWHWxVEER1NcndFJqRSoXVF7Guz3FyNW6Ttz9WLpKzegatGMdTSjZ64u4NceDK9Bot7Eoj2gYAng8xadR',
+                '3ck4JJkL42Y4TgRY8SwmFyT8jnugANSvQgAbPzo19sfaieqKRyw5b4MpzVzDS5qYwmHvxKVnSmNsj2CasjJyEC4f',
               abi: [
                 {
                   constant: !0,
@@ -3597,7 +3594,7 @@
             }),
             (this.dmwBase = {
               address:
-                '2pMUMBuWPx3wabcvx6RTK1MCLmCmcmUdiiqRjuyLnzYWBVcXvx2ugy7Z4zGSTTpzuXGFXgCgECAkEic4mYtnXnM8',
+                '3fAvz2huS4fbXp245fenVXcSaw9oZgsC1zWfpo8iXPP5YZ6R3hR1XPMuCk2uGMzm5Cp3y3wkgEmyk24UpPSTAXvj',
               abi: [
                 {
                   constant: !0,
@@ -3670,7 +3667,7 @@
             }),
             (this.dmwInfo = {
               address:
-                '5yiqeGrNWs2gJgHLVry2QzWRJgRwbbJ8iCCi9na9dJdUXH8kZeKQSgmNBfRe9UMR2TZKYjtWCujsY5avdu36zEPQ',
+                '3gFZGhd5L9KEZz3wwMVgCMNu95obux5EXH2upx5DEn9wukqGxGQgqQYVLf9UAeGrvTGf9HPKDmRoDa7PHnTttJkx',
               abi: [
                 {
                   constant: !0,
@@ -5006,7 +5003,7 @@
           H(e, t)
         );
       }
-      function Q(e) {
+      function Y(e) {
         return function() {
           var t,
             n = X(e);
@@ -5014,10 +5011,10 @@
             var r = X(this).constructor;
             t = Reflect.construct(n, arguments, r);
           } else t = n.apply(this, arguments);
-          return Y(this, t);
+          return Q(this, t);
         };
       }
-      function Y(e, t) {
+      function Q(e, t) {
         return !t || ('object' !== V(t) && 'function' !== typeof t) ? G(e) : t;
       }
       function G(e) {
@@ -5058,7 +5055,7 @@
       }
       var ee = (function(e) {
         U(n, e);
-        var t = Q(n);
+        var t = Y(n);
         function n() {
           var e;
           return (
@@ -5772,7 +5769,7 @@
     },
     Wcjj: function(e) {
       e.exports = JSON.parse(
-        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Borrow","button_repay":"Repay","button_deal":"Repay","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Bidding","button_bid":"BID","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"SSC TOOLS","menus_ssclist":"SSC LIST","menus_sscmy":"MY SSC","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle(Days)","pages_pfid_my_state":"State","pages_pfid_my_staking":"Staking","pages_pfid_my_received":"Received","pages_pfid_my_time":"Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect Receive","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"SSC","pages_equity_amount":"Amount","pages_equity_time":"Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Collateralization Ratio","pages_dmw_liquidationRatio":"Liquidation Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"SSC LIST","pages_ssctools_list_collateralizationRatio":"Collateralization Ratio","pages_ssctools_list_liquidationRatio":"Liquidation Ratio","pages_myssc_title":"MY SSC","pages_myssc_index":"Index","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Mint Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Bid","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Bid Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","state_finished":"Finished","state_valid":"Valid","state_biding":"biding"}',
+        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Borrow","button_repay":"Repay","button_deal":"Repay","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Go Auction","button_bid":"BID","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"SSC TOOLS","menus_ssclist":"SSC LIST","menus_sscmy":"MY SSC","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle(Days)","pages_pfid_my_state":"State","pages_pfid_my_staking":"Staking","pages_pfid_my_received":"Received","pages_pfid_my_time":"Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect Receive","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"SSC","pages_equity_amount":"Amount","pages_equity_time":"Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Collateralization Ratio","pages_dmw_liquidationRatio":"Liquidation Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"SSC LIST","pages_ssctools_list_collateralizationRatio":"Collateralization Ratio","pages_ssctools_list_liquidationRatio":"Liquidation Ratio","pages_myssc_title":"MY SSC","pages_myssc_index":"Index","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Mint Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Bid","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Bid Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","state_finished":"Finished","state_valid":"Valid","state_biding":"biding","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC works best on Chrome browser.","chrome_down_btn":"Click to download Chrome browser."}',
       );
     },
     Z1HP: function(e, t, n) {
@@ -6396,10 +6393,10 @@
             Object.defineProperty(e, r.key, r);
         }
       }
-      function Q(e, t, n) {
+      function Y(e, t, n) {
         return t && H(e.prototype, t), n && H(e, n), e;
       }
-      function Y(e, t) {
+      function Q(e, t) {
         return !t || ('object' !== V(t) && 'function' !== typeof t) ? G(e) : t;
       }
       function G(e) {
@@ -6461,7 +6458,7 @@
           var n, r;
           return (
             U(this, t),
-            (n = Y(this, Z(t).call(this, e))),
+            (n = Q(this, Z(t).call(this, e))),
             (n.onTabClick = function(e, t) {
               n.tabBar.props.onTabClick && n.tabBar.props.onTabClick(e, t),
                 n.setActiveKey(e);
@@ -6518,7 +6515,7 @@
         }
         return (
           X(t, e),
-          Q(
+          Y(
             t,
             [
               {
@@ -7136,19 +7133,19 @@
         (e.prototype = Object.create(t && t.prototype, {
           constructor: { value: e, writable: !0, configurable: !0 },
         })),
-          t && Qe(e, t);
+          t && Ye(e, t);
       }
-      function Qe(e, t) {
+      function Ye(e, t) {
         return (
-          (Qe =
+          (Ye =
             Object.setPrototypeOf ||
             function(e, t) {
               return (e.__proto__ = t), e;
             }),
-          Qe(e, t)
+          Ye(e, t)
         );
       }
-      var Ye = (function(e) {
+      var Qe = (function(e) {
         function t() {
           return Ve(this, t), Le(this, Ue(t).apply(this, arguments));
         }
@@ -7385,7 +7382,7 @@
           lt(e, t)
         );
       }
-      Ye.defaultProps = {
+      Qe.defaultProps = {
         panels: [],
         prefixCls: [],
         tabBarGutter: null,
@@ -8115,7 +8112,7 @@
           return null;
         },
       };
-      var Qt = (function(e) {
+      var Yt = (function(e) {
           function t() {
             return Kt(this, t), Wt(this, qt(t).apply(this, arguments));
           }
@@ -8136,7 +8133,7 @@
                         _t,
                         Dt({ saveRef: e, getRef: r }, n),
                         o.a.createElement(
-                          Ye,
+                          Qe,
                           Dt({ saveRef: e, renderTabBarNode: t }, n),
                         ),
                         o.a.createElement(Me, Dt({ saveRef: e, getRef: r }, n)),
@@ -8149,8 +8146,8 @@
             t
           );
         })(o.a.Component),
-        Yt = n('FH2Y'),
-        Gt = n.n(Yt),
+        Qt = n('FH2Y'),
+        Gt = n.n(Qt),
         Zt = n('DFhj'),
         Xt = n.n(Zt),
         Jt = n('HQEm'),
@@ -8347,7 +8344,7 @@
                   className: S,
                 });
               return (
-                (w = l ? l(_, Qt) : r['createElement'](Qt, _)),
+                (w = l ? l(_, Yt) : r['createElement'](Yt, _)),
                 r['cloneElement'](w)
               );
             }),
@@ -9269,7 +9266,7 @@
                   x(n, 'tabBarExtraContent', z),
                   n),
                 ),
-                Q =
+                Y =
                   T && T.length
                     ? r['createElement'](
                         v['a'],
@@ -9286,7 +9283,7 @@
                         }),
                       )
                     : null;
-              (O || p || Q) &&
+              (O || p || Y) &&
                 (o = r['createElement'](
                   'div',
                   { className: ''.concat(W, '-head'), style: y },
@@ -9306,9 +9303,9 @@
                         p,
                       ),
                   ),
-                  Q,
+                  Y,
                 ));
-              var Y = k
+              var Q = k
                   ? r['createElement'](
                       'div',
                       { className: ''.concat(W, '-cover') },
@@ -9350,7 +9347,7 @@
                   'div',
                   S({}, X, { className: c }),
                   o,
-                  Y,
+                  Q,
                   G,
                   Z,
                 );
@@ -9387,7 +9384,7 @@
     },
     'dSv/': function(e) {
       e.exports = JSON.parse(
-        '{"button_changeAccount":"\u5207\u6362\u8d26\u6237","button_goStaking":"\u8d28\u62bc","button_cancel":"\u53d6\u6d88","button_ok":"\u786e\u5b9a","button_commit":"\u63d0\u4ea4","button_confirm":"\u786e\u8ba4","button_borrow":"\u501f\u51fa","button_repay":"\u9000\u8fd8","button_deal":"\u9000\u8fd8","button_withdraw":"\u63d0\u73b0","button_reinvet":"\u590d\u6295","button_createAuction":"\u521b\u5efa\u7ade\u62cd","button_bidding":"\u7ade\u62cd\u4e2d","button_bid":"\u7ade\u62cd","menus_wallet":"\u94b1\u5305","menus_pfid":"PFID","menus_mypfid":"\u6211\u7684 PFID","menus_equity":"\u8d44\u4ea7","menus_dmw":"DMW","menus_ssctools":"\u7a33\u5b9a\u5e01\u5de5\u5177","menus_ssclist":"\u7a33\u5b9a\u5e01\u5217\u8868","menus_sscmy":"\u6211\u7684\u7a33\u5b9a\u5e01","menus_auction":"\u7ade\u62cd","menus_dapps":"DAPPS","pages_pfid_balance":"\u4f59\u989d","pages_pfid_stakingPool":"\u8d28\u62bc\u6c60","pages_pfid_my_stakingRecord":"\u8d28\u62bc\u8bb0\u5f55","pages_pfid_my_index":"\u5e8f\u53f7","pages_pfid_my_cycle":"\u5468\u671f(\u5929)","pages_pfid_my_state":"\u72b6\u6001","pages_pfid_my_staking":"\u8d28\u62bc\u7684","pages_pfid_my_received":"\u6536\u5230\u7684","pages_pfid_my_time":"\u65f6\u95f4","pages_pfid_my_operation":"\u64cd\u4f5c","pages_pfid_my_amount":"\u91d1\u989d","pages_pfid_my_password":"\u5bc6\u7801","pages_pfid_my_expect":"\u9884\u8ba1\u4ea7\u51fa","pages_pfid_my_expect_received":"\u9884\u8ba1\u6536\u76ca","pages_pfid_started_at":"\u5f00\u59cb\u65f6\u95f4","pages_pfid_withdraw_at":"\u63d0\u73b0\u65f6\u95f4","pages_equity_dividendList":"\u5f53\u524d\u53ef\u80fd\u5f97\u5230\u7684\u7ea2\u5229","pages_equity_dividendRecords":"\u7ea2\u5229\u8bb0\u5f55","pages_equity_index":"\u5e8f\u53f7","pages_equity_ssc":"\u5e01\u540d","pages_equity_amount":"\u91d1\u989d","pages_equity_time":"\u65f6\u95f4","pages_equity_state":"\u72b6\u6001","pages_equity_withdraw":"\u63d0\u73b0\u5217\u8868","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"\u8d28\u62bc\u6bd4\u4f8b","pages_dmw_liquidationRatio":"\u7206\u4ed3\u6bd4\u4f8b","pages_dmw_vmDataSource":"\u6570\u636e\u6765\u6e90","pages_dmw_dmwSource":"DMW \u5408\u7ea6\u5730\u5740","pages_dmw_vmSource":"VM \u5408\u7ea6\u5730\u5740","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"SSC LIST","pages_ssctools_list_collateralizationRatio":"\u8d28\u62bc\u6bd4\u4f8b","pages_ssctools_list_liquidationRatio":"\u7206\u4ed3\u6bd4\u4f8b","pages_myssc_title":"\u6211\u7684SSC","pages_myssc_index":"\u5e8f\u53f7","pages_myssc_pledged":"\u8d28\u62bc\u6570\u91cf","pages_myssc_mintCoins":"\u94f8\u5e01\u6570\u91cf","pages_myssc_fee":"\u8d39\u7528","pages_myssc_currentRatio":"\u5f53\u524d\u6bd4\u4f8b","pages_myssc_status":"\u72b6\u6001","pages_myssc_operation":"\u64cd\u4f5c","pages_auction_title":"\u7ade\u62cd","pages_auction_index":"\u5e8f\u53f7","pages_auction_assets":"\u8d44\u4ea7","pages_auction_currentPrice":"\u5f53\u524d\u51fa\u4ef7","pages_auction_singleBid":"\u5355\u6b21\u51fa\u4ef7","pages_auction_status":"\u72b6\u6001","pages_auction_countDown":"\u5012\u8ba1\u65f6","pages_auction_operation":"\u64cd\u4f5c","form_note":"\u8bf4\u660e","form_bid_total":"\u7ade\u4ef7\u603b\u989d","form_input_amount":"\u8bf7\u8f93\u5165\u91d1\u989d!","form_input_password":"\u8bf7\u8f93\u5165\u5bc6\u7801!","form_input_markup":"\u8bf7\u8f93\u5165\u52a0\u4ef7\u500d\u6570!","form_input_cycle":"\u8bf7\u9009\u62e9\u5468\u671f!","form_lable_amount":"\u91d1\u989d","form_lable_password":"\u5bc6\u7801","form_lable_markup":"\u52a0\u4ef7\u500d\u6570","form_lable_estimate":"\u4f30\u7b97","form_lable_fee":"\u8d39\u7528","state_finished":"\u5df2\u7ed3\u675f","state_valid":"\u6709\u6548","state_biding":"\u7ade\u62cd\u4e2d"}',
+        '{"button_changeAccount":"\u5207\u6362\u8d26\u6237","button_goStaking":"\u8d28\u62bc","button_cancel":"\u53d6\u6d88","button_ok":"\u786e\u5b9a","button_commit":"\u63d0\u4ea4","button_confirm":"\u786e\u8ba4","button_borrow":"\u501f\u51fa","button_repay":"\u9000\u8fd8","button_deal":"\u9000\u8fd8","button_withdraw":"\u63d0\u73b0","button_reinvet":"\u590d\u6295","button_createAuction":"\u521b\u5efa\u7ade\u62cd","button_bidding":"\u53bb\u7ade\u62cd","button_bid":"\u7ade\u62cd","menus_wallet":"\u94b1\u5305","menus_pfid":"PFID","menus_mypfid":"\u6211\u7684 PFID","menus_equity":"\u8d44\u4ea7","menus_dmw":"DMW","menus_ssctools":"\u7a33\u5b9a\u5e01\u5de5\u5177","menus_ssclist":"\u7a33\u5b9a\u5e01\u5217\u8868","menus_sscmy":"\u6211\u7684\u7a33\u5b9a\u5e01","menus_auction":"\u7ade\u62cd","menus_dapps":"DAPPS","pages_pfid_balance":"\u4f59\u989d","pages_pfid_stakingPool":"\u8d28\u62bc\u6c60","pages_pfid_my_stakingRecord":"\u8d28\u62bc\u8bb0\u5f55","pages_pfid_my_index":"\u5e8f\u53f7","pages_pfid_my_cycle":"\u5468\u671f(\u5929)","pages_pfid_my_state":"\u72b6\u6001","pages_pfid_my_staking":"\u8d28\u62bc\u7684","pages_pfid_my_received":"\u6536\u5230\u7684","pages_pfid_my_time":"\u65f6\u95f4","pages_pfid_my_operation":"\u64cd\u4f5c","pages_pfid_my_amount":"\u91d1\u989d","pages_pfid_my_password":"\u5bc6\u7801","pages_pfid_my_expect":"\u9884\u8ba1\u4ea7\u51fa","pages_pfid_my_expect_received":"\u9884\u8ba1\u6536\u76ca","pages_pfid_started_at":"\u5f00\u59cb\u65f6\u95f4","pages_pfid_withdraw_at":"\u63d0\u73b0\u65f6\u95f4","pages_equity_dividendList":"\u5f53\u524d\u53ef\u80fd\u5f97\u5230\u7684\u7ea2\u5229","pages_equity_dividendRecords":"\u7ea2\u5229\u8bb0\u5f55","pages_equity_index":"\u5e8f\u53f7","pages_equity_ssc":"\u5e01\u540d","pages_equity_amount":"\u91d1\u989d","pages_equity_time":"\u65f6\u95f4","pages_equity_state":"\u72b6\u6001","pages_equity_withdraw":"\u63d0\u73b0\u5217\u8868","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"\u8d28\u62bc\u6bd4\u4f8b","pages_dmw_liquidationRatio":"\u7206\u4ed3\u6bd4\u4f8b","pages_dmw_vmDataSource":"\u6570\u636e\u6765\u6e90","pages_dmw_dmwSource":"DMW \u5408\u7ea6\u5730\u5740","pages_dmw_vmSource":"VM \u5408\u7ea6\u5730\u5740","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"SSC LIST","pages_ssctools_list_collateralizationRatio":"\u8d28\u62bc\u6bd4\u4f8b","pages_ssctools_list_liquidationRatio":"\u7206\u4ed3\u6bd4\u4f8b","pages_myssc_title":"\u6211\u7684SSC","pages_myssc_index":"\u5e8f\u53f7","pages_myssc_pledged":"\u8d28\u62bc\u6570\u91cf","pages_myssc_mintCoins":"\u94f8\u5e01\u6570\u91cf","pages_myssc_fee":"\u8d39\u7528","pages_myssc_currentRatio":"\u5f53\u524d\u6bd4\u4f8b","pages_myssc_status":"\u72b6\u6001","pages_myssc_operation":"\u64cd\u4f5c","pages_auction_title":"\u7ade\u62cd","pages_auction_index":"\u5e8f\u53f7","pages_auction_assets":"\u8d44\u4ea7","pages_auction_currentPrice":"\u5f53\u524d\u51fa\u4ef7","pages_auction_singleBid":"\u5355\u6b21\u51fa\u4ef7","pages_auction_status":"\u72b6\u6001","pages_auction_countDown":"\u5012\u8ba1\u65f6","pages_auction_operation":"\u64cd\u4f5c","form_note":"\u8bf4\u660e","form_bid_total":"\u7ade\u4ef7\u603b\u989d","form_input_amount":"\u8bf7\u8f93\u5165\u91d1\u989d!","form_input_password":"\u8bf7\u8f93\u5165\u5bc6\u7801!","form_input_markup":"\u8bf7\u8f93\u5165\u52a0\u4ef7\u500d\u6570!","form_input_cycle":"\u8bf7\u9009\u62e9\u5468\u671f!","form_lable_amount":"\u91d1\u989d","form_lable_password":"\u5bc6\u7801","form_lable_markup":"\u52a0\u4ef7\u500d\u6570","form_lable_estimate":"\u4f30\u7b97","form_lable_fee":"\u8d39\u7528","state_finished":"\u5df2\u7ed3\u675f","state_valid":"\u6709\u6548","state_biding":"\u7ade\u62cd\u4e2d","chrome_down":"https://www.google.cn/intl/zh-CN/chrome/","chrome_down_tip":"NOVAC\u5728Chrome\u6d4f\u89c8\u5668\u4e0a\u6548\u679c\u6700\u4f73\u3002","chrome_down_btn":"\u70b9\u51fb\u4e0b\u8f7d"}',
       );
     },
     dt0z: function(e, t, n) {
@@ -10293,7 +10290,7 @@
         if (!(e instanceof t))
           throw new TypeError('Cannot call a class as a function');
       }
-      function Q(e, t) {
+      function Y(e, t) {
         for (var n = 0; n < t.length; n++) {
           var r = t[n];
           (r.enumerable = r.enumerable || !1),
@@ -10302,8 +10299,8 @@
             Object.defineProperty(e, r.key, r);
         }
       }
-      function Y(e, t, n) {
-        return t && Q(e.prototype, t), n && Q(e, n), e;
+      function Q(e, t, n) {
+        return t && Y(e.prototype, t), n && Y(e, n), e;
       }
       function G(e, t) {
         if ('function' !== typeof t && null !== t)
@@ -10442,7 +10439,7 @@
             );
           }
           return (
-            Y(n, [
+            Q(n, [
               {
                 key: 'focus',
                 value: function() {
@@ -12130,11 +12127,11 @@
           U = void 0 !== V ? V : b,
           H = void 0 !== F ? F : v;
         if (0 === U || 0 === H) return null;
-        var Q = {},
-          Y = 'number' === typeof h,
+        var Y = {},
+          Q = 'number' === typeof h,
           G = 'number' === typeof g;
-        Y && ((Q.position = 'sticky'), (Q.left = h)),
-          G && ((Q.position = 'sticky'), (Q.right = g));
+        Q && ((Y.position = 'sticky'), (Y.left = h)),
+          G && ((Y.position = 'sticky'), (Y.right = g));
         var Z,
           X = {};
         A && (X.textAlign = A),
@@ -12151,7 +12148,7 @@
             D,
             u,
             ((n = {}),
-            j(n, ''.concat(D, '-fix-left'), Y),
+            j(n, ''.concat(D, '-fix-left'), Q),
             j(n, ''.concat(D, '-fix-left-first'), w),
             j(n, ''.concat(D, '-fix-left-last'), x),
             j(n, ''.concat(D, '-fix-right'), G),
@@ -12163,7 +12160,7 @@
             R.className,
             L,
           ),
-          style: P({}, R.style, {}, X, {}, Q, {}, W),
+          style: P({}, R.style, {}, X, {}, Y, {}, W),
           ref: I(m) ? t : null,
         });
         return r['createElement'](m, Object.assign({}, J), C, a);
@@ -12396,11 +12393,11 @@
           e
         );
       }
-      function Q(e, t) {
+      function Y(e, t) {
         if (null == e) return {};
         var n,
           r,
-          o = Y(e, t);
+          o = Q(e, t);
         if (Object.getOwnPropertySymbols) {
           var a = Object.getOwnPropertySymbols(e);
           for (r = 0; r < a.length; r++)
@@ -12411,7 +12408,7 @@
         }
         return o;
       }
-      function Y(e, t) {
+      function Q(e, t) {
         if (null == e) return {};
         var n,
           r,
@@ -12424,7 +12421,7 @@
       var G = 'RC_TABLE_INTERNAL_COL_DEFINE';
       function Z(e) {
         var t = e.expandable,
-          n = Q(e, ['expandable']);
+          n = Y(e, ['expandable']);
         return 'expandable' in e ? U({}, n, {}, t) : n;
       }
       function X(e) {
@@ -12861,9 +12858,9 @@
             return B(t, t, P, o, g);
           }),
           H = 'row' === j && (!s || s(a)),
-          Q = 'nest' === j,
-          Y = b in a && a[b],
-          G = H || Q;
+          Y = 'nest' === j,
+          Q = b in a && a[b],
+          G = H || Y;
         f && (q = f(a, c));
         var Z,
           X = function(e) {
@@ -12910,7 +12907,7 @@
                 f = U[t];
               return (
                 t === (D || 0) &&
-                  Q &&
+                  Y &&
                   (n = r['createElement'](
                     r['Fragment'],
                     null,
@@ -12923,7 +12920,7 @@
                     R({
                       prefixCls: h,
                       expanded: L,
-                      expandable: Y,
+                      expandable: Q,
                       record: a,
                       onExpand: k,
                     }),
@@ -12976,7 +12973,7 @@
           );
         }
         return (
-          Y &&
+          Q &&
             L &&
             ($ = (a[b] || []).map(function(t, n) {
               var o = l(t, n);
@@ -13235,7 +13232,7 @@
             : [].concat(Me(e), [Fe({}, t, { fixed: r })]);
         }, []);
       }
-      function Qe(e) {
+      function Ye(e) {
         return e.map(function(e) {
           var t = e.fixed,
             n = Le(e, ['fixed']),
@@ -13246,7 +13243,7 @@
           );
         });
       }
-      function Ye(e, t) {
+      function Qe(e, t) {
         var n = e.prefixCls,
           o = e.columns,
           a = e.children,
@@ -13316,13 +13313,13 @@
           ),
           v = r['useMemo'](
             function() {
-              return 'rtl' === d ? Qe(He(b)) : He(b);
+              return 'rtl' === d ? Ye(He(b)) : He(b);
             },
             [b, d],
           );
         return [b, v];
       }
-      var Ge = Ye,
+      var Ge = Qe,
         Ze = n('xEkU'),
         Xe = n.n(Ze);
       function Je(e, t) {
@@ -13700,8 +13697,8 @@
             [l],
           ),
           H = Z(e),
-          Q = H.expandIcon,
-          Y = H.expandedRowKeys,
+          Y = H.expandIcon,
+          Q = H.expandedRowKeys,
           G = H.defaultExpandedRowKeys,
           J = H.defaultExpandAllRows,
           ee = H.expandedRowRender,
@@ -13713,7 +13710,7 @@
           ie = H.expandedRowClassName,
           ce = H.childrenColumnName,
           ue = H.indentSize,
-          le = Q || dt,
+          le = Y || dt,
           se = ce || 'children',
           fe = r['useMemo'](
             function() {
@@ -13738,9 +13735,9 @@
           ve = me[1],
           he = r['useMemo'](
             function() {
-              return new Set(Y || be || []);
+              return new Set(Q || be || []);
             },
-            [Y, be],
+            [Q, be],
           ),
           ge = r['useCallback'](
             function(e) {
@@ -13797,16 +13794,16 @@
           qe = Le[0],
           Ue = Le[1],
           He = x(je),
-          Qe = He.map(function(e) {
+          Ye = He.map(function(e) {
             return qe.get(e);
           }),
-          Ye = r['useMemo'](
+          Qe = r['useMemo'](
             function() {
-              return Qe;
+              return Ye;
             },
-            [Qe.join('_')],
+            [Ye.join('_')],
           ),
-          Ze = ct(Ye, je.length, m),
+          Ze = ct(Qe, je.length, m),
           Xe = R && d && _(d.y),
           Je = d && _(d.x),
           $e =
@@ -13887,7 +13884,7 @@
             [Xe, $e, je, y],
           ),
           _t = {
-            colWidths: Ye,
+            colWidths: Qe,
             columCount: je.length,
             stickyOffsets: Ze,
             onHeaderRow: E,
@@ -14207,8 +14204,8 @@
           }
           return n;
         },
-        Qt = 10;
-      function Yt(e, t) {
+        Yt = 10;
+      function Qt(e, t) {
         var n = { current: t.current, pageSize: t.pageSize },
           r = e && 'object' === Ut(e) ? e : {};
         return (
@@ -14227,7 +14224,7 @@
           u = Object(r['useState'])(function() {
             return {
               current: 'defaultCurrent' in c ? c.defaultCurrent : 1,
-              pageSize: 'defaultPageSize' in c ? c.defaultPageSize : Qt,
+              pageSize: 'defaultPageSize' in c ? c.defaultPageSize : Yt,
             };
           }),
           l = Kt(u, 2),
@@ -14864,7 +14861,7 @@
         return function() {
           var t,
             n = Gn(e);
-          if (Yn()) {
+          if (Qn()) {
             var r = Gn(this).constructor;
             t = Reflect.construct(n, arguments, r);
           } else t = n.apply(this, arguments);
@@ -14873,17 +14870,17 @@
       }
       function Hn(e, t) {
         return !t || ('object' !== zn(t) && 'function' !== typeof t)
-          ? Qn(e)
+          ? Yn(e)
           : t;
       }
-      function Qn(e) {
+      function Yn(e) {
         if (void 0 === e)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
         return e;
       }
-      function Yn() {
+      function Qn() {
         if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
         if (Reflect.construct.sham) return !1;
         if ('function' === typeof Proxy) return !0;
@@ -14938,7 +14935,7 @@
                 var n,
                   o = t.getPrefixCls,
                   a = t.direction,
-                  c = Qn(e),
+                  c = Yn(e),
                   u = c.props,
                   l = c.context,
                   s = u.prefixCls,
@@ -15675,10 +15672,10 @@
       function Hr(e) {
         if (Array.isArray(e)) return e;
       }
-      function Qr(e) {
-        return Xr(e) || Zr(e) || Gr(e) || Yr();
+      function Yr(e) {
+        return Xr(e) || Zr(e) || Gr(e) || Qr();
       }
-      function Yr() {
+      function Qr() {
         throw new TypeError(
           'Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
         );
@@ -15720,7 +15717,7 @@
         var n = [];
         return (
           (e || []).forEach(function(e) {
-            n.push(e), t in e && (n = [].concat(Qr(n), Qr(ro(e[t], t))));
+            n.push(e), t in e && (n = [].concat(Yr(n), Yr(ro(e[t], t))));
           }),
           n
         );
@@ -16032,10 +16029,10 @@
                   F = m || no(V[0]);
                 return (
                   F && (M.fixed = F),
-                  [M, Wr(Wr({}, T), { fixed: F })].concat(Qr(V))
+                  [M, Wr(Wr({}, T), { fixed: F })].concat(Yr(V))
                 );
               }
-              return [Wr(Wr({}, T), { fixed: m || no(t[0]) })].concat(Qr(t));
+              return [Wr(Wr({}, T), { fixed: m || no(t[0]) })].concat(Yr(t));
             },
             [O, g, e, k, T, p, K, x, A, s, B],
           );
@@ -16485,16 +16482,16 @@
         },
         qo = Lo;
       function Uo(e, t) {
-        return Zo(e) || Go(e, t) || Qo(e, t) || Ho();
+        return Zo(e) || Go(e, t) || Yo(e, t) || Ho();
       }
       function Ho() {
         throw new TypeError(
           'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
         );
       }
-      function Qo(e, t) {
+      function Yo(e, t) {
         if (e) {
-          if ('string' === typeof e) return Yo(e, t);
+          if ('string' === typeof e) return Qo(e, t);
           var n = Object.prototype.toString.call(e).slice(8, -1);
           return (
             'Object' === n && e.constructor && (n = e.constructor.name),
@@ -16502,12 +16499,12 @@
               ? Array.from(n)
               : 'Arguments' === n ||
                 /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-              ? Yo(e, t)
+              ? Qo(e, t)
               : void 0
           );
         }
       }
-      function Yo(e, t) {
+      function Qo(e, t) {
         (null == t || t > e.length) && (t = e.length);
         for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
         return r;
@@ -17254,14 +17251,14 @@
         );
       }
       function Ha(e, t) {
-        return Xa(e) || Za(e, t) || Ya(e, t) || Qa();
+        return Xa(e) || Za(e, t) || Qa(e, t) || Ya();
       }
-      function Qa() {
+      function Ya() {
         throw new TypeError(
           'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
         );
       }
-      function Ya(e, t) {
+      function Qa(e, t) {
         if (e) {
           if ('string' === typeof e) return Ga(e, t);
           var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -17369,12 +17366,12 @@
           q = L('table', n),
           U = L('dropdown', s),
           H = Ja({ childrenColumnName: h, expandIconColumnIndex: C }, S),
-          Q = H.childrenColumnName,
-          Y = void 0 === Q ? 'children' : Q,
+          Y = H.childrenColumnName,
+          Q = void 0 === Y ? 'children' : Y,
           G = r['useMemo'](
             function() {
               return F.some(function(e) {
-                return e[Y];
+                return e[Q];
               })
                 ? 'nest'
                 : _ || (S && S.expandedRowRender)
@@ -17394,7 +17391,7 @@
             },
             [y],
           ),
-          J = Zt(F, Y, X),
+          J = Zt(F, Q, X),
           $ = Ha(J, 1),
           ee = $[0],
           te = {},
@@ -17417,7 +17414,7 @@
               g &&
                 g(n.pagination, n.filters, n.sorter, {
                   currentDataSource: Pa(
-                    Do(F, n.sorterStates, Y),
+                    Do(F, n.sorterStates, Q),
                     n.filterStates,
                   ),
                 });
@@ -17441,7 +17438,7 @@
           le = ae[3],
           se = r['useMemo'](
             function() {
-              return Do(F, ce, Y);
+              return Do(F, ce, Q);
             },
             [F, ce],
           );
@@ -17485,7 +17482,7 @@
           _e = Ha(Se, 2),
           Ce = _e[0],
           Pe = _e[1];
-        (te.pagination = !1 === p ? {} : Yt(p, Ce)), (te.resetPagination = Pe);
+        (te.pagination = !1 === p ? {} : Qt(p, Ce)), (te.resetPagination = Pe);
         var je = r['useMemo'](
             function() {
               if (!1 === p || !Ce.pageSize) return ve;
@@ -17493,7 +17490,7 @@
                 t = void 0 === e ? 1 : e,
                 n = Ce.total,
                 r = Ce.pageSize,
-                o = void 0 === r ? Qt : r;
+                o = void 0 === r ? Yt : r;
               if (ve.length < n)
                 return ve.length > o
                   ? (Object(Dn['a'])(
@@ -17515,7 +17512,7 @@
             getRowKey: X,
             getRecordByKey: ee,
             expandType: G,
-            childrenColumnName: Y,
+            childrenColumnName: Q,
             locale: V,
             expandIconColumnIndex: H.expandIconColumnIndex,
             getPopupContainer: w,

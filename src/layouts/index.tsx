@@ -11,6 +11,7 @@ import {
   List,
   Avatar,
   Badge,
+  Modal,
 } from 'antd';
 import {
   GlobalOutlined,
@@ -101,6 +102,7 @@ class SiderMenus extends React.Component {
     locale: en_US,
     txDatas: [],
     pendingCount: 0,
+    chromeModal: false,
   };
 
   componentDidMount(): void {
@@ -120,7 +122,18 @@ class SiderMenus extends React.Component {
         that.initWalletInfo();
       }, 5 * 1000);
     }
+
+    this.onlyChrome();
   }
+
+  onlyChrome = () => {
+    const isChrome = window.navigator.userAgent.indexOf('Chrome') > -1;
+    if (!isChrome) {
+      this.setState({
+        chromeModal: true,
+      });
+    }
+  };
 
   startSyncTime() {
     auction.timer().then(rest => {
@@ -586,6 +599,19 @@ class SiderMenus extends React.Component {
               selectAccount={this.selectAccount}
             />
           </div>
+          <Modal
+            title="Download Chrome"
+            closable={false}
+            maskClosable={false}
+            visible={this.state.chromeModal}
+            keyboard={false}
+            footer={null}
+          >
+            {i18n.t('chrome_down_tip')}{' '}
+            <a href={i18n.t('chrome_down')} target={'_blank'}>
+              {i18n.t('chrome_down_btn')}
+            </a>
+          </Modal>
         </ConfigProvider>
       </I18nextProvider>
     );

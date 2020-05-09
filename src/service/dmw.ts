@@ -105,22 +105,6 @@ class Dmw {
     );
   }
 
-  async setAuctionPrice(
-    _contractIndex: number,
-    password: string,
-  ): Promise<any> {
-    const act: AccountInfo = account.getCurrent();
-    return this.executeMethod(
-      'setAuctionPrice',
-      act.PK,
-      act.MainPKr,
-      [_contractIndex],
-      new BigNumber(0),
-      'SERO',
-      password,
-    );
-  }
-
   now(): any {
     return Math.ceil(new Date().getTime() / 1000);
   }

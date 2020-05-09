@@ -20,7 +20,7 @@ class DmwBase {
 
   async getTradingPairs(): Promise<any> {
     const act: AccountInfo = account.getCurrent();
-    return this.callMethod('getTradingPairs', act.MainPKr, ['']);
+    return this.callMethod('getTradingPairs', act.MainPKr, ['en']);
   }
 
   async getProxyAddress(backedCoin: string, mintCoin: string): Promise<any> {

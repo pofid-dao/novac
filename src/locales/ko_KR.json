@@ -11,7 +11,7 @@
   "button_withdraw": "현금인출",
   "button_reinvet": "복투",
   "button_createAuction": "크리에잇 옥션",
-  "button_bidding": "비드중",
+  "button_bidding": "경매로 이동",
   "button_bid": "비드",
   "menus_wallet": "지갑",
   "menus_pfid": "PFID",
@@ -87,5 +87,8 @@
   "form_lable_fee": "비용",
   "state_finished": "종료",
   "state_valid": "유효",
-  "state_biding": "비드중"
+  "state_biding": "비드중",
+  "chrome_down": "https://www.google.com/chrome/",
+  "chrome_down_tip": "NOVAC는 Chrome 브라우저에서 가장 잘 작동합니다.",
+  "chrome_down_btn": "Chrome 브라우저를 다운로드하려면 클릭하십시오."
 }

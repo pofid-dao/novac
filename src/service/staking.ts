@@ -113,7 +113,7 @@ class Staking {
 
   async stakingBalance(): Promise<any> {
     const act: AccountInfo = account.getCurrent();
-    return this.callMethod('stakingBalance', act.MainPKr, []);
+    return this.callMethod('stakingPoolBalance', act.MainPKr, []);
   }
 
   async fee(): Promise<any> {

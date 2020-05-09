@@ -22,6 +22,7 @@ import DealForm from '@/components/Deal';
 import PasswordForm from '@/components/Password';
 import BigNumber from 'bignumber.js';
 import i18n from '@/i18n';
+import { url } from '@/common/url';
 
 const notify = (type: string, message: string, desc: string) => {
   let d = 4.5;
@@ -107,7 +108,7 @@ function convertStatus(status: number) {
   } else if (status === 2) {
     return 'Liquidation';
   } else if (status === 3) {
-    return 'Biding';
+    return 'Auction created';
   } else if (status === 4) {
     return 'Unsold';
   } else if (status === 0) {
@@ -433,8 +434,14 @@ class MySSC extends Component {
           );
         } else if (d.status == 3) {
           buttons.push(
-            <Button disabled={true} block>
-              {i18n.t('button_bidding')}...
+            <Button
+              block
+              type={'primary'}
+              onClick={() => {
+                url.goPage(url.path.auction);
+              }}
+            >
+              {i18n.t('button_bidding')}
             </Button>,
           );
         } else if (d.status == 4) {

@@ -1,7 +1,7 @@
 class Config {
   staking = {
     address:
-      '4NHALHzxjwWefkhaTtQjEBjUAtHWesErUCvx8QT9wuDETrYE6BWFo6xoJM6ogaV55DbjVu6NqFypppvgPCZSjpbA',
+      '52JAzozCtrWhns5vS7XXEoYCKDdfze7dsYVQzTgq4vn47vmcFYB8jdKeGrucbskvJvxJcNdkTxizj7rvbM5PThMJ',
     abi: [
       {
         constant: true,
@@ -207,7 +207,7 @@ class Config {
       {
         constant: true,
         inputs: [],
-        name: 'stakingBalance',
+        name: 'stakingPoolBalance',
         outputs: [
           {
             name: '',
@@ -223,7 +223,7 @@ class Config {
 
   auction = {
     address:
-      '4QULo2qSpAeo5Zm7AhFBepJHq3p2ASDT4hnwgeg16eqM9BFbtwpLeTym5TCVj8uPXQWRcK2vNDrgpV4xRrSc2XRF',
+      '32ikcVxFyct9pVeEsAVxgTbUX1ueorxAoxJBAssQ14P9FwKBm6ZBSz7ZbqXxmswa7P11ziCNFunHufRYDvsWRYkC',
     abi: [
       {
         constant: false,
@@ -258,10 +258,6 @@ class Config {
         inputs: [
           {
             name: '_contractIndex',
-            type: 'uint256',
-          },
-          {
-            name: '_marketValue',
             type: 'uint256',
           },
         ],
@@ -380,7 +376,7 @@ class Config {
 
   dmw = {
     address:
-      '5FDwcpimWHWxVEER1NcndFJqRSoXVF7Guz3FyNW6Ttz9WLpKzegatGMdTSjZ64u4NceDK9Bot7Eoj2gYAng8xadR',
+      '3ck4JJkL42Y4TgRY8SwmFyT8jnugANSvQgAbPzo19sfaieqKRyw5b4MpzVzDS5qYwmHvxKVnSmNsj2CasjJyEC4f',
     abi: [
       {
         constant: true,
@@ -528,7 +524,7 @@ class Config {
 
   dmwBase = {
     address:
-      '2pMUMBuWPx3wabcvx6RTK1MCLmCmcmUdiiqRjuyLnzYWBVcXvx2ugy7Z4zGSTTpzuXGFXgCgECAkEic4mYtnXnM8',
+      '3fAvz2huS4fbXp245fenVXcSaw9oZgsC1zWfpo8iXPP5YZ6R3hR1XPMuCk2uGMzm5Cp3y3wkgEmyk24UpPSTAXvj',
     abi: [
       {
         constant: true,
@@ -654,7 +650,7 @@ class Config {
 
   dmwInfo = {
     address:
-      '5yiqeGrNWs2gJgHLVry2QzWRJgRwbbJ8iCCi9na9dJdUXH8kZeKQSgmNBfRe9UMR2TZKYjtWCujsY5avdu36zEPQ',
+      '3gFZGhd5L9KEZz3wwMVgCMNu95obux5EXH2upx5DEn9wukqGxGQgqQYVLf9UAeGrvTGf9HPKDmRoDa7PHnTttJkx',
     abi: [
       {
         constant: true,

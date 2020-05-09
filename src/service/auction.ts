@@ -48,6 +48,22 @@ class Auction {
     );
   }
 
+  async setAuctionPrice(
+    _contractIndex: number,
+    password: string,
+  ): Promise<any> {
+    const act: AccountInfo = account.getCurrent();
+    return this.executeMethod(
+      'setAuctionPrice',
+      act.PK,
+      act.MainPKr,
+      [_contractIndex],
+      new BigNumber(0),
+      'SERO',
+      password,
+    );
+  }
+
   async pageAuctions(offset: number, pageSize: number): Promise<any> {
     const act: AccountInfo = account.getCurrent();
     return this.callMethod('pageAuctions', act.MainPKr, [offset, pageSize]);
