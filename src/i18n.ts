@@ -6,6 +6,11 @@ import zh_CN from '@/locales/zh_CN.json';
 import ko_KR from '@/locales/ko_KR.json';
 import { initReactI18next } from 'react-i18next';
 
+let lang = storage.get(storage.keys.language);
+if (!lang) {
+  lang = 'en_US';
+  storage.set(storage.keys.language, 'en_US');
+}
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -21,9 +26,7 @@ i18n
         translation: ko_KR,
       },
     },
-    fallbackLng: storage.get(storage.keys.language)
-      ? storage.get(storage.keys.language)
-      : 'en_US',
+    fallbackLng: lang,
     debug: false,
     interpolation: {
       escapeValue: false,

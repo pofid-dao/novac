@@ -46,30 +46,36 @@ const columns = [
     title: i18n.t('pages_myssc_no'),
     dataIndex: 'no',
     key: 'no',
-    width: '5%',
+    width: '10%',
   },
   {
     title: i18n.t('pages_auction_assets'),
     dataIndex: 'backedValue',
     key: 'backedValue',
-    width: '20%',
+    width: '15%',
   },
   {
     title: i18n.t('pages_auction_currentPrice'),
     dataIndex: 'currentPrice',
     key: 'currentPrice',
-    width: '20%',
+    width: '15%',
   },
   {
     title: i18n.t('pages_auction_singleBid'),
     dataIndex: 'cut',
     key: 'cut',
-    width: '20%',
+    width: '10%',
   },
   {
     title: i18n.t('pages_auction_status'),
     dataIndex: 'status',
     key: 'status',
+    width: '10%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_time'),
+    dataIndex: 'createdAt',
+    key: 'createdAt',
     width: '10%',
   },
   {
@@ -377,6 +383,7 @@ class Auction extends Component {
           cut:
             utils.toValue(data.cut, decimal2).toFixed(4) + ' ' + data.mintCoin,
           status: status,
+          createdAt: utils.formatTime(data.startedAt * 1000),
           duration: idOver ? 'Finished' : <span>{deadline - timer}s</span>,
           operator: btn,
         });

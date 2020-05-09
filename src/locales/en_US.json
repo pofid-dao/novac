@@ -31,7 +31,7 @@
   "pages_pfid_my_state": "State",
   "pages_pfid_my_staking": "Staking",
   "pages_pfid_my_received": "Received",
-  "pages_pfid_my_time": "Time",
+  "pages_pfid_my_time": "Create Time",
   "pages_pfid_my_operation": "Operation",
   "pages_pfid_my_amount": "Amount",
   "pages_pfid_my_password": "password",
@@ -46,7 +46,7 @@
   "pages_equity_index": "Index",
   "pages_equity_ssc": "SSC",
   "pages_equity_amount": "Amount",
-  "pages_equity_time": "Time",
+  "pages_equity_time": "Create Time",
   "pages_equity_state": "State",
   "pages_equity_withdraw": "Withdraw List",
 

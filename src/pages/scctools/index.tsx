@@ -219,10 +219,7 @@ class SSCTools extends Component {
         backedCoin: backedCoin,
         mintCoin: mintCoin,
         proxy: proxy,
-        minBorrowValue: utils.toValue(
-          new BigNumber(rest).toString(10),
-          decimal,
-        ),
+        minBorrowValue: new BigNumber(rest).toString(10),
       });
       that.setVisible(true);
     });
@@ -628,8 +625,10 @@ class SSCTools extends Component {
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_exchangeRatio')}
             >
-              {data.currentRateNumerator} {data.backeCoin} ={' '}
-              {data.currentRateDenominator} {mintCoin}
+              {utils.toValue(data.currentRateNumerator, 8).toString(10)}{' '}
+              {data.backeCoin} ={' '}
+              {utils.toValue(data.currentRateDenominator, 8).toString(10)}{' '}
+              {mintCoin}
             </Descriptions.Item>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_liquidationRatio')}
@@ -688,8 +687,10 @@ class SSCTools extends Component {
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_exchangeRatio')}
             >
-              {data.currentRateNumerator} {data.backeCoin} ={' '}
-              {data.currentRateDenominator} {mintCoin}
+              {utils.toValue(data.currentRateNumerator, 8).toString(10)}{' '}
+              {data.backeCoin} ={' '}
+              {utils.toValue(data.currentRateDenominator, 8).toString(10)}{' '}
+              {mintCoin}
             </Descriptions.Item>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_liquidationRatio')}

@@ -7,7 +7,6 @@ class Utils {
     if (str && str.length > 8) {
       str = str.substr(0, 8) + '...' + str.substr(str.length - 8);
     }
-    console.log('str>>', str);
     return str;
   }
 

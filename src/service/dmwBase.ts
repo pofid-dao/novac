@@ -21,7 +21,8 @@ class DmwBase {
 
   async getTradingPairs(): Promise<any> {
     const act: AccountInfo = account.getCurrent();
-    const lang = storage.get(storage.keys.language);
+    let lang: any = storage.get(storage.keys.language);
+    lang = lang ? lang : 'en_US';
     return this.callMethod('getTradingPairs', act.MainPKr, [lang]);
   }
 

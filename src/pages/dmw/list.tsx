@@ -76,6 +76,7 @@ class DmwList extends Component {
 
   async list() {
     const rest: any = await dmwBase.getTradingPairs();
+    console.info('rest>>', rest);
     let list = JSON.parse(rest);
     let dataMap: Map<string, any> = new Map<string, any>();
     for (let i = 0; i < list.length; i++) {
