@@ -2419,15 +2419,6 @@
             oe['a'].Item,
             {
               onClick: () => {
-                Rn('zh_CN');
-              },
-            },
-            '\u7b80\u4f53\u4e2d\u6587',
-          ),
-          i['createElement'](
-            oe['a'].Item,
-            {
-              onClick: () => {
                 Rn('en_US');
               },
             },
@@ -2441,6 +2432,15 @@
               },
             },
             '\ud55c\uad6d\uc5b4',
+          ),
+          i['createElement'](
+            oe['a'].Item,
+            {
+              onClick: () => {
+                Rn('zh_CN');
+              },
+            },
+            '\u7b80\u4f53\u4e2d\u6587',
           ),
         ),
         Tn = null,
@@ -2563,9 +2563,9 @@
                               16,
                             ).toNumber()),
                             vn['a'].update(c).then())
-                          : Math.ceil(new Date().getTime() - c.timestamp) /
-                              1e3 >
-                              300 &&
+                          : Math.ceil(
+                              new Date().getTime() / 1e3 - c.timestamp,
+                            ) > 900 &&
                             ((c.state = 'failed'), vn['a'].update(c).then());
                     case 15:
                       'pending' == c.state && o++, r.push(c);
@@ -4431,32 +4431,6 @@
                 '3ck4JJkL42Y4TgRY8SwmFyT8jnugANSvQgAbPzo19sfaieqKRyw5b4MpzVzDS5qYwmHvxKVnSmNsj2CasjJyEC4f',
               abi: [
                 {
-                  constant: !0,
-                  inputs: [
-                    { name: '_backedCoin', type: 'string' },
-                    { name: '_mintCoin', type: 'string' },
-                    { name: 'offset', type: 'uint256' },
-                    { name: 'pageSize', type: 'uint8' },
-                  ],
-                  name: 'keyPageContracts',
-                  outputs: [{ name: 'result', type: 'string' }],
-                  payable: !1,
-                  stateMutability: 'view',
-                  type: 'function',
-                },
-                {
-                  constant: !0,
-                  inputs: [
-                    { name: 'offset', type: 'uint256' },
-                    { name: 'pageSize', type: 'uint256' },
-                  ],
-                  name: 'myPageContracts',
-                  outputs: [{ name: 'result', type: 'string' }],
-                  payable: !1,
-                  stateMutability: 'view',
-                  type: 'function',
-                },
-                {
                   constant: !1,
                   inputs: [{ name: 'contractIndex', type: 'uint256' }],
                   name: 'claim',
@@ -4467,20 +4441,20 @@
                 },
                 {
                   constant: !1,
-                  inputs: [{ name: '_contractIndex', type: 'uint256' }],
-                  name: 'setAuctionPrice',
-                  outputs: [],
-                  payable: !1,
-                  stateMutability: 'nonpayable',
-                  type: 'function',
-                },
-                {
-                  constant: !1,
                   inputs: [{ name: 'mintCoin', type: 'string' }],
                   name: 'issue',
                   outputs: [],
                   payable: !0,
                   stateMutability: 'payable',
+                  type: 'function',
+                },
+                {
+                  constant: !0,
+                  inputs: [{ name: '_backedCoin', type: 'string' }],
+                  name: 'getMinBackedAmount',
+                  outputs: [{ name: '', type: 'uint256' }],
+                  payable: !1,
+                  stateMutability: 'view',
                   type: 'function',
                 },
                 {

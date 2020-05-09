@@ -92,6 +92,11 @@ class Dmw {
     ]);
   }
 
+  async getMinBackedAmount(_backedCoin: string): Promise<any> {
+    const act: AccountInfo = account.getCurrent();
+    return this.callMethod('getMinBackedAmount', act.MainPKr, [_backedCoin]);
+  }
+
   async createAuction(_contractIndex: number, password: string): Promise<any> {
     const act: AccountInfo = account.getCurrent();
     return this.executeMethod(

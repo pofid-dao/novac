@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Modal, Select, Input, Descriptions } from 'antd';
+import { Form, Modal, Select, Input, InputNumber, Descriptions } from 'antd';
 import i18n from '@/i18n';
 
 interface Values {
@@ -18,6 +18,7 @@ interface CollectionCreateFormProps {
   amountEstimate: any;
   fee: any;
   estimate: (amount: any) => void;
+  params: any;
 }
 
 const BorrowForm: React.FC<CollectionCreateFormProps> = ({
@@ -29,6 +30,7 @@ const BorrowForm: React.FC<CollectionCreateFormProps> = ({
   amountEstimate,
   fee,
   estimate,
+  params,
 }) => {
   const [form] = Form.useForm();
   return (
@@ -62,10 +64,15 @@ const BorrowForm: React.FC<CollectionCreateFormProps> = ({
           rules={[{ required: true, message: i18n.t('form_input_amount') }]}
           className="collection-create-form_last-form-item"
         >
-          <Input
-            onBlur={v => {
-              estimate(v.target.value);
+          <InputNumber
+            min={params['minBorrowValue']}
+            defaultValue={1}
+            step={1}
+            style={{ width: '200px' }}
+            onChange={v => {
+              estimate(form.getFieldValue('amountes'));
             }}
+            precision={0}
           />
         </Form.Item>
         <Form.Item

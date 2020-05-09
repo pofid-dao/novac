@@ -154,6 +154,7 @@ class SSCTools extends Component {
     selectBackedCoin: '',
     selectMintCoin: '',
     proxy: false,
+    minBorrowValue: 0,
   };
 
   componentDidMount(): void {
@@ -212,12 +213,19 @@ class SSCTools extends Component {
 
   borrow(backedCoin: string, mintCoin: string, proxy: any) {
     const that = this;
-    that.setState({
-      backedCoin: backedCoin,
-      mintCoin: mintCoin,
-      proxy: proxy,
+    const decimal = utils.getDecimalCache(backedCoin);
+    dmw.getMinBackedAmount(backedCoin).then(rest => {
+      that.setState({
+        backedCoin: backedCoin,
+        mintCoin: mintCoin,
+        proxy: proxy,
+        minBorrowValue: utils.toValue(
+          new BigNumber(rest).toString(10),
+          decimal,
+        ),
+      });
+      that.setVisible(true);
     });
-    that.setVisible(true);
   }
 
   deal(
@@ -395,16 +403,12 @@ class SSCTools extends Component {
     const { pageNo, pageSize } = that.state;
     const rest: any = await dmwBase.getTradingPairs();
     const arr = JSON.parse(rest);
-    console.log('arrarrarrarr =>>> ', arr);
     let decimals: any = {};
     if (arr.length > 0) {
       let subPanes: any = {};
       let panes: any = {};
       let selectBackedCoin: any;
       let selectMintCoin: any;
-
-      console.log('arr=>>> ', arr);
-
       for (let i = 0; i < arr.length; i++) {
         const data = arr[i];
         const backeCoin: string = data.backeCoin;
@@ -759,6 +763,7 @@ class SSCTools extends Component {
       mintValue,
       subPanes,
       panes,
+      minBorrowValue,
     } = this.state;
     let params = {
       mintCoin,
@@ -821,6 +826,7 @@ class SSCTools extends Component {
           fee={fee}
           backedCoin={backedCoin}
           estimate={this.estimate}
+          params={{ minBorrowValue: minBorrowValue }}
         />
 
         <DealForm

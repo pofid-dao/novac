@@ -403,32 +403,6 @@
                 '3ck4JJkL42Y4TgRY8SwmFyT8jnugANSvQgAbPzo19sfaieqKRyw5b4MpzVzDS5qYwmHvxKVnSmNsj2CasjJyEC4f',
               abi: [
                 {
-                  constant: !0,
-                  inputs: [
-                    { name: '_backedCoin', type: 'string' },
-                    { name: '_mintCoin', type: 'string' },
-                    { name: 'offset', type: 'uint256' },
-                    { name: 'pageSize', type: 'uint8' },
-                  ],
-                  name: 'keyPageContracts',
-                  outputs: [{ name: 'result', type: 'string' }],
-                  payable: !1,
-                  stateMutability: 'view',
-                  type: 'function',
-                },
-                {
-                  constant: !0,
-                  inputs: [
-                    { name: 'offset', type: 'uint256' },
-                    { name: 'pageSize', type: 'uint256' },
-                  ],
-                  name: 'myPageContracts',
-                  outputs: [{ name: 'result', type: 'string' }],
-                  payable: !1,
-                  stateMutability: 'view',
-                  type: 'function',
-                },
-                {
                   constant: !1,
                   inputs: [{ name: 'contractIndex', type: 'uint256' }],
                   name: 'claim',
@@ -439,20 +413,20 @@
                 },
                 {
                   constant: !1,
-                  inputs: [{ name: '_contractIndex', type: 'uint256' }],
-                  name: 'setAuctionPrice',
-                  outputs: [],
-                  payable: !1,
-                  stateMutability: 'nonpayable',
-                  type: 'function',
-                },
-                {
-                  constant: !1,
                   inputs: [{ name: 'mintCoin', type: 'string' }],
                   name: 'issue',
                   outputs: [],
                   payable: !0,
                   stateMutability: 'payable',
+                  type: 'function',
+                },
+                {
+                  constant: !0,
+                  inputs: [{ name: '_backedCoin', type: 'string' }],
+                  name: 'getMinBackedAmount',
+                  outputs: [{ name: '', type: 'uint256' }],
+                  payable: !1,
+                  stateMutability: 'view',
                   type: 'function',
                 },
                 {
@@ -792,8 +766,8 @@
             ),
           );
         },
-        P = x,
-        k = a('e3ns'),
+        k = x,
+        P = a('e3ns'),
         M = a('iMMW');
       function E(e) {
         if ('undefined' === typeof Symbol || null == e[Symbol.iterator]) {
@@ -905,7 +879,7 @@
                 while (1)
                   switch ((t.prev = t.next)) {
                     case 0:
-                      return (t.next = 2), k['a'].getTradingPairs();
+                      return (t.next = 2), P['a'].getTradingPairs();
                     case 2:
                       for (
                         a = t.sent,
@@ -947,8 +921,8 @@
                                   ),
                                 );
                               }
-                            } catch (k) {
-                              l.e(k);
+                            } catch (P) {
+                              l.e(P);
                             } finally {
                               l.f();
                             }
@@ -966,20 +940,20 @@
                                     var x = g.value;
                                     _.indexOf(x.name) > -1 || _.push(x.name);
                                   }
-                                } catch (k) {
-                                  C.e(k);
+                                } catch (P) {
+                                  C.e(P);
                                 } finally {
                                   C.f();
                                 }
                               }
-                            } catch (k) {
-                              y.e(k);
+                            } catch (P) {
+                              y.e(P);
                             } finally {
                               y.f();
                             }
-                            var P = [];
+                            var k = [];
                             _.forEach(e => {
-                              P.push(
+                              k.push(
                                 d.a.createElement(
                                   c['a'],
                                   { className: 'tag-cst' },
@@ -1039,7 +1013,7 @@
                                       d.a.createElement(
                                         'p',
                                         { style: { color: '#161796' } },
-                                        P,
+                                        k,
                                       ),
                                     ),
                                     d.a.createElement(r['a'], {
@@ -1113,7 +1087,7 @@
                 this.setVisible(!1);
               },
             }),
-            d.a.createElement(P, {
+            d.a.createElement(k, {
               visible: a,
               onCreate: this.onCreateSSC,
               onCancel: () => {

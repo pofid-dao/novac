@@ -379,60 +379,6 @@ class Config {
       '3ck4JJkL42Y4TgRY8SwmFyT8jnugANSvQgAbPzo19sfaieqKRyw5b4MpzVzDS5qYwmHvxKVnSmNsj2CasjJyEC4f',
     abi: [
       {
-        constant: true,
-        inputs: [
-          {
-            name: '_backedCoin',
-            type: 'string',
-          },
-          {
-            name: '_mintCoin',
-            type: 'string',
-          },
-          {
-            name: 'offset',
-            type: 'uint256',
-          },
-          {
-            name: 'pageSize',
-            type: 'uint8',
-          },
-        ],
-        name: 'keyPageContracts',
-        outputs: [
-          {
-            name: 'result',
-            type: 'string',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
-        constant: true,
-        inputs: [
-          {
-            name: 'offset',
-            type: 'uint256',
-          },
-          {
-            name: 'pageSize',
-            type: 'uint256',
-          },
-        ],
-        name: 'myPageContracts',
-        outputs: [
-          {
-            name: 'result',
-            type: 'string',
-          },
-        ],
-        payable: false,
-        stateMutability: 'view',
-        type: 'function',
-      },
-      {
         constant: false,
         inputs: [
           {
@@ -450,20 +396,6 @@ class Config {
         constant: false,
         inputs: [
           {
-            name: '_contractIndex',
-            type: 'uint256',
-          },
-        ],
-        name: 'setAuctionPrice',
-        outputs: [],
-        payable: false,
-        stateMutability: 'nonpayable',
-        type: 'function',
-      },
-      {
-        constant: false,
-        inputs: [
-          {
             name: 'mintCoin',
             type: 'string',
           },
@@ -472,6 +404,25 @@ class Config {
         outputs: [],
         payable: true,
         stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: '_backedCoin',
+            type: 'string',
+          },
+        ],
+        name: 'getMinBackedAmount',
+        outputs: [
+          {
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
         type: 'function',
       },
       {

@@ -49,13 +49,6 @@ const languageList = (
   <Menu>
     <Menu.Item
       onClick={() => {
-        changeLang('zh_CN');
-      }}
-    >
-      简体中文
-    </Menu.Item>
-    <Menu.Item
-      onClick={() => {
         changeLang('en_US');
       }}
     >
@@ -68,6 +61,13 @@ const languageList = (
       }}
     >
       한국어
+    </Menu.Item>
+    <Menu.Item
+      onClick={() => {
+        changeLang('zh_CN');
+      }}
+    >
+      简体中文
     </Menu.Item>
   </Menu>
 );
@@ -165,8 +165,8 @@ class SiderMenus extends React.Component {
             tx.update(txInfo).then();
           } else {
             if (
-              Math.ceil(new Date().getTime() - txInfo.timestamp) / 1000 >
-              5 * 60
+              Math.ceil(new Date().getTime() / 1000 - txInfo.timestamp) >
+              15 * 60
             ) {
               txInfo.state = 'failed';
               tx.update(txInfo).then();
