@@ -183,7 +183,7 @@
         constructor() {
           (this.staking = {
             address:
-              '52JAzozCtrWhns5vS7XXEoYCKDdfze7dsYVQzTgq4vn47vmcFYB8jdKeGrucbskvJvxJcNdkTxizj7rvbM5PThMJ',
+              'NmFB4TWZpAr6FsVdF8DqjHN7KsfLtZMkWxHGcm7yKg1rrkmMeXpjvGXG1ALYLx7vCwSraCfuqpDGqCr5eK7xVhQ',
             abi: [
               {
                 constant: !0,
@@ -795,9 +795,9 @@
         P = x,
         k = a('e3ns'),
         M = a('iMMW');
-      function E(e) {
+      function D(e) {
         if ('undefined' === typeof Symbol || null == e[Symbol.iterator]) {
-          if (Array.isArray(e) || (e = D(e))) {
+          if (Array.isArray(e) || (e = E(e))) {
             var t = 0,
               a = function() {};
             return {
@@ -841,7 +841,7 @@
           },
         };
       }
-      function D(e, t) {
+      function E(e, t) {
         if (e) {
           if ('string' === typeof e) return I(e, t);
           var a = Object.prototype.toString.call(e).slice(8, -1);
@@ -925,7 +925,7 @@
                       console.log('dataMap>>> ', l),
                         (f = []),
                         (b = 0),
-                        (w = E(l));
+                        (w = D(l));
                       try {
                         for (
                           v = function() {
@@ -935,7 +935,7 @@
                               a = S[0],
                               n = S[1],
                               i = [],
-                              l = E(n);
+                              l = D(n);
                             try {
                               for (l.s(); !(t = l.n()).done; ) {
                                 var p = t.value;
@@ -954,13 +954,13 @@
                             }
                             var m,
                               _ = [],
-                              y = E(n);
+                              y = D(n);
                             try {
                               for (y.s(); !(m = y.n()).done; ) {
                                 var g,
                                   w = m.value,
                                   v = w.exchanges,
-                                  C = E(v);
+                                  C = D(v);
                                 try {
                                   for (C.s(); !(g = C.n()).done; ) {
                                     var x = g.value;

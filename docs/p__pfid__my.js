@@ -3293,7 +3293,7 @@
         constructor() {
           (this.staking = {
             address:
-              '52JAzozCtrWhns5vS7XXEoYCKDdfze7dsYVQzTgq4vn47vmcFYB8jdKeGrucbskvJvxJcNdkTxizj7rvbM5PThMJ',
+              'NmFB4TWZpAr6FsVdF8DqjHN7KsfLtZMkWxHGcm7yKg1rrkmMeXpjvGXG1ALYLx7vCwSraCfuqpDGqCr5eK7xVhQ',
             abi: [
               {
                 constant: !0,

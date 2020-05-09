@@ -79,12 +79,9 @@ let walletUrl = walletHost + storage.get(storage.keys.language);
 
 function changeLang(l: string) {
   storage.set(storage.keys.language, l);
-  i18n.changeLanguage(l);
-
-  const ifmodel: any = document.getElementById('popupModel');
-  if (ifmodel) {
-    ifmodel.src = walletHost + l;
-  }
+  i18n.changeLanguage(l).then(() => {
+    document.location.href = 'http://' + document.location.host;
+  });
 }
 
 class SiderMenus extends React.Component {

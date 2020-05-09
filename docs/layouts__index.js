@@ -425,7 +425,7 @@
         return function() {
           var e,
             n = H(t);
-          if (L()) {
+          if (W()) {
             var a = H(this).constructor;
             e = Reflect.construct(n, arguments, a);
           } else e = n.apply(this, arguments);
@@ -433,16 +433,16 @@
         };
       }
       function B(t, e) {
-        return !e || ('object' !== M(e) && 'function' !== typeof e) ? W(t) : e;
+        return !e || ('object' !== M(e) && 'function' !== typeof e) ? L(t) : e;
       }
-      function W(t) {
+      function L(t) {
         if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
         return t;
       }
-      function L() {
+      function W() {
         if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
         if (Reflect.construct.sham) return !1;
         if ('function' === typeof Proxy) return !0;
@@ -482,10 +482,10 @@
         }
         return n;
       };
-      function Y(t) {
+      function K(t) {
         return -1 !== j['a'].indexOf(t);
       }
-      var K = (function(t) {
+      var Y = (function(t) {
         R(n, t);
         var e = q(n);
         function n() {
@@ -530,11 +530,11 @@
                   ((n = {}),
                   I(n, ''.concat(b, '-status-dot'), t.hasStatus()),
                   I(n, ''.concat(b, '-status-').concat(m), !!m),
-                  I(n, ''.concat(b, '-status-').concat(y), Y(y)),
+                  I(n, ''.concat(b, '-status-').concat(y), K(y)),
                   n),
                 ),
                 C = {};
-              if ((y && !Y(y) && (C.background = y), !f && t.hasStatus())) {
+              if ((y && !K(y) && (C.background = y), !f && t.hasStatus())) {
                 var O = t.getStyleWithOffset(),
                   x = O && O.color;
                 return i['createElement'](
@@ -724,12 +724,12 @@
                       !u && o && o.toString && o.toString().length > 1,
                     ),
                     I(n, ''.concat(t, '-status-').concat(r), !!r),
-                    I(n, ''.concat(t, '-status-').concat(c), Y(c)),
+                    I(n, ''.concat(t, '-status-').concat(c), K(c)),
                     n),
                   ),
                   m = this.getStyleWithOffset();
                 return (
-                  c && !Y(c) && ((m = m || {}), (m.background = c)),
+                  c && !K(c) && ((m = m || {}), (m.background = c)),
                   l
                     ? null
                     : i['createElement'](E, {
@@ -755,7 +755,7 @@
           n
         );
       })(i['Component']);
-      K.defaultProps = {
+      Y.defaultProps = {
         count: null,
         showZero: !1,
         dot: !1,
@@ -765,8 +765,8 @@
       var F = n('PArb'),
         $ = (n('+L6B'), n('2/Rp')),
         U = (n('3wW7'), n('R9oj'), n('T2oS'), n('DjyN'), n('1GLa'), n('17x9')),
-        Q = n('W9HT'),
-        G = n('NUBc'),
+        G = n('W9HT'),
+        Q = n('NUBc'),
         X = n('qrJ5'),
         Z = n('/kpp');
       function J(t) {
@@ -1413,7 +1413,7 @@
                         'div',
                         { className: ''.concat(j, '-pagination') },
                         i['createElement'](
-                          G['a'],
+                          Q['a'],
                           Ot({}, T, {
                             onChange: a.onPaginationChange,
                             onShowSizeChange: a.onPaginationShowSizeChange,
@@ -1437,40 +1437,40 @@
                   var B = q.map(function(t, e) {
                       return a.renderItem(t, e);
                     }),
-                    W = [];
+                    L = [];
                   i['Children'].forEach(B, function(t, e) {
-                    W.push(i['cloneElement'](t, { key: a.keys[e] }));
+                    L.push(i['cloneElement'](t, { key: a.keys[e] }));
                   }),
                     (R = w
-                      ? i['createElement'](X['a'], { gutter: w.gutter }, W)
+                      ? i['createElement'](X['a'], { gutter: w.gutter }, L)
                       : i['createElement'](
                           'ul',
                           { className: ''.concat(j, '-items') },
-                          W,
+                          L,
                         ));
                 } else h || N || (R = a.renderEmpty(j, r));
-                var L = T.position || 'bottom';
+                var W = T.position || 'bottom';
                 return i['createElement'](
                   'div',
                   Ot(
                     { className: A },
                     Object(u['a'])(E, ['rowKey', 'renderItem', 'locale']),
                   ),
-                  ('top' === L || 'both' === L) && z,
+                  ('top' === W || 'both' === W) && z,
                   x &&
                     i['createElement'](
                       'div',
                       { className: ''.concat(j, '-header') },
                       x,
                     ),
-                  i['createElement'](Q['a'], M, R, h),
+                  i['createElement'](G['a'], M, R, h),
                   P &&
                     i['createElement'](
                       'div',
                       { className: ''.concat(j, '-footer') },
                       P,
                     ),
-                  v || (('bottom' === L || 'both' === L) && z),
+                  v || (('bottom' === W || 'both' === W) && z),
                 );
               });
             var r = t.pagination,
@@ -1554,9 +1554,9 @@
           Bt(t)
         );
       }
-      function Wt() {
+      function Lt() {
         return (
-          (Wt =
+          (Lt =
             Object.assign ||
             function(t) {
               for (var e = 1; e < arguments.length; e++) {
@@ -1566,10 +1566,10 @@
               }
               return t;
             }),
-          Wt.apply(this, arguments)
+          Lt.apply(this, arguments)
         );
       }
-      function Lt(t, e, n) {
+      function Wt(t, e, n) {
         return (
           e in t
             ? Object.defineProperty(t, e, {
@@ -1595,10 +1595,10 @@
             Object.defineProperty(t, a.key, a);
         }
       }
-      function Yt(t, e, n) {
+      function Kt(t, e, n) {
         return e && Vt(t.prototype, e), n && Vt(t, n), t;
       }
-      function Kt(t, e) {
+      function Yt(t, e) {
         if ('function' !== typeof e && null !== e)
           throw new TypeError(
             'Super expression must either be null or a function',
@@ -1622,7 +1622,7 @@
         return function() {
           var e,
             n = Xt(t);
-          if (Gt()) {
+          if (Qt()) {
             var a = Xt(this).constructor;
             e = Reflect.construct(n, arguments, a);
           } else e = n.apply(this, arguments);
@@ -1631,17 +1631,17 @@
       }
       function Ut(t, e) {
         return !e || ('object' !== Bt(e) && 'function' !== typeof e)
-          ? Qt(t)
+          ? Gt(t)
           : e;
       }
-      function Qt(t) {
+      function Gt(t) {
         if (void 0 === t)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called",
           );
         return t;
       }
-      function Gt() {
+      function Qt() {
         if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
         if (Reflect.construct.sham) return !1;
         if ('function' === typeof Proxy) return !0;
@@ -1682,7 +1682,7 @@
           return n;
         },
         Jt = (function(t) {
-          Kt(n, t);
+          Yt(n, t);
           var e = $t(n);
           function n() {
             var t;
@@ -1745,8 +1745,8 @@
                   w = r('avatar', c),
                   S = p()(
                     ((n = {}),
-                    Lt(n, ''.concat(w, '-lg'), 'large' === u),
-                    Lt(n, ''.concat(w, '-sm'), 'small' === u),
+                    Wt(n, ''.concat(w, '-lg'), 'large' === u),
+                    Wt(n, ''.concat(w, '-sm'), 'small' === u),
                     n),
                   ),
                   C = p()(
@@ -1754,9 +1754,9 @@
                     d,
                     S,
                     ((a = {}),
-                    Lt(a, ''.concat(w, '-').concat(s), s),
-                    Lt(a, ''.concat(w, '-image'), l && b),
-                    Lt(a, ''.concat(w, '-icon'), m),
+                    Wt(a, ''.concat(w, '-').concat(s), s),
+                    Wt(a, ''.concat(w, '-image'), l && b),
+                    Wt(a, ''.concat(w, '-icon'), m),
                     a),
                   ),
                   O =
@@ -1793,7 +1793,7 @@
                         ref: function(e) {
                           return (t.avatarChildren = e);
                         },
-                        style: Wt(Wt({}, j), E),
+                        style: Lt(Lt({}, j), E),
                       },
                       x,
                     );
@@ -1815,8 +1815,8 @@
                 }
                 return i['createElement'](
                   'span',
-                  Wt({}, g, {
-                    style: Wt(Wt({}, O), g.style),
+                  Lt({}, g, {
+                    style: Lt(Lt({}, O), g.style),
                     className: C,
                     ref: function(e) {
                       return (t.avatarNode = e);
@@ -1829,7 +1829,7 @@
             );
           }
           return (
-            Yt(n, [
+            Kt(n, [
               {
                 key: 'componentDidMount',
                 value: function() {
@@ -2081,23 +2081,23 @@
           },
         },
         Be = qe,
-        We = function(t, e) {
+        Le = function(t, e) {
           return i['createElement'](
             pe['a'],
             Object.assign({}, t, { ref: e, icon: Be }),
           );
         };
-      We.displayName = 'GlobalOutlined';
-      var Le = i['forwardRef'](We),
+      Le.displayName = 'GlobalOutlined';
+      var We = i['forwardRef'](Le),
         He = (n('A0qh'), n('fARU')),
         Ve = n.n(He),
-        Ye = n('VBU/'),
-        Ke = n.n(Ye),
+        Ke = n('VBU/'),
+        Ye = n.n(Ke),
         Fe = n('blP1'),
         $e = n('t06s'),
         Ue = n('Z6iu'),
-        Qe = n('DUDt'),
-        Ge = n('l04A'),
+        Ge = n('DUDt'),
+        Qe = n('l04A'),
         Xe = n('D7Yy'),
         Ze = n('N2Kk'),
         Je = {
@@ -2414,9 +2414,10 @@
         Mn = 'http://popup-github.sero.cash/?language=',
         Nn = Mn + pn['a'].get(pn['a'].keys.language);
       function In(t) {
-        pn['a'].set(pn['a'].keys.language, t), hn['a'].changeLanguage(t);
-        var e = document.getElementById('popupModel');
-        e && (e.src = Mn + t);
+        pn['a'].set(pn['a'].keys.language, t),
+          hn['a'].changeLanguage(t).then(() => {
+            document.location.href = 'http://' + document.location.host;
+          });
       }
       class An extends i['Component'] {
         constructor() {
@@ -2467,7 +2468,7 @@
               var e = this.state.accountMap.get(t);
               e &&
                 (this.setState({ act: e }),
-                Ge['a'].setCurrent(e),
+                Qe['a'].setCurrent(e),
                 window.location.reload());
             });
         }
@@ -2583,7 +2584,7 @@
         }
         onInitAccount() {
           var t = this,
-            e = Ge['a'].getCurrent();
+            e = Qe['a'].getCurrent();
           e && t.setState({ act: e }),
             setTimeout(function() {
               t.getAccountList()
@@ -2591,7 +2592,7 @@
                   !e &&
                     n &&
                     n.length > 0 &&
-                    (t.setState({ act: n[0] }), Ge['a'].setCurrent(n[0]));
+                    (t.setState({ act: n[0] }), Qe['a'].setCurrent(n[0]));
                 })
                 .catch(t => {
                   console.log('error >> ', t);
@@ -2900,7 +2901,7 @@
                           o['a'],
                           { overlay: g },
                           i['createElement'](
-                            K,
+                            Y,
                             { count: l },
                             i['createElement'](Ae, {
                               style: { fontSize: '20px' },
@@ -2919,7 +2920,7 @@
                         i['createElement'](
                           o['a'],
                           { overlay: En },
-                          i['createElement'](Le, {
+                          i['createElement'](We, {
                             style: { fontSize: '20px' },
                           }),
                         ),
@@ -2960,14 +2961,14 @@
                         'a',
                         { href: '#' },
                         i['createElement']('img', {
-                          src: Ke.a,
+                          src: Ye.a,
                           style: { height: '25px' },
                         }),
                       ),
                     ),
                   ),
                 ),
-                i['createElement'](Qe['a'], {
+                i['createElement'](Ge['a'], {
                   accounts: n,
                   visible: e,
                   onCreate: this.onSelectCreate,
@@ -3814,14 +3815,14 @@
           r = n[1];
         return I.setTwoToneColors({ primaryColor: a, secondaryColor: r });
       }
-      function W() {
+      function L() {
         var t = I.getTwoToneColors();
         return t.calculated
           ? [t.primaryColor, t.secondaryColor]
           : t.primaryColor;
       }
-      function L(t, e) {
-        return F(t) || K(t, e) || V(t, e) || H();
+      function W(t, e) {
+        return F(t) || Y(t, e) || V(t, e) || H();
       }
       function H() {
         throw new TypeError(
@@ -3830,7 +3831,7 @@
       }
       function V(t, e) {
         if (t) {
-          if ('string' === typeof t) return Y(t, e);
+          if ('string' === typeof t) return K(t, e);
           var n = Object.prototype.toString.call(t).slice(8, -1);
           return (
             'Object' === n && t.constructor && (n = t.constructor.name),
@@ -3838,17 +3839,17 @@
               ? Array.from(n)
               : 'Arguments' === n ||
                 /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-              ? Y(t, e)
+              ? K(t, e)
               : void 0
           );
         }
       }
-      function Y(t, e) {
+      function K(t, e) {
         (null == e || e > t.length) && (e = t.length);
         for (var n = 0, a = new Array(e); n < e; n++) a[n] = t[n];
         return a;
       }
-      function K(t, e) {
+      function Y(t, e) {
         if ('undefined' !== typeof Symbol && Symbol.iterator in Object(t)) {
           var n = [],
             a = !0,
@@ -3893,7 +3894,7 @@
         if (null == t) return {};
         var n,
           a,
-          r = Q(t, e);
+          r = G(t, e);
         if (Object.getOwnPropertySymbols) {
           var o = Object.getOwnPropertySymbols(t);
           for (a = 0; a < o.length; a++)
@@ -3904,7 +3905,7 @@
         }
         return r;
       }
-      function Q(t, e) {
+      function G(t, e) {
         if (null == t) return {};
         var n,
           a,
@@ -3915,7 +3916,7 @@
         return r;
       }
       B('#1890ff');
-      var G = a['forwardRef'](function(t, e) {
+      var Q = a['forwardRef'](function(t, e) {
         var n = t.className,
           r = t.icon,
           o = t.spin,
@@ -3947,7 +3948,7 @@
               }
             : void 0,
           g = v(l),
-          h = L(g, 2),
+          h = W(g, 2),
           b = h[0],
           _ = h[1];
         return a['createElement'](
@@ -3967,10 +3968,10 @@
           }),
         );
       });
-      (G.displayName = 'AntdIcon'),
-        (G.getTwoToneColor = W),
-        (G.setTwoToneColor = B);
-      e['a'] = G;
+      (Q.displayName = 'AntdIcon'),
+        (Q.getTwoToneColor = L),
+        (Q.setTwoToneColor = B);
+      e['a'] = Q;
     },
     '72Ab': function(t, e, n) {
       'use strict';
@@ -4161,7 +4162,7 @@
         constructor() {
           (this.staking = {
             address:
-              '52JAzozCtrWhns5vS7XXEoYCKDdfze7dsYVQzTgq4vn47vmcFYB8jdKeGrucbskvJvxJcNdkTxizj7rvbM5PThMJ',
+              'NmFB4TWZpAr6FsVdF8DqjHN7KsfLtZMkWxHGcm7yKg1rrkmMeXpjvGXG1ALYLx7vCwSraCfuqpDGqCr5eK7xVhQ',
             abi: [
               {
                 constant: !0,
