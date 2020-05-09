@@ -2582,7 +2582,7 @@
           }),
             (this.auction = {
               address:
-                '32ikcVxFyct9pVeEsAVxgTbUX1ueorxAoxJBAssQ14P9FwKBm6ZBSz7ZbqXxmswa7P11ziCNFunHufRYDvsWRYkC',
+                '4EYRBdmVoJTQCReMfwZPD8jsuPg3r6hFo9Zf3QVgK1XYpTfGDDiBxBddpGH51tp2ykqbMsSQRkWWy9Cz5uaiu45x',
               abi: [
                 {
                   constant: !1,

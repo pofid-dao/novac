@@ -10452,7 +10452,7 @@
             npm_config_only: '',
             npm_config_commit_hooks: 'true',
             npm_config_browser: '',
-            npm_package_gitHead: '2e6177b4cb2bb420968e4af6e28d167e37a3e926',
+            npm_package_gitHead: '25b5375cc3945220a1babd8d3d3d14838f048311',
             npm_package_devDependencies_i18next_http_backend: '^1.0.8',
             npm_config_also: '',
             npm_config_sign_git_commit: '',
