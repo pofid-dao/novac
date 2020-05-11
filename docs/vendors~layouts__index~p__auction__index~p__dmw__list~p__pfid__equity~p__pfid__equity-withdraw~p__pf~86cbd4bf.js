@@ -10452,7 +10452,7 @@
             npm_config_only: '',
             npm_config_commit_hooks: 'true',
             npm_config_browser: '',
-            npm_package_gitHead: '260365c09ad7f4dbd2d87b8876b11cd42bdba6b4',
+            npm_package_gitHead: 'bc9b8463b16c280d23c93c3d4ab3ae4c29eab8c2',
             npm_package_devDependencies_i18next_http_backend: '^1.0.8',
             npm_config_also: '',
             npm_config_sign_git_commit: '',
@@ -10508,7 +10508,7 @@
             npm_config_key: '',
             npm_package_readmeFilename: 'README.md',
             __INTELLIJ_COMMAND_HISTFILE__:
-              '/Users/huangw/Library/Application Support/JetBrains/IntelliJIdea2020.1/terminal/history/history-397',
+              '/Users/huangw/Library/Application Support/JetBrains/IntelliJIdea2020.1/terminal/history/history-191',
             npm_package_description: '## Getting Started',
             npm_package_devDependencies_react_i18next: '^11.4.0',
             rvm_stored_umask: '022',

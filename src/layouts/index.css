@@ -45,7 +45,8 @@ div{
 
 *{
   /*font-family: -apple-system, system-ui, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;*/
-  font-family: FT Base,-apple-system,system-ui,BlinkMacSystemFont,SF Pro Text,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  font-family: "Inferi Normal", "Times New Roman", serif;
+  /*font-family: "Inter Roman", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
   letter-spacing: .02rem;
 }
 

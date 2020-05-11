@@ -92,10 +92,13 @@ export default defineConfig({
     },
   ],
   theme: {
-    'primary-color': '#161796',
-    'font-family':
-      '"Inter Roman", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    'letter-spacing': '.02rem',
+    '@primary-color': '#161796',
+    '@font-family': '"Inferi Normal", "Times New Roman", serif',
   },
+  styles: [
+    `font-family:"Inferi Normal", "Times New Roman", serif`,
+    `letter-spacing:.02rem`,
+  ],
+
   dynamicImport: {},
 });
