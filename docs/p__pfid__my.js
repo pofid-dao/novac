@@ -5528,6 +5528,8 @@
                                   ? b.a.createElement(xe, {
                                       title: ve['a'].t('button_withdraw'),
                                       value: 1e3 * t.endTime,
+                                      format: 'D day HH:mm:ss',
+                                      valueStyle: { fontSize: '16px' },
                                     })
                                   : ve['a'].t('state_finished')),
                                 n.push({

@@ -262,6 +262,8 @@ class MyPfid extends Component {
               <Countdown
                 title={i18n.t('button_withdraw')}
                 value={data.endTime * 1000}
+                format="D day HH:mm:ss"
+                valueStyle={{ fontSize: '16px' }}
               />
             );
           } else {
