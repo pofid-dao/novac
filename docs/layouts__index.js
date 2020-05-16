@@ -2444,7 +2444,7 @@
           ),
         ),
         An = null,
-        Tn = 'http://popup-github.sero.cash/?language=',
+        Tn = 'https://popup-github.sero.cash/?language=',
         Dn = Tn + yn['a'].get(yn['a'].keys.language);
       function Rn(t) {
         yn['a'].set(yn['a'].keys.language, t),

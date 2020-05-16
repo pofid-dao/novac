@@ -75,7 +75,7 @@ const languageList = (
 let timerId: any = null;
 // let syncTxStateId: any = null;
 // let syncWalletInfoId: any = null;
-let walletHost = 'http://popup-github.sero.cash/?language=';
+let walletHost = 'https://popup-github.sero.cash/?language=';
 let walletUrl = walletHost + storage.get(storage.keys.language);
 
 function changeLang(l: string) {
