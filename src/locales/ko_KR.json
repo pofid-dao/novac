@@ -55,7 +55,7 @@
   "pages_dmw_dmwSource": "DMW 계약 주소",
   "pages_dmw_vmSource": "VM 계약 주소",
   "pages_dmw_stableCoin": "스테이블 코인",
-  "pages_ssctools_list_title": "SSC 리스트",
+  "pages_ssctools_list_title": "AOC 리스트",
   "pages_ssctools_list_collateralizationRatio": "저당율",
   "pages_ssctools_list_liquidationRatio": "블라스팅 웨어하우스 율",
   "pages_ssctools_list_exchangeRatio": "교환 비율",
