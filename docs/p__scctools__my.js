@@ -11,7 +11,7 @@
     },
     '1C8T': function(e) {
       e.exports = JSON.parse(
-        '{"button_changeAccount":"\uacc4\uc815 \uc804\ud658","button_goStaking":"\uc800\ub2f9","button_cancel":"\ucde8\uc18c","button_ok":"\ud655\uc815","button_commit":"\uc81c\ucd9c","button_confirm":"\ud655\uc778","button_borrow":"\ub300\ucd9c","button_repay":"\uc0c1\ud658","button_deal":"\ubc18\ud658","button_withdraw":"\ud604\uae08\uc778\ucd9c","button_reinvet":"\ubcf5\ud22c","button_createAuction":"\ud06c\ub9ac\uc5d0\uc787 \uc625\uc158","button_bidding":"\uacbd\ub9e4\ub85c \uc774\ub3d9","button_bid":"\ube44\ub4dc","menus_wallet":"\uc9c0\uac11","menus_pfid":"PFID","menus_mypfid":"\ub098\uc758PFID","menus_equity":"\uc790\uc0b0","menus_dmw":" DMW","menus_ssctools":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778 \ub3c4\uad6c","menus_ssclist":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778  \ub9ac\uc2a4\ud2b8","menus_sscmy":"\ub098\uc758 \uc548\uc815 \ud654\ud3d0","menus_auction":"\uacbd\ub9e4","menus_dapps":"DAPPS","pages_pfid_balance":"\uc794\uace0","pages_pfid_stakingPool":"\uc800\ub2f9\uc9c0","pages_pfid_my_stakingRecord":"\uc800\ub2f9 \uae30\ub85d","pages_pfid_my_index":"\uc21c\ubc88","pages_pfid_my_cycle":"\uc8fc\uae30(\uc77c )","pages_pfid_my_state":"\uc0c1\ud0dc","pages_pfid_my_staking":"\uc800\ub2f9\ud55c","pages_pfid_my_received":"\ubc1b\uc740","pages_pfid_my_time":"\uc2dc\uac04","pages_pfid_my_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_pfid_my_amount":"\uae08\uc561","pages_pfid_my_password":"\ube44\ubc00 \ubc88\ud638","pages_pfid_my_expect":"\uc608\uc0c1 \uc0b0\ucd9c","pages_pfid_my_expect_received":" \uc608\uc0c1 \uc218\uc775","pages_pfid_started_at":"\uc2dc\uc791 \uc2dc\uac04","pages_pfid_withdraw_at":"\ud604\uae08\uc778\ucd9c \uc2dc\uac04","pages_equity_dividendList":"\ud604\uc2dc\uc810\uc5d0\uc11c \ubc1b\uc744\uc218 \uc788\ub294 \ubc30\ub2f9\uae08","pages_equity_dividendRecords":"\ubc30\ub2f9\uae08 \uae30\ub85d","pages_equity_index":"\uc21c\ubc88","pages_equity_ssc":"\ucf54\uc778 \uc774\ub984","pages_equity_amount":"\uae08\uc561","pages_equity_time":"\uc2dc\uac04","pages_equity_state":"\uc0c1\ud0dc","pages_equity_withdraw":"\ud604\uae08\uc778\ucd9c \ub9ac\uc2a4\ud2b8","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO\ub294 \uc138\uacc4\uc5d0\uc11c \ucd5c\ucd08\ub85c \ud1a0\ub9c1 \uc644\uc804 \uc2a4\ub9c8\ud2b8 \uac8c\uc57d\ub97c \uc9c0\uc9c0\ud558\ub294 \ud68c\uc0ac\ub2e4 . \uc774\uac83\uc740 \ubb34\uc9c0\uc2dd\uc99d\uba85\uc73c\ub85c  \uc790\uc0b0\uc758 \uacf5\uacf5 \uc0ac\uc2ac\uacfc \uac70\ub798 \ud504\ub77c\uc774\ubc84\uc2dc\ub97c \ubcf4\ud638\ud55c\ub2e4.","pages_dmw_collateralizationRatio":"\uc800\ub2f9 \ube44\uc728","pages_dmw_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \ube44\uc728","pages_dmw_vmDataSource":"\ub370\uc774\ud2b8 \uc18c\uc2a4","pages_dmw_dmwSource":"DMW \uacc4\uc57d \uc8fc\uc18c","pages_dmw_vmSource":"VM \uacc4\uc57d \uc8fc\uc18c","pages_dmw_stableCoin":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778","pages_ssctools_list_title":"SSC \ub9ac\uc2a4\ud2b8","pages_ssctools_list_collateralizationRatio":"\uc800\ub2f9\uc728","pages_ssctools_list_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \uc728","pages_ssctools_list_exchangeRatio":"\uad50\ud658 \ube44\uc728","pages_myssc_title":" \ub098\uc758 SSC","pages_myssc_index":"\uc21c\ubc88","pages_myssc_no":"\ubc88\ud638","pages_myssc_pledged":"\uc800\ub2f9 \uc218\ub7c9","pages_myssc_mintCoins":"\uc8fc\ud654 \uc218\ub7c9","pages_myssc_fee":"\ube44\uc6a9","pages_myssc_currentRatio":"\ud604\uc7ac \ube44\uc728","pages_myssc_status":"\uc0c1\ud0dc","pages_myssc_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_auction_title":"\uc625\uc158 \ud0c0\uc774\ud2c0","pages_auction_index":"\uc21c\ubc88","pages_auction_assets":"\uc790\uc0b0","pages_auction_currentPrice":"\ud604\uc7ac\uac00\uaca9","pages_auction_singleBid":"\ub2e8\ucc28\ucd9c\uac00","pages_auction_status":"\uc0c1\ud0dc","pages_auction_countDown":"\uce74\uc6b4\ud2b8\ub2e4\uc6b4","pages_auction_operation":"\uc624\ud37c\ub808\uc774\uc158","form_note":"\uc124\uba85","form_bid_total":"\uacbd\ub9e4 \ucd1d\uc561","form_input_amount":"\uae08\uc561\uc744 \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_password":"\ube44\ubc00 \ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_cycle":"\uc8fc\uae30\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694!","form_input_desc":"\uc124\uba85\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc624!","form_input_name":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc6241!","form_lable_amount":"\uae08\uc561","form_lable_password":"\ube44\ubc00 \ubc88\ud638","form_lable_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218","form_lable_estimate":"\ucd94\uc0b0","form_lable_fee":"\ube44\uc6a9","form_lable_exchange_name":"\uad50\ud658 \uba85","state_finished":"\uc885\ub8cc","state_valid":"\uc720\ud6a8","state_biding":"\ube44\ub4dc\uc911","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC\ub294 Chrome \ube0c\ub77c\uc6b0\uc800\uc5d0\uc11c \uac00\uc7a5 \uc798 \uc791\ub3d9\ud569\ub2c8\ub2e4.","chrome_down_btn":"Chrome \ube0c\ub77c\uc6b0\uc800\ub97c \ub2e4\uc6b4\ub85c\ub4dc\ud558\ub824\uba74 \ud074\ub9ad\ud558\uc2ed\uc2dc\uc624.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"\uc601\uc5b4","ko_KR":"\ud55c\uad6d\uc5b4","zh_CN":"\uc911\uad6d\uc5b4 \uac04\uccb4","updateDesc":"\uc5c5\ub370\uc774\ud2b8 \uc124\uba85","addExchange":"\uad50\ud658 \ucd94\uac00"}',
+        '{"button_changeAccount":"\uacc4\uc815 \uc804\ud658","button_goStaking":"\uc800\ub2f9","button_cancel":"\ucde8\uc18c","button_ok":"\ud655\uc815","button_commit":"\uc81c\ucd9c","button_confirm":"\ud655\uc778","button_borrow":"\ub300\ucd9c","button_repay":"\uc0c1\ud658","button_deal":"\ubc18\ud658","button_withdraw":"\ud604\uae08\uc778\ucd9c","button_reinvet":"\ubcf5\ud22c","button_createAuction":"\ud06c\ub9ac\uc5d0\uc787 \uc625\uc158","button_bidding":"\uacbd\ub9e4\ub85c \uc774\ub3d9","button_bid":"\ube44\ub4dc","menus_wallet":"\uc9c0\uac11","menus_pfid":"PFID","menus_mypfid":"\ub098\uc758PFID","menus_equity":"\uc790\uc0b0","menus_dmw":" DMW","menus_ssctools":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778 \ub3c4\uad6c","menus_ssclist":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778  \ub9ac\uc2a4\ud2b8","menus_sscmy":"\ub098\uc758 \uc548\uc815 \ud654\ud3d0","menus_auction":"\uacbd\ub9e4","menus_dapps":"DAPPS","pages_pfid_balance":"\uc794\uace0","pages_pfid_stakingPool":"\uc800\ub2f9\uc9c0","pages_pfid_my_stakingRecord":"\uc800\ub2f9 \uae30\ub85d","pages_pfid_my_index":"\uc21c\ubc88","pages_pfid_my_cycle":"\uc8fc\uae30(\uc77c )","pages_pfid_my_state":"\uc0c1\ud0dc","pages_pfid_my_staking":"\uc800\ub2f9\ud55c","pages_pfid_my_received":"\ubc1b\uc740","pages_pfid_my_time":"\uc2dc\uac04","pages_pfid_my_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_pfid_my_amount":"\uae08\uc561","pages_pfid_my_password":"\ube44\ubc00 \ubc88\ud638","pages_pfid_my_expect":"\uc608\uc0c1 \uc0b0\ucd9c","pages_pfid_my_expect_received":" \uc608\uc0c1 \uc218\uc775","pages_pfid_started_at":"\uc2dc\uc791 \uc2dc\uac04","pages_pfid_withdraw_at":"\ud604\uae08\uc778\ucd9c \uc2dc\uac04","pages_equity_dividendList":"\ud604\uc2dc\uc810\uc5d0\uc11c \ubc1b\uc744\uc218 \uc788\ub294 \ubc30\ub2f9\uae08","pages_equity_dividendRecords":"\ubc30\ub2f9\uae08 \uae30\ub85d","pages_equity_index":"\uc21c\ubc88","pages_equity_ssc":"\ucf54\uc778 \uc774\ub984","pages_equity_amount":"\uae08\uc561","pages_equity_time":"\uc2dc\uac04","pages_equity_state":"\uc0c1\ud0dc","pages_equity_withdraw":"\ud604\uae08\uc778\ucd9c \ub9ac\uc2a4\ud2b8","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO\ub294 \uc138\uacc4\uc5d0\uc11c \ucd5c\ucd08\ub85c \ud1a0\ub9c1 \uc644\uc804 \uc2a4\ub9c8\ud2b8 \uac8c\uc57d\ub97c \uc9c0\uc9c0\ud558\ub294 \ud68c\uc0ac\ub2e4 . \uc774\uac83\uc740 \ubb34\uc9c0\uc2dd\uc99d\uba85\uc73c\ub85c  \uc790\uc0b0\uc758 \uacf5\uacf5 \uc0ac\uc2ac\uacfc \uac70\ub798 \ud504\ub77c\uc774\ubc84\uc2dc\ub97c \ubcf4\ud638\ud55c\ub2e4.","pages_dmw_collateralizationRatio":"\uc800\ub2f9 \ube44\uc728","pages_dmw_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \ube44\uc728","pages_dmw_vmDataSource":"\ub370\uc774\ud2b8 \uc18c\uc2a4","pages_dmw_dmwSource":"DMW \uacc4\uc57d \uc8fc\uc18c","pages_dmw_vmSource":"VM \uacc4\uc57d \uc8fc\uc18c","pages_dmw_stableCoin":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778","pages_ssctools_list_title":"AOC \ub9ac\uc2a4\ud2b8","pages_ssctools_list_collateralizationRatio":"\uc800\ub2f9\uc728","pages_ssctools_list_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \uc728","pages_ssctools_list_exchangeRatio":"\uad50\ud658 \ube44\uc728","pages_myssc_title":" \ub098\uc758 SSC","pages_myssc_index":"\uc21c\ubc88","pages_myssc_no":"\ubc88\ud638","pages_myssc_pledged":"\uc800\ub2f9 \uc218\ub7c9","pages_myssc_mintCoins":"\uc8fc\ud654 \uc218\ub7c9","pages_myssc_fee":"\ube44\uc6a9","pages_myssc_currentRatio":"\ud604\uc7ac \ube44\uc728","pages_myssc_status":"\uc0c1\ud0dc","pages_myssc_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_auction_title":"\uc625\uc158 \ud0c0\uc774\ud2c0","pages_auction_index":"\uc21c\ubc88","pages_auction_assets":"\uc790\uc0b0","pages_auction_currentPrice":"\ud604\uc7ac\uac00\uaca9","pages_auction_singleBid":"\ub2e8\ucc28\ucd9c\uac00","pages_auction_status":"\uc0c1\ud0dc","pages_auction_countDown":"\uce74\uc6b4\ud2b8\ub2e4\uc6b4","pages_auction_operation":"\uc624\ud37c\ub808\uc774\uc158","form_note":"\uc124\uba85","form_bid_total":"\uacbd\ub9e4 \ucd1d\uc561","form_input_amount":"\uae08\uc561\uc744 \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_password":"\ube44\ubc00 \ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_cycle":"\uc8fc\uae30\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694!","form_input_desc":"\uc124\uba85\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc624!","form_input_name":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc6241!","form_lable_amount":"\uae08\uc561","form_lable_password":"\ube44\ubc00 \ubc88\ud638","form_lable_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218","form_lable_estimate":"\ucd94\uc0b0","form_lable_fee":"\ube44\uc6a9","form_lable_exchange_name":"\uad50\ud658 \uba85","state_finished":"\uc885\ub8cc","state_valid":"\uc720\ud6a8","state_biding":"\ube44\ub4dc\uc911","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC\ub294 Chrome \ube0c\ub77c\uc6b0\uc800\uc5d0\uc11c \uac00\uc7a5 \uc798 \uc791\ub3d9\ud569\ub2c8\ub2e4.","chrome_down_btn":"Chrome \ube0c\ub77c\uc6b0\uc800\ub97c \ub2e4\uc6b4\ub85c\ub4dc\ud558\ub824\uba74 \ud074\ub9ad\ud558\uc2ed\uc2dc\uc624.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"\uc601\uc5b4","ko_KR":"\ud55c\uad6d\uc5b4","zh_CN":"\uc911\uad6d\uc5b4 \uac04\uccb4","updateDesc":"\uc5c5\ub370\uc774\ud2b8 \uc124\uba85","addExchange":"\uad50\ud658 \ucd94\uac00"}',
       );
     },
     '1R0B': function(e, t, n) {
@@ -163,7 +163,7 @@
       function O(e) {
         return !!(e.prefix || e.suffix || e.allowClear);
       }
-      var S = (function(e) {
+      var C = (function(e) {
           y(n, e);
           var t = v(n);
           function n() {
@@ -382,7 +382,7 @@
             n
           );
         })(r['Component']),
-        C = S,
+        S = C,
         P = n('H84U'),
         k = n('3Nzz'),
         j = n('6CfX');
@@ -635,7 +635,7 @@
                 (o.direction = n),
                 r['createElement'](k['b'].Consumer, null, function(e) {
                   return r['createElement'](
-                    C,
+                    S,
                     A({ size: e }, o.props, {
                       prefixCls: l,
                       inputType: 'input',
@@ -1230,9 +1230,9 @@
         return { height: p, minHeight: s, maxHeight: f, overflowY: l };
       }
       var Oe = n('oHiP');
-      function Se(e) {
+      function Ce(e) {
         return (
-          (Se =
+          (Ce =
             'function' === typeof Symbol && 'symbol' === typeof Symbol.iterator
               ? function(e) {
                   return typeof e;
@@ -1245,12 +1245,12 @@
                     ? 'symbol'
                     : typeof e;
                 }),
-          Se(e)
+          Ce(e)
         );
       }
-      function Ce() {
+      function Se() {
         return (
-          (Ce =
+          (Se =
             Object.assign ||
             function(e) {
               for (var t = 1; t < arguments.length; t++) {
@@ -1260,7 +1260,7 @@
               }
               return e;
             }),
-          Ce.apply(this, arguments)
+          Se.apply(this, arguments)
         );
       }
       function Pe(e, t, n) {
@@ -1324,7 +1324,7 @@
         };
       }
       function Re(e, t) {
-        return !t || ('object' !== Se(t) && 'function' !== typeof t)
+        return !t || ('object' !== Ce(t) && 'function' !== typeof t)
           ? Ne(e)
           : t;
       }
@@ -1428,8 +1428,8 @@
                   ]),
                   m = a()(t, u, Pe({}, ''.concat(t, '-disabled'), l));
                 'value' in d && (d.value = d.value || '');
-                var y = Ce(
-                  Ce(Ce({}, o.props.style), f),
+                var y = Se(
+                  Se(Se({}, o.props.style), f),
                   p === Ve
                     ? { overflowX: 'hidden', overflowY: 'hidden' }
                     : null,
@@ -1439,7 +1439,7 @@
                   { onResize: o.handleResize, disabled: !(n || c) },
                   r['createElement'](
                     'textarea',
-                    Ce({}, d, { className: m, style: y, ref: o.saveTextArea }),
+                    Se({}, d, { className: m, style: y, ref: o.saveTextArea }),
                   ),
                 );
               }),
@@ -1659,7 +1659,7 @@
                   a = o.props.prefixCls,
                   i = t('input', a);
                 return r['createElement'](
-                  C,
+                  S,
                   Le({}, o.props, {
                     prefixCls: i,
                     inputType: 'text',
@@ -3391,7 +3391,7 @@
       function O(e) {
         if (Array.isArray(e)) return e;
       }
-      function S(e, t) {
+      function C(e, t) {
         var n = function() {
           var n,
             o = null,
@@ -3430,9 +3430,9 @@
         };
         return n;
       }
-      function C() {
+      function S() {
         return (
-          (C =
+          (S =
             Object.assign ||
             function(e) {
               for (var t = 1; t < arguments.length; t++) {
@@ -3442,7 +3442,7 @@
               }
               return e;
             }),
-          C.apply(this, arguments)
+          S.apply(this, arguments)
         );
       }
       var P,
@@ -3613,11 +3613,11 @@
       };
       ['success', 'info', 'warning', 'error'].forEach(function(e) {
         V[e] = function(t) {
-          return V.open(C(C({}, t), { type: e }));
+          return V.open(S(S({}, t), { type: e }));
         };
       }),
         (V.warn = V.warning),
-        (V.useNotification = S(D, z));
+        (V.useNotification = C(D, z));
       t['a'] = V;
     },
     Uc92: function(e, t, n) {
@@ -3725,7 +3725,7 @@
     },
     Wcjj: function(e) {
       e.exports = JSON.parse(
-        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Borrow","button_repay":"Repay","button_deal":"Repay","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Go Bid","button_bid":"BID","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"SSC TOOLS","menus_ssclist":"SSC LIST","menus_sscmy":"MY SSC","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle(Days)","pages_pfid_my_state":"State","pages_pfid_my_staking":"Staking","pages_pfid_my_received":"Received","pages_pfid_my_time":"Create Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect Receive","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"SSC","pages_equity_amount":"Amount","pages_equity_time":"Create Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Collateralization Ratio","pages_dmw_liquidationRatio":"Liquidation Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"SSC LIST","pages_ssctools_list_collateralizationRatio":"Collateralization Ratio","pages_ssctools_list_liquidationRatio":"Liquidation Ratio","pages_ssctools_list_exchangeRatio":"Exchange Ratio","pages_myssc_title":"MY SSC","pages_myssc_index":"Index","pages_myssc_no":"No","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Mint Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Bid","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Bid Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_input_desc":"Please Input Description!","form_input_name":"Please Input Name!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","form_lable_exchange_name":"Exchange Name","state_finished":"Finished","state_valid":"Valid","state_biding":"biding","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC works best on Chrome browser.","chrome_down_btn":"Click to download Chrome browser.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"English","ko_KR":"Korean","zh_CN":"Simplified Chinese","updateDesc":"Update Description","addExchange":"Add Exchange"}',
+        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Borrow","button_repay":"Repay","button_deal":"Repay","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Go Bid","button_bid":"BID","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"AOC TOOLS","menus_ssclist":"AOC LIST","menus_sscmy":"MY AOC","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle(Days)","pages_pfid_my_state":"State","pages_pfid_my_staking":"Staking","pages_pfid_my_received":"Received","pages_pfid_my_time":"Create Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect Receive","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"AOC","pages_equity_amount":"Amount","pages_equity_time":"Create Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Collateralization Ratio","pages_dmw_liquidationRatio":"Liquidation Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"AOC LIST","pages_ssctools_list_collateralizationRatio":"Collateralization Ratio","pages_ssctools_list_liquidationRatio":"Liquidation Ratio","pages_ssctools_list_exchangeRatio":"Exchange Ratio","pages_myssc_title":"MY AOC","pages_myssc_index":"Index","pages_myssc_no":"No","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Mint Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Bid","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Bid Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_input_desc":"Please Input Description!","form_input_name":"Please Input Name!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","form_lable_exchange_name":"Exchange Name","state_finished":"Finished","state_valid":"Valid","state_biding":"biding","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC works best on Chrome browser.","chrome_down_btn":"Click to download Chrome browser.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"English","ko_KR":"Korean","zh_CN":"Simplified Chinese","updateDesc":"Update Description","addExchange":"Add Exchange"}',
       );
     },
     Z7TE: function(e, t, n) {
@@ -4212,7 +4212,7 @@
           var p = this;
           return Object(a['a'])(
             o.a.mark(function a() {
-              var m, v, w, _, x, O, S, C, P, k, j, E;
+              var m, v, w, _, x, O, C, S, P, k, j, E;
               return o.a.wrap(function(o) {
                 while (1)
                   switch ((o.prev = o.next)) {
@@ -4253,15 +4253,15 @@
                         b['a'].post('sero_getFullAddress', [[O]])
                       );
                     case 11:
-                      (S = o.sent), (x = S[O]), (_.to = x);
+                      (C = o.sent), (x = C[O]), (_.to = x);
                     case 14:
                       return (
                         (o.next = 16), b['a'].post('sero_estimateGas', [_])
                       );
                     case 16:
                       if (
-                        ((C = o.sent),
-                        (w.gas = C),
+                        ((S = o.sent),
+                        (w.gas = S),
                         (P = i['a'].dmw.address),
                         1 != f || 'issue' != e)
                       ) {
@@ -4270,7 +4270,7 @@
                       }
                       return (k = new h(x)), (o.next = 23), k.feeCoin();
                     case 23:
-                      return (j = o.sent), (o.next = 26), k.estimateGas(C);
+                      return (j = o.sent), (o.next = 26), k.estimateGas(S);
                     case 26:
                       (E = o.sent),
                         (w.feeCy = j),
@@ -4282,7 +4282,7 @@
                         'return',
                         new Promise((n, r) => {
                           s.a.executeContract(w, function(r) {
-                            y['a'].addTx(c, u, r, t, C, P, e), n(r);
+                            y['a'].addTx(c, u, r, t, S, P, e), n(r);
                           });
                         }),
                       );
@@ -4384,7 +4384,7 @@
         _ = n.n(w),
         x = n('iMMW'),
         O = n('blP1'),
-        S = (e, t, n) => {
+        C = (e, t, n) => {
           var r = 4.5;
           'success' == e &&
             n &&
@@ -4406,7 +4406,7 @@
               duration: r,
             });
         },
-        C = [
+        S = [
           {
             title: x['a'].t('pages_myssc_index'),
             dataIndex: 'index',
@@ -4539,13 +4539,13 @@
                   e['password'],
                 )
                 .then(e => {
-                  S('success', 'SUCCESS', e),
+                  C('success', 'SUCCESS', e),
                     t.setState({ loading: !1, visible: !1 });
                 })
                 .catch(e => {
                   t.setState({ loading: !1 });
                   var n = 'string' === typeof e ? e : e.message;
-                  S('error', 'Error', n);
+                  C('error', 'Error', n);
                 });
             }),
             (this.onDeal = e => {
@@ -4563,13 +4563,13 @@
                   e['password'],
                 )
                 .then(e => {
-                  S('success', 'SUCCESS', e),
+                  C('success', 'SUCCESS', e),
                     t.setState({ loading: !1, visibleDeal: !1 });
                 })
                 .catch(e => {
                   t.setState({ loading: !1 });
                   var n = 'string' === typeof e ? e : e.message;
-                  S('error', 'Error', n);
+                  C('error', 'Error', n);
                 });
             }),
             (this.onCreateAuction = e => {
@@ -4579,13 +4579,13 @@
               b['a']
                 .createAuction(n, e['password'])
                 .then(e => {
-                  S('success', 'SUCCESS', e),
+                  C('success', 'SUCCESS', e),
                     t.setState({ loading: !1, visibleAuction: !1 });
                 })
                 .catch(e => {
                   t.setState({ loading: !1 });
                   var n = 'string' === typeof e ? e : e.message;
-                  S('error', 'Error', n);
+                  C('error', 'Error', n);
                 });
             }),
             (this.pageChange = e => {
@@ -4607,7 +4607,7 @@
               .catch(t => {
                 e.setState({ loading: !1 });
                 var n = 'string' === typeof t ? t : t.message;
-                S('error', 'Error', n);
+                C('error', 'Error', n);
               });
         }
         borrow(e, t) {
@@ -4813,7 +4813,7 @@
                         'div',
                         null,
                         m.a.createElement(s['a'], {
-                          columns: C,
+                          columns: S,
                           dataSource: f,
                           pagination: !1,
                         }),
@@ -4845,7 +4845,7 @@
                         'div',
                         null,
                         m.a.createElement(s['a'], {
-                          columns: C,
+                          columns: S,
                           dataSource: [],
                           pagination: !1,
                         }),
@@ -6079,10 +6079,10 @@
           e
         );
       }
-      function S(e) {
+      function C(e) {
         return null !== e && void 0 !== e;
       }
-      function C(e, t) {
+      function S(e, t) {
         var n = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
@@ -6098,12 +6098,12 @@
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
           t % 2
-            ? C(Object(n), !0).forEach(function(t) {
+            ? S(Object(n), !0).forEach(function(t) {
                 k(e, t, n[t]);
               })
             : Object.getOwnPropertyDescriptors
             ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : C(Object(n)).forEach(function(t) {
+            : S(Object(n)).forEach(function(t) {
                 Object.defineProperty(
                   e,
                   t,
@@ -6197,8 +6197,8 @@
           w = e.firstFixLeft,
           x = e.lastFixLeft,
           O = e.firstFixRight,
-          S = e.lastFixRight,
-          C = e.appendNode,
+          C = e.lastFixRight,
+          S = e.appendNode,
           E = e.additionalProps,
           R = void 0 === E ? {} : E,
           N = e.ellipsis,
@@ -6258,9 +6258,9 @@
             k(n, ''.concat(T, '-fix-left-last'), x),
             k(n, ''.concat(T, '-fix-right'), Q),
             k(n, ''.concat(T, '-fix-right-first'), O),
-            k(n, ''.concat(T, '-fix-right-last'), S),
+            k(n, ''.concat(T, '-fix-right-last'), C),
             k(n, ''.concat(T, '-ellipsis'), N),
-            k(n, ''.concat(T, '-with-append'), C),
+            k(n, ''.concat(T, '-with-append'), S),
             n),
             R.className,
             L,
@@ -6268,7 +6268,7 @@
           style: P({}, R.style, {}, Z, {}, G, {}, q),
           ref: M(y) ? t : null,
         });
-        return r['createElement'](y, Object.assign({}, J), C, a);
+        return r['createElement'](y, Object.assign({}, J), S, a);
       }
       var N = r['forwardRef'](R);
       N.displayName = 'Cell';
@@ -6859,7 +6859,7 @@
         );
       }
       function we(e, t) {
-        return Ce(e) || Se(e, t) || xe(e, t) || _e();
+        return Se(e) || Ce(e, t) || xe(e, t) || _e();
       }
       function _e() {
         throw new TypeError(
@@ -6886,7 +6886,7 @@
         for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
         return r;
       }
-      function Se(e, t) {
+      function Ce(e, t) {
         if ('undefined' !== typeof Symbol && Symbol.iterator in Object(e)) {
           var n = [],
             r = !0,
@@ -6911,7 +6911,7 @@
           return n;
         }
       }
-      function Ce(e) {
+      function Se(e) {
         if (Array.isArray(e)) return e;
       }
       function Pe(e) {
@@ -6935,8 +6935,8 @@
           w = r['useContext'](me),
           _ = w.fixHeader,
           O = w.fixColumn,
-          S = w.horizonScroll,
-          C = w.componentWidth,
+          C = w.horizonScroll,
+          S = w.componentWidth,
           P = w.flattenColumns,
           k = w.expandableType,
           j = w.expandRowByClick,
@@ -7068,9 +7068,9 @@
               prefixCls: h,
               fixHeader: _,
               fixColumn: O,
-              horizonScroll: S,
+              horizonScroll: C,
               component: m,
-              componentWidth: C,
+              componentWidth: S,
               cellComponent: y,
               colSpan: P.length,
             },
@@ -7658,7 +7658,7 @@
         );
       }
       function ht(e) {
-        return _t(e) || wt(e) || St(e) || gt();
+        return _t(e) || wt(e) || Ct(e) || gt();
       }
       function gt() {
         throw new TypeError(
@@ -7670,19 +7670,19 @@
           return Array.from(e);
       }
       function _t(e) {
-        if (Array.isArray(e)) return Ct(e);
+        if (Array.isArray(e)) return St(e);
       }
       function xt(e, t) {
-        return kt(e) || Pt(e, t) || St(e, t) || Ot();
+        return kt(e) || Pt(e, t) || Ct(e, t) || Ot();
       }
       function Ot() {
         throw new TypeError(
           'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
         );
       }
-      function St(e, t) {
+      function Ct(e, t) {
         if (e) {
-          if ('string' === typeof e) return Ct(e, t);
+          if ('string' === typeof e) return St(e, t);
           var n = Object.prototype.toString.call(e).slice(8, -1);
           return (
             'Object' === n && e.constructor && (n = e.constructor.name),
@@ -7690,12 +7690,12 @@
               ? Array.from(n)
               : 'Arguments' === n ||
                 /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-              ? Ct(e, t)
+              ? St(e, t)
               : void 0
           );
         }
       }
-      function Ct(e, t) {
+      function St(e, t) {
         (null == t || t > e.length) && (t = e.length);
         for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
         return r;
@@ -7759,7 +7759,7 @@
           h = e.summary,
           g = e.id,
           w = e.showHeader,
-          C = e.components,
+          S = e.components,
           P = e.emptyText,
           k = e.onRow,
           j = e.onHeaderRow,
@@ -7780,9 +7780,9 @@
           B,
           q = r['useMemo'](
             function() {
-              return O(C, {});
+              return O(S, {});
             },
-            [C],
+            [S],
           ),
           W = r['useCallback'](
             function(e, t) {
@@ -7862,7 +7862,7 @@
           _e = xt(we, 2),
           xe = _e[0],
           Oe = _e[1],
-          Se = Qe(
+          Ce = Qe(
             bt({}, e, {}, H, {
               expandable: !!ee,
               expandedKeys: he,
@@ -7874,9 +7874,9 @@
             }),
             E === At ? A : null,
           ),
-          Ce = xt(Se, 2),
-          Pe = Ce[0],
-          ke = Ce[1],
+          Se = xt(Ce, 2),
+          Pe = Se[0],
+          ke = Se[1],
           je = r['useMemo'](
             function() {
               return { columns: Pe, flattenColumns: ke };
@@ -7909,8 +7909,8 @@
             [Ge.join('_')],
           ),
           Xe = ct(Ye, ke.length, y),
-          Ze = R && d && S(d.y),
-          Je = d && S(d.x),
+          Ze = R && d && C(d.y),
+          Je = d && C(d.x),
           $e =
             Je &&
             ke.some(function(e) {
@@ -7988,13 +7988,13 @@
             },
             [Ze, $e, ke, m],
           ),
-          St = {
+          Ct = {
             colWidths: Ye,
             columCount: ke.length,
             stickyOffsets: Xe,
             onHeaderRow: j,
           },
-          Ct = r['useMemo'](
+          St = r['useMemo'](
             function() {
               return R ? null : 'function' === typeof P ? P() : P;
             },
@@ -8008,7 +8008,7 @@
             rowExpandable: oe,
             getRowKey: U,
             onRow: k,
-            emptyNode: Ct,
+            emptyNode: St,
             childrenColumnName: se,
           }),
           kt = r['createElement']($, {
@@ -8023,7 +8023,7 @@
         Ze
           ? ('function' === typeof Rt
               ? ((wt = Rt(M, { scrollbarSize: T, ref: Re, onScroll: st })),
-                (St.colWidths = ke.map(function(e, t) {
+                (Ct.colWidths = ke.map(function(e, t) {
                   var n = e.width,
                     r = t === Pe.length - 1 ? n - T : n;
                   return 'number' !== typeof r || Number.isNaN(r)
@@ -8064,7 +8064,7 @@
                   },
                   r['createElement'](
                     pe,
-                    Object.assign({}, St, je, { direction: y }),
+                    Object.assign({}, Ct, je, { direction: y }),
                   ),
                 ),
               wt,
@@ -8081,7 +8081,7 @@
                 _t,
                 { style: bt({}, B, { tableLayout: Ot }) },
                 kt,
-                !1 !== w && r['createElement'](L, Object.assign({}, St, je)),
+                !1 !== w && r['createElement'](L, Object.assign({}, Ct, je)),
                 Pt,
                 Mt,
               ),
@@ -8641,10 +8641,10 @@
             Object.defineProperty(e, r.key, r);
         }
       }
-      function Sn(e, t, n) {
+      function Cn(e, t, n) {
         return t && On(e.prototype, t), n && On(e, n), e;
       }
-      function Cn(e, t) {
+      function Sn(e, t) {
         if ('function' !== typeof t && null !== t)
           throw new TypeError(
             'Super expression must either be null or a function',
@@ -8729,7 +8729,7 @@
         },
         Rn = r['createContext'](null),
         Nn = (function(e) {
-          Cn(n, e);
+          Sn(n, e);
           var t = kn(n);
           function n(e) {
             var o;
@@ -8840,7 +8840,7 @@
             );
           }
           return (
-            Sn(
+            Cn(
               n,
               [
                 {
@@ -9445,7 +9445,7 @@
         if (!(e instanceof t))
           throw new TypeError('Cannot call a class as a function');
       }
-      function Sr(e, t) {
+      function Cr(e, t) {
         for (var n = 0; n < t.length; n++) {
           var r = t[n];
           (r.enumerable = r.enumerable || !1),
@@ -9454,8 +9454,8 @@
             Object.defineProperty(e, r.key, r);
         }
       }
-      function Cr(e, t, n) {
-        return t && Sr(e.prototype, t), n && Sr(e, n), e;
+      function Sr(e, t, n) {
+        return t && Cr(e.prototype, t), n && Cr(e, n), e;
       }
       function Pr(e, t) {
         if ('function' !== typeof t && null !== t)
@@ -9630,7 +9630,7 @@
           return (o.state = { value: a, prevPropValue: e.value }), o;
         }
         return (
-          Cr(
+          Sr(
             n,
             [
               {
@@ -9849,8 +9849,8 @@
           _ = t.getRowKey,
           x = t.expandType,
           O = t.childrenColumnName,
-          S = t.locale,
-          C = t.expandIconColumnIndex,
+          C = t.locale,
+          S = t.expandIconColumnIndex,
           P = t.getPopupContainer,
           k = r['useState'](),
           j = Lr(k, 2),
@@ -9904,7 +9904,7 @@
                 return e === eo
                   ? {
                       key: 'all',
-                      text: S.selectionAll,
+                      text: C.selectionAll,
                       onSelect: function() {
                         z(
                           h.map(function(e, t) {
@@ -9916,7 +9916,7 @@
                   : e === to
                   ? {
                       key: 'invert',
-                      text: S.selectInvert,
+                      text: C.selectInvert,
                       onSelect: function() {
                         var e = new Set(M);
                         g.forEach(function(t, n) {
@@ -9961,7 +9961,7 @@
                 h = f.some(function(e) {
                   return o.has(e);
                 }),
-                S = function() {
+                C = function() {
                   var e = [];
                   m
                     ? f.forEach(function(t) {
@@ -10030,7 +10030,7 @@
                   r['createElement']($n, {
                     checked: !E && !!n.length && m,
                     indeterminate: !m && h,
-                    onChange: S,
+                    onChange: C,
                     disabled: 0 === n.length || E,
                   }),
                   k,
@@ -10127,7 +10127,7 @@
                   title: e.columnTitle || c,
                   render: A,
                 };
-              if ('row' === x && t.length && !C) {
+              if ('row' === x && t.length && !S) {
                 var R = Br(t),
                   N = R[0],
                   F = R.slice(1),
@@ -10228,7 +10228,7 @@
         );
       }
       function wo(e) {
-        return So(e) || Oo(e) || xo(e) || _o();
+        return Co(e) || Oo(e) || xo(e) || _o();
       }
       function _o() {
         throw new TypeError(
@@ -10237,7 +10237,7 @@
       }
       function xo(e, t) {
         if (e) {
-          if ('string' === typeof e) return Co(e, t);
+          if ('string' === typeof e) return So(e, t);
           var n = Object.prototype.toString.call(e).slice(8, -1);
           return (
             'Object' === n && e.constructor && (n = e.constructor.name),
@@ -10245,7 +10245,7 @@
               ? Array.from(n)
               : 'Arguments' === n ||
                 /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-              ? Co(e, t)
+              ? So(e, t)
               : void 0
           );
         }
@@ -10254,10 +10254,10 @@
         if ('undefined' !== typeof Symbol && Symbol.iterator in Object(e))
           return Array.from(e);
       }
-      function So(e) {
-        if (Array.isArray(e)) return Co(e);
+      function Co(e) {
+        if (Array.isArray(e)) return So(e);
       }
-      function Co(e, t) {
+      function So(e, t) {
         (null == t || t > e.length) && (t = e.length);
         for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
         return r;
@@ -10359,9 +10359,9 @@
               _ = c || {},
               x = _.cancelSort,
               O = _.triggerAsc,
-              S = _.triggerDesc,
-              C = x;
-            h === jo ? (C = S) : h === ko && (C = O),
+              C = _.triggerDesc,
+              S = x;
+            h === jo ? (S = C) : h === ko && (S = O),
               (p = go(go({}, p), {
                 className: i()(
                   p.className,
@@ -10391,7 +10391,7 @@
                   return m
                     ? r['createElement'](
                         lo['a'],
-                        { title: C },
+                        { title: S },
                         r['createElement'](
                           'div',
                           {
@@ -10779,9 +10779,9 @@
           _ = 'boolean' === typeof d ? d : v,
           x = u && u.filteredKeys,
           O = Zo(x || []),
-          S = $o(O, 2),
-          C = S[0],
-          P = S[1],
+          C = $o(O, 2),
+          S = C[0],
+          P = C[1],
           k = function(e) {
             var t = e.selectedKeys;
             P(t);
@@ -10821,7 +10821,7 @@
               : null;
           },
           z = function() {
-            T(C());
+            T(S());
           },
           V = function() {
             P([]), T([]);
@@ -10838,7 +10838,7 @@
             setSelectedKeys: function(e) {
               return k({ selectedKeys: e });
             },
-            selectedKeys: C(),
+            selectedKeys: S(),
             confirm: z,
             clearFilters: V,
             filters: n.filters,
@@ -10846,7 +10846,7 @@
           });
         else if (n.filterDropdown) D = n.filterDropdown;
         else {
-          var B = C() || [];
+          var B = S() || [];
           D = r['createElement'](
             r['Fragment'],
             null,
@@ -10864,7 +10864,7 @@
                 openKeys: A,
                 onOpenChange: R,
               },
-              ua(n.filters || [], t, C(), c),
+              ua(n.filters || [], t, S(), c),
             ),
             r['createElement'](
               'div',
@@ -11094,7 +11094,7 @@
             : n;
         });
       }
-      function Sa(e) {
+      function Ca(e) {
         var t = {};
         return (
           e.forEach(function(e) {
@@ -11105,13 +11105,13 @@
           t
         );
       }
-      function Ca(e) {
+      function Sa(e) {
         var t = [];
         return (
           (e || []).forEach(function(e) {
             var n = e.value,
               r = e.children;
-            t.push(n), r && (t = [].concat(ba(t), ba(Ca(r))));
+            t.push(n), r && (t = [].concat(ba(t), ba(Sa(r))));
           }),
           t
         );
@@ -11125,7 +11125,7 @@
           return r && a && a.length
             ? e.filter(function(e) {
                 return a.some(function(t) {
-                  var n = Ca(o),
+                  var n = Sa(o),
                     a = n.findIndex(function(e) {
                       return String(e) === String(t);
                     }),
@@ -11168,7 +11168,7 @@
           ),
           y = r['useCallback'](
             function() {
-              return Sa(m);
+              return Ca(m);
             },
             [m],
           ),
@@ -11177,7 +11177,7 @@
               var n = t.key;
               return n !== e.key;
             });
-            t.push(e), d(t), i(Sa(t), t);
+            t.push(e), d(t), i(Ca(t), t);
           },
           v = function(e) {
             return Oa(t, n, e, m, b, c, u);
@@ -11448,8 +11448,8 @@
           _ = e.loading,
           x = e.expandIcon,
           O = e.expandable,
-          S = e.expandedRowRender,
-          C = e.expandIconColumnIndex,
+          C = e.expandedRowRender,
+          S = e.expandIconColumnIndex,
           P = e.indentSize,
           k = e.scroll,
           j = e.sortDirections,
@@ -11470,7 +11470,7 @@
           L = q.getPrefixCls,
           W = L('table', n),
           U = L('dropdown', s),
-          H = Ja({ childrenColumnName: h, expandIconColumnIndex: C }, O),
+          H = Ja({ childrenColumnName: h, expandIconColumnIndex: S }, O),
           G = H.childrenColumnName,
           Y = void 0 === G ? 'children' : G,
           Q = r['useMemo'](
@@ -11479,7 +11479,7 @@
                 return e[Y];
               })
                 ? 'nest'
-                : S || (O && O.expandedRowRender)
+                : C || (O && O.expandedRowRender)
                 ? 'row'
                 : null;
             },
@@ -11584,17 +11584,17 @@
             });
           },
           Oe = Qt(ve.length, p, xe),
-          Se = Ha(Oe, 2),
-          Ce = Se[0],
-          Pe = Se[1];
-        (te.pagination = !1 === p ? {} : Yt(p, Ce)), (te.resetPagination = Pe);
+          Ce = Ha(Oe, 2),
+          Se = Ce[0],
+          Pe = Ce[1];
+        (te.pagination = !1 === p ? {} : Yt(p, Se)), (te.resetPagination = Pe);
         var ke = r['useMemo'](
             function() {
-              if (!1 === p || !Ce.pageSize) return ve;
-              var e = Ce.current,
+              if (!1 === p || !Se.pageSize) return ve;
+              var e = Se.current,
                 t = void 0 === e ? 1 : e,
-                n = Ce.total,
-                r = Ce.pageSize,
+                n = Se.total,
+                r = Se.pageSize,
                 o = void 0 === r ? Gt : r;
               if (ve.length < n)
                 return ve.length > o
@@ -11608,7 +11608,7 @@
               var a = ve.slice((t - 1) * o, t * o);
               return a;
             },
-            [!!p, ve, Ce && Ce.current, Ce && Ce.pageSize, Ce && Ce.total],
+            [!!p, ve, Se && Se.current, Se && Se.pageSize, Se && Se.total],
           ),
           je = oo(d, {
             prefixCls: W,
@@ -11651,8 +11651,8 @@
           );
         if (!1 !== p) {
           var ze;
-          ze = Ce.size
-            ? Ce.size
+          ze = Se.size
+            ? Se.size
             : 'small' === K || 'middle' === K
             ? 'small'
             : void 0;
@@ -11670,16 +11670,16 @@
                     .concat(W, '-pagination-')
                     .concat(e),
                 },
-                Ce,
+                Se,
                 { size: ze },
               ),
             );
           };
-          if (null !== Ce.position && Array.isArray(Ce.position)) {
-            var Ke = Ce.position.find(function(e) {
+          if (null !== Se.position && Array.isArray(Se.position)) {
+            var Ke = Se.position.find(function(e) {
                 return -1 !== e.indexOf('top');
               }),
-              Fe = Ce.position.find(function(e) {
+              Fe = Se.position.find(function(e) {
                 return -1 !== e.indexOf('bottom');
               });
             Ke || Fe
