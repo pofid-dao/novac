@@ -9,6 +9,7 @@ import {
   Table,
   Spin,
   notification,
+  Tag,
   Pagination,
 } from 'antd';
 import './index.css';
@@ -52,18 +53,19 @@ const notify = (type: string, message: string, desc: string) => {
   });
 };
 const columns = [
-  {
-    title: i18n.t('pages_myssc_index'),
-    dataIndex: 'index',
-    key: 'index',
-    width: '5%',
-  },
-  {
-    title: i18n.t('pages_myssc_no'),
-    dataIndex: 'no',
-    key: 'no',
-    width: '5%',
-  },
+  // {
+  //   title: i18n.t('pages_myssc_index'),
+  //   dataIndex: 'index',
+  //   key: 'index',
+  //   width: '5%',
+  // },
+  //
+  // {
+  //   title: i18n.t('pages_myssc_no'),
+  //   dataIndex: 'no',
+  //   key: 'no',
+  //   width: '5%',
+  // },
   {
     title: i18n.t('pages_myssc_pledged'),
     dataIndex: 'backedValue',
@@ -75,6 +77,13 @@ const columns = [
     dataIndex: 'mintValue',
     key: 'mintValue',
     width: '15%',
+  },
+
+  {
+    title: i18n.t('pages_myssc_canClaimtValue'),
+    dataIndex: 'canClaimtValue',
+    key: 'canClaimtValue',
+    width: '10%',
   },
   {
     title: i18n.t('pages_myssc_fee'),
@@ -110,11 +119,11 @@ const columns = [
 
 function convertStatus(status: number) {
   if (status === 1) {
-    return 'Normal';
+    return i18n.t('pages_myssc_normal');
   } else if (status === 2) {
-    return 'Liquidation';
+    return i18n.t('pages_myssc_biding');
   } else if (status === 3) {
-    return 'Auction created';
+    return 'UnKnow';
   } else if (status === 4) {
     return 'Unsold';
   } else if (status === 0) {
@@ -155,6 +164,9 @@ class SSCTools extends Component {
     selectMintCoin: '',
     proxy: false,
     minBorrowValue: 0,
+
+    estimatAddDepositAmount: [],
+    lastIndex: 0,
   };
 
   componentDidMount(): void {
@@ -243,12 +255,18 @@ class SSCTools extends Component {
     that.setVisibleDeal(true);
   }
 
-  auction(contractIndex: number) {
+  deposit(contractIndex: number) {
     const that = this;
-    that.setState({
-      contractIndex: contractIndex,
-    });
-    that.setVisibleAuction(true);
+    dmw
+      .estimatAddDepositAmount(contractIndex)
+      .then((rest: any) => {
+        that.setState({
+          contractIndex: contractIndex,
+          estimatAddDepositAmount: rest,
+        });
+        that.setVisibleAuction(true);
+      })
+      .catch(e => {});
   }
 
   setAuctionPrice(contractIndex: number) {
@@ -346,8 +364,9 @@ class SSCTools extends Component {
       });
   };
 
-  onCreateAuction = (values: any) => {
+  onDeposit = (values: any) => {
     const that = this;
+    const { estimatAddDepositAmount, selectBackedCoin } = this.state;
     that.setState({
       visibleAuction: false,
       loading: true,
@@ -355,7 +374,12 @@ class SSCTools extends Component {
     const { contractIndex } = that.state;
 
     dmw
-      .createAuction(contractIndex, values['password'])
+      .deposit(
+        contractIndex,
+        values['password'],
+        estimatAddDepositAmount[0],
+        selectBackedCoin,
+      )
       .then(rest => {
         notify('success', 'SUCCESS', rest);
         that.setState({
@@ -398,10 +422,11 @@ class SSCTools extends Component {
         const records = await dmwInfo.keyPageContracts(
           backeCoin,
           mintCoin,
-          (pageNo - 1) * pageSize,
+          0,
           pageSize,
         );
         const datas = JSON.parse(records);
+        console.log('datas>>', datas);
         if (panes[backeCoin]) {
           let org: Array<any> = panes[backeCoin];
           panes[backeCoin] = org.concat([data]);
@@ -430,15 +455,11 @@ class SSCTools extends Component {
       selectBackedCoin,
       selectMintCoin,
       subPanes,
+      lastIndex,
     } = this.state;
     let tmpSubPanes: any = subPanes;
     dmwInfo
-      .keyPageContracts(
-        selectBackedCoin,
-        selectMintCoin,
-        (pageNo - 1) * pageSize,
-        pageSize,
-      )
+      .keyPageContracts(selectBackedCoin, selectMintCoin, lastIndex, pageSize)
       .then(records => {
         const datas = JSON.parse(records);
         console.log('datas==', datas);
@@ -446,6 +467,7 @@ class SSCTools extends Component {
         that.setState({
           subPanes: tmpSubPanes,
           loading: false,
+          lastIndex: datas.lastIndex,
         });
       })
       .catch(error => {
@@ -495,15 +517,14 @@ class SSCTools extends Component {
       for (let i = 0; i < datas.data.length; i++) {
         let buttons = [];
         const d = datas.data[i];
-        const currentRate = new BigNumber(d.backedValue)
+        const currentRateBig = new BigNumber(d.backedValue)
           .multipliedBy(new BigNumber(currentRateDenominator))
-          .dividedBy(new BigNumber(currentRateNumerator))
-          .dividedBy(new BigNumber(d.mintValue))
           .multipliedBy(100)
-          .toFixed(2);
+          .dividedBy(new BigNumber(currentRateNumerator))
+          .dividedBy(new BigNumber(d.mintValue));
+        const currentRate = currentRateBig.toFixed(2);
 
-        if (d.status == 1) {
-          // buttons.push(<Button type={"primary"} onClick={()=>{that.borrow(backeCoin,mintCoin)}} block style={{marginTop:'5px'}}>Borrow</Button>);
+        if (d.status == 1 || d.status == 2) {
           if (d.owns) {
             buttons.push(
               <Button
@@ -525,74 +546,54 @@ class SSCTools extends Component {
               </Button>,
             );
           }
-        } else if (d.status == 2) {
-          if (d.owns) {
+
+          if (currentRateBig.comparedTo(collateralRate) == -1 && d.owns) {
             buttons.push(
               <Button
                 type={'primary'}
                 onClick={() => {
-                  // @ts-ignore
-                  const dcmls = decimals[mintCoin];
-                  that.deal(
-                    backeCoin,
-                    mintCoin,
-                    utils.toValue(d.mintValue, dcmls).toString(10),
-                    d.contractIndex,
-                  );
+                  that.deposit(d.contractIndex);
                 }}
                 block
                 style={{ marginTop: '5px' }}
               >
-                {i18n.t('button_repay')}
+                {i18n.t('button_deposit')}
               </Button>,
             );
-          } else {
+          } else if (currentRateBig.comparedTo(thresholdRate) < 0) {
             buttons.push(
               <Button
                 type={'primary'}
                 onClick={() => {
-                  that.auction(d.contractIndex);
+                  that.deposit(d.contractIndex);
                 }}
                 block
                 style={{ marginTop: '5px' }}
               >
-                {i18n.t('button_createAuction')}
+                {i18n.t('button_deposit')}
               </Button>,
             );
           }
-        } else if (d.status == 3) {
-          buttons.push(
-            <Button
-              block
-              type={'primary'}
-              onClick={() => {
-                url.goPage(url.path.auction);
-              }}
-            >
-              {i18n.t('button_bidding')}
-            </Button>,
-          );
-        } else if (d.status == 4) {
-          buttons.push(
-            <Button
-              type={'primary'}
-              onClick={() => {
-                that.setAuctionPrice(d.contractIndex);
-              }}
-              block
-              style={{ marginTop: '5px' }}
-            >
-              {i18n.t('button_createAuction')}
-            </Button>,
-          );
         }
+
+        console.log('buttons>> ', buttons);
+
         // @ts-ignore
         const decimal = decimals[data.backeCoin];
         // @ts-ignore
         const decima2 = decimals[data.mintCoin];
         datasource.push({
-          index: i + 1,
-          no: d.contractIndex + 100000,
+          index: (
+            <div>
+              {i + 1} {d.owns ? <Tag color="volcano">Owner</Tag> : ''}
+            </div>
+          ),
+          no: (
+            <div>
+              {d.contractIndex + 100000}{' '}
+              {d.owns ? <Tag color="volcano">Owner</Tag> : ''}
+            </div>
+          ),
           backedValue:
             utils.toValue(d.backedValue, decimal).toFixed(4) +
             ' ' +
@@ -601,7 +602,11 @@ class SSCTools extends Component {
             utils.toValue(d.mintValue, decima2).toFixed(4) +
             ' ' +
             data.mintCoin,
-          fee: utils.toValue(d.fee, decima2).toFixed(4),
+          canClaimtValue:
+            utils.toValue(d.canClaimtValue, decimal).toFixed(4) +
+            ' ' +
+            data.backeCoin,
+          fee: utils.toValue(d.fee, decima2).toFixed(4) + ' ' + data.mintCoin,
           currentratio: currentRate + '%',
           status: convertStatus(d.status),
           time: utils.formatTime(d.createTime * 1000),
@@ -736,16 +741,30 @@ class SSCTools extends Component {
       amount,
       fee,
       visibleAuction,
-      visibleAuctionPrice,
       mintValue,
       subPanes,
       panes,
       minBorrowValue,
+      estimatAddDepositAmount,
+      selectBackedCoin,
     } = this.state;
     let params = {
       mintCoin,
       mintValue,
     };
+
+    let desc = [];
+    if (estimatAddDepositAmount && estimatAddDepositAmount.length > 0) {
+      const decimal = utils.getDecimalCache(selectBackedCoin);
+      console.log('decimal>>> ', utils.getDecimalCache(selectBackedCoin));
+      desc.push(
+        `Deposit ${utils
+          .toValue(estimatAddDepositAmount[0], decimal)
+          .toFixed(4)} ${selectBackedCoin} , Possible Receive ${utils
+          .toValue(estimatAddDepositAmount[1], decimal)
+          .toFixed(4)} ${selectBackedCoin}`,
+      );
+    }
 
     const panesKeys = Object.keys(panes);
     const tabPanes = [];
@@ -816,11 +835,12 @@ class SSCTools extends Component {
         />
         <PasswordForm
           visible={visibleAuction}
-          onCreate={this.onCreateAuction}
+          onCreate={this.onDeposit}
           onCancel={() => {
             this.setVisibleAuction(false);
           }}
-          title={i18n.t('button_createAuction')}
+          title={i18n.t('button_deposit')}
+          desc={desc}
         />
       </div>
     );

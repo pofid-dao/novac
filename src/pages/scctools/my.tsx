@@ -3,19 +3,19 @@ import {
   Card,
   Col,
   Row,
-  Divider,
   Button,
   Tabs,
   Descriptions,
   Table,
   Spin,
-  message,
   notification,
   Pagination,
+  Tag,
 } from 'antd';
 import './index.css';
 import utils from '@/common/utils';
 import dmw from '@/service/dmw';
+import dmwBase from '@/service/dmwBase';
 import dmwInfo from '@/service/dmwInfo';
 import BorrowForm from '@/components/Borrow';
 import DealForm from '@/components/Deal';
@@ -23,6 +23,8 @@ import PasswordForm from '@/components/Password';
 import BigNumber from 'bignumber.js';
 import i18n from '@/i18n';
 import { url } from '@/common/url';
+
+const { TabPane } = Tabs;
 
 const notify = (type: string, message: string, desc: string) => {
   let d = 4.5;
@@ -50,43 +52,50 @@ const notify = (type: string, message: string, desc: string) => {
     // bottom: 50,
   });
 };
-
 const columns = [
-  {
-    title: i18n.t('pages_myssc_index'),
-    dataIndex: 'index',
-    key: 'index',
-    width: '5%',
-  },
-  {
-    title: i18n.t('pages_myssc_no'),
-    dataIndex: 'no',
-    key: 'no',
-    width: '5%',
-  },
+  // {
+  //   title: i18n.t('pages_myssc_index'),
+  //   dataIndex: 'index',
+  //   key: 'index',
+  //   width: '5%',
+  // },
+  // {
+  //   title: i18n.t('pages_myssc_no'),
+  //   dataIndex: 'no',
+  //   key: 'no',
+  //   width: '5%',
+  // },
   {
     title: i18n.t('pages_myssc_pledged'),
     dataIndex: 'backedValue',
     key: 'backedValue',
-    width: '15%',
+    width: '20%',
   },
+  //
+  // {
+  //   title: i18n.t('pages_myssc_mintCoins'),
+  //   dataIndex: 'mintValue',
+  //   key: 'mintValue',
+  //   width: '15%',
+  // },
+
   {
-    title: i18n.t('pages_myssc_mintCoins'),
-    dataIndex: 'mintValue',
-    key: 'mintValue',
+    title: i18n.t('pages_myssc_canClaimtValue'),
+    dataIndex: 'canClaimtValue',
+    key: 'canClaimtValue',
     width: '15%',
   },
   {
     title: i18n.t('pages_myssc_fee'),
     dataIndex: 'fee',
     key: 'fee',
-    width: '10%',
+    width: '15%',
   },
   {
     title: i18n.t('pages_myssc_currentRatio'),
     dataIndex: 'currentratio',
     key: 'currentratio',
-    width: '15%',
+    width: '10%',
   },
   {
     title: i18n.t('pages_myssc_status'),
@@ -110,11 +119,11 @@ const columns = [
 
 function convertStatus(status: number) {
   if (status === 1) {
-    return 'Normal';
+    return i18n.t('pages_myssc_normal');
   } else if (status === 2) {
-    return 'Liquidation';
+    return i18n.t('pages_myssc_biding');
   } else if (status === 3) {
-    return 'Auction created';
+    return 'UnKnow';
   } else if (status === 4) {
     return 'Unsold';
   } else if (status === 0) {
@@ -122,8 +131,9 @@ function convertStatus(status: number) {
   }
 }
 
-let mySSCTimerId: any = null;
-class MySSC extends Component {
+let sscTimerId: any = null;
+
+class SSCTools extends Component {
   state = {
     visible: false,
     visibleDeal: false,
@@ -136,14 +146,27 @@ class MySSC extends Component {
 
     backedCoin: '',
     mintCoin: '',
-    mintValue: 0,
     amount: '',
     fee: '',
     contractIndex: 0,
 
     loading: false,
-    queryOwn: true,
-    total: 0,
+
+    queryOwn: false,
+    mintValue: 0,
+
+    subPanes: {},
+    panes: {},
+
+    decimals: {},
+
+    selectBackedCoin: '',
+    selectMintCoin: '',
+    proxy: false,
+    minBorrowValue: 0,
+
+    estimatAddDepositAmount: [],
+    lastIndex: 0,
   };
 
   componentDidMount(): void {
@@ -151,9 +174,8 @@ class MySSC extends Component {
     that.setState({
       loading: true,
     });
-
     that
-      .list()
+      .list(that)
       .then(() => {
         that.setState({
           loading: false,
@@ -167,10 +189,13 @@ class MySSC extends Component {
         notify('error', 'Error', err);
       });
 
-    // if(mySSCTimerId == null){
-    //   mySSCTimerId = setInterval(function () {
-    //     that.list().catch(e => {});
-    //   },10 * 1000 )
+    // if (sscTimerId == null) {
+    //   sscTimerId = setInterval(function() {
+    //     that
+    //       .list(that)
+    //       .then(() => {})
+    //       .catch(e => {});
+    //   }, 10 * 1000);
     // }
   }
 
@@ -198,13 +223,20 @@ class MySSC extends Component {
     });
   };
 
-  borrow(backedCoin: string, mintCoin: string) {
+  borrow(backedCoin: string, mintCoin: string, proxy: any) {
     const that = this;
-    that.setState({
-      backedCoin: backedCoin,
-      mintCoin: mintCoin,
+    const decimal = utils.getDecimalCache(backedCoin);
+    dmw.getMinBackedAmount(backedCoin).then(rest => {
+      that.setState({
+        backedCoin: backedCoin,
+        mintCoin: mintCoin,
+        proxy: proxy,
+        minBorrowValue: utils
+          .toValue(new BigNumber(rest).toString(10), decimal)
+          .toString(10),
+      });
+      that.setVisible(true);
     });
-    that.setVisible(true);
   }
 
   deal(
@@ -217,18 +249,24 @@ class MySSC extends Component {
     that.setState({
       backedCoin: backedCoin,
       mintCoin: mintCoin,
-      contractIndex: contractIndex,
       mintValue: mintValue,
+      contractIndex: contractIndex,
     });
     that.setVisibleDeal(true);
   }
 
-  auction(contractIndex: number) {
+  deposit(contractIndex: number) {
     const that = this;
-    that.setState({
-      contractIndex: contractIndex,
-    });
-    that.setVisibleAuction(true);
+    dmw
+      .estimatAddDepositAmount(contractIndex)
+      .then((rest: any) => {
+        that.setState({
+          contractIndex: contractIndex,
+          estimatAddDepositAmount: rest,
+        });
+        that.setVisibleAuction(true);
+      })
+      .catch(e => {});
   }
 
   setAuctionPrice(contractIndex: number) {
@@ -268,7 +306,7 @@ class MySSC extends Component {
       loading: true,
     });
     const amount = values['amountes'];
-    const { contractIndex, mintCoin, backedCoin } = that.state;
+    const { proxy, mintCoin, backedCoin } = that.state;
 
     dmw
       .issue(
@@ -276,6 +314,7 @@ class MySSC extends Component {
         backedCoin,
         utils.fromValue(amount, 18).toString(10),
         values['password'],
+        proxy,
       )
       .then(rest => {
         notify('success', 'SUCCESS', rest);
@@ -325,8 +364,9 @@ class MySSC extends Component {
       });
   };
 
-  onCreateAuction = (values: any) => {
+  onDeposit = (values: any) => {
     const that = this;
+    const { estimatAddDepositAmount, selectBackedCoin } = this.state;
     that.setState({
       visibleAuction: false,
       loading: true,
@@ -334,7 +374,12 @@ class MySSC extends Component {
     const { contractIndex } = that.state;
 
     dmw
-      .createAuction(contractIndex, values['password'])
+      .deposit(
+        contractIndex,
+        values['password'],
+        estimatAddDepositAmount[0],
+        selectBackedCoin,
+      )
       .then(rest => {
         notify('success', 'SUCCESS', rest);
         that.setState({
@@ -351,54 +396,136 @@ class MySSC extends Component {
       });
   };
 
-  async list() {
+  async list(that: any) {
+    const { pageNo, pageSize } = that.state;
+    const rest: any = await dmwBase.getTradingPairs();
+    const arr = JSON.parse(rest);
+    let decimals: any = {};
+    if (arr.length > 0) {
+      let subPanes: any = {};
+      let panes: any = {};
+      let selectBackedCoin: any;
+      let selectMintCoin: any;
+      for (let i = 0; i < arr.length; i++) {
+        const data = arr[i];
+        const backeCoin: string = data.backeCoin;
+        const mintCoin: string = data.mintCoin;
+        if (i == 0) {
+          selectBackedCoin = backeCoin;
+          selectMintCoin = mintCoin;
+        }
+        const d1 = await utils.getDecimal(backeCoin);
+        const d2 = await utils.getDecimal(mintCoin);
+        decimals[backeCoin] = d1;
+        decimals[mintCoin] = d2;
+
+        const records = await dmwInfo.myPageKeyContracts(
+          backeCoin,
+          mintCoin,
+          0,
+          pageSize,
+        );
+        const datas = JSON.parse(records);
+        console.log('datas>>', datas);
+        if (panes[backeCoin]) {
+          let org: Array<any> = panes[backeCoin];
+          panes[backeCoin] = org.concat([data]);
+        } else {
+          panes[backeCoin] = [data];
+        }
+        subPanes[subPanesKey(backeCoin, mintCoin)] = datas;
+      }
+      console.log('subPanes>>>> ', subPanes);
+
+      that.setState({
+        panes: panes,
+        decimals: decimals,
+        subPanes: subPanes,
+        selectBackedCoin: selectBackedCoin,
+        selectMintCoin: selectMintCoin,
+      });
+    }
+  }
+
+  getRecords = () => {
     const that = this;
-    const { pageNo, pageSize } = this.state;
-    let result: any = await dmwInfo.myPageContracts(
-      (pageNo - 1) * pageSize,
+    const {
+      pageNo,
       pageSize,
-    );
+      selectBackedCoin,
+      selectMintCoin,
+      subPanes,
+      lastIndex,
+    } = this.state;
+    let tmpSubPanes: any = subPanes;
+    dmwInfo
+      .myPageKeyContracts(selectBackedCoin, selectMintCoin, lastIndex, pageSize)
+      .then(records => {
+        const datas = JSON.parse(records);
+        console.log('datas==', datas);
+        tmpSubPanes[subPanesKey(selectBackedCoin, selectMintCoin)] = datas;
+        that.setState({
+          subPanes: tmpSubPanes,
+          loading: false,
+          lastIndex: datas.lastIndex,
+        });
+      })
+      .catch(error => {
+        that.setState({
+          loading: false,
+        });
+      });
+  };
+
+  pageChange = (no: number) => {
+    const that = this;
+
+    that.setState({
+      pageNo: no,
+      loading: true,
+    });
+
+    setTimeout(function() {
+      that.getRecords();
+    }, 10);
+  };
+
+  onShowSizeChange = (current: number, pagesize: number) => {
+    const that = this;
+
+    that.setState({
+      pageSize: pagesize,
+      loading: true,
+    });
+
+    setTimeout(function() {
+      that.getRecords();
+    }, 10);
+  };
+
+  renderSubPane(data: any, datas: any) {
+    const that = this;
+    const { pageNo, pageSize, decimals } = that.state;
+    const thresholdRate: number = data.thresholdRate;
+    const collateralRate: number = data.collateralRate;
+    const currentRateNumerator: number = data.currentRateNumerator;
+    const currentRateDenominator: number = data.currentRateDenominator;
+    const backeCoin = data.backeCoin;
+    const mintCoin = data.mintCoin;
     let datasource = [];
-    const datas = JSON.parse(result);
-    console.log('result>>', datas);
-    let total = datas.total;
     if (datas && datas.total > 0) {
       for (let i = 0; i < datas.data.length; i++) {
         let buttons = [];
         const d = datas.data[i];
-        const backedCoin: string = d.backedCoin;
-        const mintCoin: string = d.mintCoin;
-        const currentRateNumerator: number = d.currentRateNumerator;
-        const currentRateDenominator: number = d.currentRateDenominator;
-        const currentRate = new BigNumber(d.backedValue)
+        const currentRateBig = new BigNumber(d.backedValue)
           .multipliedBy(new BigNumber(currentRateDenominator))
-          .dividedBy(new BigNumber(currentRateNumerator))
-          .dividedBy(new BigNumber(d.mintValue))
           .multipliedBy(100)
-          .toFixed(2);
-        const decimal = await utils.getDecimal(d.backedCoin);
-        const decimal2 = await utils.getDecimal(d.mintCoin);
-        if (d.status == 1) {
-          if (d.owns) {
-            buttons.push(
-              <Button
-                type={'primary'}
-                onClick={() => {
-                  that.deal(
-                    backedCoin,
-                    mintCoin,
-                    utils.toValue(d.mintValue, decimal2).toString(10),
-                    d.contractIndex,
-                  );
-                }}
-                block
-                style={{ marginTop: '5px' }}
-              >
-                {i18n.t('button_repay')}
-              </Button>,
-            );
-          }
-        } else if (d.status == 2) {
+          .dividedBy(new BigNumber(currentRateNumerator))
+          .dividedBy(new BigNumber(d.mintValue));
+        const currentRate = currentRateBig.toFixed(2);
+
+        if (d.status == 1 || d.status == 2) {
+          // buttons.push(<Button type={"primary"} onClick={()=>{that.borrow(backeCoin,mintCoin)}} block style={{marginTop:'5px'}}>Borrow</Button>);
           if (d.owns) {
             buttons.push(
               <Button
@@ -407,7 +534,7 @@ class MySSC extends Component {
                   // @ts-ignore
                   const dcmls = decimals[mintCoin];
                   that.deal(
-                    backedCoin,
+                    backeCoin,
                     mintCoin,
                     utils.toValue(d.mintValue, dcmls).toString(10),
                     d.contractIndex,
@@ -420,125 +547,252 @@ class MySSC extends Component {
               </Button>,
             );
           }
-        } else if (d.status == 3) {
-          buttons.push(
-            <Button
-              block
-              type={'primary'}
-              onClick={() => {
-                url.goPage(url.path.auction);
-              }}
-            >
-              {i18n.t('button_bidding')}
-            </Button>,
-          );
-        } else if (d.status == 4) {
-          buttons.push(
-            <Button
-              type={'primary'}
-              onClick={() => {
-                that.setAuctionPrice(d.contractIndex);
-              }}
-              block
-              style={{ marginTop: '5px' }}
-            >
-              {i18n.t('button_createAuction')}
-            </Button>,
-          );
+
+          if (currentRateBig.comparedTo(collateralRate) == -1 && d.owns) {
+            buttons.push(
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  that.deposit(d.contractIndex);
+                }}
+                block
+                style={{ marginTop: '5px' }}
+              >
+                {i18n.t('button_deposit')}
+              </Button>,
+            );
+          } else if (currentRateBig.comparedTo(thresholdRate) < 0) {
+            buttons.push(
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  that.deposit(d.contractIndex);
+                }}
+                block
+                style={{ marginTop: '5px' }}
+              >
+                {i18n.t('button_deposit')}
+              </Button>,
+            );
+          }
         }
+
+        // @ts-ignore
+        const decimal = decimals[data.backeCoin];
+        // @ts-ignore
+        const decima2 = decimals[data.mintCoin];
         datasource.push({
-          index: i + 1,
-          no: d.contractIndex + 100000,
+          index: (
+            <div>
+              {i + 1} {d.owns ? <Tag color="volcano">Owner</Tag> : ''}
+            </div>
+          ),
+          no: (
+            <div>
+              {d.contractIndex + 100000}{' '}
+              {d.owns ? <Tag color="volcano">Owner</Tag> : ''}
+            </div>
+          ),
           backedValue:
             utils.toValue(d.backedValue, decimal).toFixed(4) +
             ' ' +
-            d.backedCoin,
+            data.backeCoin,
           mintValue:
-            utils.toValue(d.mintValue, decimal2).toFixed(4) + ' ' + d.mintCoin,
-          fee: utils.toValue(d.fee, decimal2).toFixed(4),
+            utils.toValue(d.mintValue, decima2).toFixed(4) +
+            ' ' +
+            data.mintCoin,
+          canClaimtValue:
+            utils.toValue(d.canClaimtValue, decimal).toFixed(4) +
+            ' ' +
+            data.backeCoin,
+          fee: utils.toValue(d.fee, decima2).toFixed(4) + ' ' + data.mintCoin,
           currentratio: currentRate + '%',
           status: convertStatus(d.status),
           time: utils.formatTime(d.createTime * 1000),
           operator: buttons,
         });
       }
+
       let mintCoinTabs = (
-        <div>
+        <TabPane
+          tab={mintCoin}
+          key={mintCoin}
+          style={{
+            maxHeight: document.documentElement.clientHeight * 0.6,
+            overflowY: 'scroll',
+          }}
+        >
+          <Descriptions column={4}>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_collateralizationRatio')}
+            >
+              {collateralRate}%
+            </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_exchangeRatio')}
+            >
+              {utils.toValue(data.currentRateNumerator, 8).toString(10)}{' '}
+              {data.backeCoin} ={' '}
+              {utils.toValue(data.currentRateDenominator, 8).toString(10)}{' '}
+              {mintCoin}
+            </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_liquidationRatio')}
+            >
+              {thresholdRate}%
+            </Descriptions.Item>
+            <Descriptions.Item label={''}>
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  that.borrow(backeCoin, mintCoin, data.proxy);
+                }}
+                block
+                style={{ marginTop: '5px' }}
+              >
+                {i18n.t('button_borrow')}
+              </Button>
+            </Descriptions.Item>
+          </Descriptions>
+          <p />
           <Table columns={columns} dataSource={datasource} pagination={false} />
           <div
             style={{ position: 'relative', float: 'right', padding: '15px' }}
           >
             <Pagination
               size="small"
-              total={total}
+              total={datas.total}
               defaultCurrent={1}
               current={pageNo}
               pageSize={pageSize}
               onChange={this.pageChange}
               showTotal={showTotal}
+              onShowSizeChange={this.onShowSizeChange}
             />
           </div>
-        </div>
+        </TabPane>
       );
 
-      this.setState({
-        tabs: mintCoinTabs,
-      });
+      return mintCoinTabs;
     } else {
-      let mintCoinTabs = (
-        <div>
+      return (
+        <TabPane
+          tab={mintCoin}
+          key={mintCoin}
+          style={{
+            maxHeight: document.documentElement.clientHeight * 0.6,
+            overflowY: 'scroll',
+          }}
+        >
+          <Descriptions column={4}>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_collateralizationRatio')}
+            >
+              {collateralRate}%
+            </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_exchangeRatio')}
+            >
+              {utils.toValue(data.currentRateNumerator, 8).toString(10)}{' '}
+              {data.backeCoin} ={' '}
+              {utils.toValue(data.currentRateDenominator, 8).toString(10)}{' '}
+              {mintCoin}
+            </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_liquidationRatio')}
+            >
+              {thresholdRate}%
+            </Descriptions.Item>
+            <Descriptions.Item label={''}>
+              <Button
+                type={'primary'}
+                onClick={() => {
+                  that.borrow(backeCoin, mintCoin, data.proxy);
+                }}
+                block
+                style={{ marginTop: '5px' }}
+              >
+                {i18n.t('button_borrow')}
+              </Button>
+            </Descriptions.Item>
+          </Descriptions>
+          <p />
           <Table columns={columns} dataSource={[]} pagination={false} />
-          <div
-            style={{ position: 'relative', float: 'right', padding: '15px' }}
-          >
-            <Pagination
-              size="small"
-              total={total}
-              defaultCurrent={1}
-              current={pageNo}
-              pageSize={pageSize}
-              onChange={this.pageChange}
-              showTotal={showTotal}
-            />
-          </div>
-        </div>
+        </TabPane>
       );
-
-      this.setState({
-        tabs: mintCoinTabs,
-      });
     }
   }
 
-  pageChange = (no: number) => {
-    const that = this;
-    that.setState({
-      pageNo: no,
+  setSelectTap = (backedCoin: string, mintCoin: string) => {
+    this.setState({
+      selectBackedCoin: backedCoin,
+      selectMintCoin: mintCoin,
     });
-
-    setTimeout(function() {
-      that.list().then();
-    }, 10);
   };
 
   render() {
+    const that = this;
     const {
       visible,
-      tabs,
       backedCoin,
       visibleDeal,
       mintCoin,
       amount,
       fee,
       visibleAuction,
-      visibleAuctionPrice,
       mintValue,
+      subPanes,
+      panes,
+      minBorrowValue,
+      estimatAddDepositAmount,
+      selectBackedCoin,
     } = this.state;
-
     let params = {
       mintCoin,
       mintValue,
     };
+
+    let desc = [];
+    if (estimatAddDepositAmount && estimatAddDepositAmount.length > 0) {
+      const decimal = utils.getDecimalCache(selectBackedCoin);
+      console.log('decimal>>> ', utils.getDecimalCache(selectBackedCoin));
+      desc.push(
+        `Deposit ${utils
+          .toValue(estimatAddDepositAmount[0], decimal)
+          .toFixed(4)} ${selectBackedCoin} , Possible Receive ${utils
+          .toValue(estimatAddDepositAmount[1], decimal)
+          .toFixed(4)} ${selectBackedCoin}`,
+      );
+    }
+
+    const panesKeys = Object.keys(panes);
+    const tabPanes = [];
+    if (panesKeys.length > 0) {
+      for (let backedCoinK of panesKeys) {
+        // @ts-ignore
+        const datas = panes[backedCoinK];
+        let subPaneTag = [];
+        for (let data of datas) {
+          // @ts-ignore
+          let records: any = subPanes[subPanesKey(backedCoinK, data.mintCoin)];
+          const subPane = that.renderSubPane(data, records);
+          subPaneTag.push(subPane);
+        }
+        tabPanes.push(
+          <TabPane tab={backedCoinK} key={backedCoinK}>
+            <Tabs
+              type="card"
+              tabPosition={'left'}
+              onTabClick={(mintCoin: any) => {
+                this.setSelectTap(backedCoinK, mintCoin);
+              }}
+            >
+              {subPaneTag}
+            </Tabs>
+          </TabPane>,
+        );
+      }
+    }
 
     return (
       <div>
@@ -550,9 +804,25 @@ class MySSC extends Component {
             <Col span={12} style={{ textAlign: 'right' }}></Col>
           </Row>
           <p />
-          {tabs}
+          <Tabs type="card" animated>
+            {tabPanes}
+          </Tabs>
           <p />
         </Spin>
+
+        <BorrowForm
+          visible={visible}
+          onCreate={this.onBorrow}
+          onCancel={() => {
+            this.setVisible(false);
+          }}
+          mintCoin={mintCoin}
+          amountEstimate={amount}
+          fee={fee}
+          backedCoin={backedCoin}
+          estimate={this.estimate}
+          params={{ minBorrowValue: minBorrowValue }}
+        />
 
         <DealForm
           visible={visibleDeal}
@@ -564,19 +834,28 @@ class MySSC extends Component {
         />
         <PasswordForm
           visible={visibleAuction}
-          onCreate={this.onCreateAuction}
+          onCreate={this.onDeposit}
           onCancel={() => {
             this.setVisibleAuction(false);
           }}
-          title={i18n.t('button_createAuction')}
+          title={i18n.t('button_deposit')}
+          desc={desc}
         />
       </div>
     );
   }
+}
+//
+// function panesKey(backeCoin:string, mintCoin:string) {
+//   return ["panes",backeCoin, mintCoin].join("_")
+// }
+
+function subPanesKey(backeCoin: string, mintCoin: string) {
+  return ['subPanes', backeCoin, mintCoin].join('_');
 }
 
 function showTotal(total: any) {
   return `Total ${total} items`;
 }
 
-export default MySSC;
+export default SSCTools;

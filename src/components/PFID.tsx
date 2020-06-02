@@ -136,9 +136,9 @@ const PFIDForm: React.FC<CollectionCreateFormProps> = ({
         </Form.Item>
         <Form.Item>
           <Descriptions>
-            <Descriptions.Item label={i18n.t('pages_pfid_my_expect')}>
-              <span style={{ color: '#161796' }}>{expect}</span> PFID
-            </Descriptions.Item>
+            {/*<Descriptions.Item label={i18n.t('pages_pfid_my_expect')}>*/}
+            {/*  <span style={{ color: '#161796' }}>{expect}</span> PFID*/}
+            {/*</Descriptions.Item>*/}
             {/*<Descriptions.Item label={"Fee Rate"}><span style={{color:'#161796'}}>{fee/100}</span></Descriptions.Item>*/}
             <Descriptions.Item label={i18n.t('pages_pfid_my_expect_received')}>
               <span style={{ color: '#161796' }}>

@@ -11,6 +11,7 @@ import {
   Spin,
   Pagination,
   Tag,
+  notification,
 } from 'antd';
 import './equity.css';
 import staking from '@/service/staking';
@@ -23,6 +24,59 @@ import PFIDForm from '@/components/PFID';
 import PasswordForm from '@/components/Password';
 import { url } from '@/common/url';
 import i18n from '@/i18n';
+
+const notify = (type: string, message: string, desc: string) => {
+  let d = 4.5;
+  if (type == 'success' && desc && !desc.startsWith('0x')) {
+    type = 'error';
+    message = 'Error';
+  }
+  // @ts-ignore
+  notification[type]({
+    message: message,
+    description: (
+      <p
+        style={{
+          wordBreak: 'normal',
+          whiteSpace: 'pre-wrap',
+          wordWrap: 'break-word',
+        }}
+      >
+        {desc}
+      </p>
+    ),
+    duration: d,
+    // placement: 'bottomRight',
+    // bottom: 50,
+  });
+};
+
+const columnsWithdraw = [
+  {
+    title: i18n.t('pages_equity_index'),
+    dataIndex: 'index',
+    key: 'index',
+    width: '15%',
+  },
+  {
+    title: i18n.t('pages_equity_ssc'),
+    dataIndex: 'ssc',
+    key: 'ssc',
+    width: '30%',
+  },
+  {
+    title: i18n.t('pages_equity_amount'),
+    dataIndex: 'amount',
+    key: 'amount',
+    width: '30%',
+  },
+  {
+    title: i18n.t('pages_pfid_my_operation'),
+    dataIndex: 'operation',
+    key: 'operation',
+    width: '15%',
+  },
+];
 
 const columns = [
   {
@@ -43,12 +97,12 @@ const columns = [
     key: 'amount',
     width: '20%',
   },
-  {
-    title: i18n.t('pages_equity_time'),
-    dataIndex: 'time',
-    key: 'time',
-    width: '20%',
-  },
+  // {
+  //   title: i18n.t('pages_equity_time'),
+  //   dataIndex: 'time',
+  //   key: 'time',
+  //   width: '20%',
+  // },
   {
     title: i18n.t('pages_equity_state'),
     dataIndex: 'state',
@@ -99,6 +153,10 @@ class Equity extends Component {
     visiblePassword: false,
     index: 0,
     devidendList: [],
+
+    datasourceWithdraw: [],
+    totalWithdraw: 0,
+    ssc: '',
   };
 
   componentDidMount(): void {
@@ -128,6 +186,21 @@ class Equity extends Component {
     //     that.getStakingBalance();
     //   },10 * 1000)
     // }
+
+    that
+      .mySSCWithDraw()
+      .then(() => {
+        that.setState({
+          loading: false,
+        });
+      })
+      .catch(e => {
+        const err = typeof e == 'string' ? e : e.message;
+        notify('error', 'Error', err);
+        that.setState({
+          loading: false,
+        });
+      });
   }
 
   getStakingBalance() {
@@ -163,7 +236,6 @@ class Equity extends Component {
   dividendList() {
     const that = this;
     staking.allSSC().then((rest: any) => {
-      console.log('devidendList:', JSON.parse(rest));
       that.setState({
         devidendList: JSON.parse(rest),
       });
@@ -206,8 +278,6 @@ class Equity extends Component {
         }
       }
 
-      console.log('sscMap>>', sscMap);
-
       for (let [k, mvalue] of sscMap) {
         tmp.push({
           index: ++i,
@@ -215,8 +285,8 @@ class Equity extends Component {
           amount: new BigNumber(mvalue.value).toFixed(4),
           time: utils.formatTime(mvalue.data.endTime * 1000),
           state: mvalue.data.valid
-            ? i18n.t('state_valid')
-            : i18n.t('state_finished'),
+            ? i18n.t('state_ssc_valid')
+            : i18n.t('state_ssc_finished'),
         });
       }
 
@@ -231,47 +301,6 @@ class Equity extends Component {
     });
     return new Promise(resolve => resolve);
   }
-
-  onWithdraw(index: number) {
-    this.setState({
-      index: index,
-      visiblePassword: true,
-    });
-  }
-
-  onCreateWithdraw = (values: any) => {
-    const that = this;
-    that.setState({
-      visiblePassword: false,
-      loading: true,
-    });
-    staking.withDrawShare(that.state.index, values['password']).then(rest => {
-      that.setState({
-        loading: false,
-      });
-      message.success(rest);
-    });
-  };
-
-  onCreate = (values: any) => {
-    const that = this;
-    const amount = values['amount'];
-    const cycle = values['cycle'];
-    that.setState({
-      visible: false,
-      loading: true,
-    });
-
-    staking
-      .staking(parseInt(cycle), utils.fromValue(amount, 18), values['password'])
-      .then(rest => {
-        console.log(rest);
-        that.setState({
-          loading: false,
-        });
-        message.success(rest);
-      });
-  };
 
   setVisible = (f: boolean) => {
     const that = this;
@@ -313,6 +342,71 @@ class Equity extends Component {
     }, 10);
   };
 
+  async mySSCWithDraw(): Promise<any> {
+    const that = this;
+    that.setState({
+      loading: true,
+    });
+    const rest: any = await staking.mySSCWithDraw();
+    console.log('mySSCWithDraw>> ', rest);
+    const datas = JSON.parse(rest);
+    if (datas.length > 0) {
+      let source = [];
+      let i = 0;
+      for (let data of datas) {
+        const decimal = await utils.getDecimal(data.sscName);
+        const amount = utils.toValue(data.amount, decimal);
+        source.push({
+          index: ++i,
+          amount: amount.toString(10),
+          ssc: data.sscName,
+          operation:
+            amount.toNumber() > 0 ? (
+              <Button
+                type={'primary'}
+                onClick={() => that.onWithdraw(data.sscName)}
+              >
+                {i18n.t('button_withdraw')}
+              </Button>
+            ) : (
+              ''
+            ),
+        });
+      }
+      that.setState({
+        datasourceWithdraw: source,
+      });
+    }
+  }
+
+  onWithdraw(name: string) {
+    this.setState({
+      ssc: name,
+      visiblePassword: true,
+    });
+  }
+
+  onCreateWithdraw = (values: any) => {
+    const that = this;
+    const { ssc } = that.state;
+    that.setState({
+      visiblePassword: false,
+      loading: true,
+    });
+    staking
+      .withDrawSSC(ssc, values['password'])
+      .then(rest => {
+        that.setState({
+          loading: false,
+        });
+        notify('success', 'SUCCESS', rest);
+      })
+      .catch(e => {
+        const err = typeof e == 'string' ? e : e.message;
+        notify('error', 'Error', err);
+      });
+  };
+
   render() {
     const {
       visible,
@@ -325,6 +419,7 @@ class Equity extends Component {
       pageNo,
       pageSize,
       visiblePassword,
+      datasourceWithdraw,
       devidendList,
     } = this.state;
 
@@ -365,49 +460,40 @@ class Equity extends Component {
           </Card>
           <p />
           <Card
-            title={i18n.t('pages_equity_dividendRecords')}
-            extra={
-              <Button
-                type={'primary'}
-                onClick={() => {
-                  url.goPage(url.path.pfid.equityWithdraw);
-                }}
-              >
-                {i18n.t('button_withdraw')}
-              </Button>
-            }
+            title={i18n.t('equity_withdraw_list')}
+            style={{ height: 'auto' }}
           >
-            <Table
-              dataSource={datasource}
-              columns={columns}
-              pagination={false}
-            />
-            {/*<div*/}
-            {/*  style={{ position: 'relative', float: 'right', padding: '15px' }}*/}
-            {/*>*/}
-            {/*  <Pagination*/}
-            {/*    size="small"*/}
-            {/*    total={total}*/}
-            {/*    defaultCurrent={1}*/}
-            {/*    current={pageNo}*/}
-            {/*    pageSize={pageSize}*/}
-            {/*    onChange={this.pageChange}*/}
-            {/*    showTotal={showTotal}*/}
-            {/*  />*/}
-            {/*</div>*/}
+            <div
+              style={{
+                maxHeight: document.documentElement.clientHeight * 0.4,
+                overflowY: 'scroll',
+              }}
+            >
+              <Table
+                dataSource={datasourceWithdraw}
+                columns={columnsWithdraw}
+                pagination={false}
+              />
+            </div>
           </Card>
-
-          <PFIDForm
-            visible={visible}
-            onCreate={this.onCreate}
-            onCancel={() => {
-              this.setVisible(false);
-            }}
-            onExpect={this.expect}
-            expect={expect}
-            fee={fee}
-            params={{}}
-          />
+          <p />
+          <Card
+            title={i18n.t('pages_equity_dividendRecords')}
+            style={{ height: 'auto' }}
+          >
+            <div
+              style={{
+                maxHeight: document.documentElement.clientHeight * 0.6,
+                overflowY: 'scroll',
+              }}
+            >
+              <Table
+                dataSource={datasource}
+                columns={columns}
+                pagination={false}
+              />
+            </div>
+          </Card>
 
           <PasswordForm
             visible={visiblePassword}

@@ -13,6 +13,8 @@
   "button_createAuction": "크리에잇 옥션",
   "button_bidding": "경매로 이동",
   "button_bid": "비드",
+  "button_deposit": "매기다",
+
   "menus_wallet": "지갑",
   "menus_pfid": "PFID",
   "menus_mypfid": "나의PFID",
@@ -20,14 +22,15 @@
   "menus_dmw": " DMW",
   "menus_ssctools": "스테이블 코인 도구",
   "menus_ssclist": "스테이블 코인  리스트",
-  "menus_sscmy": "나의 안정 화폐",
+  "menus_sscmy": "내 주문",
   "menus_auction": "경매",
   "menus_dapps": "DAPPS",
   "pages_pfid_balance": "잔고",
   "pages_pfid_stakingPool": "저당지",
   "pages_pfid_my_stakingRecord": "저당 기록",
   "pages_pfid_my_index": "순번",
-  "pages_pfid_my_cycle": "주기(일 )",
+  "pages_pfid_my_cycle": "주기",
+  "pages_pfid_my_cycle_days": "일",
   "pages_pfid_my_state": "상태",
   "pages_pfid_my_staking": "저당한",
   "pages_pfid_my_received": "받은",
@@ -64,6 +67,9 @@
   "pages_myssc_no": "번호",
   "pages_myssc_pledged": "저당 수량",
   "pages_myssc_mintCoins": "주화 수량",
+  "pages_myssc_canClaimtValue": "청구 동전",
+  "pages_myssc_biding": "입찰",
+  "pages_myssc_normal": "표준",
   "pages_myssc_fee": "비용",
   "pages_myssc_currentRatio": "현재 비율",
   "pages_myssc_status": "상태",
@@ -95,6 +101,9 @@
   "state_finished": "종료",
   "state_valid": "유효",
   "state_biding": "비드중",
+  "state_ssc_finished": "기록됨",
+  "state_ssc_valid": "기록되지 않음",
+
   "chrome_down": "https://www.google.com/chrome/",
   "chrome_down_tip": "NOVAC는 Chrome 브라우저에서 가장 잘 작동합니다.",
   "chrome_down_btn": "Chrome 브라우저를 다운로드하려면 클릭하십시오.",
@@ -105,5 +114,8 @@
   "zh_CN": "중국어 간체",
 
   "updateDesc": "업데이트 설명",
-  "addExchange": "교환 추가"
+  "addExchange": "교환 추가",
+
+  "countdownFormat": "D 일 HH:mm:ss",
+  "equity_withdraw_list": "출금 목록"
 }

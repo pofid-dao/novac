@@ -37,6 +37,21 @@ class DmwInfo {
     ]);
   }
 
+  async myPageKeyContracts(
+    _backedCoin: string,
+    _mintCoin: string,
+    offset: number,
+    pageSize: number,
+  ): Promise<any> {
+    const act: AccountInfo = account.getCurrent();
+    return this.callMethod('myPageKeyContracts', act.MainPKr, [
+      _backedCoin,
+      _mintCoin,
+      offset,
+      pageSize,
+    ]);
+  }
+
   now(): any {
     return Math.ceil(new Date().getTime() / 1000);
   }
@@ -58,7 +73,11 @@ class DmwInfo {
               let rest = that.callContract.unPackData(_method, callData);
               resolve(rest);
             } catch (e) {
-              reject(e.message);
+              if (callData === '0x') {
+                resolve(null);
+              } else {
+                reject(e.message);
+              }
             }
           } else {
             reject(callData);

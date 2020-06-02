@@ -13,6 +13,7 @@ interface CollectionCreateFormProps {
   onCreate: (values: Values) => void;
   onCancel: () => void;
   title: string;
+  desc?: Array<any>;
 }
 
 const PasswordForm: React.FC<CollectionCreateFormProps> = ({
@@ -20,6 +21,7 @@ const PasswordForm: React.FC<CollectionCreateFormProps> = ({
   onCreate,
   onCancel,
   title,
+  desc,
 }) => {
   const [form] = Form.useForm();
   return (
@@ -56,6 +58,7 @@ const PasswordForm: React.FC<CollectionCreateFormProps> = ({
           <Input type={'password'} />
         </Form.Item>
       </Form>
+      <p>{desc}</p>
     </Modal>
   );
 };

@@ -63,13 +63,13 @@ export default defineConfig({
           path: '/scctools/list',
           wrappers: ['@/wrappers/filter'],
           component: '@/pages/scctools/index',
-          title: 'NOVAC - SSC - LIST',
+          title: 'NOVAC - AOC - LIST',
         },
         {
           path: '/scctools/my',
           wrappers: ['@/wrappers/filter'],
           component: '@/pages/scctools/my',
-          title: 'NOVAC - SSC - MY',
+          title: 'NOVAC - AOC - MY',
         },
 
         {

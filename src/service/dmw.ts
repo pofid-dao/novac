@@ -97,15 +97,27 @@ class Dmw {
     return this.callMethod('getMinBackedAmount', act.MainPKr, [_backedCoin]);
   }
 
-  async createAuction(_contractIndex: number, password: string): Promise<any> {
+  async estimatAddDepositAmount(_contractIndex: number): Promise<any> {
+    const act: AccountInfo = account.getCurrent();
+    return this.callMethod('estimatAddDepositAmount', act.MainPKr, [
+      _contractIndex,
+    ]);
+  }
+
+  async deposit(
+    _contractIndex: number,
+    password: string,
+    value: any,
+    backedCoin: string,
+  ): Promise<any> {
     const act: AccountInfo = account.getCurrent();
     return this.executeMethod(
-      'createAuction',
+      'deposit',
       act.PK,
       act.MainPKr,
       [_contractIndex],
-      new BigNumber(0),
-      'SERO',
+      new BigNumber(value),
+      backedCoin,
       password,
     );
   }

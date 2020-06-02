@@ -75,7 +75,7 @@ const languageList = (
 let timerId: any = null;
 // let syncTxStateId: any = null;
 // let syncWalletInfoId: any = null;
-let walletHost = 'https://popup-github.sero.cash/?language=';
+let walletHost = '//popup-github.sero.cash/?language=';
 let walletUrl = walletHost + storage.get(storage.keys.language);
 
 function changeLang(l: string) {
@@ -500,13 +500,13 @@ class SiderMenus extends React.Component {
                     </Menu.Item>
                   </SubMenu>
 
-                  <Menu.Item
-                    key={url.path.auction}
-                    onClick={() => this.switchMenus(url.path.auction)}
-                  >
-                    <WalletOutlined />
-                    {i18n.t('menus_auction')}
-                  </Menu.Item>
+                  {/*<Menu.Item*/}
+                  {/*  key={url.path.auction}*/}
+                  {/*  onClick={() => this.switchMenus(url.path.auction)}*/}
+                  {/*>*/}
+                  {/*  <WalletOutlined />*/}
+                  {/*  {i18n.t('menus_auction')}*/}
+                  {/*</Menu.Item>*/}
 
                   {/*<SubMenu*/}
                   {/*  key="3"*/}

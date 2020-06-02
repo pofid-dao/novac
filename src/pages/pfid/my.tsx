@@ -57,14 +57,14 @@ const columns = [
     title: i18n.t('pages_pfid_my_index'),
     dataIndex: 'index',
     key: 'index',
-    width: '5%',
+    width: '10%',
   },
-  {
-    title: i18n.t('pages_myssc_no'),
-    dataIndex: 'no',
-    key: 'no',
-    width: '5%',
-  },
+  // {
+  //   title: i18n.t('pages_myssc_no'),
+  //   dataIndex: 'no',
+  //   key: 'no',
+  //   width: '5%',
+  // },
   {
     title: i18n.t('pages_pfid_my_cycle'),
     dataIndex: 'cycle',
@@ -262,7 +262,7 @@ class MyPfid extends Component {
               <Countdown
                 title={i18n.t('button_withdraw')}
                 value={data.endTime * 1000}
-                format="D day HH:mm:ss"
+                format={i18n.t('countdownFormat')}
                 valueStyle={{ fontSize: '16px' }}
               />
             );
@@ -272,26 +272,28 @@ class MyPfid extends Component {
         }
 
         tmp.push({
-          index: i + 1,
+          index: ++i,
           no: data.shareIndex + 100000,
-          cycle: data.stakingDays,
+          cycle: data.stakingDays + ' ' + i18n.t('pages_pfid_my_cycle_days'),
           state: data.valid ? i18n.t('state_valid') : i18n.t('state_finished'),
-          staking: utils.toValue(data.value, 18).toString(10),
-          received: utils
-            .toValue(
-              new BigNumber(data.value)
-                .multipliedBy(new BigNumber(data.interest))
-                .dividedBy(new BigNumber(10).pow(data.interestDecimals))
-                .toString(10),
-              18,
-            )
-            .toString(10),
-          fee: new BigNumber(data.fee)
-            .multipliedBy(new BigNumber(data.value))
-            .multipliedBy(new BigNumber(data.interest))
-            .dividedBy(new BigNumber(10).pow(18 + data.interestDecimals))
-            .dividedBy(100)
-            .toString(10),
+          staking: utils.toValue(data.value, 18).toString(10) + ' PFID',
+          received:
+            utils
+              .toValue(
+                new BigNumber(data.value)
+                  .multipliedBy(new BigNumber(data.interest))
+                  .dividedBy(new BigNumber(10).pow(data.interestDecimals))
+                  .toString(10),
+                18,
+              )
+              .toString(10) + ' PFID',
+          fee:
+            new BigNumber(data.fee)
+              .multipliedBy(new BigNumber(data.value))
+              .multipliedBy(new BigNumber(data.interest))
+              .dividedBy(new BigNumber(10).pow(18 + data.interestDecimals))
+              .dividedBy(100)
+              .toString(10) + ' PFID',
           // ssc:sscArr,
           time: (
             <Descriptions column={1}>

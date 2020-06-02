@@ -1,7 +1,7 @@
 class Config {
   staking = {
     address:
-      '2FiVcKhkPpf9N5zyBKCaMF6Tp5TBVgrtM191ZmACdZXGpYQBmvKcdYKtjpXEkrKvjWEyGKWy33RTRTKFkf1qtiBo',
+      '2CASDxyPxcG8Ek4sLnMy5mmoK94DeVgRw6E28NoCqw7kXAQqs3ZpdJET5cqEobGv1TKNjLVr2j1X5sVJXvEWYc3Z',
     abi: [
       {
         constant: true,
@@ -223,7 +223,7 @@ class Config {
 
   auction = {
     address:
-      '5A1TkMf9ZkZabBRYRQSusGnshqduo8RiytktqTmQMVSsSoHU8yFq4Dx5EjZ1GM7GbG4aiTYsANFiVG9U6pUiF1V',
+      '34esrhiuhqC9zQt4PSkHGQMFQBBhbYK5QHcrbtiqM621BWJ6ZkLTWZEqHpXoFhKkPexeiCFztPBPB29eHDqkD4er',
     abi: [
       {
         constant: false,
@@ -376,7 +376,7 @@ class Config {
 
   dmw = {
     address:
-      '5RyUgPb8tWLqkp8YKHahbzUC7rmDHYFTbNdNf2M83T5Ms2hyouJZhP3yGxY6gMX7zDB7jRo7AjNaeo1owKY2rsPY',
+      '55amxWdSMSESEzEScTd3Kdh3TyRmwS9ti1Cun3ykE3hDKKXiMg1jdfS7AN1rN6o9EhkmbgBxg7VCDssueijAzSQq',
     abi: [
       {
         constant: false,
@@ -429,6 +429,43 @@ class Config {
         constant: true,
         inputs: [
           {
+            name: '_contractIndex',
+            type: 'uint256',
+          },
+        ],
+        name: 'estimatAddDepositAmount',
+        outputs: [
+          {
+            name: '_depositValue',
+            type: 'uint256',
+          },
+          {
+            name: '_canClaimtValue',
+            type: 'uint256',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: 'contractIndex',
+            type: 'uint256',
+          },
+        ],
+        name: 'deposit',
+        outputs: [],
+        payable: true,
+        stateMutability: 'payable',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [
+          {
             name: '_backedCoin',
             type: 'string',
           },
@@ -456,26 +493,12 @@ class Config {
         stateMutability: 'view',
         type: 'function',
       },
-      {
-        constant: false,
-        inputs: [
-          {
-            name: '_contractIndex',
-            type: 'uint256',
-          },
-        ],
-        name: 'createAuction',
-        outputs: [],
-        payable: false,
-        stateMutability: 'nonpayable',
-        type: 'function',
-      },
     ],
   };
 
   dmwBase = {
     address:
-      'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
+      'JY6PxE8d9UEAyBBZ3d4XbHwPRZq2bckqy58arZKe3AXR825u42Ypm1fJ5kHw8dbLgpjeoJqCseFc2X4s2zhtEAN',
     abi: [
       {
         constant: true,
@@ -601,7 +624,7 @@ class Config {
 
   dmwInfo = {
     address:
-      '2XcFCFRiq4CcxdRDmMoHk3iyLssGLUPnqbkuUgqNAs7mQyyR93p56He1RAWWSPFEYHzhxCWkR6ezLKpvWGqKXnpx',
+      '32KojcSxU1nDtvNBeyPKLXXsmnozfFC7BHXMcBf52XcUbzzBPXGSuN9fE3CNmYLW7e9BFKQuJXUV7NK8rqc8fjVF',
     abi: [
       {
         constant: true,
@@ -615,7 +638,7 @@ class Config {
             type: 'string',
           },
           {
-            name: 'offset',
+            name: '_lastIndex',
             type: 'uint256',
           },
           {
@@ -638,12 +661,43 @@ class Config {
         constant: true,
         inputs: [
           {
-            name: 'offset',
+            name: '_backedCoin',
+            type: 'string',
+          },
+          {
+            name: '_mintCoin',
+            type: 'string',
+          },
+          {
+            name: '_lastIndex',
             type: 'uint256',
           },
           {
             name: 'pageSize',
+            type: 'uint8',
+          },
+        ],
+        name: 'myPageKeyContracts',
+        outputs: [
+          {
+            name: 'result',
+            type: 'string',
+          },
+        ],
+        payable: false,
+        stateMutability: 'view',
+        type: 'function',
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: '_lastIndex',
             type: 'uint256',
+          },
+          {
+            name: 'pageSize',
+            type: 'uint8',
           },
         ],
         name: 'myPageContracts',
