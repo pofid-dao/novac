@@ -1,7 +1,7 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
   [6],
   {
-    VRMD: function(e, t, n) {
+    dvGz: function(e, t, n) {
       'use strict';
       n.r(t);
       var a = n('q1tI'),

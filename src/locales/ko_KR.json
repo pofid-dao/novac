@@ -61,6 +61,7 @@
   "pages_ssctools_list_title": "AOC 리스트",
   "pages_ssctools_list_collateralizationRatio": "저당율",
   "pages_ssctools_list_liquidationRatio": "블라스팅 웨어하우스 율",
+  "pages_ssctools_list_current_total": "현재 순환",
   "pages_ssctools_list_exchangeRatio": "교환 비율",
   "pages_myssc_title": " 나의 SSC",
   "pages_myssc_index": "순번",

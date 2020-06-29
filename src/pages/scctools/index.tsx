@@ -22,7 +22,8 @@ import DealForm from '@/components/Deal';
 import PasswordForm from '@/components/Password';
 import BigNumber from 'bignumber.js';
 import i18n from '@/i18n';
-import { url } from '@/common/url';
+import coinFactory from '@/service/coinFactory';
+import { util } from 'prettier';
 
 const { TabPane } = Tabs;
 
@@ -167,6 +168,8 @@ class SSCTools extends Component {
 
     estimatAddDepositAmount: [],
     lastIndex: 0,
+
+    totalSupply: 0,
   };
 
   componentDidMount(): void {
@@ -253,6 +256,17 @@ class SSCTools extends Component {
       contractIndex: contractIndex,
     });
     that.setVisibleDeal(true);
+  }
+
+  async totalSupply(mintCoin: string) {
+    const rest: any = await coinFactory.totalSupply(mintCoin);
+    console.log(
+      'totalSupply>>> ',
+      utils.toValue(rest, utils.getDecimalCache(mintCoin)).toFixed(4),
+    );
+    return new Promise(resolve => {
+      resolve(utils.toValue(rest, utils.getDecimalCache(mintCoin)).toFixed(4));
+    });
   }
 
   deposit(contractIndex: number) {
@@ -437,12 +451,15 @@ class SSCTools extends Component {
       }
       console.log('subPanes>>>> ', subPanes);
 
+      const totalSupply: any = await that.totalSupply(selectMintCoin);
+
       that.setState({
         panes: panes,
         decimals: decimals,
         subPanes: subPanes,
         selectBackedCoin: selectBackedCoin,
         selectMintCoin: selectMintCoin,
+        totalSupply: totalSupply,
       });
     }
   }
@@ -457,6 +474,11 @@ class SSCTools extends Component {
       subPanes,
       lastIndex,
     } = this.state;
+    that.totalSupply(selectMintCoin).then((totalSupply: any) => {
+      that.setState({
+        totalSupply: totalSupply,
+      });
+    });
     let tmpSubPanes: any = subPanes;
     dmwInfo
       .keyPageContracts(selectBackedCoin, selectMintCoin, lastIndex, pageSize)
@@ -505,7 +527,7 @@ class SSCTools extends Component {
 
   renderSubPane(data: any, datas: any) {
     const that = this;
-    const { pageNo, pageSize, decimals } = that.state;
+    const { pageNo, pageSize, decimals, totalSupply } = that.state;
     const thresholdRate: number = data.thresholdRate;
     const collateralRate: number = data.collateralRate;
     const currentRateNumerator: number = data.currentRateNumerator;
@@ -623,7 +645,7 @@ class SSCTools extends Component {
             overflowY: 'scroll',
           }}
         >
-          <Descriptions column={4}>
+          <Descriptions column={5}>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_collateralizationRatio')}
             >
@@ -641,6 +663,11 @@ class SSCTools extends Component {
               label={i18n.t('pages_ssctools_list_liquidationRatio')}
             >
               {thresholdRate}%
+            </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_current_total')}
+            >
+              {totalSupply}
             </Descriptions.Item>
             <Descriptions.Item label={''}>
               <Button
@@ -725,9 +752,15 @@ class SSCTools extends Component {
   }
 
   setSelectTap = (backedCoin: string, mintCoin: string) => {
+    const that = this;
     this.setState({
       selectBackedCoin: backedCoin,
       selectMintCoin: mintCoin,
+    });
+    that.totalSupply(mintCoin).then((totalSupply: any) => {
+      that.setState({
+        totalSupply: totalSupply,
+      });
     });
   };
 

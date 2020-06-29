@@ -64,6 +64,7 @@
   "pages_ssctools_list_title": "AOC LIST",
   "pages_ssctools_list_collateralizationRatio": "Collateralization Ratio",
   "pages_ssctools_list_liquidationRatio": "Bidding Ratio",
+  "pages_ssctools_list_current_total": "Current circulation",
   "pages_ssctools_list_exchangeRatio": "Exchange Ratio",
   "pages_myssc_title": "MY AOC",
   "pages_myssc_index": "Index",

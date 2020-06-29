@@ -10,7 +10,7 @@ class Utils {
     return str;
   }
 
-  toValue(value: string, decimal: number): BigNumber {
+  toValue(value: string | BigNumber, decimal: number): BigNumber {
     return new BigNumber(value).dividedBy(new BigNumber(10).pow(decimal));
   }
 

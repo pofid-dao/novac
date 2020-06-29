@@ -767,6 +767,32 @@ class Config {
       },
     ],
   };
+
+  coinFactory = {
+    address:
+      '3Mfg7tx84QVynnMhBmuQB46nhRxW6sbnQZyL9TbLQfafJt4fTAgQNWqZbAhP1zoQNYUKsQMKtr4MJikBzsWaNgaP',
+    abi: [
+      {
+        inputs: [
+          {
+            internalType: 'string',
+            name: 'symbol',
+            type: 'string',
+          },
+        ],
+        name: 'totalSupply',
+        outputs: [
+          {
+            internalType: 'uint256',
+            name: '',
+            type: 'uint256',
+          },
+        ],
+        stateMutability: 'view',
+        type: 'function',
+      },
+    ],
+  };
 }
 const config = new Config();
 
