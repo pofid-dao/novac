@@ -376,7 +376,7 @@ class Config {
 
   dmw = {
     address:
-      '55amxWdSMSESEzEScTd3Kdh3TyRmwS9ti1Cun3ykE3hDKKXiMg1jdfS7AN1rN6o9EhkmbgBxg7VCDssueijAzSQq',
+      '2JY9pzyRTUTFa4UsGDaKKMv3qw3ZRJy3Di9jNgm8tJHQkPb9KiV4rztXaD8Cma12Vg9CastY9z5SyPcSyPSJiPMV',
     abi: [
       {
         constant: false,
@@ -624,7 +624,7 @@ class Config {
 
   dmwInfo = {
     address:
-      '32KojcSxU1nDtvNBeyPKLXXsmnozfFC7BHXMcBf52XcUbzzBPXGSuN9fE3CNmYLW7e9BFKQuJXUV7NK8rqc8fjVF',
+      '47QgngRN8FL1tTnxEEMCXUu7LoYgM7t4LRNmrvT1nhNGuSDYuYhWc6fihVSEDTjNMdexBXPJjDdNcXqfAzq6PScs',
     abi: [
       {
         constant: true,
