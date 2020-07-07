@@ -298,7 +298,7 @@ class SSCTools extends Component {
         .myPageKeyContracts(
           selectBackedCoin,
           selectMintCoin,
-          lastIndex,
+          (pageNo - 1) * pageSize,
           pageSize,
         )
         .then(records => {

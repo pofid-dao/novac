@@ -8,6 +8,7 @@ import gerorpc from '@/common/gerorpc';
 class DmwInfo {
   constructor() {
     this.callContract = null;
+    console.log('dwmInfo,', config.dmwInfo);
     this.callContract = serojs.callContract(
       config.dmwInfo.abi,
       config.dmwInfo.address,
@@ -18,6 +19,8 @@ class DmwInfo {
     return this.callMethod('myPageContracts', act.MainPKr, [offset, pageSize]);
   }
   async keyPageContracts(_backedCoin, _mintCoin, offset, pageSize) {
+    console.log('keyPageContracts', _backedCoin, _mintCoin, offset, pageSize);
+    console.log(this.callContract);
     const act = account.getCurrent();
     return this.callMethod('keyPageContracts', act.MainPKr, [
       _backedCoin,

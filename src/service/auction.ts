@@ -90,23 +90,24 @@ class Auction {
       data: packData,
     };
     return new Promise<any>((resolve, reject) => {
-      gerorpc
-        .post('sero_call', [callParams, 'latest'])
-        .then(callData => {
-          if (callData !== '0x') {
-            try {
-              let rest = that.callContract.unPackData(_method, callData);
-              resolve(rest);
-            } catch (e) {
-              reject(e.message);
-            }
-          } else {
-            reject(callData);
-          }
-        })
-        .catch(e => {
-          reject(e);
-        });
+      resolve();
+      // gerorpc
+      //   .post('sero_call', [callParams, 'latest'])
+      //   .then(callData => {
+      //     if (callData !== '0x') {
+      //       try {
+      //         let rest = that.callContract.unPackData(_method, callData);
+      //         resolve(rest);
+      //       } catch (e) {
+      //         reject(e.message);
+      //       }
+      //     } else {
+      //       reject(callData);
+      //     }
+      //   })
+      //   .catch(e => {
+      //     reject(e);
+      //   });
     });
   }
 

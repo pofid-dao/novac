@@ -302,7 +302,12 @@ class SSCTools extends Component {
       });
       let tmpSubPanes = subPanes;
       dmwInfo
-        .keyPageContracts(selectBackedCoin, selectMintCoin, lastIndex, pageSize)
+        .keyPageContracts(
+          selectBackedCoin,
+          selectMintCoin,
+          (pageNo - 1) * pageSize,
+          pageSize,
+        )
         .then(records => {
           const datas = JSON.parse(records);
           console.log('datas==', datas);
@@ -561,7 +566,7 @@ class SSCTools extends Component {
             );
           }
         }
-        console.log('buttons>> ', buttons);
+        // console.log('buttons>> ', buttons);
         // @ts-ignore
         const decimal = decimals[data.backeCoin];
         // @ts-ignore

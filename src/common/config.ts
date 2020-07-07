@@ -2,6 +2,7 @@ class Config {
   staking = {
     address:
       '2CASDxyPxcG8Ek4sLnMy5mmoK94DeVgRw6E28NoCqw7kXAQqs3ZpdJET5cqEobGv1TKNjLVr2j1X5sVJXvEWYc3Z',
+
     abi: [
       {
         constant: true,
@@ -376,7 +377,7 @@ class Config {
 
   dmw = {
     address:
-      '2JY9pzyRTUTFa4UsGDaKKMv3qw3ZRJy3Di9jNgm8tJHQkPb9KiV4rztXaD8Cma12Vg9CastY9z5SyPcSyPSJiPMV',
+      '3giJkF2eoeA7pmCYgRDLpASqR3wYDoPwjCXi66yN11jkj9bxYrTeN5KgQyRFf1qTykcyTDUPFMtDHVRmaRxvyxGy',
     abi: [
       {
         constant: false,
@@ -624,7 +625,7 @@ class Config {
 
   dmwInfo = {
     address:
-      '47QgngRN8FL1tTnxEEMCXUu7LoYgM7t4LRNmrvT1nhNGuSDYuYhWc6fihVSEDTjNMdexBXPJjDdNcXqfAzq6PScs',
+      '2MfjrAJxfb1tHf3Ugdy39CEfsVnKgkdbJbDWsuJkup5wAiB4nfAVnmFD54G6zzUMRfTojrQvnMiVJ6Pe1rphtmYu',
     abi: [
       {
         constant: true,

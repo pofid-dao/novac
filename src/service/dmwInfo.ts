@@ -11,6 +11,7 @@ class DmwInfo {
   callContract: any = null;
 
   constructor() {
+    console.log('dwmInfo,', config.dmwInfo);
     this.callContract = serojs.callContract(
       config.dmwInfo.abi,
       config.dmwInfo.address,
@@ -28,6 +29,10 @@ class DmwInfo {
     offset: number,
     pageSize: number,
   ): Promise<any> {
+    console.log('keyPageContracts', _backedCoin, _mintCoin, offset, pageSize);
+
+    console.log(this.callContract);
+
     const act: AccountInfo = account.getCurrent();
     return this.callMethod('keyPageContracts', act.MainPKr, [
       _backedCoin,

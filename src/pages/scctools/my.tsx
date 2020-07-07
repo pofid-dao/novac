@@ -459,7 +459,12 @@ class SSCTools extends Component {
     } = this.state;
     let tmpSubPanes: any = subPanes;
     dmwInfo
-      .myPageKeyContracts(selectBackedCoin, selectMintCoin, lastIndex, pageSize)
+      .myPageKeyContracts(
+        selectBackedCoin,
+        selectMintCoin,
+        (pageNo - 1) * pageSize,
+        pageSize,
+      )
       .then(records => {
         const datas = JSON.parse(records);
         console.log('datas==', datas);

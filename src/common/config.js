@@ -375,7 +375,7 @@ class Config {
     };
     this.dmw = {
       address:
-        '55amxWdSMSESEzEScTd3Kdh3TyRmwS9ti1Cun3ykE3hDKKXiMg1jdfS7AN1rN6o9EhkmbgBxg7VCDssueijAzSQq',
+        '3giJkF2eoeA7pmCYgRDLpASqR3wYDoPwjCXi66yN11jkj9bxYrTeN5KgQyRFf1qTykcyTDUPFMtDHVRmaRxvyxGy',
       abi: [
         {
           constant: false,
@@ -621,7 +621,7 @@ class Config {
     };
     this.dmwInfo = {
       address:
-        '32KojcSxU1nDtvNBeyPKLXXsmnozfFC7BHXMcBf52XcUbzzBPXGSuN9fE3CNmYLW7e9BFKQuJXUV7NK8rqc8fjVF',
+        '2MfjrAJxfb1tHf3Ugdy39CEfsVnKgkdbJbDWsuJkup5wAiB4nfAVnmFD54G6zzUMRfTojrQvnMiVJ6Pe1rphtmYu',
       abi: [
         {
           constant: true,
