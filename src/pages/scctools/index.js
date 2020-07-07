@@ -509,7 +509,7 @@ class SSCTools extends Component {
           .multipliedBy(100)
           .dividedBy(new BigNumber(currentRateNumerator))
           .dividedBy(new BigNumber(d.mintValue));
-        const currentRate = currentRateBig.toFixed(2);
+        const currentRate = currentRateBig.toFixed(4, 1);
         if (d.status == 1 || d.status == 2) {
           if (d.owns) {
             buttons.push(
