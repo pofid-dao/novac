@@ -226,7 +226,7 @@ class SSCTools extends Component {
   borrow(backedCoin: string, mintCoin: string, proxy: any) {
     const that = this;
     const decimal = utils.getDecimalCache(backedCoin);
-    dmw.getMinBackedAmount(backedCoin).then(rest => {
+    dmw.getMinBackedAmount(backedCoin, mintCoin).then(rest => {
       that.setState({
         backedCoin: backedCoin,
         mintCoin: mintCoin,
@@ -524,10 +524,11 @@ class SSCTools extends Component {
         const d = datas.data[i];
         const currentRateBig = new BigNumber(d.backedValue)
           .multipliedBy(new BigNumber(currentRateDenominator))
-          .multipliedBy(100)
           .dividedBy(new BigNumber(currentRateNumerator))
-          .dividedBy(new BigNumber(d.mintValue));
-        const currentRate = currentRateBig.toFixed(2);
+          .dividedBy(new BigNumber(d.mintValue))
+          .multipliedBy(100);
+
+        const currentRate = currentRateBig.toFixed(4, 1);
 
         if (d.status == 1 || d.status == 2) {
           // buttons.push(<Button type={"primary"} onClick={()=>{that.borrow(backeCoin,mintCoin)}} block style={{marginTop:'5px'}}>Borrow</Button>);

@@ -92,9 +92,15 @@ class Dmw {
     ]);
   }
 
-  async getMinBackedAmount(_backedCoin: string): Promise<any> {
+  async getMinBackedAmount(
+    _backedCoin: string,
+    _mintCoin: string,
+  ): Promise<any> {
     const act: AccountInfo = account.getCurrent();
-    return this.callMethod('getMinBackedAmount', act.MainPKr, [_backedCoin]);
+    return this.callMethod('getMinBackedAmount', act.MainPKr, [
+      _backedCoin,
+      _mintCoin,
+    ]);
   }
 
   async estimatAddDepositAmount(_contractIndex: number): Promise<any> {

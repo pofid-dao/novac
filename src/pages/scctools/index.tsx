@@ -229,7 +229,7 @@ class SSCTools extends Component {
   borrow(backedCoin: string, mintCoin: string, proxy: any) {
     const that = this;
     const decimal = utils.getDecimalCache(backedCoin);
-    dmw.getMinBackedAmount(backedCoin).then(rest => {
+    dmw.getMinBackedAmount(backedCoin, mintCoin).then(rest => {
       that.setState({
         backedCoin: backedCoin,
         mintCoin: mintCoin,
@@ -531,6 +531,7 @@ class SSCTools extends Component {
   };
 
   renderSubPane(data: any, datas: any) {
+    console.log('data>>> ', data);
     const that = this;
     const { pageNo, pageSize, decimals, totalSupply } = that.state;
     const thresholdRate: number = data.thresholdRate;
@@ -544,11 +545,13 @@ class SSCTools extends Component {
       for (let i = 0; i < datas.data.length; i++) {
         let buttons = [];
         const d = datas.data[i];
+
         const currentRateBig = new BigNumber(d.backedValue)
           .multipliedBy(new BigNumber(currentRateDenominator))
-          .multipliedBy(100)
           .dividedBy(new BigNumber(currentRateNumerator))
-          .dividedBy(new BigNumber(d.mintValue));
+          .dividedBy(new BigNumber(d.mintValue))
+          .multipliedBy(new BigNumber(100));
+
         const currentRate = currentRateBig.toFixed(4, 1);
 
         if (d.status == 1 || d.status == 2) {
