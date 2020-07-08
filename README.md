@@ -1,4 +1,3 @@
-# umi project
 
 ## Getting Started
 
