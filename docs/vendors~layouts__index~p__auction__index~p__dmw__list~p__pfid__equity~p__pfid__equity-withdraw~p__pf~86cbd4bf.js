@@ -10452,7 +10452,7 @@
             npm_config_only: '',
             npm_config_commit_hooks: 'true',
             npm_config_browser: '',
-            npm_package_gitHead: '5245287de9425cb32b5abdeba12694b858d68b6a',
+            npm_package_gitHead: 'c587f895ec81913a4eece9aeafb1b244c605a7f9',
             npm_package_devDependencies_i18next_http_backend: '^1.0.8',
             npm_config_also: '',
             rvm_use_flag: '',
@@ -10513,8 +10513,8 @@
             npm_config_key: '',
             npm_package_readmeFilename: 'README.md',
             __INTELLIJ_COMMAND_HISTFILE__:
-              '/Users/huangw/Library/Application Support/JetBrains/IntelliJIdea2020.1/terminal/history/history-1043',
-            npm_package_description: '## Getting Started',
+              '/Users/huangw/Library/Application Support/JetBrains/IntelliJIdea2020.1/terminal/history/history-785',
+            npm_package_description: 'Install dependencies,',
             npm_package_devDependencies_react_i18next: '^11.4.0',
             USER: 'huangw',
             rvm_gemstone_package_file: '',
@@ -10573,6 +10573,7 @@
             JAVA_HOME:
               '/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home',
             npm_lifecycle_event: 'build',
+            npm_package_dependencies_cross_env: '^7.0.2',
             npm_package_lint_staged___ts__x__0:
               'prettier --parser=typescript --write',
             npm_config_save: 'true',
