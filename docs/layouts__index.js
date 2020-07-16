@@ -4654,7 +4654,7 @@
                       ' ',
                       r['createElement'](
                         'a',
-                        { href: 'https://pofid.com/' },
+                        { target: '_blank', href: 'https://pofid.com/' },
                         r['createElement']('img', {
                           src: Gt.a,
                           style: { height: '25px' },

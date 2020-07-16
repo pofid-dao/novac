@@ -605,7 +605,7 @@ class SiderMenus extends React.Component {
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
                   NOVAC ©2020 Create By{' '}
-                  <a href={'https://pofid.com/'}>
+                  <a target="_blank" href={'https://pofid.com/'}>
                     <img src={pofid} style={{ height: '25px' }} />
                   </a>
                 </Footer>
