@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@umijs/test": "^3.0.14",
+    "cross-env": "^7.0.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "react": "^16.12.0",

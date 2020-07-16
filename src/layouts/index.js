@@ -612,7 +612,7 @@ class SiderMenus extends React.Component {
                 ' ',
                 React.createElement(
                   'a',
-                  { href: '#' },
+                  { href: 'https://pofid.com/' },
                   React.createElement('img', {
                     src: pofid,
                     style: { height: '25px' },

@@ -3,6 +3,7 @@ import { defineConfig } from 'umi';
 export default defineConfig({
   // locale:{antd:true},
   publicPath: './',
+  outputPath: '/docs',
   history: { type: 'hash' },
   favicon: '/assets/favicon.ico',
   routes: [
