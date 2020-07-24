@@ -303,10 +303,10 @@
           (E.secondaryColor = n || b(t)),
           (E.calculated = !!n);
       }
-      function N() {
+      function M() {
         return k({}, E);
       }
-      var M = function(e) {
+      var N = function(e) {
         var t = e.icon,
           n = e.className,
           a = e.onClick,
@@ -353,10 +353,10 @@
           )
         );
       };
-      (M.displayName = 'IconReact'),
-        (M.getTwoToneColors = N),
-        (M.setTwoToneColors = j);
-      var I = M;
+      (N.displayName = 'IconReact'),
+        (N.getTwoToneColors = M),
+        (N.setTwoToneColors = j);
+      var I = N;
       function A(e, t) {
         return q(e) || z(e, t) || D(e, t) || T();
       }
@@ -413,14 +413,14 @@
       function q(e) {
         if (Array.isArray(e)) return e;
       }
-      function B(e) {
+      function L(e) {
         var t = _(e),
           n = A(t, 2),
           a = n[0],
           r = n[1];
         return I.setTwoToneColors({ primaryColor: a, secondaryColor: r });
       }
-      function L() {
+      function B() {
         var e = I.getTwoToneColors();
         return e.calculated
           ? [e.primaryColor, e.secondaryColor]
@@ -520,7 +520,7 @@
           (n = o[a]), t.indexOf(n) >= 0 || (r[n] = e[n]);
         return r;
       }
-      B('#1890ff');
+      L('#1890ff');
       var Q = a['forwardRef'](function(e, t) {
         var n = e.className,
           r = e.icon,
@@ -574,8 +574,8 @@
         );
       });
       (Q.displayName = 'AntdIcon'),
-        (Q.getTwoToneColor = L),
-        (Q.setTwoToneColor = B);
+        (Q.getTwoToneColor = B),
+        (Q.setTwoToneColor = L);
       t['a'] = Q;
     },
     '72Ab': function(e, t, n) {
@@ -1349,7 +1349,7 @@
     },
     Wcjj: function(e) {
       e.exports = JSON.parse(
-        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Borrow","button_repay":"Repay","button_deal":"Repay","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Go Bid","button_bid":"Bid","button_deposit":"Bid","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"AOC TOOLS","menus_ssclist":"AOC LIST","menus_sscmy":"My Order","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle","pages_pfid_my_cycle_days":"Days","pages_pfid_my_state":"State","pages_pfid_my_staking":"Amount","pages_pfid_my_received":"Expect","pages_pfid_my_time":"Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"AOC","pages_equity_amount":"Amount","pages_equity_time":"Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Collateralization Ratio","pages_dmw_liquidationRatio":"Bidding Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"AOC LIST","pages_ssctools_list_collateralizationRatio":"Collateralization Ratio","pages_ssctools_list_liquidationRatio":"Bidding Ratio","pages_ssctools_list_current_total":"Current circulation","pages_ssctools_list_exchangeRatio":"Exchange Ratio","pages_myssc_title":"MY AOC","pages_myssc_index":"Index","pages_myssc_no":"No","pages_myssc_biding":"Biding","pages_myssc_normal":"Normal","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Mint Coins","pages_myssc_canClaimtValue":"Claimt Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Bid","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Bid Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_input_desc":"Please Input Description!","form_input_name":"Please Input Name!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","form_lable_exchange_name":"Exchange Name","state_finished":"Finished","state_valid":"Valid","state_biding":"biding","state_ssc_finished":"Recorded","state_ssc_valid":"Not Recorded","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC works best on Chrome browser.","chrome_down_btn":"Click to download Chrome browser.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"English","ko_KR":"Korean","zh_CN":"Simplified Chinese","updateDesc":"Update Description","addExchange":"Add Exchange","countdownFormat":"D day HH:mm:ss","equity_withdraw_list":"Withdrawal List"}',
+        '{"button_changeAccount":"Change Account","button_goStaking":"Go Staking","button_cancel":"Cancel","button_ok":"OK","button_commit":"Commit","button_confirm":"Confirm","button_borrow":"Issue","button_repay":"Reclaim","button_deal":"Reclaim","button_withdraw":"Withdraw","button_reinvet":"Re Staking","button_createAuction":"Create Auction","button_bidding":"Go Fill Short","button_bid":"Fill Short","button_deposit":"Fill Short","menus_wallet":"Wallet","menus_pfid":"PFID","menus_mypfid":"MY PFID","menus_equity":"EQUITY","menus_dmw":"DMW","menus_ssctools":"AOC TOOLS","menus_ssclist":"AOC LIST","menus_sscmy":"My Order","menus_auction":"AUCTION","menus_dapps":"DAPPS","pages_pfid_balance":"Balance","pages_pfid_stakingPool":"Staking Pool","pages_pfid_my_stakingRecord":"Staking Records","pages_pfid_my_index":"Index","pages_pfid_my_cycle":"Cycle","pages_pfid_my_cycle_days":"Days","pages_pfid_my_state":"State","pages_pfid_my_staking":"Amount","pages_pfid_my_received":"Expect","pages_pfid_my_time":"Time","pages_pfid_my_operation":"Operation","pages_pfid_my_amount":"Amount","pages_pfid_my_password":"password","pages_pfid_my_expect":"Expect","pages_pfid_my_expect_received":"Expect","pages_pfid_started_at":"Started At","pages_pfid_withdraw_at":"Withdraw At","pages_equity_dividendList":"Current Dividend List","pages_equity_dividendRecords":"Dividend Records","pages_equity_index":"Index","pages_equity_ssc":"AOC","pages_equity_amount":"Amount","pages_equity_time":"Time","pages_equity_state":"State","pages_equity_withdraw":"Withdraw List","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"Initial Pledge Ratio","pages_dmw_liquidationRatio":"Maintenance Ratio","pages_dmw_vmDataSource":"VM Data Source","pages_dmw_dmwSource":"DMW Source","pages_dmw_vmSource":"VM Source","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"AOC LIST","pages_ssctools_list_collateralizationRatio":"Initial Pledge Ratio","pages_ssctools_list_liquidationRatio":"Maintenance Ratio","pages_ssctools_list_current_total":"Current circulation","pages_ssctools_list_exchangeRatio":"Exchange Ratio","pages_myssc_title":"MY AOC","pages_myssc_index":"Index","pages_myssc_no":"No","pages_myssc_biding":"Fill Short","pages_myssc_normal":"Normal","pages_myssc_pledged":"Pledged Coins","pages_myssc_mintCoins":"Minted Coins","pages_myssc_canClaimtValue":"Reclaimable Coins","pages_myssc_fee":"Fee","pages_myssc_currentRatio":"Current Ratio","pages_myssc_status":"Status","pages_myssc_operation":"Operation","pages_auction_title":"Auctions","pages_auction_index":"Index","pages_auction_assets":"Assets","pages_auction_currentPrice":"Current Price","pages_auction_singleBid":"Single Fill Short","pages_auction_status":"Status","pages_auction_countDown":"Countdown","pages_auction_operation":"Operation","form_note":"Note","form_bid_total":"Fill Short Total","form_input_amount":"Please Input Amount!","form_input_password":"Please Input Password!","form_input_markup":"Please Input Markup multiple!","form_input_cycle":"Please Select Cycle!","form_input_desc":"Please Input Description!","form_input_name":"Please Input Name!","form_lable_amount":"Amount","form_lable_password":"Password","form_lable_markup":"Markup multiple","form_lable_estimate":"Estimate","form_lable_fee":"Fee","form_lable_exchange_name":"Exchange Name","state_finished":"Finished","state_valid":"Valid","state_biding":"Fill Short","state_ssc_finished":"Recorded","state_ssc_valid":"Not Recorded","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC works best on Chrome browser.","chrome_down_btn":"Click to download Chrome browser.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"English","ko_KR":"Korean","zh_CN":"Simplified Chinese","updateDesc":"Update Description","addExchange":"Add Exchange","countdownFormat":"D day HH:mm:ss","equity_withdraw_list":"Withdrawal List"}',
       );
     },
     a5B0: function(e, t, n) {
@@ -1993,7 +1993,7 @@
           j.apply(this, arguments)
         );
       }
-      function N(e, t, n) {
+      function M(e, t, n) {
         return (
           t in e
             ? Object.defineProperty(e, t, {
@@ -2006,7 +2006,7 @@
           e
         );
       }
-      function M(e, t) {
+      function N(e, t) {
         if (!(e instanceof t))
           throw new TypeError('Cannot call a class as a function');
       }
@@ -2045,9 +2045,9 @@
       function R(e) {
         return function() {
           var t,
-            n = L(e);
-          if (B()) {
-            var a = L(this).constructor;
+            n = B(e);
+          if (L()) {
+            var a = B(this).constructor;
             t = Reflect.construct(n, arguments, a);
           } else t = n.apply(this, arguments);
           return z(this, t);
@@ -2063,7 +2063,7 @@
           );
         return e;
       }
-      function B() {
+      function L() {
         if ('undefined' === typeof Reflect || !Reflect.construct) return !1;
         if (Reflect.construct.sham) return !1;
         if ('function' === typeof Proxy) return !0;
@@ -2078,14 +2078,14 @@
           return !1;
         }
       }
-      function L(e) {
+      function B(e) {
         return (
-          (L = Object.setPrototypeOf
+          (B = Object.setPrototypeOf
             ? Object.getPrototypeOf
             : function(e) {
                 return e.__proto__ || Object.getPrototypeOf(e);
               }),
-          L(e)
+          B(e)
         );
       }
       var W = function(e, t) {
@@ -2112,7 +2112,7 @@
         function n() {
           var e;
           return (
-            M(this, n),
+            N(this, n),
             (e = t.apply(this, arguments)),
             (e.renderBadge = function(t) {
               var n,
@@ -2149,9 +2149,9 @@
                 w = e.renderStatusText(b),
                 S = l()(
                   ((n = {}),
-                  N(n, ''.concat(b, '-status-dot'), e.hasStatus()),
-                  N(n, ''.concat(b, '-status-').concat(f), !!f),
-                  N(n, ''.concat(b, '-status-').concat(y), K(y)),
+                  M(n, ''.concat(b, '-status-dot'), e.hasStatus()),
+                  M(n, ''.concat(b, '-status-').concat(f), !!f),
+                  M(n, ''.concat(b, '-status-').concat(y), K(y)),
                   n),
                 ),
                 x = {};
@@ -2254,9 +2254,9 @@
                   r,
                   e,
                   ((t = {}),
-                  N(t, ''.concat(e, '-status'), this.hasStatus()),
-                  N(t, ''.concat(e, '-not-a-wrapper'), !o),
-                  N(t, ''.concat(e, '-rtl'), 'rtl' === n),
+                  M(t, ''.concat(e, '-status'), this.hasStatus()),
+                  M(t, ''.concat(e, '-not-a-wrapper'), !o),
+                  M(t, ''.concat(e, '-rtl'), 'rtl' === n),
                   t),
                 );
               },
@@ -2337,15 +2337,15 @@
                   p = this.isHidden(),
                   m = l()(
                     ((n = {}),
-                    N(n, ''.concat(e, '-dot'), u),
-                    N(n, ''.concat(e, '-count'), !u),
-                    N(
+                    M(n, ''.concat(e, '-dot'), u),
+                    M(n, ''.concat(e, '-count'), !u),
+                    M(
                       n,
                       ''.concat(e, '-multiple-words'),
                       !u && i && i.toString && i.toString().length > 1,
                     ),
-                    N(n, ''.concat(e, '-status-').concat(o), !!o),
-                    N(n, ''.concat(e, '-status-').concat(c), K(c)),
+                    M(n, ''.concat(e, '-status-').concat(o), !!o),
+                    M(n, ''.concat(e, '-status-').concat(c), K(c)),
                     n),
                   ),
                   f = this.getStyleWithOffset();
@@ -2832,19 +2832,19 @@
         (e.prototype = Object.create(t && t.prototype, {
           constructor: { value: e, writable: !0, configurable: !0 },
         })),
-          t && Ne(e, t);
+          t && Me(e, t);
       }
-      function Ne(e, t) {
+      function Me(e, t) {
         return (
-          (Ne =
+          (Me =
             Object.setPrototypeOf ||
             function(e, t) {
               return (e.__proto__ = t), e;
             }),
-          Ne(e, t)
+          Me(e, t)
         );
       }
-      function Me(e) {
+      function Ne(e) {
         return function() {
           var t,
             n = De(e);
@@ -2911,7 +2911,7 @@
         },
         ze = (function(e) {
           je(n, e);
-          var t = Me(n);
+          var t = Ne(n);
           function n(e) {
             var a;
             ke(this, n),
@@ -2988,9 +2988,9 @@
                     'loading',
                   ]),
                   j = n('list', f),
-                  N = P;
-                'boolean' === typeof N && (N = { spinning: N });
-                var M = N && N.spinning,
+                  M = P;
+                'boolean' === typeof M && (M = { spinning: M });
+                var N = M && M.spinning,
                   I = '';
                 switch (C) {
                   case 'large':
@@ -3010,7 +3010,7 @@
                     Oe(t, ''.concat(j, '-').concat(I), I),
                     Oe(t, ''.concat(j, '-split'), y),
                     Oe(t, ''.concat(j, '-bordered'), d),
-                    Oe(t, ''.concat(j, '-loading'), M),
+                    Oe(t, ''.concat(j, '-loading'), N),
                     Oe(t, ''.concat(j, '-grid'), w),
                     Oe(
                       t,
@@ -3053,25 +3053,25 @@
                       T.pageSize,
                     )),
                   (R =
-                    M &&
+                    N &&
                     r['createElement']('div', { style: { minHeight: 53 } })),
                   q.length > 0)
                 ) {
-                  var B = q.map(function(e, t) {
+                  var L = q.map(function(e, t) {
                       return a.renderItem(e, t);
                     }),
-                    L = [];
-                  r['Children'].forEach(B, function(e, t) {
-                    L.push(r['cloneElement'](e, { key: a.keys[t] }));
+                    B = [];
+                  r['Children'].forEach(L, function(e, t) {
+                    B.push(r['cloneElement'](e, { key: a.keys[t] }));
                   }),
                     (R = w
-                      ? r['createElement'](X['a'], { gutter: w.gutter }, L)
+                      ? r['createElement'](X['a'], { gutter: w.gutter }, B)
                       : r['createElement'](
                           'ul',
                           { className: ''.concat(j, '-items') },
-                          L,
+                          B,
                         ));
-                } else h || M || (R = a.renderEmpty(j, o));
+                } else h || N || (R = a.renderEmpty(j, o));
                 var W = T.position || 'bottom';
                 return r['createElement'](
                   'div',
@@ -3086,7 +3086,7 @@
                       { className: ''.concat(j, '-header') },
                       O,
                     ),
-                  r['createElement'](G['a'], N, R, h),
+                  r['createElement'](G['a'], M, R, h),
                   k &&
                     r['createElement'](
                       'div',
@@ -3159,9 +3159,9 @@
         });
       n('ifDB');
       var qe = n('6CfX');
-      function Be(e) {
+      function Le(e) {
         return (
-          (Be =
+          (Le =
             'function' === typeof Symbol && 'symbol' === typeof Symbol.iterator
               ? function(e) {
                   return typeof e;
@@ -3174,12 +3174,12 @@
                     ? 'symbol'
                     : typeof e;
                 }),
-          Be(e)
+          Le(e)
         );
       }
-      function Le() {
+      function Be() {
         return (
-          (Le =
+          (Be =
             Object.assign ||
             function(e) {
               for (var t = 1; t < arguments.length; t++) {
@@ -3189,7 +3189,7 @@
               }
               return e;
             }),
-          Le.apply(this, arguments)
+          Be.apply(this, arguments)
         );
       }
       function We(e, t, n) {
@@ -3253,7 +3253,7 @@
         };
       }
       function Ue(e, t) {
-        return !t || ('object' !== Be(t) && 'function' !== typeof t)
+        return !t || ('object' !== Le(t) && 'function' !== typeof t)
           ? Ge(e)
           : t;
       }
@@ -3416,13 +3416,13 @@
                         ref: function(t) {
                           return (e.avatarChildren = t);
                         },
-                        style: Le(Le({}, j), E),
+                        style: Be(Be({}, j), E),
                       },
                       O,
                     );
                   } else {
-                    var N = {};
-                    v || (N.opacity = 0),
+                    var M = {};
+                    v || (M.opacity = 0),
                       (O = r['createElement'](
                         'span',
                         {
@@ -3438,8 +3438,8 @@
                 }
                 return r['createElement'](
                   'span',
-                  Le({}, g, {
-                    style: Le(Le({}, C), g.style),
+                  Be({}, g, {
+                    style: Be(Be({}, C), g.style),
                     className: x,
                     ref: function(t) {
                       return (e.avatarNode = t);
@@ -3634,7 +3634,7 @@
         };
       Et.displayName = 'FundOutlined';
       var jt = r['forwardRef'](Et),
-        Nt = {
+        Mt = {
           name: 'tool',
           theme: 'outlined',
           icon: {
@@ -3651,11 +3651,11 @@
             ],
           },
         },
-        Mt = Nt,
+        Nt = Mt,
         It = function(e, t) {
           return r['createElement'](
             pt['a'],
-            Object.assign({}, e, { ref: t, icon: Mt }),
+            Object.assign({}, e, { ref: t, icon: Nt }),
           );
         };
       It.displayName = 'ToolOutlined';
@@ -3710,15 +3710,15 @@
             ],
           },
         },
-        Bt = qt,
-        Lt = function(e, t) {
+        Lt = qt,
+        Bt = function(e, t) {
           return r['createElement'](
             pt['a'],
-            Object.assign({}, e, { ref: t, icon: Bt }),
+            Object.assign({}, e, { ref: t, icon: Lt }),
           );
         };
-      Lt.displayName = 'QuestionCircleOutlined';
-      var Wt = r['forwardRef'](Lt),
+      Bt.displayName = 'QuestionCircleOutlined';
+      var Wt = r['forwardRef'](Bt),
         Kt = {
           name: 'global',
           theme: 'outlined',
@@ -4065,8 +4065,8 @@
         return a;
       }
       var jn = st.Header,
-        Nn = st.Sider,
-        Mn = st.Content,
+        Mn = st.Sider,
+        Nn = st.Content,
         In = st.Footer,
         An = ot['a'].SubMenu,
         Tn = r['createElement'](
@@ -4109,7 +4109,7 @@
             document.location.href = 'http://' + document.location.host;
           });
       }
-      class Bn extends r['Component'] {
+      class Ln extends r['Component'] {
         constructor() {
           super(...arguments),
             (this.hash = window.location.hash.replace('#', '')),
@@ -4423,7 +4423,7 @@
                   st,
                   null,
                   r['createElement'](
-                    Nn,
+                    Mn,
                     {
                       trigger: null,
                       collapsible: !0,
@@ -4622,7 +4622,7 @@
                       ),
                     ),
                     r['createElement'](
-                      Mn,
+                      Nn,
                       {
                         className: 'site-layout-background',
                         style: {
@@ -4695,13 +4695,13 @@
           );
         }
       }
-      t['default'] = Bn;
+      t['default'] = Ln;
     },
     bE4E: function(e, t, n) {},
     bXwC: function(e, t, n) {},
     'dSv/': function(e) {
       e.exports = JSON.parse(
-        '{"button_changeAccount":"\u5207\u6362\u8d26\u6237","button_goStaking":"\u8d28\u62bc","button_cancel":"\u53d6\u6d88","button_ok":"\u786e\u5b9a","button_commit":"\u63d0\u4ea4","button_confirm":"\u786e\u8ba4","button_borrow":"\u501f\u51fa","button_repay":"\u8fd8\u6b3e","button_deal":"\u8fd8\u6b3e","button_withdraw":"\u63d0\u73b0","button_reinvet":"\u590d\u6295","button_createAuction":"\u521b\u5efa\u7ade\u62cd","button_bidding":"\u53bb\u7ade\u62cd","button_bid":"\u7ade\u62cd","button_deposit":"\u7ade\u62cd","menus_wallet":"\u94b1\u5305","menus_pfid":"PFID","menus_mypfid":"\u6211\u7684PFID","menus_equity":"\u5206\u7ea2","menus_dmw":"DMW","menus_ssctools":"\u7a33\u5b9a\u5e01\u5de5\u5177","menus_ssclist":"\u7a33\u5b9a\u5e01\u5217\u8868","menus_sscmy":"\u6211\u7684\u501f\u51fa","menus_auction":"\u7ade\u62cd","menus_dapps":"DAPPS","pages_pfid_balance":"\u4f59\u989d","pages_pfid_stakingPool":"\u8d28\u62bc\u6c60","pages_pfid_my_stakingRecord":"\u8d28\u62bc\u8bb0\u5f55","pages_pfid_my_index":"\u5e8f\u53f7","pages_pfid_my_cycle":"\u5468\u671f","pages_pfid_my_cycle_days":"\u5929","pages_pfid_my_state":"\u72b6\u6001","pages_pfid_my_staking":"\u8d28\u62bc","pages_pfid_my_received":"\u6536\u5230","pages_pfid_my_time":"\u65f6\u95f4","pages_pfid_my_operation":"\u64cd\u4f5c","pages_pfid_my_amount":"\u91d1\u989d","pages_pfid_my_password":"\u5bc6\u7801","pages_pfid_my_expect":"\u9884\u8ba1\u4ea7\u51fa","pages_pfid_my_expect_received":"\u9884\u8ba1\u6536\u76ca","pages_pfid_started_at":"\u5f00\u59cb\u65f6\u95f4","pages_pfid_withdraw_at":"\u63d0\u73b0\u65f6\u95f4","pages_equity_dividendList":"\u5f53\u524d\u53ef\u80fd\u5f97\u5230\u7684\u7ea2\u5229","pages_equity_dividendRecords":"\u7ea2\u5229\u8bb0\u5f55","pages_equity_index":"\u5e8f\u53f7","pages_equity_ssc":"\u5e01\u540d","pages_equity_amount":"\u91d1\u989d","pages_equity_time":"\u65f6\u95f4","pages_equity_state":"\u72b6\u6001","pages_equity_withdraw":"\u63d0\u73b0\u5217\u8868","pages_myssc_biding":"\u6e05\u7b97\u4e2d","pages_myssc_normal":"\u6b63\u5e38","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"\u8d28\u62bc\u7387","pages_dmw_liquidationRatio":"\u6e05\u7b97\u7387","pages_dmw_vmDataSource":"\u6570\u636e\u6765\u6e90","pages_dmw_dmwSource":"DMW \u5408\u7ea6\u5730\u5740","pages_dmw_vmSource":"VM \u5408\u7ea6\u5730\u5740","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"\u7a33\u5b9a\u5e01\u5217\u8868","pages_ssctools_list_collateralizationRatio":"\u8d28\u62bc\u7387","pages_ssctools_list_liquidationRatio":"\u6e05\u7b97\u7387","pages_ssctools_list_current_total":"\u5f53\u524d\u6d41\u901a","pages_ssctools_list_exchangeRatio":"\u5151\u6362\u6bd4\u4f8b","pages_myssc_title":"\u6211\u7684\u7a33\u5b9a\u5e01","pages_myssc_index":"\u5e8f\u53f7","pages_myssc_no":"\u7f16\u53f7","pages_myssc_pledged":"\u8d28\u62bc\u6570\u91cf","pages_myssc_mintCoins":"\u501f\u51fa\u6570\u91cf","pages_myssc_canClaimtValue":"\u53ef\u8d4e\u56de\u6570\u91cf","pages_myssc_fee":"\u8d39\u7528","pages_myssc_currentRatio":"\u5f53\u524d\u8d28\u62bc\u7387","pages_myssc_status":"\u72b6\u6001","pages_myssc_operation":"\u64cd\u4f5c","pages_auction_title":"\u7ade\u62cd","pages_auction_index":"\u5e8f\u53f7","pages_auction_assets":"\u8d44\u4ea7","pages_auction_currentPrice":"\u5f53\u524d\u51fa\u4ef7","pages_auction_singleBid":"\u5355\u6b21\u51fa\u4ef7","pages_auction_status":"\u72b6\u6001","pages_auction_countDown":"\u5012\u8ba1\u65f6","pages_auction_operation":"\u64cd\u4f5c","form_note":"\u8bf4\u660e","form_bid_total":"\u7ade\u4ef7\u603b\u989d","form_input_amount":"\u8bf7\u8f93\u5165\u91d1\u989d!","form_input_password":"\u8bf7\u8f93\u5165\u5bc6\u7801!","form_input_markup":"\u8bf7\u8f93\u5165\u52a0\u4ef7\u500d\u6570!","form_input_cycle":"\u8bf7\u9009\u62e9\u5468\u671f!","form_input_desc":"\u8bf7\u8f93\u5165\u63cf\u8ff0!","form_input_name":"\u8bf7\u8f93\u5165\u540d\u79f0!","form_lable_amount":"\u91d1\u989d","form_lable_password":"\u5bc6\u7801","form_lable_markup":"\u52a0\u4ef7\u500d\u6570","form_lable_estimate":"\u4f30\u7b97","form_lable_fee":"\u8d39\u7528","form_lable_exchange_name":"\u4ea4\u6613\u6240\u540d\u79f0","state_finished":"\u5df2\u7ed3\u675f","state_valid":"\u6709\u6548","state_biding":"\u7ade\u62cd\u4e2d","state_ssc_finished":"\u5df2\u5165\u8d26","state_ssc_valid":"\u672a\u5165\u8d26","chrome_down":"https://www.google.cn/intl/zh-CN/chrome/","chrome_down_tip":"NOVAC\u5728Chrome\u6d4f\u89c8\u5668\u4e0a\u6548\u679c\u6700\u4f73\u3002","chrome_down_btn":"\u70b9\u51fb\u4e0b\u8f7d","help":"https://pofid.com/Tech_guide.html#top0","en_US":"\u82f1\u6587","ko_KR":"\u97e9\u6587","zh_CN":"\u7b80\u4f53\u4e2d\u6587","updateDesc":"\u66f4\u65b0\u63cf\u8ff0","addExchange":"\u589e\u52a0\u4ea4\u6613\u6240","countdownFormat":"D \u5929 HH:mm:ss","equity_withdraw_list":"\u63d0\u73b0\u5217\u8868"}',
+        '{"button_changeAccount":"\u5207\u6362\u8d26\u6237","button_goStaking":"\u8d28\u62bc","button_cancel":"\u53d6\u6d88","button_ok":"\u786e\u5b9a","button_commit":"\u63d0\u4ea4","button_confirm":"\u786e\u8ba4","button_borrow":"\u501f\u51fa","button_repay":"\u8fd8\u6b3e","button_deal":"\u8fd8\u6b3e","button_withdraw":"\u63d0\u73b0","button_reinvet":"\u590d\u6295","button_createAuction":"\u521b\u5efa\u7ade\u62cd","button_bidding":"\u53bb\u7ade\u62cd","button_bid":"\u7ade\u62cd","button_deposit":"\u7ade\u62cd","menus_wallet":"\u94b1\u5305","menus_pfid":"PFID","menus_mypfid":"\u6211\u7684PFID","menus_equity":"\u5206\u7ea2","menus_dmw":"DMW","menus_ssctools":"\u7a33\u5b9a\u5e01\u5de5\u5177","menus_ssclist":"\u7a33\u5b9a\u5e01\u5217\u8868","menus_sscmy":"\u6211\u7684\u501f\u51fa","menus_auction":"\u7ade\u62cd","menus_dapps":"DAPPS","pages_pfid_balance":"\u4f59\u989d","pages_pfid_stakingPool":"\u8d28\u62bc\u6c60","pages_pfid_my_stakingRecord":"\u8d28\u62bc\u8bb0\u5f55","pages_pfid_my_index":"\u5e8f\u53f7","pages_pfid_my_cycle":"\u5468\u671f","pages_pfid_my_cycle_days":"\u5929","pages_pfid_my_state":"\u72b6\u6001","pages_pfid_my_staking":"\u8d28\u62bc","pages_pfid_my_received":"\u6536\u5230","pages_pfid_my_time":"\u65f6\u95f4","pages_pfid_my_operation":"\u64cd\u4f5c","pages_pfid_my_amount":"\u91d1\u989d","pages_pfid_my_password":"\u5bc6\u7801","pages_pfid_my_expect":"\u9884\u8ba1\u4ea7\u51fa","pages_pfid_my_expect_received":"\u9884\u8ba1\u6536\u76ca","pages_pfid_started_at":"\u5f00\u59cb\u65f6\u95f4","pages_pfid_withdraw_at":"\u63d0\u73b0\u65f6\u95f4","pages_equity_dividendList":"\u5f53\u524d\u53ef\u80fd\u5f97\u5230\u7684\u7ea2\u5229","pages_equity_dividendRecords":"\u7ea2\u5229\u8bb0\u5f55","pages_equity_index":"\u5e8f\u53f7","pages_equity_ssc":"\u5e01\u540d","pages_equity_amount":"\u91d1\u989d","pages_equity_time":"\u65f6\u95f4","pages_equity_state":"\u72b6\u6001","pages_equity_withdraw":"\u63d0\u73b0\u5217\u8868","pages_myssc_biding":"\u6e05\u7b97\u4e2d","pages_myssc_normal":"\u6b63\u5e38","pages_dmw_list":"DMW LIST","pages_dmw_sero":"SERO is the first company in the world to support Turing complete smart contracts_ It adopts zero-knowledge proof to protect the public chain of assets and transaction privacy","pages_dmw_collateralizationRatio":"\u521d\u59cb\u8d28\u62bc\u7387","pages_dmw_liquidationRatio":"\u7ef4\u62a4\u95e8\u69db","pages_dmw_vmDataSource":"\u6570\u636e\u6765\u6e90","pages_dmw_dmwSource":"DMW \u5408\u7ea6\u5730\u5740","pages_dmw_vmSource":"VM \u5408\u7ea6\u5730\u5740","pages_dmw_stableCoin":"Stable coin by","pages_ssctools_list_title":"\u7a33\u5b9a\u5e01\u5217\u8868","pages_ssctools_list_collateralizationRatio":"\u8d28\u62bc\u7387","pages_ssctools_list_liquidationRatio":"\u6e05\u7b97\u7387","pages_ssctools_list_current_total":"\u5f53\u524d\u6d41\u901a","pages_ssctools_list_exchangeRatio":"\u5151\u6362\u6bd4\u4f8b","pages_myssc_title":"\u6211\u7684\u7a33\u5b9a\u5e01","pages_myssc_index":"\u5e8f\u53f7","pages_myssc_no":"\u7f16\u53f7","pages_myssc_pledged":"\u8d28\u62bc\u6570\u91cf","pages_myssc_mintCoins":"\u501f\u51fa\u6570\u91cf","pages_myssc_canClaimtValue":"\u53ef\u8d4e\u56de\u6570\u91cf","pages_myssc_fee":"\u8d39\u7528","pages_myssc_currentRatio":"\u5f53\u524d\u8d28\u62bc\u7387","pages_myssc_status":"\u72b6\u6001","pages_myssc_operation":"\u64cd\u4f5c","pages_auction_title":"\u7ade\u62cd","pages_auction_index":"\u5e8f\u53f7","pages_auction_assets":"\u8d44\u4ea7","pages_auction_currentPrice":"\u5f53\u524d\u51fa\u4ef7","pages_auction_singleBid":"\u5355\u6b21\u51fa\u4ef7","pages_auction_status":"\u72b6\u6001","pages_auction_countDown":"\u5012\u8ba1\u65f6","pages_auction_operation":"\u64cd\u4f5c","form_note":"\u8bf4\u660e","form_bid_total":"\u7ade\u4ef7\u603b\u989d","form_input_amount":"\u8bf7\u8f93\u5165\u91d1\u989d!","form_input_password":"\u8bf7\u8f93\u5165\u5bc6\u7801!","form_input_markup":"\u8bf7\u8f93\u5165\u52a0\u4ef7\u500d\u6570!","form_input_cycle":"\u8bf7\u9009\u62e9\u5468\u671f!","form_input_desc":"\u8bf7\u8f93\u5165\u63cf\u8ff0!","form_input_name":"\u8bf7\u8f93\u5165\u540d\u79f0!","form_lable_amount":"\u91d1\u989d","form_lable_password":"\u5bc6\u7801","form_lable_markup":"\u52a0\u4ef7\u500d\u6570","form_lable_estimate":"\u4f30\u7b97","form_lable_fee":"\u8d39\u7528","form_lable_exchange_name":"\u4ea4\u6613\u6240\u540d\u79f0","state_finished":"\u5df2\u7ed3\u675f","state_valid":"\u6709\u6548","state_biding":"\u7ade\u62cd\u4e2d","state_ssc_finished":"\u5df2\u5165\u8d26","state_ssc_valid":"\u672a\u5165\u8d26","chrome_down":"https://www.google.cn/intl/zh-CN/chrome/","chrome_down_tip":"NOVAC\u5728Chrome\u6d4f\u89c8\u5668\u4e0a\u6548\u679c\u6700\u4f73\u3002","chrome_down_btn":"\u70b9\u51fb\u4e0b\u8f7d","help":"https://pofid.com/Tech_guide.html#top0","en_US":"\u82f1\u6587","ko_KR":"\u97e9\u6587","zh_CN":"\u7b80\u4f53\u4e2d\u6587","updateDesc":"\u66f4\u65b0\u63cf\u8ff0","addExchange":"\u589e\u52a0\u4ea4\u6613\u6240","countdownFormat":"D \u5929 HH:mm:ss","equity_withdraw_list":"\u63d0\u73b0\u5217\u8868"}',
       );
     },
     fARU: function(e, t, n) {
@@ -5549,7 +5549,7 @@
         warning: u.a,
         loading: s.a,
       };
-      function N(e) {
+      function M(e) {
         var t,
           n = void 0 !== e.duration ? e.duration : x,
           r = j[e.type],
@@ -5591,13 +5591,13 @@
           l
         );
       }
-      function M(e) {
+      function N(e) {
         return (
           '[object Object]' === Object.prototype.toString.call(e) && !!e.content
         );
       }
       var I = {
-        open: N,
+        open: M,
         config: function(e) {
           void 0 !== e.top && ((_ = e.top), (v = null)),
             void 0 !== e.duration && (x = e.duration),
@@ -5613,7 +5613,7 @@
       };
       ['success', 'info', 'warning', 'error', 'loading'].forEach(function(e) {
         I[e] = function(t, n, a) {
-          return M(t)
+          return N(t)
             ? I.open(h(h({}, t), { type: e }))
             : ('function' === typeof n && ((a = n), (n = void 0)),
               I.open({ content: t, duration: n, type: e, onClose: a }));
@@ -5847,7 +5847,7 @@
       function j(e, t, n) {
         return t && E(e.prototype, t), n && E(e, n), e;
       }
-      function N(e, t) {
+      function M(e, t) {
         if ('function' !== typeof t && null !== t)
           throw new TypeError(
             'Super expression must either be null or a function',
@@ -5855,16 +5855,16 @@
         (e.prototype = Object.create(t && t.prototype, {
           constructor: { value: e, writable: !0, configurable: !0 },
         })),
-          t && M(e, t);
+          t && N(e, t);
       }
-      function M(e, t) {
+      function N(e, t) {
         return (
-          (M =
+          (N =
             Object.setPrototypeOf ||
             function(e, t) {
               return (e.__proto__ = t), e;
             }),
-          M(e, t)
+          N(e, t)
         );
       }
       function I(e) {
@@ -5914,7 +5914,7 @@
         );
       }
       var z = (function(e) {
-        N(n, e);
+        M(n, e);
         var t = I(n);
         function n() {
           var e;
