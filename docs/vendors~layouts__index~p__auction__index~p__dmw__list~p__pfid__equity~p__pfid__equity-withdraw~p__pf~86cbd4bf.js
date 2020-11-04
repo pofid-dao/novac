@@ -10452,7 +10452,7 @@
             npm_config_only: '',
             npm_config_commit_hooks: 'true',
             npm_config_browser: '',
-            npm_package_gitHead: 'fe1c6b408cb83583839c0f59e869aef3a72d6e4d',
+            npm_package_gitHead: 'ef9716a3a2a01117681bd8e543a94b2c808d118f',
             npm_package_devDependencies_i18next_http_backend: '^1.0.8',
             npm_config_also: '',
             rvm_use_flag: '',
@@ -10509,7 +10509,7 @@
             npm_config_key: '',
             npm_package_readmeFilename: 'README.md',
             __INTELLIJ_COMMAND_HISTFILE__:
-              '/Users/huangw/Library/Preferences/WebStorm2019.2/terminal/history/history-2327',
+              '/Users/huangw/Library/Preferences/WebStorm2019.2/terminal/history/history-395',
             npm_package_description: 'Install dependencies,',
             npm_package_devDependencies_react_i18next: '^11.4.0',
             USER: 'huangw',
@@ -10523,7 +10523,7 @@
             npm_package_devDependencies_bignumber_js: '^9.0.0',
             rvm_path: '/Users/huangw/.rvm',
             SSH_AUTH_SOCK:
-              '/private/tmp/com.apple.launchd.3lrT6PlHAu/Listeners',
+              '/private/tmp/com.apple.launchd.Zzohh7LYbN/Listeners',
             __CF_USER_TEXT_ENCODING: '0x1F5:0x0:0x0',
             npm_execpath: '/usr/local/lib/node_modules/npm/bin/npm-cli.js',
             npm_config_global_style: '',
