@@ -10452,7 +10452,7 @@
             npm_config_only: '',
             npm_config_commit_hooks: 'true',
             npm_config_browser: '',
-            npm_package_gitHead: 'ef9716a3a2a01117681bd8e543a94b2c808d118f',
+            npm_package_gitHead: 'eb8178c6a443c30e57b896c37a6e581981e5d379',
             npm_package_devDependencies_i18next_http_backend: '^1.0.8',
             npm_config_also: '',
             rvm_use_flag: '',

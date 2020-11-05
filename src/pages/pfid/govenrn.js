@@ -110,7 +110,7 @@ class Govenrn extends Component {
         React.createElement(
           'div',
           null,
-          "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+          "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
           React.createElement('br', null),
           'Began on 16 March \uFF0CEnd  of 16 April     Executed: still not',
         ),
@@ -122,7 +122,7 @@ class Govenrn extends Component {
           title: React.createElement(
             'div',
             { style: { width: '60%' } },
-            React.createElement('span', null, 'Proposed ethereum to join DMW'),
+            React.createElement('span', null, 'Proposed ethereum to join PV'),
             React.createElement(
               'span',
               { style: { float: 'right' } },
@@ -139,7 +139,7 @@ class Govenrn extends Component {
         React.createElement(
           'div',
           null,
-          "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+          "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
           React.createElement('br', null),
           'Began on 16 March \uFF0CEnd  of 16 April     Executed: still not',
         ),
@@ -176,7 +176,7 @@ class Govenrn extends Component {
         React.createElement(
           'div',
           null,
-          "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+          "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
           React.createElement('br', null),
           'Began on 16 March \uFF0CEnd  of 16 April     Executed: still not',
         ),
@@ -205,7 +205,7 @@ class Govenrn extends Component {
         React.createElement(
           'div',
           null,
-          "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+          "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
           React.createElement('br', null),
           'Began on 16 March \uFF0CEnd  of 16 April     Executed: still not',
         ),
@@ -234,7 +234,7 @@ class Govenrn extends Component {
         React.createElement(
           'div',
           null,
-          "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+          "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
           React.createElement('br', null),
           'Began on 16 March \uFF0CEnd  of 16 April     Executed: still not',
         ),

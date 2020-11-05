@@ -117,7 +117,7 @@
               i.a.createElement(
                 'div',
                 null,
-                "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+                "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
                 i.a.createElement('br', null),
                 'Began on 16 March \uff0cEnd  of 16 April     Executed: still not',
               ),
@@ -132,7 +132,7 @@
                   i.a.createElement(
                     'span',
                     null,
-                    'Proposed ethereum to join DMW',
+                    'Proposed ethereum to join PV',
                   ),
                   i.a.createElement(
                     'span',
@@ -154,7 +154,7 @@
               i.a.createElement(
                 'div',
                 null,
-                "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+                "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
                 i.a.createElement('br', null),
                 'Began on 16 March \uff0cEnd  of 16 April     Executed: still not',
               ),
@@ -191,7 +191,7 @@
               i.a.createElement(
                 'div',
                 null,
-                "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+                "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
                 i.a.createElement('br', null),
                 'Began on 16 March \uff0cEnd  of 16 April     Executed: still not',
               ),
@@ -220,7 +220,7 @@
               i.a.createElement(
                 'div',
                 null,
-                "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+                "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
                 i.a.createElement('br', null),
                 'Began on 16 March \uff0cEnd  of 16 April     Executed: still not',
               ),
@@ -249,7 +249,7 @@
               i.a.createElement(
                 'div',
                 null,
-                "It is hoped that the coinage tax rate of BTC's DMW will be adjusted to 8%",
+                "It is hoped that the coinage tax rate of BTC's PV will be adjusted to 8%",
                 i.a.createElement('br', null),
                 'Began on 16 March \uff0cEnd  of 16 April     Executed: still not',
               ),

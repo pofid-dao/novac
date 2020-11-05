@@ -259,7 +259,7 @@ class DmwList extends Component {
               i18n.t('pages_dmw_stableCoin'),
               ' ',
               key,
-              ' DMW',
+              ' PV',
             ),
           ),
           React.createElement('p', null, coinsx),

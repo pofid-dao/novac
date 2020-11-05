@@ -58,19 +58,19 @@ export default defineConfig({
           path: '/dmw/list',
           wrappers: ['@/wrappers/filter'],
           component: '@/pages/dmw/list',
-          title: 'NOVAC - DMW - LIST',
+          title: 'NOVAC - PV - LIST',
         },
         {
           path: '/scctools/list',
           wrappers: ['@/wrappers/filter'],
           component: '@/pages/scctools/index',
-          title: 'NOVAC - AOC - LIST',
+          title: 'NOVAC - OCA - LIST',
         },
         {
           path: '/scctools/my',
           wrappers: ['@/wrappers/filter'],
           component: '@/pages/scctools/my',
-          title: 'NOVAC - AOC - MY',
+          title: 'NOVAC - OCA - MY',
         },
 
         {

@@ -1216,7 +1216,7 @@
                                       x['a'].t('pages_dmw_stableCoin'),
                                       ' ',
                                       n,
-                                      ' DMW',
+                                      ' PV',
                                     ),
                                   ),
                                   h.a.createElement('p', null, i),

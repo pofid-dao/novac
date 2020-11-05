@@ -169,7 +169,7 @@ class Borrow extends Component {
           React.createElement(
             Col,
             { span: 6 },
-            'DMW: ',
+            'PV: ',
             React.createElement('span', null, 'SRO_A'),
           ),
           React.createElement(

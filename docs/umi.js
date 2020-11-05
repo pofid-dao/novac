@@ -14313,7 +14313,7 @@
                     n.bind(null, 'f0qC'),
                   ),
               }),
-              title: 'NOVAC - DMW - LIST',
+              title: 'NOVAC - PV - LIST',
               exact: !0,
             },
             {
@@ -14325,7 +14325,7 @@
                     n.bind(null, 'mQPl'),
                   ),
               }),
-              title: 'NOVAC - AOC - LIST',
+              title: 'NOVAC - OCA - LIST',
               exact: !0,
             },
             {
@@ -14337,7 +14337,7 @@
                     n.bind(null, 'VDO8'),
                   ),
               }),
-              title: 'NOVAC - AOC - MY',
+              title: 'NOVAC - OCA - MY',
               exact: !0,
             },
             {

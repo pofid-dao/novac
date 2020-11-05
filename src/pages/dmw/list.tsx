@@ -166,7 +166,7 @@ class DmwList extends Component {
           <Divider dashed />
           <p>
             <h2>
-              {i18n.t('pages_dmw_stableCoin')} {key} DMW
+              {i18n.t('pages_dmw_stableCoin')} {key} PV
             </h2>
           </p>
           <p>{coinsx}</p>

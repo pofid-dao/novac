@@ -169,7 +169,7 @@ class Deposit extends Component {
           React.createElement(
             Col,
             { span: 8 },
-            'DMW: ',
+            'PV: ',
             React.createElement('span', null, 'SRO_D'),
           ),
           React.createElement(
