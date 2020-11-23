@@ -9,20 +9,21 @@ import {
   Table,
   Spin,
   notification,
-  Pagination,
   Tag,
+  Pagination,
 } from 'antd';
 import './index.css';
 import utils from '@/common/utils';
-import dmw from '@/service/dmw';
+import dmw from '@/service/dmwV2';
 import dmwBase from '@/service/dmwBase';
-import dmwInfo from '@/service/dmwInfo';
+import dmwInfo from '@/service/dmwInfoV2';
 import BorrowForm from '@/components/Borrow';
 import DealForm from '@/components/Deal';
 import PasswordForm from '@/components/Password';
 import BigNumber from 'bignumber.js';
 import i18n from '@/i18n';
-import { url } from '@/common/url';
+import coinFactory from '@/service/coinFactory';
+import { util } from 'prettier';
 
 const { TabPane } = Tabs;
 
@@ -59,6 +60,7 @@ const columns = [
   //   key: 'index',
   //   width: '5%',
   // },
+  //
   // {
   //   title: i18n.t('pages_myssc_no'),
   //   dataIndex: 'no',
@@ -69,27 +71,26 @@ const columns = [
     title: i18n.t('pages_myssc_pledged'),
     dataIndex: 'backedValue',
     key: 'backedValue',
-    width: '20%',
+    width: '15%',
   },
-  //
-  // {
-  //   title: i18n.t('pages_myssc_mintCoins'),
-  //   dataIndex: 'mintValue',
-  //   key: 'mintValue',
-  //   width: '15%',
-  // },
+  {
+    title: i18n.t('pages_myssc_mintCoins'),
+    dataIndex: 'mintValue',
+    key: 'mintValue',
+    width: '15%',
+  },
 
   {
     title: i18n.t('pages_myssc_canClaimtValue'),
     dataIndex: 'canClaimtValue',
     key: 'canClaimtValue',
-    width: '15%',
+    width: '10%',
   },
   {
     title: i18n.t('pages_myssc_fee'),
     dataIndex: 'fee',
     key: 'fee',
-    width: '15%',
+    width: '10%',
   },
   {
     title: i18n.t('pages_myssc_currentRatio'),
@@ -167,6 +168,8 @@ class SSCTools extends Component {
 
     estimatAddDepositAmount: [],
     lastIndex: 0,
+
+    totalSupply: 0,
   };
 
   componentDidMount(): void {
@@ -255,8 +258,20 @@ class SSCTools extends Component {
     that.setVisibleDeal(true);
   }
 
+  async totalSupply(mintCoin: string) {
+    const rest: any = await coinFactory.totalSupply(mintCoin);
+    console.log(
+      'totalSupply>>> ',
+      utils.toValue(rest, utils.getDecimalCache(mintCoin)).toFixed(4),
+    );
+    return new Promise(resolve => {
+      resolve(utils.toValue(rest, utils.getDecimalCache(mintCoin)).toFixed(4));
+    });
+  }
+
   deposit(contractIndex: number) {
     const that = this;
+    console.log('');
     dmw
       .estimatAddDepositAmount(contractIndex)
       .then((rest: any) => {
@@ -419,7 +434,7 @@ class SSCTools extends Component {
         decimals[backeCoin] = d1;
         decimals[mintCoin] = d2;
 
-        const records = await dmwInfo.myPageKeyContracts(
+        const records = await dmwInfo.keyPageContracts(
           backeCoin,
           mintCoin,
           0,
@@ -437,12 +452,15 @@ class SSCTools extends Component {
       }
       console.log('subPanes>>>> ', subPanes);
 
+      const totalSupply: any = await that.totalSupply(selectMintCoin);
+
       that.setState({
         panes: panes,
         decimals: decimals,
         subPanes: subPanes,
         selectBackedCoin: selectBackedCoin,
         selectMintCoin: selectMintCoin,
+        totalSupply: totalSupply,
       });
     }
   }
@@ -457,9 +475,14 @@ class SSCTools extends Component {
       subPanes,
       lastIndex,
     } = this.state;
+    that.totalSupply(selectMintCoin).then((totalSupply: any) => {
+      that.setState({
+        totalSupply: totalSupply,
+      });
+    });
     let tmpSubPanes: any = subPanes;
     dmwInfo
-      .myPageKeyContracts(
+      .keyPageContracts(
         selectBackedCoin,
         selectMintCoin,
         (pageNo - 1) * pageSize,
@@ -509,8 +532,9 @@ class SSCTools extends Component {
   };
 
   renderSubPane(data: any, datas: any) {
+    console.log('data>>> ', data);
     const that = this;
-    const { pageNo, pageSize, decimals } = that.state;
+    const { pageNo, pageSize, decimals, totalSupply } = that.state;
     const thresholdRate: number = data.thresholdRate;
     const collateralRate: number = data.collateralRate;
     const currentRateNumerator: number = data.currentRateNumerator;
@@ -522,16 +546,16 @@ class SSCTools extends Component {
       for (let i = 0; i < datas.data.length; i++) {
         let buttons = [];
         const d = datas.data[i];
+
         const currentRateBig = new BigNumber(d.backedValue)
           .multipliedBy(new BigNumber(currentRateDenominator))
           .dividedBy(new BigNumber(currentRateNumerator))
           .dividedBy(new BigNumber(d.mintValue))
-          .multipliedBy(100);
+          .multipliedBy(new BigNumber(100));
 
         const currentRate = currentRateBig.toFixed(4, 1);
 
         if (d.status == 1 || d.status == 2) {
-          // buttons.push(<Button type={"primary"} onClick={()=>{that.borrow(backeCoin,mintCoin)}} block style={{marginTop:'5px'}}>Borrow</Button>);
           if (d.owns) {
             buttons.push(
               <Button
@@ -557,9 +581,10 @@ class SSCTools extends Component {
           if (currentRateBig.comparedTo(collateralRate) == -1 && d.owns) {
             buttons.push(
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
+                  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>11');
+
                   that.deposit(d.contractIndex);
                 }}
                 block
@@ -571,9 +596,9 @@ class SSCTools extends Component {
           } else if (currentRateBig.comparedTo(thresholdRate) < 0) {
             buttons.push(
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
+                  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>22');
                   that.deposit(d.contractIndex);
                 }}
                 block
@@ -584,6 +609,8 @@ class SSCTools extends Component {
             );
           }
         }
+
+        // console.log('buttons>> ', buttons);
 
         // @ts-ignore
         const decimal = decimals[data.backeCoin];
@@ -630,7 +657,7 @@ class SSCTools extends Component {
             overflowY: 'scroll',
           }}
         >
-          <Descriptions column={4}>
+          <Descriptions column={5}>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_collateralizationRatio')}
             >
@@ -649,9 +676,13 @@ class SSCTools extends Component {
             >
               {thresholdRate}%
             </Descriptions.Item>
+            <Descriptions.Item
+              label={i18n.t('pages_ssctools_list_current_total')}
+            >
+              {totalSupply}
+            </Descriptions.Item>
             <Descriptions.Item label={''}>
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -714,7 +745,6 @@ class SSCTools extends Component {
             </Descriptions.Item>
             <Descriptions.Item label={''}>
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -734,9 +764,15 @@ class SSCTools extends Component {
   }
 
   setSelectTap = (backedCoin: string, mintCoin: string) => {
+    const that = this;
     this.setState({
       selectBackedCoin: backedCoin,
       selectMintCoin: mintCoin,
+    });
+    that.totalSupply(mintCoin).then((totalSupply: any) => {
+      that.setState({
+        totalSupply: totalSupply,
+      });
     });
   };
 
@@ -809,7 +845,7 @@ class SSCTools extends Component {
         <Spin spinning={this.state.loading}>
           <Row className={'pfid-title'}>
             <Col span={12}>
-              <span>{i18n.t('pages_myssc_title')}</span>
+              <span>{i18n.t('pages_ssctools_list_title')}</span>
             </Col>
             <Col span={12} style={{ textAlign: 'right' }}></Col>
           </Row>
@@ -852,6 +888,8 @@ class SSCTools extends Component {
           visible={visibleAuction}
           onCreate={this.onDeposit}
           onCancel={() => {
+            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>11');
+
             this.setVisibleAuction(false);
           }}
           title={i18n.t('button_deposit')}

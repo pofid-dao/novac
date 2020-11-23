@@ -515,6 +515,7 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
+                  disabled: true,
                   type: 'primary',
                   onClick: () => {
                     that.deposit(d.contractIndex);
@@ -530,6 +531,7 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
+                  disabled: true,
                   type: 'primary',
                   onClick: () => {
                     that.deposit(d.contractIndex);
@@ -627,6 +629,7 @@ class SSCTools extends Component {
             React.createElement(
               Button,
               {
+                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -704,6 +707,7 @@ class SSCTools extends Component {
             React.createElement(
               Button,
               {
+                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -806,7 +810,17 @@ class SSCTools extends Component {
           React.createElement(Col, { span: 12, style: { textAlign: 'right' } }),
         ),
         React.createElement('p', null),
-        React.createElement(Tabs, { type: 'card', animated: true }, tabPanes),
+        React.createElement(
+          Tabs,
+          {
+            type: 'card',
+            onTabClick: mintCoin => {
+              this.setSelectTap(mintCoin, 'SUSD');
+            },
+            animated: true,
+          },
+          tabPanes,
+        ),
         React.createElement('p', null),
       ),
       React.createElement(BorrowForm, {

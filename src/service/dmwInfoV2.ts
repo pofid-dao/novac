@@ -4,77 +4,57 @@ import serojs from 'serojs';
 import seropp from 'sero-pp';
 import account from '@/service/account';
 import BigNumber from 'bignumber.js';
-import tx from './tx';
+import tx from '@/service/tx';
 import gerorpc from '@/common/gerorpc';
-class Auction {
+
+class DmwInfo {
   callContract: any = null;
 
   constructor() {
+    console.log('dwmInfo>>>>>>>>>>>>>>>>,', config.dmwInfoV2);
     this.callContract = serojs.callContract(
-      config.auction.abi,
-      config.auction.address,
+      config.dmwInfoV2.abi,
+      config.dmwInfoV2.address,
     );
   }
 
-  async bid(
-    contractIndex: number,
-    mintCoin: string,
-    amount: any,
-    password: string,
+  async myPageContracts(offset: number, pageSize: number): Promise<any> {
+    const act: AccountInfo = account.getCurrent();
+    return this.callMethod('myPageContracts', act.MainPKr, [offset, pageSize]);
+  }
+
+  async keyPageContracts(
+    _backedCoin: string,
+    _mintCoin: string,
+    offset: number,
+    pageSize: number,
   ): Promise<any> {
-    const that = this;
+    console.log('keyPageContracts', _backedCoin, _mintCoin, offset, pageSize);
+
+    console.log(this.callContract);
+
     const act: AccountInfo = account.getCurrent();
-    return that.executeMethod(
-      'bid',
-      act.PK,
-      act.MainPKr,
-      [contractIndex],
-      new BigNumber(amount),
-      mintCoin,
-      password,
-    );
+    return this.callMethod('keyPageContracts', act.MainPKr, [
+      _backedCoin,
+      _mintCoin,
+      offset,
+      pageSize,
+    ]);
   }
 
-  async withDraw(contractIndex: number, password: string): Promise<any> {
-    const act: AccountInfo = account.getCurrent();
-    return this.executeMethod(
-      'withDraw',
-      act.PK,
-      act.MainPKr,
-      [contractIndex],
-      new BigNumber(0),
-      'SERO',
-      password,
-    );
-  }
-
-  async setAuctionPrice(
-    _contractIndex: number,
-    password: string,
+  async myPageKeyContracts(
+    _backedCoin: string,
+    _mintCoin: string,
+    offset: number,
+    pageSize: number,
   ): Promise<any> {
     const act: AccountInfo = account.getCurrent();
-    return this.executeMethod(
-      'setAuctionPrice',
-      act.PK,
-      act.MainPKr,
-      [_contractIndex],
-      new BigNumber(0),
-      'SERO',
-      password,
-    );
-  }
-
-  async pageAuctions(offset: number, pageSize: number): Promise<any> {
-    const act: AccountInfo = account.getCurrent();
-    return this.callMethod('pageAuctions', act.MainPKr, [offset, pageSize]);
-  }
-
-  async timer(): Promise<any> {
-    const act: AccountInfo = account.getCurrent();
-    if (act && act.MainPKr) {
-      return this.callMethod('timer', act.MainPKr, []);
-    }
-    return;
+    return this.callMethod('myPageKeyContracts', act.MainPKr, [
+      _backedCoin,
+      _mintCoin,
+      offset,
+      pageSize,
+    ]);
   }
 
   now(): any {
@@ -86,28 +66,32 @@ class Auction {
     let packData = that.callContract.packData(_method, _args);
     let callParams = {
       from: from,
-      to: config.auction.address,
+      to: config.dmwInfoV2.address,
       data: packData,
     };
     return new Promise<any>((resolve, reject) => {
-      resolve('');
-      // gerorpc
-      //   .post('sero_call', [callParams, 'latest'])
-      //   .then(callData => {
-      //     if (callData !== '0x') {
-      //       try {
-      //         let rest = that.callContract.unPackData(_method, callData);
-      //         resolve(rest);
-      //       } catch (e) {
-      //         reject(e.message);
-      //       }
-      //     } else {
-      //       reject(callData);
-      //     }
-      //   })
-      //   .catch(e => {
-      //     reject(e);
-      //   });
+      gerorpc
+        .post('sero_call', [callParams, 'latest'])
+        .then(callData => {
+          if (callData !== '0x') {
+            try {
+              let rest = that.callContract.unPackData(_method, callData);
+              console.log('SSSSSSSSSSSSSS', rest, that.callContract);
+              resolve(rest);
+            } catch (e) {
+              if (callData === '0x') {
+                resolve(null);
+              } else {
+                reject(e.message);
+              }
+            }
+          } else {
+            reject(callData);
+          }
+        })
+        .catch(e => {
+          reject(e);
+        });
     });
   }
 
@@ -125,7 +109,7 @@ class Auction {
       let packData = that.callContract.packData(_method, args);
       let executeData = {
         from: from,
-        to: config.auction.address,
+        to: config.dmwInfoV2.address,
         value: '0x' + value.toString(16),
         data: packData,
         gasPrice: '0x' + new BigNumber('1000000000').toString(16),
@@ -135,7 +119,7 @@ class Auction {
       };
       let estimateParam = {
         from: mainPKr,
-        to: config.auction.address,
+        to: config.dmwInfoV2.address,
         value: '0x' + value.toString(16),
         data: packData,
         gasPrice: '0x' + new BigNumber('1000000000').toString(16),
@@ -152,7 +136,7 @@ class Auction {
               rest,
               from,
               gas,
-              config.auction.address,
+              config.dmwInfoV2.address,
               _method,
             );
             resolve(rest);
@@ -165,6 +149,6 @@ class Auction {
   }
 }
 
-const auction = new Auction();
+const dmwInfo = new DmwInfo();
 
-export default auction;
+export default dmwInfo;

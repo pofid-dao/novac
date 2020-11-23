@@ -41,6 +41,7 @@ export default defineConfig({
           component: '@/pages/pfid/equity',
           title: 'NOVAC - EQUITY',
         },
+
         {
           path: '/pfid/equity/withdraw',
           wrappers: ['@/wrappers/filter'],
@@ -53,7 +54,6 @@ export default defineConfig({
           component: '@/pages/pfid/govenrn',
           title: 'NOVAC - GOVENRN',
         },
-
         {
           path: '/dmw/list',
           wrappers: ['@/wrappers/filter'],
@@ -70,6 +70,25 @@ export default defineConfig({
           path: '/scctools/my',
           wrappers: ['@/wrappers/filter'],
           component: '@/pages/scctools/my',
+          title: 'NOVAC - OCA - MY',
+        },
+
+        {
+          path: '/dmwv2/list',
+          wrappers: ['@/wrappers/filter'],
+          component: '@/pages/dmw/list',
+          title: 'NOVAC - PV - LIST',
+        },
+        {
+          path: '/scctoolsv2/list',
+          wrappers: ['@/wrappers/filter'],
+          component: '@/pages/scctoolsv2/index',
+          title: 'NOVAC - OCA - LIST',
+        },
+        {
+          path: '/scctoolsv2/my',
+          wrappers: ['@/wrappers/filter'],
+          component: '@/pages/scctoolsv2/my',
           title: 'NOVAC - OCA - MY',
         },
 

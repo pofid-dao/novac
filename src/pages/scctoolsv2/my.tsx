@@ -14,9 +14,9 @@ import {
 } from 'antd';
 import './index.css';
 import utils from '@/common/utils';
-import dmw from '@/service/dmw';
+import dmw from '@/service/dmwV2';
 import dmwBase from '@/service/dmwBase';
-import dmwInfo from '@/service/dmwInfo';
+import dmwInfo from '@/service/dmwInfoV2';
 import BorrowForm from '@/components/Borrow';
 import DealForm from '@/components/Deal';
 import PasswordForm from '@/components/Password';
@@ -170,6 +170,8 @@ class SSCTools extends Component {
   };
 
   componentDidMount(): void {
+    console.log('FFFFFFFFFFFFF componentDidMount');
+
     const that = this;
     that.setState({
       loading: true,
@@ -260,6 +262,7 @@ class SSCTools extends Component {
     dmw
       .estimatAddDepositAmount(contractIndex)
       .then((rest: any) => {
+        console.log(rest, '>>>>>>>>>>>>>>>>>>>>>>estimatAddDepositAmount');
         that.setState({
           contractIndex: contractIndex,
           estimatAddDepositAmount: rest,
@@ -401,6 +404,7 @@ class SSCTools extends Component {
     const rest: any = await dmwBase.getTradingPairs();
     const arr = JSON.parse(rest);
     let decimals: any = {};
+    console.log('getTradingPairs', arr);
     if (arr.length > 0) {
       let subPanes: any = {};
       let panes: any = {};
@@ -484,7 +488,7 @@ class SSCTools extends Component {
 
   pageChange = (no: number) => {
     const that = this;
-
+    console.log('OONNNNNNNNNNNNNNNNNNNNNNNNNNNNNN');
     that.setState({
       pageNo: no,
       loading: true,
@@ -509,6 +513,7 @@ class SSCTools extends Component {
   };
 
   renderSubPane(data: any, datas: any) {
+    console.log(data, datas, 'mypage>>>>>>>>>>>');
     const that = this;
     const { pageNo, pageSize, decimals } = that.state;
     const thresholdRate: number = data.thresholdRate;
@@ -557,9 +562,9 @@ class SSCTools extends Component {
           if (currentRateBig.comparedTo(collateralRate) == -1 && d.owns) {
             buttons.push(
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
+                  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>111');
                   that.deposit(d.contractIndex);
                 }}
                 block
@@ -571,9 +576,9 @@ class SSCTools extends Component {
           } else if (currentRateBig.comparedTo(thresholdRate) < 0) {
             buttons.push(
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
+                  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>22');
                   that.deposit(d.contractIndex);
                 }}
                 block
@@ -651,7 +656,6 @@ class SSCTools extends Component {
             </Descriptions.Item>
             <Descriptions.Item label={''}>
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -714,7 +718,6 @@ class SSCTools extends Component {
             </Descriptions.Item>
             <Descriptions.Item label={''}>
               <Button
-                disabled
                 type={'primary'}
                 onClick={() => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -765,7 +768,6 @@ class SSCTools extends Component {
     let desc = [];
     if (estimatAddDepositAmount && estimatAddDepositAmount.length > 0) {
       const decimal = utils.getDecimalCache(selectBackedCoin);
-      console.log('decimal>>> ', utils.getDecimalCache(selectBackedCoin));
       desc.push(
         `Deposit ${utils
           .toValue(estimatAddDepositAmount[0], decimal)

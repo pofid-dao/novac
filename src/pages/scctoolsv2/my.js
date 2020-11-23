@@ -8,20 +8,19 @@ import {
   Table,
   Spin,
   notification,
-  Tag,
   Pagination,
+  Tag,
 } from 'antd';
 import './index.css';
 import utils from '@/common/utils';
-import dmw from '@/service/dmw';
+import dmw from '@/service/dmwV2';
 import dmwBase from '@/service/dmwBase';
-import dmwInfo from '@/service/dmwInfo';
+import dmwInfo from '@/service/dmwInfoV2';
 import BorrowForm from '@/components/Borrow';
 import DealForm from '@/components/Deal';
 import PasswordForm from '@/components/Password';
 import BigNumber from 'bignumber.js';
 import i18n from '@/i18n';
-import coinFactory from '@/service/coinFactory';
 const { TabPane } = Tabs;
 const notify = (type, message, desc) => {
   let d = 4.5;
@@ -53,7 +52,6 @@ const columns = [
   //   key: 'index',
   //   width: '5%',
   // },
-  //
   // {
   //   title: i18n.t('pages_myssc_no'),
   //   dataIndex: 'no',
@@ -64,25 +62,26 @@ const columns = [
     title: i18n.t('pages_myssc_pledged'),
     dataIndex: 'backedValue',
     key: 'backedValue',
-    width: '15%',
+    width: '20%',
   },
-  {
-    title: i18n.t('pages_myssc_mintCoins'),
-    dataIndex: 'mintValue',
-    key: 'mintValue',
-    width: '15%',
-  },
+  //
+  // {
+  //   title: i18n.t('pages_myssc_mintCoins'),
+  //   dataIndex: 'mintValue',
+  //   key: 'mintValue',
+  //   width: '15%',
+  // },
   {
     title: i18n.t('pages_myssc_canClaimtValue'),
     dataIndex: 'canClaimtValue',
     key: 'canClaimtValue',
-    width: '10%',
+    width: '15%',
   },
   {
     title: i18n.t('pages_myssc_fee'),
     dataIndex: 'fee',
     key: 'fee',
-    width: '10%',
+    width: '15%',
   },
   {
     title: i18n.t('pages_myssc_currentRatio'),
@@ -151,7 +150,6 @@ class SSCTools extends Component {
       minBorrowValue: 0,
       estimatAddDepositAmount: [],
       lastIndex: 0,
-      totalSupply: 0,
     };
     this.setVisible = f => {
       this.setState({
@@ -295,14 +293,9 @@ class SSCTools extends Component {
         subPanes,
         lastIndex,
       } = this.state;
-      that.totalSupply(selectMintCoin).then(totalSupply => {
-        that.setState({
-          totalSupply: totalSupply,
-        });
-      });
       let tmpSubPanes = subPanes;
       dmwInfo
-        .keyPageContracts(
+        .myPageKeyContracts(
           selectBackedCoin,
           selectMintCoin,
           (pageNo - 1) * pageSize,
@@ -326,6 +319,7 @@ class SSCTools extends Component {
     };
     this.pageChange = no => {
       const that = this;
+      console.log('OONNNNNNNNNNNNNNNNNNNNNNNNNNNNNN');
       that.setState({
         pageNo: no,
         loading: true,
@@ -345,19 +339,14 @@ class SSCTools extends Component {
       }, 10);
     };
     this.setSelectTap = (backedCoin, mintCoin) => {
-      const that = this;
       this.setState({
         selectBackedCoin: backedCoin,
         selectMintCoin: mintCoin,
       });
-      that.totalSupply(mintCoin).then(totalSupply => {
-        that.setState({
-          totalSupply: totalSupply,
-        });
-      });
     };
   }
   componentDidMount() {
+    console.log('FFFFFFFFFFFFF componentDidMount');
     const that = this;
     that.setState({
       loading: true,
@@ -410,21 +399,12 @@ class SSCTools extends Component {
     });
     that.setVisibleDeal(true);
   }
-  async totalSupply(mintCoin) {
-    const rest = await coinFactory.totalSupply(mintCoin);
-    console.log(
-      'totalSupply>>> ',
-      utils.toValue(rest, utils.getDecimalCache(mintCoin)).toFixed(4),
-    );
-    return new Promise(resolve => {
-      resolve(utils.toValue(rest, utils.getDecimalCache(mintCoin)).toFixed(4));
-    });
-  }
   deposit(contractIndex) {
     const that = this;
     dmw
       .estimatAddDepositAmount(contractIndex)
       .then(rest => {
+        console.log(rest, '>>>>>>>>>>>>>>>>>>>>>>estimatAddDepositAmount');
         that.setState({
           contractIndex: contractIndex,
           estimatAddDepositAmount: rest,
@@ -445,6 +425,7 @@ class SSCTools extends Component {
     const rest = await dmwBase.getTradingPairs();
     const arr = JSON.parse(rest);
     let decimals = {};
+    console.log('getTradingPairs', arr);
     if (arr.length > 0) {
       let subPanes = {};
       let panes = {};
@@ -462,7 +443,7 @@ class SSCTools extends Component {
         const d2 = await utils.getDecimal(mintCoin);
         decimals[backeCoin] = d1;
         decimals[mintCoin] = d2;
-        const records = await dmwInfo.keyPageContracts(
+        const records = await dmwInfo.myPageKeyContracts(
           backeCoin,
           mintCoin,
           0,
@@ -478,21 +459,20 @@ class SSCTools extends Component {
         }
         subPanes[subPanesKey(backeCoin, mintCoin)] = datas;
       }
-      const totalSupply = await that.totalSupply(selectMintCoin);
+      console.log('subPanes>>>> ', subPanes);
       that.setState({
         panes: panes,
         decimals: decimals,
         subPanes: subPanes,
         selectBackedCoin: selectBackedCoin,
         selectMintCoin: selectMintCoin,
-        totalSupply: totalSupply,
       });
     }
   }
   renderSubPane(data, datas) {
-    console.log('data>>> ', data);
+    console.log(data, datas, 'mypage>>>>>>>>>>>');
     const that = this;
-    const { pageNo, pageSize, decimals, totalSupply } = that.state;
+    const { pageNo, pageSize, decimals } = that.state;
     const thresholdRate = data.thresholdRate;
     const collateralRate = data.collateralRate;
     const currentRateNumerator = data.currentRateNumerator;
@@ -508,9 +488,10 @@ class SSCTools extends Component {
           .multipliedBy(new BigNumber(currentRateDenominator))
           .dividedBy(new BigNumber(currentRateNumerator))
           .dividedBy(new BigNumber(d.mintValue))
-          .multipliedBy(new BigNumber(100));
+          .multipliedBy(100);
         const currentRate = currentRateBig.toFixed(4, 1);
         if (d.status == 1 || d.status == 2) {
+          // buttons.push(<Button type={"primary"} onClick={()=>{that.borrow(backeCoin,mintCoin)}} block style={{marginTop:'5px'}}>Borrow</Button>);
           if (d.owns) {
             buttons.push(
               React.createElement(
@@ -539,9 +520,9 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
-                  disabled: true,
                   type: 'primary',
                   onClick: () => {
+                    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>111');
                     that.deposit(d.contractIndex);
                   },
                   block: true,
@@ -555,9 +536,9 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
-                  disabled: true,
                   type: 'primary',
                   onClick: () => {
+                    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>22');
                     that.deposit(d.contractIndex);
                   },
                   block: true,
@@ -568,7 +549,6 @@ class SSCTools extends Component {
             );
           }
         }
-        // console.log('buttons>> ', buttons);
         // @ts-ignore
         const decimal = decimals[data.backeCoin];
         // @ts-ignore
@@ -623,7 +603,7 @@ class SSCTools extends Component {
         },
         React.createElement(
           Descriptions,
-          { column: 5 },
+          { column: 4 },
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_collateralizationRatio') },
@@ -650,16 +630,10 @@ class SSCTools extends Component {
           ),
           React.createElement(
             Descriptions.Item,
-            { label: i18n.t('pages_ssctools_list_current_total') },
-            totalSupply,
-          ),
-          React.createElement(
-            Descriptions.Item,
             { label: '' },
             React.createElement(
               Button,
               {
-                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -737,7 +711,6 @@ class SSCTools extends Component {
             React.createElement(
               Button,
               {
-                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -782,7 +755,6 @@ class SSCTools extends Component {
     let desc = [];
     if (estimatAddDepositAmount && estimatAddDepositAmount.length > 0) {
       const decimal = utils.getDecimalCache(selectBackedCoin);
-      console.log('decimal>>> ', utils.getDecimalCache(selectBackedCoin));
       desc.push(
         `Deposit ${utils
           .toValue(estimatAddDepositAmount[0], decimal)
@@ -835,11 +807,7 @@ class SSCTools extends Component {
           React.createElement(
             Col,
             { span: 12 },
-            React.createElement(
-              'span',
-              null,
-              i18n.t('pages_ssctools_list_title'),
-            ),
+            React.createElement('span', null, i18n.t('pages_myssc_title')),
           ),
           React.createElement(Col, { span: 12, style: { textAlign: 'right' } }),
         ),
@@ -901,4 +869,4 @@ function showTotal(total) {
   return `Total ${total} items`;
 }
 export default SSCTools;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=my.js.map

@@ -57,7 +57,9 @@ const ChangeAccountCreateForm = ({
           Select,
           {
             onChange: v => {
-              selectAccount(v);
+              if (selectAccount) {
+                selectAccount(v);
+              }
             },
           },
           options,

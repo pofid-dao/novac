@@ -426,7 +426,7 @@ class SiderMenus extends React.Component {
                   theme: 'dark',
                   mode: 'inline',
                   defaultSelectedKeys: [selectKey],
-                  defaultOpenKeys: ['2', '4'],
+                  defaultOpenKeys: ['2', '4', '5'],
                 },
                 React.createElement(
                   Menu.Item,
@@ -486,6 +486,7 @@ class SiderMenus extends React.Component {
                         'span',
                         null,
                         i18n.t('menus_ssctools'),
+                        'V1',
                       ),
                     ),
                   },
@@ -502,6 +503,39 @@ class SiderMenus extends React.Component {
                     {
                       key: url.path.scctools.my,
                       onClick: () => this.switchMenus(url.path.scctools.my),
+                    },
+                    i18n.t('menus_sscmy'),
+                  ),
+                ),
+                React.createElement(
+                  SubMenu,
+                  {
+                    key: '5',
+                    title: React.createElement(
+                      'span',
+                      null,
+                      React.createElement(ToolOutlined, null),
+                      React.createElement(
+                        'span',
+                        null,
+                        i18n.t('menus_ssctools'),
+                        'V2',
+                      ),
+                    ),
+                  },
+                  React.createElement(
+                    Menu.Item,
+                    {
+                      key: url.path.scctoolsV2.list,
+                      onClick: () => this.switchMenus(url.path.scctoolsV2.list),
+                    },
+                    i18n.t('menus_ssclist'),
+                  ),
+                  React.createElement(
+                    Menu.Item,
+                    {
+                      key: url.path.scctoolsV2.my,
+                      onClick: () => this.switchMenus(url.path.scctoolsV2.my),
                     },
                     i18n.t('menus_sscmy'),
                   ),

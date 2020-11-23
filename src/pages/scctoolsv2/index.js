@@ -13,9 +13,9 @@ import {
 } from 'antd';
 import './index.css';
 import utils from '@/common/utils';
-import dmw from '@/service/dmw';
+import dmw from '@/service/dmwV2';
 import dmwBase from '@/service/dmwBase';
-import dmwInfo from '@/service/dmwInfo';
+import dmwInfo from '@/service/dmwInfoV2';
 import BorrowForm from '@/components/Borrow';
 import DealForm from '@/components/Deal';
 import PasswordForm from '@/components/Password';
@@ -422,6 +422,7 @@ class SSCTools extends Component {
   }
   deposit(contractIndex) {
     const that = this;
+    console.log('');
     dmw
       .estimatAddDepositAmount(contractIndex)
       .then(rest => {
@@ -478,6 +479,7 @@ class SSCTools extends Component {
         }
         subPanes[subPanesKey(backeCoin, mintCoin)] = datas;
       }
+      console.log('subPanes>>>> ', subPanes);
       const totalSupply = await that.totalSupply(selectMintCoin);
       that.setState({
         panes: panes,
@@ -539,9 +541,9 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
-                  disabled: true,
                   type: 'primary',
                   onClick: () => {
+                    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>11');
                     that.deposit(d.contractIndex);
                   },
                   block: true,
@@ -555,9 +557,9 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
-                  disabled: true,
                   type: 'primary',
                   onClick: () => {
+                    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>22');
                     that.deposit(d.contractIndex);
                   },
                   block: true,
@@ -659,7 +661,6 @@ class SSCTools extends Component {
             React.createElement(
               Button,
               {
-                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -737,7 +738,6 @@ class SSCTools extends Component {
             React.createElement(
               Button,
               {
-                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -882,6 +882,7 @@ class SSCTools extends Component {
         visible: visibleAuction,
         onCreate: this.onDeposit,
         onCancel: () => {
+          console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>11');
           this.setVisibleAuction(false);
         },
         title: i18n.t('button_deposit'),
