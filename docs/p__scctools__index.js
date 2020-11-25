@@ -5795,7 +5795,7 @@
                       }
                       (c = {}), (s = {}), (d = 0);
                     case 10:
-                      if (!(d < o.length)) {
+                      if (!(d < 1)) {
                         t.next = 33;
                         break;
                       }
@@ -5986,8 +5986,7 @@
                       'pages_ssctools_list_collateralizationRatio',
                     ),
                   },
-                  m,
-                  '%',
+                  '180%',
                 ),
                 y.a.createElement(
                   d['a'].Item,
@@ -6004,8 +6003,7 @@
                 y.a.createElement(
                   d['a'].Item,
                   { label: j['a'].t('pages_ssctools_list_liquidationRatio') },
-                  f,
-                  '%',
+                  '130%',
                 ),
                 y.a.createElement(
                   d['a'].Item,
@@ -6077,8 +6075,7 @@
                 {
                   label: j['a'].t('pages_ssctools_list_collateralizationRatio'),
                 },
-                m,
-                '%',
+                '180%',
               ),
               y.a.createElement(
                 d['a'].Item,
@@ -6095,8 +6092,7 @@
               y.a.createElement(
                 d['a'].Item,
                 { label: j['a'].t('pages_ssctools_list_liquidationRatio') },
-                f,
-                '%',
+                '130%',
               ),
               y.a.createElement(
                 d['a'].Item,

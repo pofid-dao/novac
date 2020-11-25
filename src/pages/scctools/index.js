@@ -450,7 +450,8 @@ class SSCTools extends Component {
       let panes = {};
       let selectBackedCoin;
       let selectMintCoin;
-      for (let i = 0; i < arr.length; i++) {
+      // for (let i = 0; i < arr.length; i++) {
+      for (let i = 0; i < 1; i++) {
         const data = arr[i];
         const backeCoin = data.backeCoin;
         const mintCoin = data.mintCoin;
@@ -627,8 +628,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_collateralizationRatio') },
-            collateralRate,
-            '%',
+            '180%',
           ),
           React.createElement(
             Descriptions.Item,
@@ -645,8 +645,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_liquidationRatio') },
-            thresholdRate,
-            '%',
+            '130%',
           ),
           React.createElement(
             Descriptions.Item,
@@ -710,8 +709,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_collateralizationRatio') },
-            collateralRate,
-            '%',
+            '180%',
           ),
           React.createElement(
             Descriptions.Item,
@@ -728,8 +726,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_liquidationRatio') },
-            thresholdRate,
-            '%',
+            '130%',
           ),
           React.createElement(
             Descriptions.Item,
