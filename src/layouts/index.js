@@ -554,6 +554,7 @@ class SiderMenus extends React.Component {
                   React.createElement(
                     Button,
                     {
+                      className: 'layoutbtn',
                       type: 'link',
                       onClick: () => this.setVisibleAccount(true),
                     },
@@ -581,7 +582,7 @@ class SiderMenus extends React.Component {
                   }),
                   React.createElement(
                     Dropdown,
-                    { overlay: txList },
+                    { className: 'downbox', overlay: txList },
                     React.createElement(
                       Badge,
                       { count: pendingCount },

@@ -572,6 +572,7 @@ class SiderMenus extends React.Component {
                 >
                   <div style={{ float: 'right', marginRight: '24px' }}>
                     <Button
+                      className="layoutbtn"
                       type={'link'}
                       onClick={() => this.setVisibleAccount(true)}
                     >
@@ -588,7 +589,7 @@ class SiderMenus extends React.Component {
                       </Button>
                     </Button>
                     <Divider dashed type={'vertical'} />
-                    <Dropdown overlay={txList}>
+                    <Dropdown className="downbox" overlay={txList}>
                       <Badge count={pendingCount}>
                         <UnorderedListOutlined style={{ fontSize: '20px' }} />
                       </Badge>

@@ -1052,23 +1052,32 @@ class Config {
   }
 }
 
-// const configaddress = {
-//   staking: "2CASDxyPxcG8Ek4sLnMy5mmoK94DeVgRw6E28NoCqw7kXAQqs3ZpdJET5cqEobGv1TKNjLVr2j1X5sVJXvEWYc3Z",
-//   auction: "34esrhiuhqC9zQt4PSkHGQMFQBBhbYK5QHcrbtiqM621BWJ6ZkLTWZEqHpXoFhKkPexeiCFztPBPB29eHDqkD4er",
-//   dmw: "erbTk53NpkVieDbCdP3Q54dtf63ZxqkmeniihxDFzKDZBqCEEjgRh5bCAwDrAnbgkDt3uVCYUX7v6RhkZ12ZrKV",
-//   dmwV2: "v5DkAKjhsT9X997NqccHpiVkEfNC9p3HRgXuYFonXignBSRDCxZ7XLT6fqiLzRDLveZpn1UJuwWP4FFz6LBNqym",
-//   dmwBase: "JY6PxE8d9UEAyBBZ3d4XbHwPRZq2bckqy58arZKe3AXR825u42Ypm1fJ5kHw8dbLgpjeoJqCseFc2X4s2zhtEAN",
-//   dmwInfo: "54rjCXL3YpMvQWkpxwT4byd7rtLnZs3ksFNwkFfyBV6XUSrimxnk79pFQZT3gK1Xw3xtPeFZtJE87TgA8hWB4mHP",
-//   dmwInfoV2:"5CcgtisRm5ehHxeb3JEDQQwgh3a1NciKpbekibRrs9KPKRfWpshyYMrhmenX9HStgyDjEGycFxvRxvYJSUk7gXN1",
-//   dmwProxy: "5Gf9KSYWZZnhXMPRfBBQi7EznqSFDDerTSmW58ERUsWz6WGZ8BtrRJjXJuKEuN9iskjw8FuTWFKjXPbtAE5zBtbT",
-//   coinFactory: "3Mfg7tx84QVynnMhBmuQB46nhRxW6sbnQZyL9TbLQfafJt4fTAgQNWqZbAhP1zoQNYUKsQMKtr4MJikBzsWaNgaP",
-// }
+const configaddress_dev = {
+  staking:
+    '2CASDxyPxcG8Ek4sLnMy5mmoK94DeVgRw6E28NoCqw7kXAQqs3ZpdJET5cqEobGv1TKNjLVr2j1X5sVJXvEWYc3Z',
+  auction:
+    '34esrhiuhqC9zQt4PSkHGQMFQBBhbYK5QHcrbtiqM621BWJ6ZkLTWZEqHpXoFhKkPexeiCFztPBPB29eHDqkD4er',
+  dmw:
+    'erbTk53NpkVieDbCdP3Q54dtf63ZxqkmeniihxDFzKDZBqCEEjgRh5bCAwDrAnbgkDt3uVCYUX7v6RhkZ12ZrKV',
+  dmwV2:
+    'v5DkAKjhsT9X997NqccHpiVkEfNC9p3HRgXuYFonXignBSRDCxZ7XLT6fqiLzRDLveZpn1UJuwWP4FFz6LBNqym',
+  dmwBase:
+    'JY6PxE8d9UEAyBBZ3d4XbHwPRZq2bckqy58arZKe3AXR825u42Ypm1fJ5kHw8dbLgpjeoJqCseFc2X4s2zhtEAN',
+  dmwInfo:
+    '54rjCXL3YpMvQWkpxwT4byd7rtLnZs3ksFNwkFfyBV6XUSrimxnk79pFQZT3gK1Xw3xtPeFZtJE87TgA8hWB4mHP',
+  dmwInfoV2:
+    '5CcgtisRm5ehHxeb3JEDQQwgh3a1NciKpbekibRrs9KPKRfWpshyYMrhmenX9HStgyDjEGycFxvRxvYJSUk7gXN1',
+  dmwProxy:
+    '5Gf9KSYWZZnhXMPRfBBQi7EznqSFDDerTSmW58ERUsWz6WGZ8BtrRJjXJuKEuN9iskjw8FuTWFKjXPbtAE5zBtbT',
+  coinFactory:
+    '3Mfg7tx84QVynnMhBmuQB46nhRxW6sbnQZyL9TbLQfafJt4fTAgQNWqZbAhP1zoQNYUKsQMKtr4MJikBzsWaNgaP',
+};
 
 /**
  * produce address
  */
 
-const configaddress = {
+const configaddress_prod = {
   staking:
     '2FiVcKhkPpf9N5zyBKCaMF6Tp5TBVgrtM191ZmACdZXGpYQBmvKcdYKtjpXEkrKvjWEyGKWy33RTRTKFkf1qtiBo',
   auction:
@@ -1076,18 +1085,18 @@ const configaddress = {
   dmw:
     '2LYCBCsUf23tDgBbwofPQDDd11ax4KrDtSmctiRDy45dgNmjWjwkriJd1yALo6YXJNgL5XRHLGBwmVtgaqUoVtnV',
   dmwV2:
-    '2LYCBCsUf23tDgBbwofPQDDd11ax4KrDtSmctiRDy45dgNmjWjwkriJd1yALo6YXJNgL5XRHLGBwmVtgaqUoVtnV',
+    '2SqAc5vQBPcMXMhZnL6TvozAFzBoxE57yDG1j4oJXBENUCyWJs4a11By56Bn6Ko85FGWHs3qeh9Tj8PJPJ3DwDrJ',
   dmwBase:
     'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
   dmwInfo:
     '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
   dmwInfoV2:
-    '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
+    '5ucYNuhZczZVKcU6RzbsFMRNDG4vxkNjdA3qS6toVwppJ9HYy5e8WXdDWp1wwXekfnSggWVNeEAkx2wb1JWcMhE5',
   dmwProxy:
     '5Gf9KSYWZZnhXMPRfBBQi7EznqSFDDerTSmW58ERUsWz6WGZ8BtrRJjXJuKEuN9iskjw8FuTWFKjXPbtAE5zBtbT',
   coinFactory:
     '36qvyVN3FGZpHNwEZGPsdwWw9XKhKixUw2aFwZGpu5WQQPWRRMYXqBqKEByVaAKLLJf3zR9KQZkDuYYPNN4nyykz',
 };
-const config = new Config(configaddress);
+const config = new Config(configaddress_prod);
 
 export default config;
