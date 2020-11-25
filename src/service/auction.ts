@@ -90,7 +90,7 @@ class Auction {
       data: packData,
     };
     return new Promise<any>((resolve, reject) => {
-      resolve();
+      resolve('');
       // gerorpc
       //   .post('sero_call', [callParams, 'latest'])
       //   .then(callData => {

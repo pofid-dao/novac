@@ -28,7 +28,7 @@ class Tx {
     const act = account.getCurrent();
     return new Promise((resolve, reject) => {
       if (!act) {
-        resolve();
+        resolve([]);
       } else {
         if (state) {
           that._db

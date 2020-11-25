@@ -21,21 +21,21 @@
   background: #fff;
 }
 
-.layout{
+.layout {
   /*max-width: 1140px;*/
 }
 
-.ant-layout.ant-layout-has-sider{
+.ant-layout.ant-layout-has-sider {
   /*width: 100%;*/
   /*margin-right: auto;*/
   /*margin-left: auto;*/
 }
 
-div{
+div {
   /*display: block;*/
 }
 
-.ant-menu-item span{
+.ant-menu-item span {
   font-style: normal;
   font-stretch: normal;
   font-weight: 400;
@@ -43,7 +43,7 @@ div{
   opacity: 0.9;
 }
 
-*{
+* {
   /*font-family: -apple-system, system-ui, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;*/
   font-family: "Inferi Normal", "Times New Roman", serif;
   /*font-family: "Inter Roman", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
@@ -51,17 +51,28 @@ div{
 }
 
 
-.head-account{
+.head-account {
   font-size: 16px;
   font-weight: 400;
   padding: 0 5px;
 }
 
-.txListDropDown{
-  padding:0 30px 0;
+.txListDropDown {
+  padding: 0 30px 0;
   background-color: #fff;
   background-clip: padding-box;
   border-radius: 2px;
   outline: none;
   box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+.layoutbtn {
+  position: relative;
+  left: 280px;
+  z-index: 999;
+}
+
+.downbox {
+  width: 300px;
+  text-align: right;
 }

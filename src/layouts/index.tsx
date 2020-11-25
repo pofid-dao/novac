@@ -435,7 +435,7 @@ class SiderMenus extends React.Component {
                   theme="dark"
                   mode="inline"
                   defaultSelectedKeys={[selectKey]}
-                  defaultOpenKeys={['2', '4']}
+                  defaultOpenKeys={['2', '4', '5']}
                 >
                   <Menu.Item
                     key={url.path.wallet}
@@ -482,7 +482,7 @@ class SiderMenus extends React.Component {
                     title={
                       <span>
                         <ToolOutlined />
-                        <span>{i18n.t('menus_ssctools')}</span>
+                        <span>{i18n.t('menus_ssctools')}V1</span>
                       </span>
                     }
                   >
@@ -495,6 +495,29 @@ class SiderMenus extends React.Component {
                     <Menu.Item
                       key={url.path.scctools.my}
                       onClick={() => this.switchMenus(url.path.scctools.my)}
+                    >
+                      {i18n.t('menus_sscmy')}
+                    </Menu.Item>
+                  </SubMenu>
+
+                  <SubMenu
+                    key="5"
+                    title={
+                      <span>
+                        <ToolOutlined />
+                        <span>{i18n.t('menus_ssctools')}V2</span>
+                      </span>
+                    }
+                  >
+                    <Menu.Item
+                      key={url.path.scctoolsV2.list}
+                      onClick={() => this.switchMenus(url.path.scctoolsV2.list)}
+                    >
+                      {i18n.t('menus_ssclist')}
+                    </Menu.Item>
+                    <Menu.Item
+                      key={url.path.scctoolsV2.my}
+                      onClick={() => this.switchMenus(url.path.scctoolsV2.my)}
                     >
                       {i18n.t('menus_sscmy')}
                     </Menu.Item>
@@ -549,6 +572,7 @@ class SiderMenus extends React.Component {
                 >
                   <div style={{ float: 'right', marginRight: '24px' }}>
                     <Button
+                      className="layoutbtn"
                       type={'link'}
                       onClick={() => this.setVisibleAccount(true)}
                     >
@@ -565,7 +589,7 @@ class SiderMenus extends React.Component {
                       </Button>
                     </Button>
                     <Divider dashed type={'vertical'} />
-                    <Dropdown overlay={txList}>
+                    <Dropdown className="downbox" overlay={txList}>
                       <Badge count={pendingCount}>
                         <UnorderedListOutlined style={{ fontSize: '20px' }} />
                       </Badge>

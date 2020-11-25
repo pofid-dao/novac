@@ -427,7 +427,8 @@ class SSCTools extends Component {
       let panes = {};
       let selectBackedCoin;
       let selectMintCoin;
-      for (let i = 0; i < arr.length; i++) {
+      // for (let i = 0; i < arr.length; i++) {
+      for (let i = 0; i < 1; i++) {
         const data = arr[i];
         const backeCoin = data.backeCoin;
         const mintCoin = data.mintCoin;
@@ -515,6 +516,7 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
+                  disabled: true,
                   type: 'primary',
                   onClick: () => {
                     that.deposit(d.contractIndex);
@@ -530,6 +532,7 @@ class SSCTools extends Component {
               React.createElement(
                 Button,
                 {
+                  disabled: true,
                   type: 'primary',
                   onClick: () => {
                     that.deposit(d.contractIndex);
@@ -600,8 +603,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_collateralizationRatio') },
-            collateralRate,
-            '%',
+            '180%',
           ),
           React.createElement(
             Descriptions.Item,
@@ -618,8 +620,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_liquidationRatio') },
-            thresholdRate,
-            '%',
+            '130%',
           ),
           React.createElement(
             Descriptions.Item,
@@ -627,6 +628,7 @@ class SSCTools extends Component {
             React.createElement(
               Button,
               {
+                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -677,8 +679,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_collateralizationRatio') },
-            collateralRate,
-            '%',
+            '180%',
           ),
           React.createElement(
             Descriptions.Item,
@@ -695,8 +696,7 @@ class SSCTools extends Component {
           React.createElement(
             Descriptions.Item,
             { label: i18n.t('pages_ssctools_list_liquidationRatio') },
-            thresholdRate,
-            '%',
+            '130%',
           ),
           React.createElement(
             Descriptions.Item,
@@ -704,6 +704,7 @@ class SSCTools extends Component {
             React.createElement(
               Button,
               {
+                disabled: true,
                 type: 'primary',
                 onClick: () => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -806,7 +807,17 @@ class SSCTools extends Component {
           React.createElement(Col, { span: 12, style: { textAlign: 'right' } }),
         ),
         React.createElement('p', null),
-        React.createElement(Tabs, { type: 'card', animated: true }, tabPanes),
+        React.createElement(
+          Tabs,
+          {
+            type: 'card',
+            onTabClick: mintCoin => {
+              this.setSelectTap(mintCoin, 'SUSD');
+            },
+            animated: true,
+          },
+          tabPanes,
+        ),
         React.createElement('p', null),
       ),
       React.createElement(BorrowForm, {

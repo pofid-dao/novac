@@ -420,7 +420,8 @@ class SSCTools extends Component {
       let panes: any = {};
       let selectBackedCoin: any;
       let selectMintCoin: any;
-      for (let i = 0; i < arr.length; i++) {
+      // for (let i = 0; i < arr.length; i++) {
+      for (let i = 0; i < 1; i++) {
         const data = arr[i];
         const backeCoin: string = data.backeCoin;
         const mintCoin: string = data.mintCoin;
@@ -449,7 +450,6 @@ class SSCTools extends Component {
         }
         subPanes[subPanesKey(backeCoin, mintCoin)] = datas;
       }
-      console.log('subPanes>>>> ', subPanes);
 
       const totalSupply: any = await that.totalSupply(selectMintCoin);
 
@@ -580,6 +580,7 @@ class SSCTools extends Component {
           if (currentRateBig.comparedTo(collateralRate) == -1 && d.owns) {
             buttons.push(
               <Button
+                disabled
                 type={'primary'}
                 onClick={() => {
                   that.deposit(d.contractIndex);
@@ -593,6 +594,7 @@ class SSCTools extends Component {
           } else if (currentRateBig.comparedTo(thresholdRate) < 0) {
             buttons.push(
               <Button
+                disabled
                 type={'primary'}
                 onClick={() => {
                   that.deposit(d.contractIndex);
@@ -657,7 +659,8 @@ class SSCTools extends Component {
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_collateralizationRatio')}
             >
-              {collateralRate}%
+              {/* {collateralRate}% */}
+              180%
             </Descriptions.Item>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_exchangeRatio')}
@@ -670,7 +673,8 @@ class SSCTools extends Component {
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_liquidationRatio')}
             >
-              {thresholdRate}%
+              {/* {thresholdRate}% */}
+              130%
             </Descriptions.Item>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_current_total')}
@@ -679,6 +683,7 @@ class SSCTools extends Component {
             </Descriptions.Item>
             <Descriptions.Item label={''}>
               <Button
+                disabled
                 type={'primary'}
                 onClick={() => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -724,7 +729,8 @@ class SSCTools extends Component {
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_collateralizationRatio')}
             >
-              {collateralRate}%
+              {/* {collateralRate}% */}
+              180%
             </Descriptions.Item>
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_exchangeRatio')}
@@ -737,10 +743,12 @@ class SSCTools extends Component {
             <Descriptions.Item
               label={i18n.t('pages_ssctools_list_liquidationRatio')}
             >
-              {thresholdRate}%
+              {/* {thresholdRate}% */}
+              130%
             </Descriptions.Item>
             <Descriptions.Item label={''}>
               <Button
+                disabled
                 type={'primary'}
                 onClick={() => {
                   that.borrow(backeCoin, mintCoin, data.proxy);
@@ -846,7 +854,13 @@ class SSCTools extends Component {
             <Col span={12} style={{ textAlign: 'right' }}></Col>
           </Row>
           <p />
-          <Tabs type="card" animated>
+          <Tabs
+            type="card"
+            onTabClick={(mintCoin: any) => {
+              this.setSelectTap(mintCoin, 'SUSD');
+            }}
+            animated
+          >
             {tabPanes}
           </Tabs>
           <p />

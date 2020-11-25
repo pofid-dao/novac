@@ -9,10 +9,10 @@ interface Values {
 
 interface CollectionCreateFormProps {
   visible: boolean;
-  accounts: Array<any>;
+  accounts?: Array<any>;
   onCreate: (values: Values) => void;
   onCancel: () => void;
-  selectAccount: (mainPKr: string) => void;
+  selectAccount?: (mainPKr: string) => void;
 }
 
 const { Option } = Select;
@@ -63,7 +63,9 @@ const ChangeAccountCreateForm: React.FC<CollectionCreateFormProps> = ({
         >
           <Select
             onChange={(v: any) => {
-              selectAccount(v);
+              if (selectAccount) {
+                selectAccount(v);
+              }
             }}
           >
             {options}

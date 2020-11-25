@@ -137,7 +137,15 @@ class DmwBase {
         .then((gas: any) => {
           executeData['gas'] = gas;
           seropp.executeContract(executeData, function(rest: any) {
-            tx.addTx(value, cy, rest, from, gas, dmwBase.address, _method);
+            tx.addTx(
+              value,
+              cy,
+              rest,
+              from,
+              gas,
+              config.dmwBase.address,
+              _method,
+            );
             resolve(rest);
           });
         })

@@ -33,7 +33,7 @@ class Tx {
     const act: AccountInfo = account.getCurrent();
     return new Promise<Array<TxInfo>>((resolve, reject) => {
       if (!act) {
-        resolve();
+        resolve([]);
       } else {
         if (state) {
           that._db

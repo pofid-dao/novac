@@ -54,7 +54,7 @@ export class PopDB {
 
   // create index
   createIndex(table: IDBObjectStore, option: RuleIndex) {
-    let optionPramas = {};
+    let optionPramas: any = {};
     if (option.unique) {
       optionPramas['unique'] = option.unique;
     }

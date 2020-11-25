@@ -22,6 +22,12 @@ class Url {
       deposit: '/scctools/deposit',
       borrow: '/scctools/borrow',
     },
+    scctoolsV2: {
+      list: '/scctoolsv2/list',
+      my: '/scctoolsv2/my',
+      deposit: '/scctoolsv2/deposit',
+      borrow: '/scctoolsv2/borrow',
+    },
     auction: '/auction',
     DApps: '/DApps',
     QA: '/QA',
