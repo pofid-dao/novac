@@ -166,8 +166,8 @@
             l = t.onCancel,
             p = t.selectAccount,
             m = s['a'].useForm(),
-            _ = Object(i['a'])(m, 1),
-            d = _[0],
+            d = Object(i['a'])(m, 1),
+            _ = d[0],
             y = [];
           if (a)
             for (var g = 0; g < a.length; g++) {
@@ -191,9 +191,9 @@
               cancelText: 'Cancel',
               onCancel: l,
               onOk: () => {
-                d.validateFields()
+                _.validateFields()
                   .then(t => {
-                    d.resetFields(), r(t);
+                    _.resetFields(), r(t);
                   })
                   .catch(t => {
                     console.log('Validate Failed:', t);
@@ -202,7 +202,7 @@
             },
             c.a.createElement(
               s['a'],
-              { form: d, layout: 'vertical', name: 'form_in_modal' },
+              { form: _, layout: 'vertical', name: 'form_in_modal' },
               c.a.createElement(
                 s['a'].Item,
                 {
@@ -641,8 +641,8 @@
           ],
         },
         m = { databaseName: 'novac', tables: [p], version: 1 },
-        _ = new l();
-      e['a'] = _;
+        d = new l();
+      e['a'] = d;
     },
     'VBU/': function(t, e, a) {
       t.exports = a.p + 'static/pofid.6be39c9b.png';
@@ -664,8 +664,8 @@
         l = a.n(u),
         p = a('3wK0'),
         m = a('kB5k'),
-        _ = a.n(m),
-        d = a('DDa7'),
+        d = a.n(m),
+        _ = a('DDa7'),
         y = a('tLa6');
       class g {
         constructor() {
@@ -694,7 +694,7 @@
                             c.PK,
                             c.MainPKr,
                             [t],
-                            new _.a(a),
+                            new d.a(a),
                             e,
                             n,
                           ),
@@ -726,7 +726,7 @@
                             i.PK,
                             i.MainPKr,
                             [t],
-                            new _.a(0),
+                            new d.a(0),
                             'SERO',
                             e,
                           ),
@@ -758,7 +758,7 @@
                             i.PK,
                             i.MainPKr,
                             [t],
-                            new _.a(0),
+                            new d.a(0),
                             'SERO',
                             e,
                           ),
@@ -875,7 +875,7 @@
                                 value: '0x' + r.toString(16),
                                 data: p,
                                 gasPrice:
-                                  '0x' + new _.a('1000000000').toString(16),
+                                  '0x' + new d.a('1000000000').toString(16),
                                 cy: c,
                                 gas: '',
                                 password: u,
@@ -886,7 +886,7 @@
                                 value: '0x' + r.toString(16),
                                 data: p,
                                 gasPrice:
-                                  '0x' + new _.a('1000000000').toString(16),
+                                  '0x' + new d.a('1000000000').toString(16),
                                 cy: c,
                               };
                             y['a']
@@ -894,7 +894,7 @@
                               .then(a => {
                                 (g['gas'] = a),
                                   l.a.executeContract(g, function(n) {
-                                    d['a'].addTx(
+                                    _['a'].addTx(
                                       r,
                                       c,
                                       n,
@@ -938,13 +938,13 @@
         l = (a('Telt'), a('Tckk')),
         p = (a('miYZ'), a('tsqr')),
         m = a('uFwe'),
-        _ = (a('/xke'), a('TeRw')),
-        d = a('o0o1'),
-        y = a.n(d),
+        d = (a('/xke'), a('TeRw')),
+        _ = a('o0o1'),
+        y = a.n(_),
         g = a('HaE+'),
         h = (a('lUTK'), a('BvKs')),
-        w = (a('B9cy'), a('Ol7k')),
-        b = a('q1tI'),
+        b = (a('B9cy'), a('Ol7k')),
+        w = a('q1tI'),
         f = a('Ue1A'),
         v = a('ye1Q'),
         k = a('2BaD'),
@@ -954,13 +954,13 @@
         M = a('SfST'),
         P = a('Lyp1'),
         E = a('+vJw'),
-        I = (a('A0qh'), a('fARU')),
-        A = a.n(I),
+        A = (a('A0qh'), a('fARU')),
+        I = a.n(A),
         D = a('VBU/'),
-        q = a.n(D),
-        V = a('FfOG');
+        V = a.n(D),
+        q = a('FfOG');
       a('bCY9');
-      class R {
+      class T {
         constructor() {
           this.path = {
             home: '/index',
@@ -995,14 +995,14 @@
           };
         }
         goPage(t) {
-          V['b'].push(t);
+          q['b'].push(t);
         }
       }
-      var T = new R(),
+      var R = new T(),
         N = a('kLkQ'),
         K = a('7sPb'),
-        O = a('8ckp'),
-        B = a('3wK0'),
+        B = a('8ckp'),
+        O = a('3wK0'),
         W = a('D7Yy'),
         F = a('+Gva'),
         L = a('iTWr'),
@@ -1013,15 +1013,15 @@
         U = a('tLa6'),
         J = a('kiXb'),
         X = a('didv'),
-        Y = w['a'].Header,
-        Q = w['a'].Sider,
-        Z = w['a'].Content,
-        $ = w['a'].Footer,
+        Y = b['a'].Header,
+        Q = b['a'].Sider,
+        Z = b['a'].Content,
+        $ = b['a'].Footer,
         tt = h['a'].SubMenu,
-        et = b['createElement'](
+        et = w['createElement'](
           h['a'],
           null,
-          b['createElement'](
+          w['createElement'](
             h['a'].Item,
             {
               onClick: () => {
@@ -1030,7 +1030,7 @@
             },
             'English',
           ),
-          b['createElement'](
+          w['createElement'](
             h['a'].Item,
             {
               onClick: () => {
@@ -1039,7 +1039,7 @@
             },
             '\ud55c\uad6d\uc5b4',
           ),
-          b['createElement'](
+          w['createElement'](
             h['a'].Item,
             {
               onClick: () => {
@@ -1058,7 +1058,7 @@
             document.location.href = 'http://' + document.location.host;
           });
       }
-      class ot extends b['Component'] {
+      class ot extends w['Component'] {
         constructor() {
           super(...arguments),
             (this.hash = window.location.hash.replace('#', '')),
@@ -1108,7 +1108,7 @@
               var e = this.state.accountMap.get(t);
               e &&
                 (this.setState({ act: e }),
-                B['a'].setCurrent(e),
+                O['a'].setCurrent(e),
                 window.location.reload());
             });
         }
@@ -1193,7 +1193,7 @@
           var t = this,
             e = L['a'].get(L['a'].keys.readWallet);
           e ||
-            _['a'].info({
+            d['a'].info({
               message: 'Note',
               description:
                 "In Novac V1.0, the account asset management functionality calls Popup's API and will be re-customized in a future release",
@@ -1227,7 +1227,7 @@
         }
         onInitAccount() {
           var t = this,
-            e = B['a'].getCurrent();
+            e = O['a'].getCurrent();
           e && t.setState({ act: e }),
             setTimeout(function() {
               t.getAccountList()
@@ -1235,7 +1235,7 @@
                   !e &&
                     a &&
                     a.length > 0 &&
-                    (t.setState({ act: a[0] }), B['a'].setCurrent(a[0]));
+                    (t.setState({ act: a[0] }), O['a'].setCurrent(a[0]));
                 })
                 .catch(t => {
                   console.log('error >> ', t);
@@ -1282,7 +1282,7 @@
         switchMenus(t) {
           var e = this.state.act;
           console.log('act>> ', e),
-            e.Name ? T.goPage(t) : p['b'].error('Please Change Account');
+            e.Name ? R.goPage(t) : p['b'].error('Please Change Account');
         }
         render() {
           var t = this.state,
@@ -1290,44 +1290,44 @@
             a = t.accounts,
             p = t.act,
             m = t.selectKey,
-            _ = t.txDatas,
-            d = t.pendingCount,
+            d = t.txDatas,
+            _ = t.pendingCount,
             y = [];
-          if (_ && _.length > 0)
-            for (var g = 0; g < _.length; g++) {
-              var I = _[g],
-                D = b['createElement'](f['a'], null);
-              'pending' == I.state
-                ? (D = b['createElement'](v['a'], null))
-                : 'success' == I.state
-                ? (D = b['createElement'](f['a'], null))
-                : 'failed' == I.state && (D = b['createElement'](k['a'], null));
-              var V = '#87d068';
-              'pending' == I.state
-                ? (V = '#ffcd00')
-                : 'success' == I.state
-                ? (V = '#87d068')
-                : 'failed' == I.state && (V = '#f81d22'),
+          if (d && d.length > 0)
+            for (var g = 0; g < d.length; g++) {
+              var A = d[g],
+                D = w['createElement'](f['a'], null);
+              'pending' == A.state
+                ? (D = w['createElement'](v['a'], null))
+                : 'success' == A.state
+                ? (D = w['createElement'](f['a'], null))
+                : 'failed' == A.state && (D = w['createElement'](k['a'], null));
+              var q = '#87d068';
+              'pending' == A.state
+                ? (q = '#ffcd00')
+                : 'success' == A.state
+                ? (q = '#87d068')
+                : 'failed' == A.state && (q = '#f81d22'),
                 y.push({
-                  tx_hash: I.tx_hash,
-                  avatar: b['createElement'](l['a'], {
+                  tx_hash: A.tx_hash,
+                  avatar: w['createElement'](l['a'], {
                     icon: D,
-                    style: { backgroundColor: V },
+                    style: { backgroundColor: q },
                   }),
-                  description: b['createElement'](
+                  description: w['createElement'](
                     'div',
                     null,
-                    b['createElement']('span', null, I.state),
-                    b['createElement']('br', null),
-                    b['createElement'](
+                    w['createElement']('span', null, A.state),
+                    w['createElement']('br', null),
+                    w['createElement'](
                       'span',
                       null,
-                      N['a'].formatTime(1e3 * I.timestamp),
+                      N['a'].formatTime(1e3 * A.timestamp),
                     ),
                   ),
                 });
             }
-          var R = b['createElement'](
+          var T = w['createElement'](
             'div',
             {
               style: {
@@ -1336,16 +1336,16 @@
               },
               className: 'txListDropDown',
             },
-            b['createElement'](u['b'], {
+            w['createElement'](u['b'], {
               itemLayout: 'horizontal',
               dataSource: y,
               renderItem: t =>
-                b['createElement'](
+                w['createElement'](
                   u['b'].Item,
                   null,
-                  b['createElement'](u['b'].Item.Meta, {
+                  w['createElement'](u['b'].Item.Meta, {
                     avatar: t.avatar,
-                    title: b['createElement'](
+                    title: w['createElement'](
                       'a',
                       {
                         href: 'https://explorer.sero.cash/txsInfo.html?hash='.concat(
@@ -1360,38 +1360,38 @@
                 ),
             }),
           );
-          return b['createElement'](
+          return w['createElement'](
             X['a'],
             { i18n: J['a'] },
-            b['createElement'](
+            w['createElement'](
               c['a'],
               null,
-              b['createElement'](
+              w['createElement'](
                 'div',
                 { className: 'layout' },
-                b['createElement'](
-                  w['a'],
+                w['createElement'](
+                  b['a'],
                   null,
-                  b['createElement'](
+                  w['createElement'](
                     Q,
                     {
                       trigger: null,
                       collapsible: !0,
                       collapsed: this.state.collapsed,
                     },
-                    b['createElement'](
+                    w['createElement'](
                       'div',
                       null,
-                      b['createElement'](
+                      w['createElement'](
                         'a',
                         { href: '/#/' },
-                        b['createElement']('img', {
-                          src: A.a,
+                        w['createElement']('img', {
+                          src: I.a,
                           className: 'logo',
                         }),
                       ),
                     ),
-                    b['createElement'](
+                    w['createElement'](
                       h['a'],
                       {
                         theme: 'dark',
@@ -1399,69 +1399,69 @@
                         defaultSelectedKeys: [m],
                         defaultOpenKeys: ['2', '4', '5'],
                       },
-                      b['createElement'](
+                      w['createElement'](
                         h['a'].Item,
                         {
-                          key: T.path.wallet,
-                          onClick: () => this.switchMenus(T.path.wallet),
+                          key: R.path.wallet,
+                          onClick: () => this.switchMenus(R.path.wallet),
                         },
-                        b['createElement'](x['a'], null),
-                        b['createElement'](
+                        w['createElement'](x['a'], null),
+                        w['createElement'](
                           'span',
                           null,
                           J['a'].t('menus_wallet'),
                         ),
                       ),
-                      b['createElement'](
+                      w['createElement'](
                         tt,
                         {
                           key: '2',
-                          title: b['createElement'](
+                          title: w['createElement'](
                             'span',
                             null,
-                            b['createElement'](S['a'], null),
-                            b['createElement'](
+                            w['createElement'](S['a'], null),
+                            w['createElement'](
                               'span',
                               null,
                               J['a'].t('menus_pfid'),
                             ),
                           ),
                         },
-                        b['createElement'](
+                        w['createElement'](
                           h['a'].Item,
                           {
-                            key: T.path.pfid.my,
-                            onClick: () => this.switchMenus(T.path.pfid.my),
+                            key: R.path.pfid.my,
+                            onClick: () => this.switchMenus(R.path.pfid.my),
                           },
                           J['a'].t('menus_mypfid'),
                         ),
-                        b['createElement'](
+                        w['createElement'](
                           h['a'].Item,
                           {
-                            key: T.path.pfid.equity,
-                            onClick: () => this.switchMenus(T.path.pfid.equity),
+                            key: R.path.pfid.equity,
+                            onClick: () => this.switchMenus(R.path.pfid.equity),
                           },
                           J['a'].t('menus_equity'),
                         ),
                       ),
-                      b['createElement'](
+                      w['createElement'](
                         h['a'].Item,
                         {
-                          key: T.path.dmw.list,
-                          onClick: () => this.switchMenus(T.path.dmw.list),
+                          key: R.path.dmw.list,
+                          onClick: () => this.switchMenus(R.path.dmw.list),
                         },
-                        b['createElement'](x['a'], null),
-                        b['createElement']('span', null, J['a'].t('menus_dmw')),
+                        w['createElement'](x['a'], null),
+                        w['createElement']('span', null, J['a'].t('menus_dmw')),
                       ),
-                      b['createElement'](
+                      w['createElement'](
                         tt,
                         {
                           key: '4',
-                          title: b['createElement'](
+                          title: w['createElement'](
                             'span',
                             null,
-                            b['createElement'](C['a'], null),
-                            b['createElement'](
+                            w['createElement'](C['a'], null),
+                            w['createElement'](
                               'span',
                               null,
                               J['a'].t('menus_ssctools'),
@@ -1469,33 +1469,33 @@
                             ),
                           ),
                         },
-                        b['createElement'](
+                        w['createElement'](
                           h['a'].Item,
                           {
-                            key: T.path.scctools.list,
+                            key: R.path.scctools.list,
                             onClick: () =>
-                              this.switchMenus(T.path.scctools.list),
+                              this.switchMenus(R.path.scctools.list),
                           },
                           J['a'].t('menus_ssclist'),
                         ),
-                        b['createElement'](
+                        w['createElement'](
                           h['a'].Item,
                           {
-                            key: T.path.scctools.my,
-                            onClick: () => this.switchMenus(T.path.scctools.my),
+                            key: R.path.scctools.my,
+                            onClick: () => this.switchMenus(R.path.scctools.my),
                           },
                           J['a'].t('menus_sscmy'),
                         ),
                       ),
-                      b['createElement'](
+                      w['createElement'](
                         tt,
                         {
                           key: '5',
-                          title: b['createElement'](
+                          title: w['createElement'](
                             'span',
                             null,
-                            b['createElement'](C['a'], null),
-                            b['createElement'](
+                            w['createElement'](C['a'], null),
+                            w['createElement'](
                               'span',
                               null,
                               J['a'].t('menus_ssctools'),
@@ -1503,51 +1503,51 @@
                             ),
                           ),
                         },
-                        b['createElement'](
+                        w['createElement'](
                           h['a'].Item,
                           {
-                            key: T.path.scctoolsV2.list,
+                            key: R.path.scctoolsV2.list,
                             onClick: () =>
-                              this.switchMenus(T.path.scctoolsV2.list),
+                              this.switchMenus(R.path.scctoolsV2.list),
                           },
                           J['a'].t('menus_ssclist'),
                         ),
-                        b['createElement'](
+                        w['createElement'](
                           h['a'].Item,
                           {
-                            key: T.path.scctoolsV2.my,
+                            key: R.path.scctoolsV2.my,
                             onClick: () =>
-                              this.switchMenus(T.path.scctoolsV2.my),
+                              this.switchMenus(R.path.scctoolsV2.my),
                           },
                           J['a'].t('menus_sscmy'),
                         ),
                       ),
                     ),
                   ),
-                  b['createElement'](
-                    w['a'],
+                  w['createElement'](
+                    b['a'],
                     { className: 'site-layout' },
-                    b['createElement'](
+                    w['createElement'](
                       Y,
                       {
                         className: 'site-layout-background',
                         style: { padding: 0 },
                       },
-                      b['createElement'](
+                      w['createElement'](
                         'div',
                         { style: { float: 'right', marginRight: '24px' } },
-                        b['createElement'](
+                        w['createElement'](
                           r['a'],
                           {
                             className: 'layoutbtn',
                             type: 'link',
                             onClick: () => this.setVisibleAccount(!0),
                           },
-                          b['createElement'](
+                          w['createElement'](
                             'span',
                             { className: 'head-account' },
                             N['a'].ellipsis(p.Name),
-                            b['createElement'](
+                            w['createElement'](
                               'small',
                               null,
                               p.MainPKr
@@ -1557,52 +1557,52 @@
                                 : '',
                             ),
                           ),
-                          b['createElement'](
+                          w['createElement'](
                             r['a'],
                             { size: 'small', type: 'primary' },
                             J['a'].t('button_changeAccount'),
                           ),
                         ),
-                        b['createElement'](o['a'], {
+                        w['createElement'](o['a'], {
                           dashed: !0,
                           type: 'vertical',
                         }),
-                        b['createElement'](
+                        w['createElement'](
                           i['a'],
-                          { className: 'downbox', overlay: R },
-                          b['createElement'](
+                          { className: 'downbox', overlay: T },
+                          w['createElement'](
                             s['a'],
-                            { count: d },
-                            b['createElement'](M['a'], {
+                            { count: _ },
+                            w['createElement'](M['a'], {
                               style: { fontSize: '20px' },
                             }),
                           ),
                         ),
-                        b['createElement'](o['a'], {
+                        w['createElement'](o['a'], {
                           dashed: !0,
                           type: 'vertical',
                         }),
-                        b['createElement'](
+                        w['createElement'](
                           'a',
                           { href: J['a'].t('help'), target: '_blank' },
-                          b['createElement'](P['a'], {
+                          w['createElement'](P['a'], {
                             style: { fontSize: '20px' },
                           }),
                         ),
-                        b['createElement'](o['a'], {
+                        w['createElement'](o['a'], {
                           dashed: !0,
                           type: 'vertical',
                         }),
-                        b['createElement'](
+                        w['createElement'](
                           i['a'],
                           { overlay: et },
-                          b['createElement'](E['a'], {
+                          w['createElement'](E['a'], {
                             style: { fontSize: '20px' },
                           }),
                         ),
                       ),
                     ),
-                    b['createElement'](
+                    w['createElement'](
                       Z,
                       {
                         className: 'site-layout-background',
@@ -1615,7 +1615,7 @@
                         },
                       },
                       this.props.children,
-                      b['createElement']('iframe', {
+                      w['createElement']('iframe', {
                         className: 'wrapperIframe',
                         style: {
                           width: '375px',
@@ -1628,23 +1628,23 @@
                         frameBorder: 'no',
                       }),
                     ),
-                    b['createElement'](
+                    w['createElement'](
                       $,
                       { style: { textAlign: 'center' } },
                       'NOVAC \xa92020 Create By',
                       ' ',
-                      b['createElement'](
+                      w['createElement'](
                         'a',
                         { target: '_blank', href: 'https://pofid.com/' },
-                        b['createElement']('img', {
-                          src: q.a,
+                        w['createElement']('img', {
+                          src: V.a,
                           style: { height: '25px' },
                         }),
                       ),
                     ),
                   ),
                 ),
-                b['createElement'](O['a'], {
+                w['createElement'](B['a'], {
                   accounts: a,
                   visible: e,
                   onCreate: this.onSelectCreate,
@@ -1654,7 +1654,7 @@
                   selectAccount: this.selectAccount,
                 }),
               ),
-              b['createElement'](
+              w['createElement'](
                 n['a'],
                 {
                   title: 'Download Chrome',
@@ -1666,7 +1666,7 @@
                 },
                 J['a'].t('chrome_down_tip'),
                 ' ',
-                b['createElement'](
+                w['createElement'](
                   'a',
                   { href: J['a'].t('chrome_down'), target: '_blank' },
                   J['a'].t('chrome_down_btn'),
@@ -1845,6 +1845,7 @@
             this.initDMW(),
             this.initDMWV2(),
             this.initDMWBase(),
+            this.initDMWBaseV2(),
             this.initDMWInfo(),
             this.initDMWInfoV2(),
             this.initDMWProxy(),
@@ -2291,6 +2292,80 @@
             ],
           };
         }
+        initDMWBaseV2() {
+          this.dmwBaseV2 = {
+            address: this.addresMap.dmwBaseV2,
+            abi: [
+              {
+                constant: !0,
+                inputs: [{ name: 'lang', type: 'string' }],
+                name: 'getTradingPairs',
+                outputs: [{ name: '', type: 'string' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [{ name: 'backedCoin', type: 'string' }],
+                name: 'exchangeLength',
+                outputs: [{ name: '', type: 'uint256' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'lang', type: 'string' },
+                  { name: 'descption', type: 'string' },
+                ],
+                name: 'addDescription',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'name', type: 'string' },
+                ],
+                name: 'addExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'index', type: 'uint256' },
+                ],
+                name: 'delExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'mintCoin', type: 'string' },
+                ],
+                name: 'getProxyAddress',
+                outputs: [{ name: '', type: 'address' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+            ],
+          };
+        }
         initDMWInfo() {
           this.dmwInfo = {
             address: this.addresMap.dmwInfo,
@@ -2449,6 +2524,8 @@
             '2SqAc5vQBPcMXMhZnL6TvozAFzBoxE57yDG1j4oJXBENUCyWJs4a11By56Bn6Ko85FGWHs3qeh9Tj8PJPJ3DwDrJ',
           dmwBase:
             'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
+          dmwBaseV2:
+            '2brAtmJ56AeFGN9k5VTVGjVusNtqjgeSL6dvSHw36RXzrgYG4v2xm7gNwv4sDfc1nAGUtx4n7AktZu9Fqk96v21P',
           dmwInfo:
             '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
           dmwInfoV2:

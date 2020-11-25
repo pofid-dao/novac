@@ -8,7 +8,7 @@ import utils from '@/common/utils';
 import tx from '@/service/tx';
 import gerorpc from '@/common/gerorpc';
 import DmwProxy from '@/service/dmwProxy';
-import dmwBase from '@/service/dmwBase';
+import dmwBase from '@/service/dmwBaseV2';
 
 class Dmw {
   callContract: any = null;

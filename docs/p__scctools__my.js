@@ -573,7 +573,7 @@
         T = function(e, t) {
           return 'height' === t.propertyName;
         },
-        A = {
+        V = {
           motionName: 'ant-motion-collapse',
           onAppearStart: I,
           onEnterStart: I,
@@ -586,7 +586,7 @@
           onLeaveEnd: T,
           motionDeadline: 500,
         },
-        V = A,
+        A = V,
         K = (function(e) {
           p()(n, e);
           var t = m()(n);
@@ -605,7 +605,7 @@
                   u = c.theme,
                   d = {
                     horizontal: { motionName: 'slide-up' },
-                    inline: V,
+                    inline: A,
                     other: { motionName: 'zoom-big' },
                   },
                   p = n('menu', s),
@@ -2315,7 +2315,7 @@
             var D,
               T = Object(i['a'])(M);
             try {
-              var A = function() {
+              var V = function() {
                 var n,
                   a = D.value,
                   r = b[a],
@@ -2351,9 +2351,9 @@
                   ),
                 );
               };
-              for (T.s(); !(D = T.n()).done; ) A();
-            } catch (V) {
-              T.e(V);
+              for (T.s(); !(D = T.n()).done; ) V();
+            } catch (A) {
+              T.e(A);
             } finally {
               T.f();
             }
@@ -2759,7 +2759,7 @@
           P = ''.concat(n, '-dropdown'),
           D = null !== S ? ''.concat(N, '-').concat(S) : null,
           T = null === o || void 0 === o ? void 0 : o.dropdownAriaLabel,
-          A = c['createElement'](
+          V = c['createElement'](
             M['f'],
             {
               onClick: function(e) {
@@ -2788,7 +2788,7 @@
               );
             }),
           );
-        function V(e) {
+        function A(e) {
           for (
             var t = r.filter(function(e) {
                 return !e.disabled;
@@ -2812,10 +2812,10 @@
           if (C)
             switch (t) {
               case O['a'].UP:
-                V(-1), e.preventDefault();
+                A(-1), e.preventDefault();
                 break;
               case O['a'].DOWN:
-                V(1), e.preventDefault();
+                A(1), e.preventDefault();
                 break;
               case O['a'].ESC:
                 _(!1);
@@ -2851,7 +2851,7 @@
                 I['a'],
                 {
                   prefixCls: P,
-                  overlay: A,
+                  overlay: V,
                   trigger: ['hover'],
                   visible: C,
                   transitionName: p,
@@ -2888,8 +2888,8 @@
           c['createElement'](R, { prefixCls: n, locale: o, editable: h }),
         );
       }
-      var A = c['forwardRef'](T),
-        V = Object(c['createContext'])(null),
+      var V = c['forwardRef'](T),
+        A = Object(c['createContext'])(null),
         K = 0.1,
         L = 0.01,
         B = 20,
@@ -3044,7 +3044,7 @@
       };
       function U(e, t) {
         var n,
-          a = c['useContext'](V),
+          a = c['useContext'](A),
           r = a.prefixCls,
           o = a.tabs,
           i = e.className,
@@ -3115,10 +3115,10 @@
           De = Ie[0],
           Re = Ie[1],
           Te = _(new Map()),
-          Ae = Object(l['a'])(Te, 2),
-          Ve = Ae[0],
-          Ke = Ae[1],
-          Le = j(o, Ve, oe),
+          Ve = Object(l['a'])(Te, 2),
+          Ae = Ve[0],
+          Ke = Ve[1],
+          Le = j(o, Ae, oe),
           Be = ''.concat(r, '-nav-operations-hidden'),
           Fe = 0,
           qe = 0;
@@ -3440,7 +3440,7 @@
               ),
             ),
             c['createElement'](
-              A,
+              V,
               Object.assign({}, e, {
                 ref: K,
                 prefixCls: r,
@@ -3464,7 +3464,7 @@
           r = e.tabPosition,
           o = e.rtl,
           i = e.destroyInactiveTabPane,
-          l = c['useContext'](V),
+          l = c['useContext'](A),
           u = l.prefixCls,
           d = l.tabs,
           p = a.tabPane,
@@ -3597,7 +3597,7 @@
           D = e.renderTabBar,
           R = e.onChange,
           T = e.onTabClick,
-          A = e.onTabScroll,
+          V = e.onTabScroll,
           K = Object(d['a'])(e, [
             'id',
             'prefixCls',
@@ -3709,7 +3709,7 @@
               moreTransitionName: M,
               tabBarGutter: E,
               onTabClick: se,
-              onTabScroll: A,
+              onTabScroll: V,
               extra: j,
               style: S,
               panes: v,
@@ -3718,7 +3718,7 @@
         return (
           (le = D ? D(de, G) : c['createElement'](G, Object.assign({}, de))),
           c['createElement'](
-            V.Provider,
+            A.Provider,
             { value: { tabs: L, prefixCls: i } },
             c['createElement'](
               'div',
@@ -4007,8 +4007,8 @@
                       ? v['createElement'](O.a, null)
                       : v['createElement'](C.a, null),
                   },
-                  A = E ? 'collapsed' : 'expanded',
-                  V = T[A],
+                  V = E ? 'collapsed' : 'expanded',
+                  A = T[V],
                   K =
                     null !== p
                       ? R ||
@@ -4019,7 +4019,7 @@
                             onClick: a.toggle,
                             style: { width: D },
                           },
-                          p || V,
+                          p || A,
                         )
                       : null,
                   L = i()(i()({}, f), {
@@ -4758,8 +4758,8 @@
                     D = t.maxLength,
                     R = t.autoFocus,
                     T = t.name,
-                    A = t.onPaste,
-                    V = t.onInput,
+                    V = t.onPaste,
+                    A = t.onInput,
                     K = Object(p['a'])(t, [
                       'prefixCls',
                       'disabled',
@@ -4916,7 +4916,7 @@
                             required: O,
                             type: S,
                             placeholder: j,
-                            onPaste: A,
+                            onPaste: V,
                             onClick: k,
                             onMouseUp: this.onMouseUp,
                             className: ''.concat(n, '-input'),
@@ -4941,7 +4941,7 @@
                             value: this.getFullNum(W),
                             pattern: M,
                             inputMode: P,
-                            onInput: V,
+                            onInput: A,
                           },
                           z,
                         ),
@@ -4979,7 +4979,7 @@
         D = n.n(I),
         R = n('H84U'),
         T = n('3Nzz'),
-        A = function(e, t) {
+        V = function(e, t) {
           var n = {};
           for (var a in e)
             Object.prototype.hasOwnProperty.call(e, a) &&
@@ -4994,7 +4994,7 @@
           }
           return n;
         },
-        V = c['forwardRef'](function(e, t) {
+        A = c['forwardRef'](function(e, t) {
           var n,
             a = c['useContext'](R['b']),
             o = a.getPrefixCls,
@@ -5004,7 +5004,7 @@
             p = e.size,
             f = e.prefixCls,
             m = e.readOnly,
-            v = A(e, ['className', 'size', 'prefixCls', 'readOnly']),
+            v = V(e, ['className', 'size', 'prefixCls', 'readOnly']),
             h = o('input-number', f),
             b = c['createElement'](M.a, {
               className: ''.concat(h, '-handler-up-inner'),
@@ -5037,8 +5037,8 @@
             ),
           );
         });
-      V.defaultProps = { step: 1 };
-      t['a'] = V;
+      A.defaultProps = { step: 1 };
+      t['a'] = A;
     },
     g9YV: function(e, t, n) {
       'use strict';
@@ -5854,7 +5854,7 @@
               'buttonsRender',
             ]),
             T = a('dropdown-button', i),
-            A = {
+            V = {
               align: _,
               overlay: x,
               disabled: l,
@@ -5862,14 +5862,14 @@
               onVisibleChange: k,
               getPopupContainer: j || n,
             };
-          'visible' in e && (A.visible = O),
-            (A.placement =
+          'visible' in e && (V.visible = O),
+            (V.placement =
               'placement' in e
                 ? E
                 : 'rtl' === o
                 ? 'bottomLeft'
                 : 'bottomRight');
-          var V = c['createElement'](
+          var A = c['createElement'](
               b['a'],
               {
                 type: s,
@@ -5882,7 +5882,7 @@
               f,
             ),
             K = c['createElement'](b['a'], { type: s, icon: M }),
-            L = D([V, K]),
+            L = D([A, K]),
             B = m()(L, 2),
             F = B[0],
             q = B[1];
@@ -5890,7 +5890,7 @@
             w,
             r()({}, R, { className: u()(T, v) }),
             F,
-            c['createElement'](S, A, q),
+            c['createElement'](S, V, q),
           );
         };
       (x.__ANT_BUTTON = !0),
@@ -6250,14 +6250,14 @@
             },
             R = i()({ backgroundColor: h && !D() ? h : void 0 }, c),
             T = D(),
-            A = S('tag', a),
-            V = d()(
-              A,
+            V = S('tag', a),
+            A = d()(
+              V,
               ((n = {}),
-              r()(n, ''.concat(A, '-').concat(h), T),
-              r()(n, ''.concat(A, '-has-color'), h && !T),
-              r()(n, ''.concat(A, '-hidden'), !M),
-              r()(n, ''.concat(A, '-rtl'), 'rtl' === j),
+              r()(n, ''.concat(V, '-').concat(h), T),
+              r()(n, ''.concat(V, '-has-color'), h && !T),
+              r()(n, ''.concat(V, '-hidden'), !M),
+              r()(n, ''.concat(V, '-rtl'), 'rtl' === j),
               n),
               o,
             ),
@@ -6271,11 +6271,11 @@
                 ? y
                   ? l['createElement'](
                       'span',
-                      { className: ''.concat(A, '-close-icon'), onClick: K },
+                      { className: ''.concat(V, '-close-icon'), onClick: K },
                       y,
                     )
                   : l['createElement'](m.a, {
-                      className: ''.concat(A, '-close-icon'),
+                      className: ''.concat(V, '-close-icon'),
                       onClick: K,
                     })
                 : null;
@@ -6293,7 +6293,7 @@
               : u,
             H = l['createElement'](
               'span',
-              i()({}, F, { ref: t, className: V, style: R }),
+              i()({}, F, { ref: t, className: A, style: R }),
               z,
               L(),
             );
@@ -6722,6 +6722,7 @@
             this.initDMW(),
             this.initDMWV2(),
             this.initDMWBase(),
+            this.initDMWBaseV2(),
             this.initDMWInfo(),
             this.initDMWInfoV2(),
             this.initDMWProxy(),
@@ -7168,6 +7169,80 @@
             ],
           };
         }
+        initDMWBaseV2() {
+          this.dmwBaseV2 = {
+            address: this.addresMap.dmwBaseV2,
+            abi: [
+              {
+                constant: !0,
+                inputs: [{ name: 'lang', type: 'string' }],
+                name: 'getTradingPairs',
+                outputs: [{ name: '', type: 'string' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [{ name: 'backedCoin', type: 'string' }],
+                name: 'exchangeLength',
+                outputs: [{ name: '', type: 'uint256' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'lang', type: 'string' },
+                  { name: 'descption', type: 'string' },
+                ],
+                name: 'addDescription',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'name', type: 'string' },
+                ],
+                name: 'addExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'index', type: 'uint256' },
+                ],
+                name: 'delExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'mintCoin', type: 'string' },
+                ],
+                name: 'getProxyAddress',
+                outputs: [{ name: '', type: 'address' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+            ],
+          };
+        }
         initDMWInfo() {
           this.dmwInfo = {
             address: this.addresMap.dmwInfo,
@@ -7326,6 +7401,8 @@
             '2SqAc5vQBPcMXMhZnL6TvozAFzBoxE57yDG1j4oJXBENUCyWJs4a11By56Bn6Ko85FGWHs3qeh9Tj8PJPJ3DwDrJ',
           dmwBase:
             'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
+          dmwBaseV2:
+            '2brAtmJ56AeFGN9k5VTVGjVusNtqjgeSL6dvSHw36RXzrgYG4v2xm7gNwv4sDfc1nAGUtx4n7AktZu9Fqk96v21P',
           dmwInfo:
             '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
           dmwInfoV2:
@@ -7518,7 +7595,7 @@
         }
         return a;
       }
-      function A(e) {
+      function V(e) {
         var t = [],
           n = {};
         return (
@@ -7533,7 +7610,7 @@
           t
         );
       }
-      function V() {
+      function A() {
         var e = {};
         function t(e, n) {
           n &&
@@ -7595,12 +7672,12 @@
           I = e.align,
           D = e.rowType,
           R = e.isSticky,
-          A = ''.concat(o, '-cell');
+          V = ''.concat(o, '-cell');
         if (p) r = p;
         else {
-          var V = T(c, l);
-          if (((r = V), u)) {
-            var K = u(V, c, s);
+          var A = T(c, l);
+          if (((r = A), u)) {
+            var K = u(A, c, s);
             L(K) ? ((r = K.children), (a = K.props)) : (r = K);
           }
         }
@@ -7612,7 +7689,7 @@
             (O || k) &&
             (r = d['createElement'](
               'span',
-              { className: ''.concat(A, '-content') },
+              { className: ''.concat(V, '-content') },
               r,
             ));
         var F = a || {},
@@ -7647,18 +7724,18 @@
             colSpan: G && 1 !== G ? G : null,
             rowSpan: Y && 1 !== Y ? Y : null,
             className: m()(
-              A,
+              V,
               i,
               ((n = {}),
-              Object(h['a'])(n, ''.concat(A, '-fix-left'), X),
-              Object(h['a'])(n, ''.concat(A, '-fix-left-first'), _),
-              Object(h['a'])(n, ''.concat(A, '-fix-left-last'), O),
-              Object(h['a'])(n, ''.concat(A, '-fix-right'), Q),
-              Object(h['a'])(n, ''.concat(A, '-fix-right-first'), k),
-              Object(h['a'])(n, ''.concat(A, '-fix-right-last'), E),
-              Object(h['a'])(n, ''.concat(A, '-ellipsis'), P),
-              Object(h['a'])(n, ''.concat(A, '-with-append'), S),
-              Object(h['a'])(n, ''.concat(A, '-fix-sticky'), (X || Q) && R),
+              Object(h['a'])(n, ''.concat(V, '-fix-left'), X),
+              Object(h['a'])(n, ''.concat(V, '-fix-left-first'), _),
+              Object(h['a'])(n, ''.concat(V, '-fix-left-last'), O),
+              Object(h['a'])(n, ''.concat(V, '-fix-right'), Q),
+              Object(h['a'])(n, ''.concat(V, '-fix-right-first'), k),
+              Object(h['a'])(n, ''.concat(V, '-fix-right-last'), E),
+              Object(h['a'])(n, ''.concat(V, '-ellipsis'), P),
+              Object(h['a'])(n, ''.concat(V, '-with-append'), S),
+              Object(h['a'])(n, ''.concat(V, '-fix-sticky'), (X || Q) && R),
               n),
               N.className,
               W,
@@ -7740,7 +7817,7 @@
             }),
             s,
           ));
-        var f = A(
+        var f = V(
           n.map(function(e) {
             return e.column;
           }),
@@ -8142,7 +8219,7 @@
           D = C.indentSize,
           R = C.expandIcon,
           T = C.expandedRowRender,
-          V = C.expandIconColumnIndex,
+          A = C.expandIconColumnIndex,
           K = d['useState'](!1),
           L = Object(w['a'])(K, 2),
           B = L[0],
@@ -8180,7 +8257,7 @@
           : 'function' === typeof M && (X = M(a, r, p));
         var Z,
           $,
-          ee = A(S),
+          ee = V(S),
           te = d['createElement'](
             f,
             Object.assign({}, z, {
@@ -8204,7 +8281,7 @@
                 l = ee[t],
                 u = x[t];
               return (
-                t === (V || 0) &&
+                t === (A || 0) &&
                   G &&
                   (n = d['createElement'](
                     d['Fragment'],
@@ -8382,7 +8459,7 @@
                   },
                   c,
                 );
-            var w = A(y);
+            var w = V(y);
             return d['createElement'](
               l,
               { className: ''.concat(f, '-tbody') },
@@ -8678,7 +8755,7 @@
       }
       var Re = De,
         Te = { Cell: Me, Row: Ie };
-      function Ae(e) {
+      function Ve(e) {
         var t,
           n = e.prefixCls,
           a = e.record,
@@ -8704,7 +8781,7 @@
           onClick: s,
         });
       }
-      function Ve(e, t, n) {
+      function Ae(e, t, n) {
         var a = [];
         function r(e) {
           (e || []).forEach(function(e, o) {
@@ -8976,7 +9053,7 @@
           J,
           X = d['useMemo'](
             function() {
-              return V(S, {});
+              return A(S, {});
             },
             [S],
           ),
@@ -9011,7 +9088,7 @@
           be = ne.expandedRowClassName,
           ge = ne.childrenColumnName,
           we = ne.indentSize,
-          xe = re || Ae,
+          xe = re || Ve,
           Ce = ge || 'children',
           _e = d['useMemo'](
             function() {
@@ -9029,7 +9106,7 @@
             [!!ue, L],
           ),
           Se = d['useState'](function() {
-            return ce || (le ? Ve(L, $, Ce) : []);
+            return ce || (le ? Ae(L, $, Ce) : []);
           }),
           Ne = Object(w['a'])(Se, 2),
           Me = Ne[0],
@@ -9098,7 +9175,7 @@
           dt = Object(w['a'])(ut, 2),
           pt = dt[0],
           ft = dt[1],
-          mt = A(Qe),
+          mt = V(Qe),
           vt = mt.map(function(e) {
             return pt.get(e);
           }),
@@ -9174,7 +9251,7 @@
           Tt = function() {
             tt.current && Rt({ currentTarget: tt.current });
           },
-          At = function(e) {
+          Vt = function(e) {
             var t = e.width;
             Tt(), qe($e.current ? $e.current.offsetWidth : t);
           };
@@ -9190,7 +9267,7 @@
           d['useEffect'](function() {
             M === Ge && D && (D.body.current = tt.current);
           });
-        var Vt,
+        var At,
           Kt,
           Lt = Q(['table'], 'table'),
           Bt = d['useMemo'](
@@ -9280,7 +9357,7 @@
                     Wt,
                   ),
                 )),
-            (Vt = d['createElement'](
+            (At = d['createElement'](
               d['Fragment'],
               null,
               !1 !== _ &&
@@ -9304,7 +9381,7 @@
                   container: St,
                 }),
             )))
-          : (Vt = d['createElement'](
+          : (At = d['createElement'](
               'div',
               {
                 style: Object(b['a'])(Object(b['a'])({}, W), Y),
@@ -9385,7 +9462,7 @@
               d['createElement'](
                 'div',
                 { className: ''.concat(n, '-container') },
-                Vt,
+                At,
               ),
               f &&
                 d['createElement'](
@@ -9395,7 +9472,7 @@
                 ),
             ),
           );
-        gt && (Yt = d['createElement'](k['a'], { onResize: At }, Yt));
+        gt && (Yt = d['createElement'](k['a'], { onResize: Vt }, Yt));
         var Jt = d['useMemo'](
             function() {
               return {
@@ -10236,7 +10313,7 @@
           r = t.checkable;
         return !(!n && !a) || !1 === r;
       }
-      function At(e, t, n, a) {
+      function Vt(e, t, n, a) {
         for (var r = new Set(e), o = new Set(), i = 0; i <= n; i += 1) {
           var c = t.get(i) || new Set();
           c.forEach(function(e) {
@@ -10285,7 +10362,7 @@
           halfCheckedKeys: Array.from(Rt(o, r)),
         };
       }
-      function Vt(e, t, n, a, r) {
+      function At(e, t, n, a, r) {
         for (var o = new Set(e), i = new Set(t), c = 0; c <= a; c += 1) {
           var s = n.get(c) || new Set();
           s.forEach(function(e) {
@@ -10367,7 +10444,7 @@
                 .join(', '),
             ),
           ),
-          (i = !0 === t ? At(c, s, l, r) : Vt(c, t.halfCheckedKeys, s, l, r)),
+          (i = !0 === t ? Vt(c, s, l, r) : At(c, t.halfCheckedKeys, s, l, r)),
           i
         );
       }
@@ -11121,7 +11198,7 @@
       function Tn(e) {
         return e && e.fixed;
       }
-      function An(e, t) {
+      function Vn(e, t) {
         var n = [];
         return (
           (e || []).forEach(function(e) {
@@ -11129,12 +11206,12 @@
               e &&
                 'object' === r()(e) &&
                 t in e &&
-                (n = [].concat(ut()(n), ut()(An(e[t], t))));
+                (n = [].concat(ut()(n), ut()(Vn(e[t], t))));
           }),
           n
         );
       }
-      function Vn(e, t) {
+      function An(e, t) {
         var n = e || {},
           a = n.preserveSelectedRowKeys,
           r = n.selectedRowKeys,
@@ -11165,8 +11242,8 @@
           D = d['useRef'](new Map()),
           R = Object(Lt['a'])(r || [], { value: r }),
           T = s()(R, 2),
-          A = T[0],
-          V = T[1],
+          V = T[0],
+          A = T[1],
           K = Object(d['useMemo'])(
             function() {
               return C ? { keyEntities: null } : It(O, void 0, S);
@@ -11176,7 +11253,7 @@
           L = K.keyEntities,
           B = Object(d['useMemo'])(
             function() {
-              return An(k, N);
+              return Vn(k, N);
             },
             [k, N],
           ),
@@ -11205,13 +11282,13 @@
           ),
           z = Object(d['useMemo'])(
             function() {
-              if (C) return [A, []];
-              var e = Kt(A, !0, L, q),
+              if (C) return [V, []];
+              var e = Kt(V, !0, L, q),
                 t = e.checkedKeys,
                 n = e.halfCheckedKeys;
               return [t, n];
             },
-            [A, C, L, q],
+            [V, C, L, q],
           ),
           H = s()(z, 2),
           W = H[0],
@@ -11235,7 +11312,7 @@
           Z = X[1];
         d['useEffect'](
           function() {
-            e || V([]);
+            e || A([]);
           },
           [!!e],
         );
@@ -11261,9 +11338,9 @@
                     var a = E(e);
                     void 0 !== a && (t.push(e), n.push(a));
                   });
-              V(t), c && c(t, n);
+              A(t), c && c(t, n);
             },
-            [V, E, c, a],
+            [A, E, c, a],
           ),
           te = Object(d['useCallback'])(
             function(e, t, n, a) {
@@ -12010,12 +12087,12 @@
           D = I[0],
           R = I[1],
           T = d['useRef'](),
-          A = function(e) {
+          V = function(e) {
             T.current = window.setTimeout(function() {
               R(e);
             });
           },
-          V = function() {
+          A = function() {
             window.clearTimeout(T.current);
           };
         d['useEffect'](function() {
@@ -12073,13 +12150,13 @@
                 multiple: c,
                 prefixCls: ''.concat(r, '-menu'),
                 className: z,
-                onClick: V,
+                onClick: A,
                 onSelect: P,
                 onDeselect: P,
                 selectedKeys: H,
                 getPopupContainer: v,
                 openKeys: D,
-                onOpenChange: A,
+                onOpenChange: V,
               },
               ha({
                 filters: a.filters || [],
@@ -12425,11 +12502,11 @@
           };
         Ma()(u);
       }
-      var Aa = n('D7Yy');
-      function Va(e) {
+      var Va = n('D7Yy');
+      function Aa(e) {
         return null;
       }
-      var Ka = Va;
+      var Ka = Aa;
       function La(e) {
         return null;
       }
@@ -12470,12 +12547,12 @@
           'Table',
           '`index` parameter of `rowKey` function is deprecated. There is no guarantee that it will work as expected.',
         );
-        var A = Object(Fa['a'])(),
-          V = d['useMemo'](
+        var V = Object(Fa['a'])(),
+          A = d['useMemo'](
             function() {
               var e = new Set(
-                Object.keys(A).filter(function(e) {
-                  return A[e];
+                Object.keys(V).filter(function(e) {
+                  return V[e];
                 }),
               );
               return (w || we(x)).filter(function(t) {
@@ -12487,13 +12564,13 @@
                 );
               });
             },
-            [x, w, A],
+            [x, w, V],
           ),
           K = Object(v['a'])(e, ['className', 'style', 'columns']),
           L = d['useContext'](kn['b']),
           B = d['useContext'](et['b']),
           F = B.locale,
-          q = void 0 === F ? Aa['a'] : F,
+          q = void 0 === F ? Va['a'] : F,
           z = B.renderEmpty,
           H = B.direction,
           W = c || L,
@@ -12565,7 +12642,7 @@
           },
           ue = na({
             prefixCls: X,
-            mergedColumns: V,
+            mergedColumns: A,
             onSorterChange: le,
             sortDirections: I || ['ascend', 'descend'],
             tableLocale: U,
@@ -12590,7 +12667,7 @@
             prefixCls: X,
             locale: U,
             dropdownPrefixCls: Q,
-            mergedColumns: V,
+            mergedColumns: A,
             onFilterChange: be,
             getPopupContainer: O,
           }),
@@ -12646,7 +12723,7 @@
             },
             [!!h, Oe, Ie && Ie.current, Ie && Ie.pageSize, Ie && Ie.total],
           ),
-          Te = Vn(b, {
+          Te = An(b, {
             prefixCls: X,
             data: Oe,
             pageData: Re,
@@ -12658,9 +12735,9 @@
             expandIconColumnIndex: Z.expandIconColumnIndex,
             getPopupContainer: O,
           }),
-          Ae = s()(Te, 2),
-          Ve = Ae[0],
-          Ke = Ae[1],
+          Ve = s()(Te, 2),
+          Ae = Ve[0],
+          Ke = Ve[1],
           Le = function(e, t, n) {
             var a;
             return (
@@ -12682,9 +12759,9 @@
           qe,
           ze = d['useCallback'](
             function(e) {
-              return je(Ve(xe(pe(e))));
+              return je(Ae(xe(pe(e))));
             },
-            [pe, xe, Ve],
+            [pe, xe, Ae],
           );
         if (!1 !== h && (null === Ie || void 0 === Ie ? void 0 : Ie.total)) {
           var He;
@@ -12740,7 +12817,7 @@
             d['createElement'](
               Qe,
               u()({}, K, {
-                columns: V,
+                columns: A,
                 direction: H,
                 expandable: Z,
                 prefixCls: X,

@@ -21,259 +21,6 @@
         '{"button_changeAccount":"\uacc4\uc815 \uc804\ud658","button_goStaking":"\uc800\ub2f9","button_cancel":"\ucde8\uc18c","button_ok":"\ud655\uc815","button_commit":"\uc81c\ucd9c","button_confirm":"\ud655\uc778","button_borrow":"\ub300\ucd9c","button_repay":"\uc0c1\ud658","button_deal":"\ubc18\ud658","button_withdraw":"\ud604\uae08\uc778\ucd9c","button_reinvet":"\ubcf5\ud22c","button_createAuction":"\ud06c\ub9ac\uc5d0\uc787 \uc625\uc158","button_bidding":"\uacbd\ub9e4\ub85c \uc774\ub3d9","button_bid":"\ube44\ub4dc","button_deposit":"\ub9e4\uae30\ub2e4","menus_wallet":"\uc9c0\uac11","menus_pfid":"PFID","menus_mypfid":"\ub098\uc758PFID","menus_equity":"\uc790\uc0b0","menus_dmw":" PV","menus_ssctools":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778 \ub3c4\uad6c","menus_ssclist":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778  \ub9ac\uc2a4\ud2b8","menus_sscmy":"\ub0b4 \uc8fc\ubb38","menus_auction":"\uacbd\ub9e4","menus_dapps":"DAPPS","pages_pfid_balance":"\uc794\uace0","pages_pfid_stakingPool":"\uc800\ub2f9\uc9c0","pages_pfid_my_stakingRecord":"\uc800\ub2f9 \uae30\ub85d","pages_pfid_my_index":"\uc21c\ubc88","pages_pfid_my_cycle":"\uc8fc\uae30","pages_pfid_my_cycle_days":"\uc77c","pages_pfid_my_state":"\uc0c1\ud0dc","pages_pfid_my_staking":"\uc800\ub2f9\ud55c","pages_pfid_my_received":"\ubc1b\uc740","pages_pfid_my_time":"\uc2dc\uac04","pages_pfid_my_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_pfid_my_amount":"\uae08\uc561","pages_pfid_my_password":"\ube44\ubc00 \ubc88\ud638","pages_pfid_my_expect":"\uc608\uc0c1 \uc0b0\ucd9c","pages_pfid_my_expect_received":" \uc608\uc0c1 \uc218\uc775","pages_pfid_started_at":"\uc2dc\uc791 \uc2dc\uac04","pages_pfid_withdraw_at":"\ud604\uae08\uc778\ucd9c \uc2dc\uac04","pages_equity_dividendList":"\ud604\uc2dc\uc810\uc5d0\uc11c \ubc1b\uc744\uc218 \uc788\ub294 \ubc30\ub2f9\uae08","pages_equity_dividendRecords":"\ubc30\ub2f9\uae08 \uae30\ub85d","pages_equity_index":"\uc21c\ubc88","pages_equity_ssc":"\ucf54\uc778 \uc774\ub984","pages_equity_amount":"\uae08\uc561","pages_equity_time":"\uc2dc\uac04","pages_equity_state":"\uc0c1\ud0dc","pages_equity_withdraw":"\ud604\uae08\uc778\ucd9c \ub9ac\uc2a4\ud2b8","pages_dmw_list":"PV LIST","pages_dmw_sero":"SERO\ub294 \uc138\uacc4\uc5d0\uc11c \ucd5c\ucd08\ub85c \ud1a0\ub9c1 \uc644\uc804 \uc2a4\ub9c8\ud2b8 \uac8c\uc57d\ub97c \uc9c0\uc9c0\ud558\ub294 \ud68c\uc0ac\ub2e4 . \uc774\uac83\uc740 \ubb34\uc9c0\uc2dd\uc99d\uba85\uc73c\ub85c  \uc790\uc0b0\uc758 \uacf5\uacf5 \uc0ac\uc2ac\uacfc \uac70\ub798 \ud504\ub77c\uc774\ubc84\uc2dc\ub97c \ubcf4\ud638\ud55c\ub2e4.","pages_dmw_collateralizationRatio":"\uc800\ub2f9 \ube44\uc728","pages_dmw_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \ube44\uc728","pages_dmw_vmDataSource":"\ub370\uc774\ud2b8 \uc18c\uc2a4","pages_dmw_dmwSource":"PV \uacc4\uc57d \uc8fc\uc18c","pages_dmw_vmSource":"VG \uacc4\uc57d \uc8fc\uc18c","pages_dmw_stableCoin":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778","pages_ssctools_list_title":"OCA \ub9ac\uc2a4\ud2b8","pages_ssctools_list_collateralizationRatio":"\uc800\ub2f9\uc728","pages_ssctools_list_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \uc728","pages_ssctools_list_current_total":"\ud604\uc7ac \uc21c\ud658","pages_ssctools_list_exchangeRatio":"\uad50\ud658 \ube44\uc728","pages_myssc_title":" \ub098\uc758 SSC","pages_myssc_index":"\uc21c\ubc88","pages_myssc_no":"\ubc88\ud638","pages_myssc_pledged":"\uc800\ub2f9 \uc218\ub7c9","pages_myssc_mintCoins":"\uc8fc\ud654 \uc218\ub7c9","pages_myssc_canClaimtValue":"\uccad\uad6c \ub3d9\uc804","pages_myssc_biding":"\uc785\ucc30","pages_myssc_normal":"\ud45c\uc900","pages_myssc_fee":"\ube44\uc6a9","pages_myssc_currentRatio":"\ud604\uc7ac \ube44\uc728","pages_myssc_status":"\uc0c1\ud0dc","pages_myssc_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_auction_title":"\uc625\uc158 \ud0c0\uc774\ud2c0","pages_auction_index":"\uc21c\ubc88","pages_auction_assets":"\uc790\uc0b0","pages_auction_currentPrice":"\ud604\uc7ac\uac00\uaca9","pages_auction_singleBid":"\ub2e8\ucc28\ucd9c\uac00","pages_auction_status":"\uc0c1\ud0dc","pages_auction_countDown":"\uce74\uc6b4\ud2b8\ub2e4\uc6b4","pages_auction_operation":"\uc624\ud37c\ub808\uc774\uc158","form_note":"\uc124\uba85","form_bid_total":"\uacbd\ub9e4 \ucd1d\uc561","form_input_amount":"\uae08\uc561\uc744 \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_password":"\ube44\ubc00 \ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_cycle":"\uc8fc\uae30\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694!","form_input_desc":"\uc124\uba85\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc624!","form_input_name":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc6241!","form_lable_amount":"\uae08\uc561","form_lable_password":"\ube44\ubc00 \ubc88\ud638","form_lable_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218","form_lable_estimate":"\ucd94\uc0b0","form_lable_fee":"\ube44\uc6a9","form_lable_exchange_name":"\uad50\ud658 \uba85","state_finished":"\uc885\ub8cc","state_valid":"\uc720\ud6a8","state_biding":"\ube44\ub4dc\uc911","state_ssc_finished":"\uae30\ub85d\ub428","state_ssc_valid":"\uae30\ub85d\ub418\uc9c0 \uc54a\uc74c","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC\ub294 Chrome \ube0c\ub77c\uc6b0\uc800\uc5d0\uc11c \uac00\uc7a5 \uc798 \uc791\ub3d9\ud569\ub2c8\ub2e4.","chrome_down_btn":"Chrome \ube0c\ub77c\uc6b0\uc800\ub97c \ub2e4\uc6b4\ub85c\ub4dc\ud558\ub824\uba74 \ud074\ub9ad\ud558\uc2ed\uc2dc\uc624.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"\uc601\uc5b4","ko_KR":"\ud55c\uad6d\uc5b4","zh_CN":"\uc911\uad6d\uc5b4 \uac04\uccb4","updateDesc":"\uc5c5\ub370\uc774\ud2b8 \uc124\uba85","addExchange":"\uad50\ud658 \ucd94\uac00","countdownFormat":"D \uc77c HH:mm:ss","equity_withdraw_list":"\ucd9c\uae08 \ubaa9\ub85d"}',
       );
     },
-    '1hUn': function(e, t, a) {
-      'use strict';
-      var n = a('o0o1'),
-        s = a.n(n),
-        i = a('HaE+'),
-        o = a('pJv6'),
-        r = a('YG53'),
-        c = a.n(r),
-        u = a('eiA3'),
-        l = a.n(u),
-        p = a('3wK0'),
-        m = a('kB5k'),
-        _ = a.n(m),
-        d = a('DDa7'),
-        y = a('tLa6'),
-        g = a('iTWr');
-      class b {
-        constructor() {
-          (this.callContract = null),
-            (this.callContract = c.a.callContract(
-              o['a'].dmwBase.abi,
-              o['a'].dmwBase.address,
-            ));
-        }
-        getTradingPairs() {
-          var e = this;
-          return Object(i['a'])(
-            s.a.mark(function t() {
-              var a, n;
-              return s.a.wrap(function(t) {
-                while (1)
-                  switch ((t.prev = t.next)) {
-                    case 0:
-                      return (
-                        (a = p['a'].getCurrent()),
-                        (n = g['a'].get(g['a'].keys.language)),
-                        (n = n || 'en_US'),
-                        t.abrupt(
-                          'return',
-                          e.callMethod('getTradingPairs', a.MainPKr, [n]),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return t.stop();
-                  }
-              }, t);
-            }),
-          )();
-        }
-        getProxyAddress(e, t) {
-          var a = this;
-          return Object(i['a'])(
-            s.a.mark(function n() {
-              var i;
-              return s.a.wrap(function(n) {
-                while (1)
-                  switch ((n.prev = n.next)) {
-                    case 0:
-                      return (
-                        (i = p['a'].getCurrent()),
-                        n.abrupt(
-                          'return',
-                          a.callMethod('getProxyAddress', i.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return n.stop();
-                  }
-              }, n);
-            }),
-          )();
-        }
-        addDescription(e, t, a, n) {
-          var o = this;
-          return Object(i['a'])(
-            s.a.mark(function i() {
-              var r;
-              return s.a.wrap(function(s) {
-                while (1)
-                  switch ((s.prev = s.next)) {
-                    case 0:
-                      return (
-                        (r = p['a'].getCurrent()),
-                        s.abrupt(
-                          'return',
-                          o.executeMethod(
-                            'addDescription',
-                            r.PK,
-                            r.MainPKr,
-                            [e, t, a],
-                            new _.a(0),
-                            'SERO',
-                            n,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return s.stop();
-                  }
-              }, i);
-            }),
-          )();
-        }
-        addExchange(e, t, a) {
-          var n = this;
-          return Object(i['a'])(
-            s.a.mark(function i() {
-              var o;
-              return s.a.wrap(function(s) {
-                while (1)
-                  switch ((s.prev = s.next)) {
-                    case 0:
-                      return (
-                        (o = p['a'].getCurrent()),
-                        s.abrupt(
-                          'return',
-                          n.executeMethod(
-                            'addExchange',
-                            o.PK,
-                            o.MainPKr,
-                            [e, t],
-                            new _.a(0),
-                            'SERO',
-                            a,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return s.stop();
-                  }
-              }, i);
-            }),
-          )();
-        }
-        now() {
-          return Math.ceil(new Date().getTime() / 1e3);
-        }
-        callMethod(e, t, a) {
-          var n = this;
-          return Object(i['a'])(
-            s.a.mark(function i() {
-              var r, c, u;
-              return s.a.wrap(function(s) {
-                while (1)
-                  switch ((s.prev = s.next)) {
-                    case 0:
-                      return (
-                        (r = n),
-                        (c = r.callContract.packData(e, a)),
-                        (u = { from: t, to: o['a'].dmwBase.address, data: c }),
-                        s.abrupt(
-                          'return',
-                          new Promise((t, a) => {
-                            y['a']
-                              .post('sero_call', [u, 'latest'])
-                              .then(n => {
-                                if ('0x' !== n)
-                                  try {
-                                    var s = r.callContract.unPackData(e, n);
-                                    t(s);
-                                  } catch (i) {
-                                    a(i.message);
-                                  }
-                                else a(n);
-                              })
-                              .catch(e => {
-                                a(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return s.stop();
-                  }
-              }, i);
-            }),
-          )();
-        }
-        executeMethod(e, t, a, n, r, c, u) {
-          var p = this;
-          return Object(i['a'])(
-            s.a.mark(function i() {
-              var m;
-              return s.a.wrap(function(s) {
-                while (1)
-                  switch ((s.prev = s.next)) {
-                    case 0:
-                      return (
-                        (m = p),
-                        s.abrupt(
-                          'return',
-                          new Promise((s, i) => {
-                            var p = m.callContract.packData(e, n),
-                              g = {
-                                from: t,
-                                to: o['a'].dmwBase.address,
-                                value: '0x' + r.toString(16),
-                                data: p,
-                                gasPrice:
-                                  '0x' + new _.a('1000000000').toString(16),
-                                cy: c,
-                                gas: '',
-                                password: u,
-                              },
-                              b = {
-                                from: a,
-                                to: o['a'].dmwBase.address,
-                                value: '0x' + r.toString(16),
-                                data: p,
-                                gasPrice:
-                                  '0x' + new _.a('1000000000').toString(16),
-                                cy: c,
-                              };
-                            y['a']
-                              .post('sero_estimateGas', [b])
-                              .then(a => {
-                                (g['gas'] = a),
-                                  l.a.executeContract(g, function(n) {
-                                    d['a'].addTx(
-                                      r,
-                                      c,
-                                      n,
-                                      t,
-                                      a,
-                                      o['a'].dmwBase.address,
-                                      e,
-                                    ),
-                                      s(n);
-                                  });
-                              })
-                              .catch(e => {
-                                i(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return s.stop();
-                  }
-              }, i);
-            }),
-          )();
-        }
-      }
-      var h = new b();
-      t['a'] = h;
-    },
     2: function(e, t) {},
     3: function(e, t) {},
     '3wK0': function(e, t, a) {
@@ -726,8 +473,8 @@
           ],
         },
         m = { databaseName: 'novac', tables: [p], version: 1 },
-        _ = new l();
-      t['a'] = _;
+        d = new l();
+      t['a'] = d;
     },
     PArb: function(e, t, a) {
       'use strict';
@@ -762,8 +509,8 @@
               c = e.prefixCls,
               l = e.type,
               m = void 0 === l ? 'horizontal' : l,
-              _ = e.orientation,
-              d = void 0 === _ ? 'center' : _,
+              d = e.orientation,
+              _ = void 0 === d ? 'center' : d,
               y = e.className,
               g = e.children,
               b = e.dashed,
@@ -778,9 +525,9 @@
                 'plain',
               ]),
               w = n('divider', c),
-              v = d.length > 0 ? '-'.concat(d) : d,
+              v = _.length > 0 ? '-'.concat(_) : _,
               x = !!g,
-              C = u()(
+              k = u()(
                 w,
                 ''.concat(w, '-').concat(m),
                 ((a = {}),
@@ -794,7 +541,7 @@
               );
             return r['createElement'](
               'div',
-              s()({ className: C }, f, { role: 'separator' }),
+              s()({ className: k }, f, { role: 'separator' }),
               g &&
                 r['createElement'](
                   'span',
@@ -833,8 +580,8 @@
         l = (a('+BJd'), a('mr32')),
         p = a('uFwe'),
         m = a('ODXe'),
-        _ = a('HaE+'),
-        d = (a('miYZ'), a('tsqr')),
+        d = a('HaE+'),
+        _ = (a('miYZ'), a('tsqr')),
         y = (a('/xke'), a('TeRw')),
         g = (a('Znn+'), a('ZTPi')),
         b = a('q1tI'),
@@ -843,8 +590,8 @@
         w = (a('y8nQ'), a('Vl3Y')),
         v = (a('5NDa'), a('5rEg')),
         x = (a('OaEy'), a('2fM7')),
-        C = a('kiXb'),
-        k = a('iTWr'),
+        k = a('kiXb'),
+        C = a('iTWr'),
         S = (x['a'].Option, v['a'].TextArea),
         P = e => {
           var t = e.visible,
@@ -853,13 +600,13 @@
             s = w['a'].useForm(),
             i = Object(m['a'])(s, 1),
             o = i[0],
-            r = k['a'].get(k['a'].keys.language),
+            r = C['a'].get(C['a'].keys.language),
             c = h.a.createElement(
               w['a'].Item,
               {
                 name: 'description',
-                label: C['a'].t(r),
-                rules: [{ required: !0, message: C['a'].t('form_input_desc') }],
+                label: k['a'].t(r),
+                rules: [{ required: !0, message: k['a'].t('form_input_desc') }],
                 className: 'collection-create-form_last-form-item',
               },
               h.a.createElement(S, null),
@@ -868,9 +615,9 @@
             f['a'],
             {
               visible: t,
-              title: C['a'].t('updateDesc'),
-              okText: C['a'].t('button_ok'),
-              cancelText: C['a'].t('button_cancel'),
+              title: k['a'].t('updateDesc'),
+              okText: k['a'].t('button_ok'),
+              cancelText: k['a'].t('button_cancel'),
               onCancel: n,
               onOk: () => {
                 o.validateFields()
@@ -895,9 +642,9 @@
                 w['a'].Item,
                 {
                   name: 'password',
-                  label: C['a'].t('form_lable_password'),
+                  label: k['a'].t('form_lable_password'),
                   rules: [
-                    { required: !0, message: C['a'].t('form_input_amount') },
+                    { required: !0, message: k['a'].t('form_input_amount') },
                   ],
                   className: 'collection-create-form_last-form-item',
                 },
@@ -907,7 +654,7 @@
           );
         },
         E = P,
-        M = a('1hUn'),
+        M = a('l9Ps'),
         D =
           (x['a'].Option,
           v['a'].TextArea,
@@ -922,9 +669,9 @@
               f['a'],
               {
                 visible: t,
-                title: C['a'].t('addExchange'),
-                okText: C['a'].t('button_ok'),
-                cancelText: C['a'].t('button_cancel'),
+                title: k['a'].t('addExchange'),
+                okText: k['a'].t('button_ok'),
+                cancelText: k['a'].t('button_cancel'),
                 onCancel: n,
                 onOk: () => {
                   o.validateFields()
@@ -948,9 +695,9 @@
                   w['a'].Item,
                   {
                     name: 'name',
-                    label: C['a'].t('form_lable_exchange_name'),
+                    label: k['a'].t('form_lable_exchange_name'),
                     rules: [
-                      { required: !0, message: C['a'].t('form_input_name') },
+                      { required: !0, message: k['a'].t('form_input_name') },
                     ],
                     className: 'collection-create-form_last-form-item',
                   },
@@ -960,9 +707,9 @@
                   w['a'].Item,
                   {
                     name: 'password',
-                    label: C['a'].t('form_lable_password'),
+                    label: k['a'].t('form_lable_password'),
                     rules: [
-                      { required: !0, message: C['a'].t('form_input_amount') },
+                      { required: !0, message: k['a'].t('form_input_amount') },
                     ],
                     className: 'collection-create-form_last-form-item',
                   },
@@ -973,7 +720,7 @@
           }),
         I = D,
         O = g['a'].TabPane,
-        q = (e, t, a) => {
+        V = (e, t, a) => {
           var n = 4.5;
           'success' == e &&
             a &&
@@ -1013,19 +760,19 @@
                 M['a']
                   .addDescription(
                     a,
-                    k['a'].get(k['a'].keys.language),
+                    C['a'].get(C['a'].keys.language),
                     e['description'],
                     e['password'],
                   )
                   .then(e => {
                     console.log(e),
                       t.setState({ loading: !1 }),
-                      q('success', 'SUCCESS', e);
+                      V('success', 'SUCCESS', e);
                   })
                   .catch(e => {
                     t.setState({ loading: !1 });
                     var a = 'string' === typeof e ? e : e.message;
-                    q('error', 'Error', a);
+                    V('error', 'Error', a);
                   });
             }),
             (this.setVisible = e => {
@@ -1041,12 +788,12 @@
                   .then(e => {
                     console.log(e),
                       t.setState({ loading: !1 }),
-                      q('success', 'SUCCESS', e);
+                      V('success', 'SUCCESS', e);
                   })
                   .catch(e => {
                     t.setState({ loading: !1 });
                     var a = 'string' === typeof e ? e : e.message;
-                    q('error', 'Error', a);
+                    V('error', 'Error', a);
                   });
             }),
             (this.setvisibleExchange = e => {
@@ -1061,14 +808,14 @@
             })
             .catch(t => {
               var a = 'string' === typeof t ? t : t.message;
-              d['b'].error(a), e.setState({ loading: !1 });
+              _['b'].error(a), e.setState({ loading: !1 });
             });
         }
         list() {
           var e = this;
-          return Object(_['a'])(
+          return Object(d['a'])(
             i.a.mark(function t() {
-              var a, n, s, _, d, y, g, b, f, w, v, x, k, S;
+              var a, n, s, d, _, y, g, b, f, w, v, x, C, S;
               return i.a.wrap(function(t) {
                 while (1)
                   switch ((t.prev = t.next)) {
@@ -1080,13 +827,13 @@
                           console.info('rest>>', a),
                           n = JSON.parse(a),
                           s = new Map(),
-                          _ = 0;
-                        _ < n.length;
-                        _++
+                          d = 0;
+                        d < n.length;
+                        d++
                       )
-                        (d = n[_]),
-                          (y = d.backeCoin),
-                          (g = d),
+                        (_ = n[d]),
+                          (y = _.backeCoin),
+                          (g = _),
                           s.has(y)
                             ? ((b = s.get(y)), s.set(y, b.concat([g])))
                             : s.set(y, [g]);
@@ -1096,29 +843,29 @@
                         (v = Object(p['a'])(s));
                       try {
                         for (
-                          k = function() {
+                          C = function() {
                             var t = x.value;
                             S = Object(m['a'])(t, 2);
                             var a,
                               n = S[0],
                               s = S[1],
                               i = [],
-                              _ = Object(p['a'])(s);
+                              d = Object(p['a'])(s);
                             try {
-                              for (_.s(); !(a = _.n()).done; ) {
-                                var d = a.value;
+                              for (d.s(); !(a = d.n()).done; ) {
+                                var _ = a.value;
                                 i.push(
                                   h.a.createElement(
                                     l['a'],
                                     { className: 'tag-cst' },
-                                    d.mintCoin,
+                                    _.mintCoin,
                                   ),
                                 );
                               }
                             } catch (I) {
-                              _.e(I);
+                              d.e(I);
                             } finally {
-                              _.f();
+                              d.f();
                             }
                             var y,
                               g = [],
@@ -1126,8 +873,8 @@
                             try {
                               for (b.s(); !(y = b.n()).done; ) {
                                 var v,
-                                  k = y.value,
-                                  P = k.exchanges,
+                                  C = y.value,
+                                  P = C.exchanges,
                                   E = Object(p['a'])(P);
                                 try {
                                   for (E.s(); !(v = E.n()).done; ) {
@@ -1174,7 +921,7 @@
                                       h.a.createElement(
                                         'p',
                                         null,
-                                        C['a'].t(
+                                        k['a'].t(
                                           'pages_dmw_collateralizationRatio',
                                         ),
                                         ':',
@@ -1188,7 +935,7 @@
                                       h.a.createElement(
                                         'p',
                                         null,
-                                        C['a'].t('pages_dmw_liquidationRatio'),
+                                        k['a'].t('pages_dmw_liquidationRatio'),
                                         ':',
                                         ' ',
                                         h.a.createElement(
@@ -1201,7 +948,7 @@
                                       h.a.createElement(
                                         'p',
                                         null,
-                                        C['a'].t('pages_dmw_vmDataSource'),
+                                        k['a'].t('pages_dmw_vmDataSource'),
                                         ':',
                                       ),
                                       h.a.createElement(
@@ -1219,7 +966,7 @@
                                                 e.setExchange(n);
                                               },
                                             },
-                                            C['a'].t('addExchange'),
+                                            k['a'].t('addExchange'),
                                           )
                                         : '',
                                     ),
@@ -1239,7 +986,7 @@
                                                 e.setDesc(n);
                                               },
                                             },
-                                            C['a'].t('updateDesc'),
+                                            k['a'].t('updateDesc'),
                                           )
                                         : '',
                                     ),
@@ -1251,7 +998,7 @@
                                     h.a.createElement(
                                       'h2',
                                       null,
-                                      C['a'].t('pages_dmw_stableCoin'),
+                                      k['a'].t('pages_dmw_stableCoin'),
                                       ' ',
                                       n,
                                       ' PV',
@@ -1265,7 +1012,7 @@
                           !(x = v.n()).done;
 
                         )
-                          k();
+                          C();
                       } catch (i) {
                         v.e(i);
                       } finally {
@@ -1303,7 +1050,7 @@
                 h.a.createElement(
                   c['a'],
                   { span: 12 },
-                  h.a.createElement('span', null, C['a'].t('pages_dmw_list')),
+                  h.a.createElement('span', null, k['a'].t('pages_dmw_list')),
                 ),
                 h.a.createElement(c['a'], {
                   span: 12,
@@ -1481,6 +1228,263 @@
           }),
         (t['a'] = s['a']);
     },
+    l9Ps: function(e, t, a) {
+      'use strict';
+      var n = a('o0o1'),
+        s = a.n(n),
+        i = a('HaE+'),
+        o = a('pJv6'),
+        r = a('YG53'),
+        c = a.n(r),
+        u = a('eiA3'),
+        l = a.n(u),
+        p = a('3wK0'),
+        m = a('kB5k'),
+        d = a.n(m),
+        _ = a('DDa7'),
+        y = a('tLa6'),
+        g = a('iTWr');
+      class b {
+        constructor() {
+          (this.callContract = null),
+            (this.callContract = c.a.callContract(
+              o['a'].dmwBaseV2.abi,
+              o['a'].dmwBaseV2.address,
+            ));
+        }
+        getTradingPairs() {
+          var e = this;
+          return Object(i['a'])(
+            s.a.mark(function t() {
+              var a, n;
+              return s.a.wrap(function(t) {
+                while (1)
+                  switch ((t.prev = t.next)) {
+                    case 0:
+                      return (
+                        (a = p['a'].getCurrent()),
+                        (n = g['a'].get(g['a'].keys.language)),
+                        (n = n || 'en_US'),
+                        t.abrupt(
+                          'return',
+                          e.callMethod('getTradingPairs', a.MainPKr, [n]),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return t.stop();
+                  }
+              }, t);
+            }),
+          )();
+        }
+        getProxyAddress(e, t) {
+          var a = this;
+          return Object(i['a'])(
+            s.a.mark(function n() {
+              var i;
+              return s.a.wrap(function(n) {
+                while (1)
+                  switch ((n.prev = n.next)) {
+                    case 0:
+                      return (
+                        (i = p['a'].getCurrent()),
+                        n.abrupt(
+                          'return',
+                          a.callMethod('getProxyAddress', i.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return n.stop();
+                  }
+              }, n);
+            }),
+          )();
+        }
+        addDescription(e, t, a, n) {
+          var o = this;
+          return Object(i['a'])(
+            s.a.mark(function i() {
+              var r;
+              return s.a.wrap(function(s) {
+                while (1)
+                  switch ((s.prev = s.next)) {
+                    case 0:
+                      return (
+                        (r = p['a'].getCurrent()),
+                        s.abrupt(
+                          'return',
+                          o.executeMethod(
+                            'addDescription',
+                            r.PK,
+                            r.MainPKr,
+                            [e, t, a],
+                            new d.a(0),
+                            'SERO',
+                            n,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return s.stop();
+                  }
+              }, i);
+            }),
+          )();
+        }
+        addExchange(e, t, a) {
+          var n = this;
+          return Object(i['a'])(
+            s.a.mark(function i() {
+              var o;
+              return s.a.wrap(function(s) {
+                while (1)
+                  switch ((s.prev = s.next)) {
+                    case 0:
+                      return (
+                        (o = p['a'].getCurrent()),
+                        s.abrupt(
+                          'return',
+                          n.executeMethod(
+                            'addExchange',
+                            o.PK,
+                            o.MainPKr,
+                            [e, t],
+                            new d.a(0),
+                            'SERO',
+                            a,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return s.stop();
+                  }
+              }, i);
+            }),
+          )();
+        }
+        now() {
+          return Math.ceil(new Date().getTime() / 1e3);
+        }
+        callMethod(e, t, a) {
+          var n = this;
+          return Object(i['a'])(
+            s.a.mark(function i() {
+              var r, c, u;
+              return s.a.wrap(function(s) {
+                while (1)
+                  switch ((s.prev = s.next)) {
+                    case 0:
+                      return (
+                        (r = n),
+                        (c = r.callContract.packData(e, a)),
+                        (u = {
+                          from: t,
+                          to: o['a'].dmwBaseV2.address,
+                          data: c,
+                        }),
+                        s.abrupt(
+                          'return',
+                          new Promise((t, a) => {
+                            y['a']
+                              .post('sero_call', [u, 'latest'])
+                              .then(n => {
+                                if ('0x' !== n)
+                                  try {
+                                    var s = r.callContract.unPackData(e, n);
+                                    t(s);
+                                  } catch (i) {
+                                    a(i.message);
+                                  }
+                                else a(n);
+                              })
+                              .catch(e => {
+                                a(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return s.stop();
+                  }
+              }, i);
+            }),
+          )();
+        }
+        executeMethod(e, t, a, n, r, c, u) {
+          var p = this;
+          return Object(i['a'])(
+            s.a.mark(function i() {
+              var m;
+              return s.a.wrap(function(s) {
+                while (1)
+                  switch ((s.prev = s.next)) {
+                    case 0:
+                      return (
+                        (m = p),
+                        s.abrupt(
+                          'return',
+                          new Promise((s, i) => {
+                            var p = m.callContract.packData(e, n),
+                              g = {
+                                from: t,
+                                to: o['a'].dmwBaseV2.address,
+                                value: '0x' + r.toString(16),
+                                data: p,
+                                gasPrice:
+                                  '0x' + new d.a('1000000000').toString(16),
+                                cy: c,
+                                gas: '',
+                                password: u,
+                              },
+                              b = {
+                                from: a,
+                                to: o['a'].dmwBaseV2.address,
+                                value: '0x' + r.toString(16),
+                                data: p,
+                                gasPrice:
+                                  '0x' + new d.a('1000000000').toString(16),
+                                cy: c,
+                              };
+                            y['a']
+                              .post('sero_estimateGas', [b])
+                              .then(a => {
+                                (g['gas'] = a),
+                                  l.a.executeContract(g, function(n) {
+                                    _['a'].addTx(
+                                      r,
+                                      c,
+                                      n,
+                                      t,
+                                      a,
+                                      o['a'].dmwBaseV2.address,
+                                      e,
+                                    ),
+                                      s(n);
+                                  });
+                              })
+                              .catch(e => {
+                                i(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return s.stop();
+                  }
+              }, i);
+            }),
+          )();
+        }
+      }
+      var h = new b();
+      t['a'] = h;
+    },
     miYZ: function(e, t, a) {
       'use strict';
       a('cIOH'), a('bXwC');
@@ -1497,8 +1501,8 @@
         l = a('TSYQ'),
         p = a.n(l),
         m = a('BGR+'),
-        _ = a('V/uB'),
-        d = a.n(_),
+        d = a('V/uB'),
+        _ = a.n(d),
         y = a('H84U'),
         g = function(e, t) {
           var a = {};
@@ -1530,11 +1534,11 @@
               'onClick',
             ]),
             m = u['useContext'](y['b']),
-            _ = m.getPrefixCls,
-            d = function(e) {
+            d = m.getPrefixCls,
+            _ = function(e) {
               r && r(!i), c && c(e);
             },
-            b = _('tag', a),
+            b = d('tag', a),
             h = p()(
               b,
               ((t = {}),
@@ -1545,7 +1549,7 @@
             );
           return u['createElement'](
             'span',
-            o()({}, l, { className: h, onClick: d }),
+            o()({}, l, { className: h, onClick: _ }),
           );
         },
         h = b,
@@ -1567,19 +1571,19 @@
           return a;
         },
         x = new RegExp('^('.concat(f['a'].join('|'), ')(-inverse)?$')),
-        C = new RegExp('^('.concat(f['b'].join('|'), ')$')),
-        k = function(e, t) {
+        k = new RegExp('^('.concat(f['b'].join('|'), ')$')),
+        C = function(e, t) {
           var a,
             n = e.prefixCls,
             i = e.className,
             r = e.style,
             l = e.children,
-            _ = e.icon,
+            d = e.icon,
             g = e.color,
             b = e.onClose,
             h = e.closeIcon,
             f = e.closable,
-            k = void 0 !== f && f,
+            C = void 0 !== f && f,
             S = v(e, [
               'prefixCls',
               'className',
@@ -1597,51 +1601,51 @@
             D = u['useState'](!0),
             I = c()(D, 2),
             O = I[0],
-            q = I[1];
+            V = I[1];
           u['useEffect'](
             function() {
-              'visible' in S && q(S.visible);
+              'visible' in S && V(S.visible);
             },
             [S.visible],
           );
           var A = function() {
-              return !!g && (x.test(g) || C.test(g));
+              return !!g && (x.test(g) || k.test(g));
             },
-            R = o()({ backgroundColor: g && !A() ? g : void 0 }, r),
-            T = A(),
-            V = E('tag', n),
+            q = o()({ backgroundColor: g && !A() ? g : void 0 }, r),
+            R = A(),
+            T = E('tag', n),
             N = p()(
-              V,
+              T,
               ((a = {}),
-              s()(a, ''.concat(V, '-').concat(g), T),
-              s()(a, ''.concat(V, '-has-color'), g && !T),
-              s()(a, ''.concat(V, '-hidden'), !O),
-              s()(a, ''.concat(V, '-rtl'), 'rtl' === M),
+              s()(a, ''.concat(T, '-').concat(g), R),
+              s()(a, ''.concat(T, '-has-color'), g && !R),
+              s()(a, ''.concat(T, '-hidden'), !O),
+              s()(a, ''.concat(T, '-rtl'), 'rtl' === M),
               a),
               i,
             ),
             B = function(e) {
               e.stopPropagation(),
                 b && b(e),
-                e.defaultPrevented || 'visible' in S || q(!1);
+                e.defaultPrevented || 'visible' in S || V(!1);
             },
             j = function() {
-              return k
+              return C
                 ? h
                   ? u['createElement'](
                       'span',
-                      { className: ''.concat(V, '-close-icon'), onClick: B },
+                      { className: ''.concat(T, '-close-icon'), onClick: B },
                       h,
                     )
-                  : u['createElement'](d.a, {
-                      className: ''.concat(V, '-close-icon'),
+                  : u['createElement'](_.a, {
+                      className: ''.concat(T, '-close-icon'),
                       onClick: B,
                     })
                 : null;
             },
             F = 'onClick' in S || (l && 'a' === l.type),
             W = Object(m['a'])(S, ['visible']),
-            K = _ || null,
+            K = d || null,
             z = K
               ? u['createElement'](
                   u['Fragment'],
@@ -1652,13 +1656,13 @@
               : l,
             L = u['createElement'](
               'span',
-              o()({}, W, { ref: t, className: N, style: R }),
+              o()({}, W, { ref: t, className: N, style: q }),
               z,
               j(),
             );
           return F ? u['createElement'](w['a'], null, L) : L;
         },
-        S = u['forwardRef'](k);
+        S = u['forwardRef'](C);
       (S.displayName = 'Tag'), (S.CheckableTag = h);
       t['a'] = S;
     },
@@ -1672,6 +1676,7 @@
             this.initDMW(),
             this.initDMWV2(),
             this.initDMWBase(),
+            this.initDMWBaseV2(),
             this.initDMWInfo(),
             this.initDMWInfoV2(),
             this.initDMWProxy(),
@@ -2118,6 +2123,80 @@
             ],
           };
         }
+        initDMWBaseV2() {
+          this.dmwBaseV2 = {
+            address: this.addresMap.dmwBaseV2,
+            abi: [
+              {
+                constant: !0,
+                inputs: [{ name: 'lang', type: 'string' }],
+                name: 'getTradingPairs',
+                outputs: [{ name: '', type: 'string' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [{ name: 'backedCoin', type: 'string' }],
+                name: 'exchangeLength',
+                outputs: [{ name: '', type: 'uint256' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'lang', type: 'string' },
+                  { name: 'descption', type: 'string' },
+                ],
+                name: 'addDescription',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'name', type: 'string' },
+                ],
+                name: 'addExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'index', type: 'uint256' },
+                ],
+                name: 'delExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'mintCoin', type: 'string' },
+                ],
+                name: 'getProxyAddress',
+                outputs: [{ name: '', type: 'address' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+            ],
+          };
+        }
         initDMWInfo() {
           this.dmwInfo = {
             address: this.addresMap.dmwInfo,
@@ -2276,6 +2355,8 @@
             '2SqAc5vQBPcMXMhZnL6TvozAFzBoxE57yDG1j4oJXBENUCyWJs4a11By56Bn6Ko85FGWHs3qeh9Tj8PJPJ3DwDrJ',
           dmwBase:
             'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
+          dmwBaseV2:
+            '2brAtmJ56AeFGN9k5VTVGjVusNtqjgeSL6dvSHw36RXzrgYG4v2xm7gNwv4sDfc1nAGUtx4n7AktZu9Fqk96v21P',
           dmwInfo:
             '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
           dmwInfoV2:

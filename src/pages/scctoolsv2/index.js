@@ -14,7 +14,7 @@ import {
 import './index.css';
 import utils from '@/common/utils';
 import dmw from '@/service/dmwV2';
-import dmwBase from '@/service/dmwBase';
+import dmwBase from '@/service/dmwBaseV2';
 import dmwInfo from '@/service/dmwInfoV2';
 import BorrowForm from '@/components/Borrow';
 import DealForm from '@/components/Deal';

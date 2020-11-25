@@ -6,6 +6,7 @@ class Config {
     this.initDMW();
     this.initDMWV2();
     this.initDMWBase();
+    this.initDMWBaseV2();
     this.initDMWInfo();
     this.initDMWInfoV2();
     this.initDMWProxy();
@@ -764,6 +765,132 @@ class Config {
       ],
     };
   }
+  initDMWBaseV2() {
+    this.dmwBaseV2 = {
+      address: this.addresMap.dmwBaseV2,
+      abi: [
+        {
+          constant: true,
+          inputs: [
+            {
+              name: 'lang',
+              type: 'string',
+            },
+          ],
+          name: 'getTradingPairs',
+          outputs: [
+            {
+              name: '',
+              type: 'string',
+            },
+          ],
+          payable: false,
+          stateMutability: 'view',
+          type: 'function',
+        },
+        {
+          constant: true,
+          inputs: [
+            {
+              name: 'backedCoin',
+              type: 'string',
+            },
+          ],
+          name: 'exchangeLength',
+          outputs: [
+            {
+              name: '',
+              type: 'uint256',
+            },
+          ],
+          payable: false,
+          stateMutability: 'view',
+          type: 'function',
+        },
+        {
+          constant: false,
+          inputs: [
+            {
+              name: 'backedCoin',
+              type: 'string',
+            },
+            {
+              name: 'lang',
+              type: 'string',
+            },
+            {
+              name: 'descption',
+              type: 'string',
+            },
+          ],
+          name: 'addDescription',
+          outputs: [],
+          payable: false,
+          stateMutability: 'nonpayable',
+          type: 'function',
+        },
+        {
+          constant: false,
+          inputs: [
+            {
+              name: 'backedCoin',
+              type: 'string',
+            },
+            {
+              name: 'name',
+              type: 'string',
+            },
+          ],
+          name: 'addExchange',
+          outputs: [],
+          payable: false,
+          stateMutability: 'nonpayable',
+          type: 'function',
+        },
+        {
+          constant: false,
+          inputs: [
+            {
+              name: 'backedCoin',
+              type: 'string',
+            },
+            {
+              name: 'index',
+              type: 'uint256',
+            },
+          ],
+          name: 'delExchange',
+          outputs: [],
+          payable: false,
+          stateMutability: 'nonpayable',
+          type: 'function',
+        },
+        {
+          constant: true,
+          inputs: [
+            {
+              name: 'backedCoin',
+              type: 'string',
+            },
+            {
+              name: 'mintCoin',
+              type: 'string',
+            },
+          ],
+          name: 'getProxyAddress',
+          outputs: [
+            {
+              name: '',
+              type: 'address',
+            },
+          ],
+          payable: false,
+          stateMutability: 'view',
+          type: 'function',
+        },
+      ],
+    };
+  }
   initDMWInfo() {
     this.dmwInfo = {
       address: this.addresMap.dmwInfo,
@@ -1040,6 +1167,8 @@ const configaddress_dev = {
     'v5DkAKjhsT9X997NqccHpiVkEfNC9p3HRgXuYFonXignBSRDCxZ7XLT6fqiLzRDLveZpn1UJuwWP4FFz6LBNqym',
   dmwBase:
     'JY6PxE8d9UEAyBBZ3d4XbHwPRZq2bckqy58arZKe3AXR825u42Ypm1fJ5kHw8dbLgpjeoJqCseFc2X4s2zhtEAN',
+  dmwBaseV2:
+    'JY6PxE8d9UEAyBBZ3d4XbHwPRZq2bckqy58arZKe3AXR825u42Ypm1fJ5kHw8dbLgpjeoJqCseFc2X4s2zhtEAN',
   dmwInfo:
     '54rjCXL3YpMvQWkpxwT4byd7rtLnZs3ksFNwkFfyBV6XUSrimxnk79pFQZT3gK1Xw3xtPeFZtJE87TgA8hWB4mHP',
   dmwInfoV2:
@@ -1063,6 +1192,8 @@ const configaddress_prod = {
     '2SqAc5vQBPcMXMhZnL6TvozAFzBoxE57yDG1j4oJXBENUCyWJs4a11By56Bn6Ko85FGWHs3qeh9Tj8PJPJ3DwDrJ',
   dmwBase:
     'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
+  dmwBaseV2:
+    '2brAtmJ56AeFGN9k5VTVGjVusNtqjgeSL6dvSHw36RXzrgYG4v2xm7gNwv4sDfc1nAGUtx4n7AktZu9Fqk96v21P',
   dmwInfo:
     '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
   dmwInfoV2:

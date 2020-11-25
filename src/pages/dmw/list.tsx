@@ -13,7 +13,7 @@ import {
 import './list.css';
 import DissentCreateForm from '@/components/Dissent';
 import CreateSSCForm from '@/components/CreateSSC';
-import dmwBase from '@/service/dmwBase';
+import dmwBase from '@/service/dmwBaseV2';
 import i18n from '@/i18n';
 import { storage } from '@/common/storage';
 import AddExchangeForm from '@/components/AddExchange';

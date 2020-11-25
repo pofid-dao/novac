@@ -106,259 +106,6 @@
         '{"button_changeAccount":"\uacc4\uc815 \uc804\ud658","button_goStaking":"\uc800\ub2f9","button_cancel":"\ucde8\uc18c","button_ok":"\ud655\uc815","button_commit":"\uc81c\ucd9c","button_confirm":"\ud655\uc778","button_borrow":"\ub300\ucd9c","button_repay":"\uc0c1\ud658","button_deal":"\ubc18\ud658","button_withdraw":"\ud604\uae08\uc778\ucd9c","button_reinvet":"\ubcf5\ud22c","button_createAuction":"\ud06c\ub9ac\uc5d0\uc787 \uc625\uc158","button_bidding":"\uacbd\ub9e4\ub85c \uc774\ub3d9","button_bid":"\ube44\ub4dc","button_deposit":"\ub9e4\uae30\ub2e4","menus_wallet":"\uc9c0\uac11","menus_pfid":"PFID","menus_mypfid":"\ub098\uc758PFID","menus_equity":"\uc790\uc0b0","menus_dmw":" PV","menus_ssctools":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778 \ub3c4\uad6c","menus_ssclist":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778  \ub9ac\uc2a4\ud2b8","menus_sscmy":"\ub0b4 \uc8fc\ubb38","menus_auction":"\uacbd\ub9e4","menus_dapps":"DAPPS","pages_pfid_balance":"\uc794\uace0","pages_pfid_stakingPool":"\uc800\ub2f9\uc9c0","pages_pfid_my_stakingRecord":"\uc800\ub2f9 \uae30\ub85d","pages_pfid_my_index":"\uc21c\ubc88","pages_pfid_my_cycle":"\uc8fc\uae30","pages_pfid_my_cycle_days":"\uc77c","pages_pfid_my_state":"\uc0c1\ud0dc","pages_pfid_my_staking":"\uc800\ub2f9\ud55c","pages_pfid_my_received":"\ubc1b\uc740","pages_pfid_my_time":"\uc2dc\uac04","pages_pfid_my_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_pfid_my_amount":"\uae08\uc561","pages_pfid_my_password":"\ube44\ubc00 \ubc88\ud638","pages_pfid_my_expect":"\uc608\uc0c1 \uc0b0\ucd9c","pages_pfid_my_expect_received":" \uc608\uc0c1 \uc218\uc775","pages_pfid_started_at":"\uc2dc\uc791 \uc2dc\uac04","pages_pfid_withdraw_at":"\ud604\uae08\uc778\ucd9c \uc2dc\uac04","pages_equity_dividendList":"\ud604\uc2dc\uc810\uc5d0\uc11c \ubc1b\uc744\uc218 \uc788\ub294 \ubc30\ub2f9\uae08","pages_equity_dividendRecords":"\ubc30\ub2f9\uae08 \uae30\ub85d","pages_equity_index":"\uc21c\ubc88","pages_equity_ssc":"\ucf54\uc778 \uc774\ub984","pages_equity_amount":"\uae08\uc561","pages_equity_time":"\uc2dc\uac04","pages_equity_state":"\uc0c1\ud0dc","pages_equity_withdraw":"\ud604\uae08\uc778\ucd9c \ub9ac\uc2a4\ud2b8","pages_dmw_list":"PV LIST","pages_dmw_sero":"SERO\ub294 \uc138\uacc4\uc5d0\uc11c \ucd5c\ucd08\ub85c \ud1a0\ub9c1 \uc644\uc804 \uc2a4\ub9c8\ud2b8 \uac8c\uc57d\ub97c \uc9c0\uc9c0\ud558\ub294 \ud68c\uc0ac\ub2e4 . \uc774\uac83\uc740 \ubb34\uc9c0\uc2dd\uc99d\uba85\uc73c\ub85c  \uc790\uc0b0\uc758 \uacf5\uacf5 \uc0ac\uc2ac\uacfc \uac70\ub798 \ud504\ub77c\uc774\ubc84\uc2dc\ub97c \ubcf4\ud638\ud55c\ub2e4.","pages_dmw_collateralizationRatio":"\uc800\ub2f9 \ube44\uc728","pages_dmw_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \ube44\uc728","pages_dmw_vmDataSource":"\ub370\uc774\ud2b8 \uc18c\uc2a4","pages_dmw_dmwSource":"PV \uacc4\uc57d \uc8fc\uc18c","pages_dmw_vmSource":"VG \uacc4\uc57d \uc8fc\uc18c","pages_dmw_stableCoin":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778","pages_ssctools_list_title":"OCA \ub9ac\uc2a4\ud2b8","pages_ssctools_list_collateralizationRatio":"\uc800\ub2f9\uc728","pages_ssctools_list_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \uc728","pages_ssctools_list_current_total":"\ud604\uc7ac \uc21c\ud658","pages_ssctools_list_exchangeRatio":"\uad50\ud658 \ube44\uc728","pages_myssc_title":" \ub098\uc758 SSC","pages_myssc_index":"\uc21c\ubc88","pages_myssc_no":"\ubc88\ud638","pages_myssc_pledged":"\uc800\ub2f9 \uc218\ub7c9","pages_myssc_mintCoins":"\uc8fc\ud654 \uc218\ub7c9","pages_myssc_canClaimtValue":"\uccad\uad6c \ub3d9\uc804","pages_myssc_biding":"\uc785\ucc30","pages_myssc_normal":"\ud45c\uc900","pages_myssc_fee":"\ube44\uc6a9","pages_myssc_currentRatio":"\ud604\uc7ac \ube44\uc728","pages_myssc_status":"\uc0c1\ud0dc","pages_myssc_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_auction_title":"\uc625\uc158 \ud0c0\uc774\ud2c0","pages_auction_index":"\uc21c\ubc88","pages_auction_assets":"\uc790\uc0b0","pages_auction_currentPrice":"\ud604\uc7ac\uac00\uaca9","pages_auction_singleBid":"\ub2e8\ucc28\ucd9c\uac00","pages_auction_status":"\uc0c1\ud0dc","pages_auction_countDown":"\uce74\uc6b4\ud2b8\ub2e4\uc6b4","pages_auction_operation":"\uc624\ud37c\ub808\uc774\uc158","form_note":"\uc124\uba85","form_bid_total":"\uacbd\ub9e4 \ucd1d\uc561","form_input_amount":"\uae08\uc561\uc744 \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_password":"\ube44\ubc00 \ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_cycle":"\uc8fc\uae30\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694!","form_input_desc":"\uc124\uba85\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc624!","form_input_name":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc6241!","form_lable_amount":"\uae08\uc561","form_lable_password":"\ube44\ubc00 \ubc88\ud638","form_lable_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218","form_lable_estimate":"\ucd94\uc0b0","form_lable_fee":"\ube44\uc6a9","form_lable_exchange_name":"\uad50\ud658 \uba85","state_finished":"\uc885\ub8cc","state_valid":"\uc720\ud6a8","state_biding":"\ube44\ub4dc\uc911","state_ssc_finished":"\uae30\ub85d\ub428","state_ssc_valid":"\uae30\ub85d\ub418\uc9c0 \uc54a\uc74c","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC\ub294 Chrome \ube0c\ub77c\uc6b0\uc800\uc5d0\uc11c \uac00\uc7a5 \uc798 \uc791\ub3d9\ud569\ub2c8\ub2e4.","chrome_down_btn":"Chrome \ube0c\ub77c\uc6b0\uc800\ub97c \ub2e4\uc6b4\ub85c\ub4dc\ud558\ub824\uba74 \ud074\ub9ad\ud558\uc2ed\uc2dc\uc624.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"\uc601\uc5b4","ko_KR":"\ud55c\uad6d\uc5b4","zh_CN":"\uc911\uad6d\uc5b4 \uac04\uccb4","updateDesc":"\uc5c5\ub370\uc774\ud2b8 \uc124\uba85","addExchange":"\uad50\ud658 \ucd94\uac00","countdownFormat":"D \uc77c HH:mm:ss","equity_withdraw_list":"\ucd9c\uae08 \ubaa9\ub85d"}',
       );
     },
-    '1hUn': function(e, t, n) {
-      'use strict';
-      var a = n('o0o1'),
-        r = n.n(a),
-        o = n('HaE+'),
-        i = n('pJv6'),
-        c = n('YG53'),
-        s = n.n(c),
-        l = n('eiA3'),
-        u = n.n(l),
-        d = n('3wK0'),
-        p = n('kB5k'),
-        f = n.n(p),
-        m = n('DDa7'),
-        v = n('tLa6'),
-        h = n('iTWr');
-      class b {
-        constructor() {
-          (this.callContract = null),
-            (this.callContract = s.a.callContract(
-              i['a'].dmwBase.abi,
-              i['a'].dmwBase.address,
-            ));
-        }
-        getTradingPairs() {
-          var e = this;
-          return Object(o['a'])(
-            r.a.mark(function t() {
-              var n, a;
-              return r.a.wrap(function(t) {
-                while (1)
-                  switch ((t.prev = t.next)) {
-                    case 0:
-                      return (
-                        (n = d['a'].getCurrent()),
-                        (a = h['a'].get(h['a'].keys.language)),
-                        (a = a || 'en_US'),
-                        t.abrupt(
-                          'return',
-                          e.callMethod('getTradingPairs', n.MainPKr, [a]),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return t.stop();
-                  }
-              }, t);
-            }),
-          )();
-        }
-        getProxyAddress(e, t) {
-          var n = this;
-          return Object(o['a'])(
-            r.a.mark(function a() {
-              var o;
-              return r.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (o = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('getProxyAddress', o.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        addDescription(e, t, n, a) {
-          var i = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var c;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (c = d['a'].getCurrent()),
-                        r.abrupt(
-                          'return',
-                          i.executeMethod(
-                            'addDescription',
-                            c.PK,
-                            c.MainPKr,
-                            [e, t, n],
-                            new f.a(0),
-                            'SERO',
-                            a,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-        addExchange(e, t, n) {
-          var a = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var i;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (i = d['a'].getCurrent()),
-                        r.abrupt(
-                          'return',
-                          a.executeMethod(
-                            'addExchange',
-                            i.PK,
-                            i.MainPKr,
-                            [e, t],
-                            new f.a(0),
-                            'SERO',
-                            n,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-        now() {
-          return Math.ceil(new Date().getTime() / 1e3);
-        }
-        callMethod(e, t, n) {
-          var a = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var c, s, l;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (c = a),
-                        (s = c.callContract.packData(e, n)),
-                        (l = { from: t, to: i['a'].dmwBase.address, data: s }),
-                        r.abrupt(
-                          'return',
-                          new Promise((t, n) => {
-                            v['a']
-                              .post('sero_call', [l, 'latest'])
-                              .then(a => {
-                                if ('0x' !== a)
-                                  try {
-                                    var r = c.callContract.unPackData(e, a);
-                                    t(r);
-                                  } catch (o) {
-                                    n(o.message);
-                                  }
-                                else n(a);
-                              })
-                              .catch(e => {
-                                n(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-        executeMethod(e, t, n, a, c, s, l) {
-          var d = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var p;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (p = d),
-                        r.abrupt(
-                          'return',
-                          new Promise((r, o) => {
-                            var d = p.callContract.packData(e, a),
-                              h = {
-                                from: t,
-                                to: i['a'].dmwBase.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: s,
-                                gas: '',
-                                password: l,
-                              },
-                              b = {
-                                from: n,
-                                to: i['a'].dmwBase.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: s,
-                              };
-                            v['a']
-                              .post('sero_estimateGas', [b])
-                              .then(n => {
-                                (h['gas'] = n),
-                                  u.a.executeContract(h, function(a) {
-                                    m['a'].addTx(
-                                      c,
-                                      s,
-                                      a,
-                                      t,
-                                      n,
-                                      i['a'].dmwBase.address,
-                                      e,
-                                    ),
-                                      r(a);
-                                  });
-                              })
-                              .catch(e => {
-                                o(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-      }
-      var y = new b();
-      t['a'] = y;
-    },
     2: function(e, t) {},
     '2oIt': function(e, t, n) {
       'use strict';
@@ -1661,7 +1408,7 @@
         v = n('DDa7'),
         h = n('tLa6'),
         b = n('yZ0O'),
-        y = n('1hUn');
+        y = n('l9Ps');
       class g {
         constructor() {
           (this.callContract = null),
@@ -5800,6 +5547,263 @@
           }),
         (t['a'] = r['a']);
     },
+    l9Ps: function(e, t, n) {
+      'use strict';
+      var a = n('o0o1'),
+        r = n.n(a),
+        o = n('HaE+'),
+        i = n('pJv6'),
+        c = n('YG53'),
+        s = n.n(c),
+        l = n('eiA3'),
+        u = n.n(l),
+        d = n('3wK0'),
+        p = n('kB5k'),
+        f = n.n(p),
+        m = n('DDa7'),
+        v = n('tLa6'),
+        h = n('iTWr');
+      class b {
+        constructor() {
+          (this.callContract = null),
+            (this.callContract = s.a.callContract(
+              i['a'].dmwBaseV2.abi,
+              i['a'].dmwBaseV2.address,
+            ));
+        }
+        getTradingPairs() {
+          var e = this;
+          return Object(o['a'])(
+            r.a.mark(function t() {
+              var n, a;
+              return r.a.wrap(function(t) {
+                while (1)
+                  switch ((t.prev = t.next)) {
+                    case 0:
+                      return (
+                        (n = d['a'].getCurrent()),
+                        (a = h['a'].get(h['a'].keys.language)),
+                        (a = a || 'en_US'),
+                        t.abrupt(
+                          'return',
+                          e.callMethod('getTradingPairs', n.MainPKr, [a]),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return t.stop();
+                  }
+              }, t);
+            }),
+          )();
+        }
+        getProxyAddress(e, t) {
+          var n = this;
+          return Object(o['a'])(
+            r.a.mark(function a() {
+              var o;
+              return r.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (o = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('getProxyAddress', o.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        addDescription(e, t, n, a) {
+          var i = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var c;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (c = d['a'].getCurrent()),
+                        r.abrupt(
+                          'return',
+                          i.executeMethod(
+                            'addDescription',
+                            c.PK,
+                            c.MainPKr,
+                            [e, t, n],
+                            new f.a(0),
+                            'SERO',
+                            a,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+        addExchange(e, t, n) {
+          var a = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var i;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (i = d['a'].getCurrent()),
+                        r.abrupt(
+                          'return',
+                          a.executeMethod(
+                            'addExchange',
+                            i.PK,
+                            i.MainPKr,
+                            [e, t],
+                            new f.a(0),
+                            'SERO',
+                            n,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+        now() {
+          return Math.ceil(new Date().getTime() / 1e3);
+        }
+        callMethod(e, t, n) {
+          var a = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var c, s, l;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (c = a),
+                        (s = c.callContract.packData(e, n)),
+                        (l = {
+                          from: t,
+                          to: i['a'].dmwBaseV2.address,
+                          data: s,
+                        }),
+                        r.abrupt(
+                          'return',
+                          new Promise((t, n) => {
+                            v['a']
+                              .post('sero_call', [l, 'latest'])
+                              .then(a => {
+                                if ('0x' !== a)
+                                  try {
+                                    var r = c.callContract.unPackData(e, a);
+                                    t(r);
+                                  } catch (o) {
+                                    n(o.message);
+                                  }
+                                else n(a);
+                              })
+                              .catch(e => {
+                                n(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+        executeMethod(e, t, n, a, c, s, l) {
+          var d = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var p;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (p = d),
+                        r.abrupt(
+                          'return',
+                          new Promise((r, o) => {
+                            var d = p.callContract.packData(e, a),
+                              h = {
+                                from: t,
+                                to: i['a'].dmwBaseV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: s,
+                                gas: '',
+                                password: l,
+                              },
+                              b = {
+                                from: n,
+                                to: i['a'].dmwBaseV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: s,
+                              };
+                            v['a']
+                              .post('sero_estimateGas', [b])
+                              .then(n => {
+                                (h['gas'] = n),
+                                  u.a.executeContract(h, function(a) {
+                                    m['a'].addTx(
+                                      c,
+                                      s,
+                                      a,
+                                      t,
+                                      n,
+                                      i['a'].dmwBaseV2.address,
+                                      e,
+                                    ),
+                                      r(a);
+                                  });
+                              })
+                              .catch(e => {
+                                o(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+      }
+      var y = new b();
+      t['a'] = y;
+    },
     mr32: function(e, t, n) {
       'use strict';
       var a = n('lSNA'),
@@ -5988,6 +5992,7 @@
             this.initDMW(),
             this.initDMWV2(),
             this.initDMWBase(),
+            this.initDMWBaseV2(),
             this.initDMWInfo(),
             this.initDMWInfoV2(),
             this.initDMWProxy(),
@@ -6434,6 +6439,80 @@
             ],
           };
         }
+        initDMWBaseV2() {
+          this.dmwBaseV2 = {
+            address: this.addresMap.dmwBaseV2,
+            abi: [
+              {
+                constant: !0,
+                inputs: [{ name: 'lang', type: 'string' }],
+                name: 'getTradingPairs',
+                outputs: [{ name: '', type: 'string' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [{ name: 'backedCoin', type: 'string' }],
+                name: 'exchangeLength',
+                outputs: [{ name: '', type: 'uint256' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'lang', type: 'string' },
+                  { name: 'descption', type: 'string' },
+                ],
+                name: 'addDescription',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'name', type: 'string' },
+                ],
+                name: 'addExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'index', type: 'uint256' },
+                ],
+                name: 'delExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'mintCoin', type: 'string' },
+                ],
+                name: 'getProxyAddress',
+                outputs: [{ name: '', type: 'address' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+            ],
+          };
+        }
         initDMWInfo() {
           this.dmwInfo = {
             address: this.addresMap.dmwInfo,
@@ -6592,6 +6671,8 @@
             '2SqAc5vQBPcMXMhZnL6TvozAFzBoxE57yDG1j4oJXBENUCyWJs4a11By56Bn6Ko85FGWHs3qeh9Tj8PJPJ3DwDrJ',
           dmwBase:
             'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
+          dmwBaseV2:
+            '2brAtmJ56AeFGN9k5VTVGjVusNtqjgeSL6dvSHw36RXzrgYG4v2xm7gNwv4sDfc1nAGUtx4n7AktZu9Fqk96v21P',
           dmwInfo:
             '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
           dmwInfoV2:
@@ -6626,7 +6707,7 @@
         y = n.n(b),
         g = (n('0n2j'), n('kLkQ')),
         w = n('QR79'),
-        x = n('1hUn'),
+        x = n('l9Ps'),
         C = n('S9ZI'),
         _ = n('jQwr'),
         O = n('EstT'),

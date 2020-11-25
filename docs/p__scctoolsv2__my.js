@@ -18,259 +18,6 @@
         '{"button_changeAccount":"\uacc4\uc815 \uc804\ud658","button_goStaking":"\uc800\ub2f9","button_cancel":"\ucde8\uc18c","button_ok":"\ud655\uc815","button_commit":"\uc81c\ucd9c","button_confirm":"\ud655\uc778","button_borrow":"\ub300\ucd9c","button_repay":"\uc0c1\ud658","button_deal":"\ubc18\ud658","button_withdraw":"\ud604\uae08\uc778\ucd9c","button_reinvet":"\ubcf5\ud22c","button_createAuction":"\ud06c\ub9ac\uc5d0\uc787 \uc625\uc158","button_bidding":"\uacbd\ub9e4\ub85c \uc774\ub3d9","button_bid":"\ube44\ub4dc","button_deposit":"\ub9e4\uae30\ub2e4","menus_wallet":"\uc9c0\uac11","menus_pfid":"PFID","menus_mypfid":"\ub098\uc758PFID","menus_equity":"\uc790\uc0b0","menus_dmw":" PV","menus_ssctools":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778 \ub3c4\uad6c","menus_ssclist":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778  \ub9ac\uc2a4\ud2b8","menus_sscmy":"\ub0b4 \uc8fc\ubb38","menus_auction":"\uacbd\ub9e4","menus_dapps":"DAPPS","pages_pfid_balance":"\uc794\uace0","pages_pfid_stakingPool":"\uc800\ub2f9\uc9c0","pages_pfid_my_stakingRecord":"\uc800\ub2f9 \uae30\ub85d","pages_pfid_my_index":"\uc21c\ubc88","pages_pfid_my_cycle":"\uc8fc\uae30","pages_pfid_my_cycle_days":"\uc77c","pages_pfid_my_state":"\uc0c1\ud0dc","pages_pfid_my_staking":"\uc800\ub2f9\ud55c","pages_pfid_my_received":"\ubc1b\uc740","pages_pfid_my_time":"\uc2dc\uac04","pages_pfid_my_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_pfid_my_amount":"\uae08\uc561","pages_pfid_my_password":"\ube44\ubc00 \ubc88\ud638","pages_pfid_my_expect":"\uc608\uc0c1 \uc0b0\ucd9c","pages_pfid_my_expect_received":" \uc608\uc0c1 \uc218\uc775","pages_pfid_started_at":"\uc2dc\uc791 \uc2dc\uac04","pages_pfid_withdraw_at":"\ud604\uae08\uc778\ucd9c \uc2dc\uac04","pages_equity_dividendList":"\ud604\uc2dc\uc810\uc5d0\uc11c \ubc1b\uc744\uc218 \uc788\ub294 \ubc30\ub2f9\uae08","pages_equity_dividendRecords":"\ubc30\ub2f9\uae08 \uae30\ub85d","pages_equity_index":"\uc21c\ubc88","pages_equity_ssc":"\ucf54\uc778 \uc774\ub984","pages_equity_amount":"\uae08\uc561","pages_equity_time":"\uc2dc\uac04","pages_equity_state":"\uc0c1\ud0dc","pages_equity_withdraw":"\ud604\uae08\uc778\ucd9c \ub9ac\uc2a4\ud2b8","pages_dmw_list":"PV LIST","pages_dmw_sero":"SERO\ub294 \uc138\uacc4\uc5d0\uc11c \ucd5c\ucd08\ub85c \ud1a0\ub9c1 \uc644\uc804 \uc2a4\ub9c8\ud2b8 \uac8c\uc57d\ub97c \uc9c0\uc9c0\ud558\ub294 \ud68c\uc0ac\ub2e4 . \uc774\uac83\uc740 \ubb34\uc9c0\uc2dd\uc99d\uba85\uc73c\ub85c  \uc790\uc0b0\uc758 \uacf5\uacf5 \uc0ac\uc2ac\uacfc \uac70\ub798 \ud504\ub77c\uc774\ubc84\uc2dc\ub97c \ubcf4\ud638\ud55c\ub2e4.","pages_dmw_collateralizationRatio":"\uc800\ub2f9 \ube44\uc728","pages_dmw_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \ube44\uc728","pages_dmw_vmDataSource":"\ub370\uc774\ud2b8 \uc18c\uc2a4","pages_dmw_dmwSource":"PV \uacc4\uc57d \uc8fc\uc18c","pages_dmw_vmSource":"VG \uacc4\uc57d \uc8fc\uc18c","pages_dmw_stableCoin":"\uc2a4\ud14c\uc774\ube14 \ucf54\uc778","pages_ssctools_list_title":"OCA \ub9ac\uc2a4\ud2b8","pages_ssctools_list_collateralizationRatio":"\uc800\ub2f9\uc728","pages_ssctools_list_liquidationRatio":"\ube14\ub77c\uc2a4\ud305 \uc6e8\uc5b4\ud558\uc6b0\uc2a4 \uc728","pages_ssctools_list_current_total":"\ud604\uc7ac \uc21c\ud658","pages_ssctools_list_exchangeRatio":"\uad50\ud658 \ube44\uc728","pages_myssc_title":" \ub098\uc758 SSC","pages_myssc_index":"\uc21c\ubc88","pages_myssc_no":"\ubc88\ud638","pages_myssc_pledged":"\uc800\ub2f9 \uc218\ub7c9","pages_myssc_mintCoins":"\uc8fc\ud654 \uc218\ub7c9","pages_myssc_canClaimtValue":"\uccad\uad6c \ub3d9\uc804","pages_myssc_biding":"\uc785\ucc30","pages_myssc_normal":"\ud45c\uc900","pages_myssc_fee":"\ube44\uc6a9","pages_myssc_currentRatio":"\ud604\uc7ac \ube44\uc728","pages_myssc_status":"\uc0c1\ud0dc","pages_myssc_operation":"\uc624\ud37c\ub808\uc774\uc158","pages_auction_title":"\uc625\uc158 \ud0c0\uc774\ud2c0","pages_auction_index":"\uc21c\ubc88","pages_auction_assets":"\uc790\uc0b0","pages_auction_currentPrice":"\ud604\uc7ac\uac00\uaca9","pages_auction_singleBid":"\ub2e8\ucc28\ucd9c\uac00","pages_auction_status":"\uc0c1\ud0dc","pages_auction_countDown":"\uce74\uc6b4\ud2b8\ub2e4\uc6b4","pages_auction_operation":"\uc624\ud37c\ub808\uc774\uc158","form_note":"\uc124\uba85","form_bid_total":"\uacbd\ub9e4 \ucd1d\uc561","form_input_amount":"\uae08\uc561\uc744 \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_password":"\ube44\ubc00 \ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694!","form_input_cycle":"\uc8fc\uae30\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694!","form_input_desc":"\uc124\uba85\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc624!","form_input_name":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc2ed\uc2dc\uc6241!","form_lable_amount":"\uae08\uc561","form_lable_password":"\ube44\ubc00 \ubc88\ud638","form_lable_markup":"\uc62c\ub9b0 \uac00\uaca9\uc758 \ubc30\uc218","form_lable_estimate":"\ucd94\uc0b0","form_lable_fee":"\ube44\uc6a9","form_lable_exchange_name":"\uad50\ud658 \uba85","state_finished":"\uc885\ub8cc","state_valid":"\uc720\ud6a8","state_biding":"\ube44\ub4dc\uc911","state_ssc_finished":"\uae30\ub85d\ub428","state_ssc_valid":"\uae30\ub85d\ub418\uc9c0 \uc54a\uc74c","chrome_down":"https://www.google.com/chrome/","chrome_down_tip":"NOVAC\ub294 Chrome \ube0c\ub77c\uc6b0\uc800\uc5d0\uc11c \uac00\uc7a5 \uc798 \uc791\ub3d9\ud569\ub2c8\ub2e4.","chrome_down_btn":"Chrome \ube0c\ub77c\uc6b0\uc800\ub97c \ub2e4\uc6b4\ub85c\ub4dc\ud558\ub824\uba74 \ud074\ub9ad\ud558\uc2ed\uc2dc\uc624.","help":"https://pofid.com/Tech_guide.html#top0","en_US":"\uc601\uc5b4","ko_KR":"\ud55c\uad6d\uc5b4","zh_CN":"\uc911\uad6d\uc5b4 \uac04\uccb4","updateDesc":"\uc5c5\ub370\uc774\ud2b8 \uc124\uba85","addExchange":"\uad50\ud658 \ucd94\uac00","countdownFormat":"D \uc77c HH:mm:ss","equity_withdraw_list":"\ucd9c\uae08 \ubaa9\ub85d"}',
       );
     },
-    '1hUn': function(e, t, n) {
-      'use strict';
-      var a = n('o0o1'),
-        r = n.n(a),
-        o = n('HaE+'),
-        i = n('pJv6'),
-        c = n('YG53'),
-        s = n.n(c),
-        l = n('eiA3'),
-        u = n.n(l),
-        d = n('3wK0'),
-        p = n('kB5k'),
-        f = n.n(p),
-        m = n('DDa7'),
-        v = n('tLa6'),
-        h = n('iTWr');
-      class b {
-        constructor() {
-          (this.callContract = null),
-            (this.callContract = s.a.callContract(
-              i['a'].dmwBase.abi,
-              i['a'].dmwBase.address,
-            ));
-        }
-        getTradingPairs() {
-          var e = this;
-          return Object(o['a'])(
-            r.a.mark(function t() {
-              var n, a;
-              return r.a.wrap(function(t) {
-                while (1)
-                  switch ((t.prev = t.next)) {
-                    case 0:
-                      return (
-                        (n = d['a'].getCurrent()),
-                        (a = h['a'].get(h['a'].keys.language)),
-                        (a = a || 'en_US'),
-                        t.abrupt(
-                          'return',
-                          e.callMethod('getTradingPairs', n.MainPKr, [a]),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return t.stop();
-                  }
-              }, t);
-            }),
-          )();
-        }
-        getProxyAddress(e, t) {
-          var n = this;
-          return Object(o['a'])(
-            r.a.mark(function a() {
-              var o;
-              return r.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (o = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('getProxyAddress', o.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        addDescription(e, t, n, a) {
-          var i = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var c;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (c = d['a'].getCurrent()),
-                        r.abrupt(
-                          'return',
-                          i.executeMethod(
-                            'addDescription',
-                            c.PK,
-                            c.MainPKr,
-                            [e, t, n],
-                            new f.a(0),
-                            'SERO',
-                            a,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-        addExchange(e, t, n) {
-          var a = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var i;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (i = d['a'].getCurrent()),
-                        r.abrupt(
-                          'return',
-                          a.executeMethod(
-                            'addExchange',
-                            i.PK,
-                            i.MainPKr,
-                            [e, t],
-                            new f.a(0),
-                            'SERO',
-                            n,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-        now() {
-          return Math.ceil(new Date().getTime() / 1e3);
-        }
-        callMethod(e, t, n) {
-          var a = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var c, s, l;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (c = a),
-                        (s = c.callContract.packData(e, n)),
-                        (l = { from: t, to: i['a'].dmwBase.address, data: s }),
-                        r.abrupt(
-                          'return',
-                          new Promise((t, n) => {
-                            v['a']
-                              .post('sero_call', [l, 'latest'])
-                              .then(a => {
-                                if ('0x' !== a)
-                                  try {
-                                    var r = c.callContract.unPackData(e, a);
-                                    t(r);
-                                  } catch (o) {
-                                    n(o.message);
-                                  }
-                                else n(a);
-                              })
-                              .catch(e => {
-                                n(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-        executeMethod(e, t, n, a, c, s, l) {
-          var d = this;
-          return Object(o['a'])(
-            r.a.mark(function o() {
-              var p;
-              return r.a.wrap(function(r) {
-                while (1)
-                  switch ((r.prev = r.next)) {
-                    case 0:
-                      return (
-                        (p = d),
-                        r.abrupt(
-                          'return',
-                          new Promise((r, o) => {
-                            var d = p.callContract.packData(e, a),
-                              h = {
-                                from: t,
-                                to: i['a'].dmwBase.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: s,
-                                gas: '',
-                                password: l,
-                              },
-                              b = {
-                                from: n,
-                                to: i['a'].dmwBase.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: s,
-                              };
-                            v['a']
-                              .post('sero_estimateGas', [b])
-                              .then(n => {
-                                (h['gas'] = n),
-                                  u.a.executeContract(h, function(a) {
-                                    m['a'].addTx(
-                                      c,
-                                      s,
-                                      a,
-                                      t,
-                                      n,
-                                      i['a'].dmwBase.address,
-                                      e,
-                                    ),
-                                      r(a);
-                                  });
-                              })
-                              .catch(e => {
-                                o(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return r.stop();
-                  }
-              }, o);
-            }),
-          )();
-        }
-      }
-      var y = new b();
-      t['a'] = y;
-    },
     2: function(e, t) {},
     '2oIt': function(e, t, n) {
       'use strict';
@@ -1573,7 +1320,7 @@
         v = n('DDa7'),
         h = n('tLa6'),
         b = n('yZ0O'),
-        y = n('1hUn');
+        y = n('l9Ps');
       class g {
         constructor() {
           (this.callContract = null),
@@ -2880,12 +2627,12 @@
           U = F[0],
           G = F[1],
           Y = 'top' === k || 'bottom' === k,
-          Q = H(0, function(e, t) {
+          J = H(0, function(e, t) {
             Y && I && I({ direction: e > t ? 'left' : 'right' });
           }),
-          J = Object(l['a'])(Q, 2),
-          X = J[0],
-          Z = J[1],
+          Q = Object(l['a'])(J, 2),
+          X = Q[0],
+          Z = Q[1],
           $ = H(0, function(e, t) {
             !Y && I && I({ direction: e > t ? 'top' : 'bottom' });
           }),
@@ -2945,10 +2692,10 @@
           Ue = Object(l['a'])(We, 2),
           Ge = Ue[0],
           Ye = Ue[1];
-        function Qe() {
+        function Je() {
           Ye(Date.now());
         }
-        function Je() {
+        function Qe() {
           window.clearTimeout(He.current);
         }
         function Xe() {
@@ -2995,17 +2742,17 @@
             if (ke >= le) return n;
             a(ne, t);
           }
-          return Je(), Qe(), n;
+          return Qe(), Je(), n;
         }),
           Object(c['useEffect'])(
             function() {
               return (
-                Je(),
+                Qe(),
                 Ge &&
                   (He.current = window.setTimeout(function() {
                     Ye(0);
                   }, 100)),
-                Je
+                Qe
               );
             },
             [Ge],
@@ -3045,7 +2792,7 @@
               },
               onFocus: function() {
                 Xe(t),
-                  Qe(),
+                  Je(),
                   h || (D.current.scrollLeft = 0),
                   (D.current.scrollTop = 0);
               },
@@ -3190,7 +2937,7 @@
               className: m()(''.concat(r, '-nav'), i),
               style: u,
               onKeyDown: function() {
-                Qe();
+                Je();
               },
             },
             c['createElement'](W, { position: 'left', extra: b, prefixCls: r }),
@@ -3315,7 +3062,7 @@
           ),
         );
       }
-      function Q(e) {
+      function J(e) {
         var t = e.prefixCls,
           n = e.forceRender,
           a = e.className,
@@ -3363,7 +3110,7 @@
           )
         );
       }
-      var J = 0;
+      var Q = 0;
       function X(e) {
         return Object(v['a'])(e)
           .map(function(e) {
@@ -3457,11 +3204,11 @@
             { value: g, defaultValue: w },
           ),
           U = Object(l['a'])(W, 2),
-          Q = U[0],
+          J = U[0],
           Z = U[1],
           $ = Object(c['useState'])(function() {
             return L.findIndex(function(e) {
-              return e.key === Q;
+              return e.key === J;
             });
           }),
           ee = Object(l['a'])($, 2),
@@ -3471,7 +3218,7 @@
           function() {
             var e,
               t = L.findIndex(function(e) {
-                return e.key === Q;
+                return e.key === J;
               });
             -1 === t &&
               ((t = Math.max(0, Math.min(te, L.length - 1))),
@@ -3482,7 +3229,7 @@
             L.map(function(e) {
               return e.key;
             }).join('_'),
-            Q,
+            J,
             te,
           ],
         );
@@ -3498,12 +3245,12 @@
         }
         z && !['left', 'right'].includes(k) && (ce = 'top'),
           Object(c['useEffect'])(function() {
-            r || (ie('rc-tabs-'.concat(J)), (J += 1));
+            r || (ie('rc-tabs-'.concat(Q)), (Q += 1));
           }, []);
         var le,
           ue = {
             id: oe,
-            activeKey: Q,
+            activeKey: J,
             animated: a,
             tabPosition: ce,
             rtl: B,
@@ -3561,7 +3308,7 @@
         );
       }
       var $ = c['forwardRef'](Z);
-      $.TabPane = Q;
+      $.TabPane = J;
       var ee = $,
         te = ee,
         ne = n('cCPh'),
@@ -3652,7 +3399,7 @@
           )
         );
       }
-      de.TabPane = Q;
+      de.TabPane = J;
       t['a'] = de;
     },
     ZX9x: function(e, t, n) {
@@ -4625,8 +4372,8 @@
                     U = (B || 0 === B) && (isNaN(B) || Number(B) >= m),
                     G = (B || 0 === B) && (isNaN(B) || Number(B) <= v),
                     Y = U || a || r,
-                    Q = G || a || r,
-                    J = u()(
+                    J = G || a || r,
+                    Q = u()(
                       ''.concat(n, '-handler'),
                       ''.concat(n, '-handler-up'),
                       Object(d['a'])(
@@ -4641,7 +4388,7 @@
                       Object(d['a'])(
                         {},
                         ''.concat(n, '-handler-down-disabled'),
-                        Q,
+                        J,
                       ),
                     ),
                     Z = o
@@ -4653,11 +4400,11 @@
                         },
                     $ = o
                       ? {
-                          onTouchStart: Q ? g : this.down,
+                          onTouchStart: J ? g : this.down,
                           onTouchEnd: this.stop,
                         }
                       : {
-                          onMouseDown: Q ? g : this.down,
+                          onMouseDown: J ? g : this.down,
                           onMouseUp: this.stop,
                           onMouseLeave: this.stop,
                         };
@@ -4687,7 +4434,7 @@
                           role: 'button',
                           'aria-label': 'Increase Value',
                           'aria-disabled': Y,
-                          className: J,
+                          className: Q,
                         }),
                         c ||
                           s.a.createElement('span', {
@@ -4701,7 +4448,7 @@
                         Object.assign({ unselectable: 'on' }, $, {
                           role: 'button',
                           'aria-label': 'Decrease Value',
-                          'aria-disabled': Q,
+                          'aria-disabled': J,
                           className: X,
                         }),
                         l ||
@@ -5712,6 +5459,263 @@
           }),
         (t['a'] = r['a']);
     },
+    l9Ps: function(e, t, n) {
+      'use strict';
+      var a = n('o0o1'),
+        r = n.n(a),
+        o = n('HaE+'),
+        i = n('pJv6'),
+        c = n('YG53'),
+        s = n.n(c),
+        l = n('eiA3'),
+        u = n.n(l),
+        d = n('3wK0'),
+        p = n('kB5k'),
+        f = n.n(p),
+        m = n('DDa7'),
+        v = n('tLa6'),
+        h = n('iTWr');
+      class b {
+        constructor() {
+          (this.callContract = null),
+            (this.callContract = s.a.callContract(
+              i['a'].dmwBaseV2.abi,
+              i['a'].dmwBaseV2.address,
+            ));
+        }
+        getTradingPairs() {
+          var e = this;
+          return Object(o['a'])(
+            r.a.mark(function t() {
+              var n, a;
+              return r.a.wrap(function(t) {
+                while (1)
+                  switch ((t.prev = t.next)) {
+                    case 0:
+                      return (
+                        (n = d['a'].getCurrent()),
+                        (a = h['a'].get(h['a'].keys.language)),
+                        (a = a || 'en_US'),
+                        t.abrupt(
+                          'return',
+                          e.callMethod('getTradingPairs', n.MainPKr, [a]),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return t.stop();
+                  }
+              }, t);
+            }),
+          )();
+        }
+        getProxyAddress(e, t) {
+          var n = this;
+          return Object(o['a'])(
+            r.a.mark(function a() {
+              var o;
+              return r.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (o = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('getProxyAddress', o.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        addDescription(e, t, n, a) {
+          var i = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var c;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (c = d['a'].getCurrent()),
+                        r.abrupt(
+                          'return',
+                          i.executeMethod(
+                            'addDescription',
+                            c.PK,
+                            c.MainPKr,
+                            [e, t, n],
+                            new f.a(0),
+                            'SERO',
+                            a,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+        addExchange(e, t, n) {
+          var a = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var i;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (i = d['a'].getCurrent()),
+                        r.abrupt(
+                          'return',
+                          a.executeMethod(
+                            'addExchange',
+                            i.PK,
+                            i.MainPKr,
+                            [e, t],
+                            new f.a(0),
+                            'SERO',
+                            n,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+        now() {
+          return Math.ceil(new Date().getTime() / 1e3);
+        }
+        callMethod(e, t, n) {
+          var a = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var c, s, l;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (c = a),
+                        (s = c.callContract.packData(e, n)),
+                        (l = {
+                          from: t,
+                          to: i['a'].dmwBaseV2.address,
+                          data: s,
+                        }),
+                        r.abrupt(
+                          'return',
+                          new Promise((t, n) => {
+                            v['a']
+                              .post('sero_call', [l, 'latest'])
+                              .then(a => {
+                                if ('0x' !== a)
+                                  try {
+                                    var r = c.callContract.unPackData(e, a);
+                                    t(r);
+                                  } catch (o) {
+                                    n(o.message);
+                                  }
+                                else n(a);
+                              })
+                              .catch(e => {
+                                n(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+        executeMethod(e, t, n, a, c, s, l) {
+          var d = this;
+          return Object(o['a'])(
+            r.a.mark(function o() {
+              var p;
+              return r.a.wrap(function(r) {
+                while (1)
+                  switch ((r.prev = r.next)) {
+                    case 0:
+                      return (
+                        (p = d),
+                        r.abrupt(
+                          'return',
+                          new Promise((r, o) => {
+                            var d = p.callContract.packData(e, a),
+                              h = {
+                                from: t,
+                                to: i['a'].dmwBaseV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: s,
+                                gas: '',
+                                password: l,
+                              },
+                              b = {
+                                from: n,
+                                to: i['a'].dmwBaseV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: s,
+                              };
+                            v['a']
+                              .post('sero_estimateGas', [b])
+                              .then(n => {
+                                (h['gas'] = n),
+                                  u.a.executeContract(h, function(a) {
+                                    m['a'].addTx(
+                                      c,
+                                      s,
+                                      a,
+                                      t,
+                                      n,
+                                      i['a'].dmwBaseV2.address,
+                                      e,
+                                    ),
+                                      r(a);
+                                  });
+                              })
+                              .catch(e => {
+                                o(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return r.stop();
+                  }
+              }, o);
+            }),
+          )();
+        }
+      }
+      var y = new b();
+      t['a'] = y;
+    },
     mr32: function(e, t, n) {
       'use strict';
       var a = n('lSNA'),
@@ -5911,7 +5915,7 @@
         y = n.n(b),
         g = (n('0n2j'), n('kLkQ')),
         w = n('QR79'),
-        x = n('1hUn'),
+        x = n('l9Ps'),
         C = n('S9ZI'),
         _ = n('jQwr'),
         O = n('EstT'),
@@ -6752,6 +6756,7 @@
             this.initDMW(),
             this.initDMWV2(),
             this.initDMWBase(),
+            this.initDMWBaseV2(),
             this.initDMWInfo(),
             this.initDMWInfoV2(),
             this.initDMWProxy(),
@@ -7198,6 +7203,80 @@
             ],
           };
         }
+        initDMWBaseV2() {
+          this.dmwBaseV2 = {
+            address: this.addresMap.dmwBaseV2,
+            abi: [
+              {
+                constant: !0,
+                inputs: [{ name: 'lang', type: 'string' }],
+                name: 'getTradingPairs',
+                outputs: [{ name: '', type: 'string' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [{ name: 'backedCoin', type: 'string' }],
+                name: 'exchangeLength',
+                outputs: [{ name: '', type: 'uint256' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'lang', type: 'string' },
+                  { name: 'descption', type: 'string' },
+                ],
+                name: 'addDescription',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'name', type: 'string' },
+                ],
+                name: 'addExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !1,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'index', type: 'uint256' },
+                ],
+                name: 'delExchange',
+                outputs: [],
+                payable: !1,
+                stateMutability: 'nonpayable',
+                type: 'function',
+              },
+              {
+                constant: !0,
+                inputs: [
+                  { name: 'backedCoin', type: 'string' },
+                  { name: 'mintCoin', type: 'string' },
+                ],
+                name: 'getProxyAddress',
+                outputs: [{ name: '', type: 'address' }],
+                payable: !1,
+                stateMutability: 'view',
+                type: 'function',
+              },
+            ],
+          };
+        }
         initDMWInfo() {
           this.dmwInfo = {
             address: this.addresMap.dmwInfo,
@@ -7356,6 +7435,8 @@
             '2SqAc5vQBPcMXMhZnL6TvozAFzBoxE57yDG1j4oJXBENUCyWJs4a11By56Bn6Ko85FGWHs3qeh9Tj8PJPJ3DwDrJ',
           dmwBase:
             'mLoJUJwQAikVipZ69TmydtKePpxm3qyGVqFSY4Xx5NGb9hxATsSZPKBfncCAgkKn8YdwWNKLy6YE8MvSr4dELv2',
+          dmwBaseV2:
+            '2brAtmJ56AeFGN9k5VTVGjVusNtqjgeSL6dvSHw36RXzrgYG4v2xm7gNwv4sDfc1nAGUtx4n7AktZu9Fqk96v21P',
           dmwInfo:
             '3okdXXHGneaSfKUeK8QhFRuBVpH15kRNc3hmN5NyRL9HKe9mpJyd2ZdzmffL6Xrp6NpweiwgGmaEfaf8ycxSuzDa',
           dmwInfoV2:
@@ -7654,11 +7735,11 @@
           G = void 0 !== q ? q : y,
           Y = void 0 !== z ? z : w;
         if (0 === G || 0 === Y) return null;
-        var Q = {},
-          J = 'number' === typeof x,
+        var J = {},
+          Q = 'number' === typeof x,
           X = 'number' === typeof C;
-        J && ((Q.position = 'sticky'), (Q.left = x)),
-          X && ((Q.position = 'sticky'), (Q.right = C));
+        Q && ((J.position = 'sticky'), (J.left = x)),
+          X && ((J.position = 'sticky'), (J.right = C));
         var Z,
           $ = {};
         I && ($.textAlign = I);
@@ -7680,7 +7761,7 @@
               V,
               i,
               ((n = {}),
-              Object(h['a'])(n, ''.concat(V, '-fix-left'), J),
+              Object(h['a'])(n, ''.concat(V, '-fix-left'), Q),
               Object(h['a'])(n, ''.concat(V, '-fix-left-first'), _),
               Object(h['a'])(n, ''.concat(V, '-fix-left-last'), O),
               Object(h['a'])(n, ''.concat(V, '-fix-right'), X),
@@ -7688,13 +7769,13 @@
               Object(h['a'])(n, ''.concat(V, '-fix-right-last'), E),
               Object(h['a'])(n, ''.concat(V, '-ellipsis'), P),
               Object(h['a'])(n, ''.concat(V, '-with-append'), S),
-              Object(h['a'])(n, ''.concat(V, '-fix-sticky'), (J || X) && R),
+              Object(h['a'])(n, ''.concat(V, '-fix-sticky'), (Q || X) && R),
               n),
               N.className,
               W,
             ),
             style: Object(b['a'])(
-              Object(b['a'])(Object(b['a'])(Object(b['a'])({}, N.style), $), Q),
+              Object(b['a'])(Object(b['a'])(Object(b['a'])({}, N.style), $), J),
               H,
             ),
             ref: B(v) ? t : null,
@@ -7805,8 +7886,8 @@
         );
       }
       Y.displayName = 'HeaderRow';
-      var Q = Y;
-      function J(e) {
+      var J = Y;
+      function Q(e) {
         var t = [];
         function n(e, a) {
           var r =
@@ -7866,7 +7947,7 @@
           c = o.getComponent,
           s = d['useMemo'](
             function() {
-              return J(n);
+              return Q(n);
             },
             [n],
           ),
@@ -7877,7 +7958,7 @@
           l,
           { className: ''.concat(i, '-thead') },
           s.map(function(e, n) {
-            var o = d['createElement'](Q, {
+            var o = d['createElement'](J, {
               key: n,
               flattenColumns: a,
               cells: e,
@@ -8188,11 +8269,11 @@
           W = 'row' === j && (!c || c(a)),
           G = 'nest' === j,
           Y = h && a && a[h],
-          Q = W || G;
+          J = W || G;
         l && (z = l(a, r));
-        var J,
+        var Q,
           X = function(e) {
-            if ((N && Q && P(a, e), z && z.onClick)) {
+            if ((N && J && P(a, e), z && z.onClick)) {
               for (
                 var t,
                   n = arguments.length,
@@ -8206,8 +8287,8 @@
             }
           };
         'string' === typeof M
-          ? (J = M)
-          : 'function' === typeof M && (J = M(a, r, p));
+          ? (Q = M)
+          : 'function' === typeof M && (Q = M(a, r, p));
         var Z,
           $,
           ee = V(S),
@@ -8219,7 +8300,7 @@
                 t,
                 ''.concat(g, '-row'),
                 ''.concat(g, '-row-level-').concat(p),
-                J,
+                Q,
                 z && z.className,
               ),
               style: Object(b['a'])(Object(b['a'])({}, n), z ? z.style : null),
@@ -8968,7 +9049,7 @@
             );
           },
         );
-      function Qe(e) {
+      function Je(e) {
         var t,
           n = e.prefixCls,
           a = e.className,
@@ -9003,8 +9084,8 @@
         });
         var W,
           Y,
-          Q,
-          J = d['useMemo'](
+          J,
+          Q = d['useMemo'](
             function() {
               return A(S, {});
             },
@@ -9012,9 +9093,9 @@
           ),
           X = d['useCallback'](
             function(e, t) {
-              return T(J, e) || t;
+              return T(Q, e) || t;
             },
-            [J],
+            [Q],
           ),
           $ = d['useMemo'](
             function() {
@@ -9104,14 +9185,14 @@
             ),
             M === Ge ? I : null,
           ),
-          Qe = Object(w['a'])(ze, 2),
-          Je = Qe[0],
-          Xe = Qe[1],
+          Je = Object(w['a'])(ze, 2),
+          Qe = Je[0],
+          Xe = Je[1],
           Ze = d['useMemo'](
             function() {
-              return { columns: Je, flattenColumns: Xe };
+              return { columns: Qe, flattenColumns: Xe };
             },
-            [Je, Xe],
+            [Qe, Xe],
           ),
           $e = d['useRef'](),
           et = d['useRef'](),
@@ -9158,7 +9239,7 @@
           gt &&
             ((W = { overflowX: 'auto' }),
             yt || (Y = { overflowY: 'hidden' }),
-            (Q = { width: !0 === s.x ? 'auto' : s.x, minWidth: '100%' }));
+            (J = { width: !0 === s.x ? 'auto' : s.x, minWidth: '100%' }));
         var jt = d['useCallback'](function(e, t) {
             Object(x['a'])($e.current) &&
               ft(function(n) {
@@ -9279,7 +9360,7 @@
               ? ((Kt = Ut(L, { scrollbarSize: z, ref: tt, onScroll: Rt })),
                 (Ft.colWidths = Xe.map(function(e, t) {
                   var n = e.width,
-                    a = t === Je.length - 1 ? n - z : n;
+                    a = t === Qe.length - 1 ? n - z : n;
                   return 'number' !== typeof a || Number.isNaN(a)
                     ? (Object(O['a'])(
                         !1,
@@ -9300,7 +9381,7 @@
                     Lt,
                     {
                       style: Object(b['a'])(
-                        Object(b['a'])({}, Q),
+                        Object(b['a'])({}, J),
                         {},
                         { tableLayout: Bt },
                       ),
@@ -9346,7 +9427,7 @@
                 Lt,
                 {
                   style: Object(b['a'])(
-                    Object(b['a'])({}, Q),
+                    Object(b['a'])({}, J),
                     {},
                     { tableLayout: Bt },
                   ),
@@ -9426,7 +9507,7 @@
             ),
           );
         gt && (Yt = d['createElement'](k['a'], { onResize: Vt }, Yt));
-        var Qt = d['useMemo'](
+        var Jt = d['useMemo'](
             function() {
               return {
                 prefixCls: n,
@@ -9441,7 +9522,7 @@
             },
             [n, X, z, u, Xe, bt, u, _t],
           ),
-          Jt = d['useMemo'](
+          Qt = d['useMemo'](
             function() {
               return Object(b['a'])(
                 Object(b['a'])({}, Ze),
@@ -9474,26 +9555,26 @@
           );
         return d['createElement'](
           U.Provider,
-          { value: Qt },
+          { value: Jt },
           d['createElement'](
             se.Provider,
-            { value: Jt },
+            { value: Qt },
             d['createElement'](me.Provider, { value: Xt }, Yt),
           ),
         );
       }
-      (Qe.Column = P),
-        (Qe.ColumnGroup = j),
-        (Qe.Summary = Te),
-        (Qe.defaultProps = {
+      (Je.Column = P),
+        (Je.ColumnGroup = j),
+        (Je.Summary = Te),
+        (Je.defaultProps = {
           rowKey: 'key',
           prefixCls: 'rc-table',
           emptyText: function() {
             return 'No Data';
           },
         });
-      var Je = Qe,
-        Xe = Je,
+      var Qe = Je,
+        Xe = Qe,
         Ze = n('W9HT'),
         $e = n('NUBc'),
         et = n('H84U'),
@@ -10411,8 +10492,8 @@
         Ut = n('7W2i'),
         Gt = n.n(Ut),
         Yt = n('LQ03'),
-        Qt = n.n(Yt),
-        Jt = n('wx14'),
+        Jt = n.n(Yt),
+        Qt = n('wx14'),
         Xt = n('md7G'),
         Zt = n('foSv');
       function $t(e, t) {
@@ -10585,7 +10666,7 @@
                     { className: _, style: r },
                     p.a.createElement(
                       'input',
-                      Object(Jt['a'])(
+                      Object(Qt['a'])(
                         {
                           name: o,
                           id: i,
@@ -10788,7 +10869,7 @@
         },
         pn = (function(e) {
           Gt()(n, e);
-          var t = Qt()(n);
+          var t = Jt()(n);
           function n() {
             var e;
             return (
@@ -11259,10 +11340,10 @@
             },
             [U, h],
           ),
-          Q = Object(d['useState'])(null),
-          J = s()(Q, 2),
-          X = J[0],
-          Z = J[1];
+          J = Object(d['useState'])(null),
+          Q = s()(J, 2),
+          X = Q[0],
+          Z = Q[1];
         d['useEffect'](
           function() {
             e || A([]);
@@ -11636,12 +11717,12 @@
           e.sorter.multiple
         );
       }
-      function Qn(e) {
+      function Jn(e) {
         return 'function' === typeof e
           ? e
           : !(!e || 'object' !== r()(e) || !e.compare) && e.compare;
       }
-      function Jn(e, t) {
+      function Qn(e, t) {
         return t ? e[e.indexOf(t) + 1] : e[0];
       }
       function Xn(e, t, n) {
@@ -11688,7 +11769,7 @@
                 return t === b;
               }),
               g = y ? y.sortOrder : null,
-              w = Jn(v, g),
+              w = Qn(v, g),
               x =
                 v.includes(Un) &&
                 d['createElement'](Fn.a, {
@@ -11809,7 +11890,7 @@
           o = a.filter(function(e) {
             var t = e.column.sorter,
               n = e.sortOrder;
-            return Qn(t) && n;
+            return Jn(t) && n;
           });
         return o.length
           ? r
@@ -11818,7 +11899,7 @@
                   var a = o[n],
                     r = a.column.sorter,
                     i = a.sortOrder,
-                    c = Qn(r);
+                    c = Jn(r);
                   if (c && i) {
                     var s = c(e, t, i);
                     if (0 !== s) return i === Un ? s : -s;
@@ -12530,9 +12611,9 @@
           U = u()(u()({}, q.Table), D),
           G = f || qa,
           Y = d['useContext'](et['b']),
-          Q = Y.getPrefixCls,
-          J = Q('table', n),
-          X = Q('dropdown', p),
+          J = Y.getPrefixCls,
+          Q = J('table', n),
+          X = J('dropdown', p),
           Z = u()({ childrenColumnName: C, expandIconColumnIndex: N }, S),
           $ = Z.childrenColumnName,
           ee = void 0 === $ ? 'children' : $,
@@ -12594,7 +12675,7 @@
             se({ sorter: e, sorterStates: t }, 'sort', !1);
           },
           ue = na({
-            prefixCls: J,
+            prefixCls: Q,
             mergedColumns: A,
             onSorterChange: le,
             sortDirections: I || ['ascend', 'descend'],
@@ -12617,7 +12698,7 @@
             se({ filters: e, filterStates: t }, 'filter', !0);
           },
           ye = ka({
-            prefixCls: J,
+            prefixCls: Q,
             locale: U,
             dropdownPrefixCls: X,
             mergedColumns: A,
@@ -12677,7 +12758,7 @@
             [!!h, Oe, Ie && Ie.current, Ie && Ie.pageSize, Ie && Ie.total],
           ),
           Te = An(b, {
-            prefixCls: J,
+            prefixCls: Q,
             data: Oe,
             pageData: Re,
             getRowKey: ae,
@@ -12695,7 +12776,7 @@
             var a;
             return (
               (a = 'function' === typeof g ? m()(g(e, t, n)) : m()(g)),
-              m()(i()({}, ''.concat(J, '-row-selected'), Ke.has(ae(e, t))), a)
+              m()(i()({}, ''.concat(Q, '-row-selected'), Ke.has(ae(e, t))), a)
             );
           };
         (Z.__PARENT_RENDER_ICON__ = Z.expandIcon),
@@ -12729,8 +12810,8 @@
                 u()(
                   {
                     className: ''
-                      .concat(J, '-pagination ')
-                      .concat(J, '-pagination-')
+                      .concat(Q, '-pagination ')
+                      .concat(Q, '-pagination-')
                       .concat(e),
                   },
                   Ie,
@@ -12743,26 +12824,26 @@
             var Ye = Ie.position.find(function(e) {
                 return -1 !== e.indexOf('top');
               }),
-              Qe = Ie.position.find(function(e) {
+              Je = Ie.position.find(function(e) {
                 return -1 !== e.indexOf('bottom');
               });
-            Ye || Qe
+            Ye || Je
               ? (Ye && (Be = We(Ye.toLowerCase().replace('top', ''))),
-                Qe && (Fe = We(Qe.toLowerCase().replace('bottom', ''))))
+                Je && (Fe = We(Je.toLowerCase().replace('bottom', ''))))
               : (Fe = We(Ue));
           } else Fe = We(Ue);
         }
         'boolean' === typeof k
           ? (qe = { spinning: k })
           : 'object' === r()(k) && (qe = u()({ spinning: !0 }, k));
-        var Je = m()(
-          ''.concat(J, '-wrapper'),
-          i()({}, ''.concat(J, '-wrapper-rtl'), 'rtl' === H),
+        var Qe = m()(
+          ''.concat(Q, '-wrapper'),
+          i()({}, ''.concat(Q, '-wrapper-rtl'), 'rtl' === H),
           a,
         );
         return d['createElement'](
           'div',
-          { className: Je, style: o },
+          { className: Qe, style: o },
           d['createElement'](
             Ze['a'],
             u()({ spinning: !1 }, qe),
@@ -12773,13 +12854,13 @@
                 columns: A,
                 direction: H,
                 expandable: Z,
-                prefixCls: J,
+                prefixCls: Q,
                 className: m()(
                   ((t = {}),
-                  i()(t, ''.concat(J, '-middle'), 'middle' === W),
-                  i()(t, ''.concat(J, '-small'), 'small' === W),
-                  i()(t, ''.concat(J, '-bordered'), l),
-                  i()(t, ''.concat(J, '-empty'), 0 === G.length),
+                  i()(t, ''.concat(Q, '-middle'), 'middle' === W),
+                  i()(t, ''.concat(Q, '-small'), 'small' === W),
+                  i()(t, ''.concat(Q, '-bordered'), l),
+                  i()(t, ''.concat(Q, '-empty'), 0 === G.length),
                   t),
                 ),
                 data: Re,
