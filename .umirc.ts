@@ -28,7 +28,12 @@ export default defineConfig({
           component: '@/pages/wallet/index',
           title: 'NOVAC - Wallet',
         },
-
+        {
+          path: '/pfid/info',
+          wrappers: ['@/wrappers/filter'],
+          component: '@/pages/pfid/info',
+          title: 'NOVAC - PFID INFO',
+        },
         {
           path: '/pfid/my',
           wrappers: ['@/wrappers/filter'],

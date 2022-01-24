@@ -5,6 +5,7 @@ class Url {
     home: '/index',
     wallet: '/wallet',
     pfid: {
+      info: '/pfid/info',
       my: '/pfid/my',
       staking: '/pfid/staking',
       equity: '/pfid/equity',

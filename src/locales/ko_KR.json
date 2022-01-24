@@ -118,5 +118,11 @@
   "addExchange": "교환 추가",
 
   "countdownFormat": "D 일 HH:mm:ss",
-  "equity_withdraw_list": "출금 목록"
+  "equity_withdraw_list": "출금 목록",
+  "menus_pfid_info": "토큰 세부 정보",
+  "total": "총 문제",
+  "posMinted": "PoS출력",
+  "posNotMinted": "PoS가 발행되지 않음",
+  "burned": "타다",
+  "circulating": "순환하는"
 }

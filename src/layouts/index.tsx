@@ -454,6 +454,12 @@ class SiderMenus extends React.Component {
                     }
                   >
                     <Menu.Item
+                      key={url.path.pfid.info}
+                      onClick={() => this.switchMenus(url.path.pfid.info)}
+                    >
+                      {i18n.t('menus_pfid_info')}
+                    </Menu.Item>
+                    <Menu.Item
                       key={url.path.pfid.my}
                       onClick={() => this.switchMenus(url.path.pfid.my)}
                     >

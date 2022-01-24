@@ -21,6 +21,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/plots": "^1.0.7",
     "@umijs/test": "^3.0.14",
     "cross-env": "^7.0.2",
     "lint-staged": "^10.0.7",

@@ -122,5 +122,11 @@
   "addExchange": "Add Exchange",
   "countdownFormat": "D day HH:mm:ss",
 
-  "equity_withdraw_list": "Withdrawal List"
+  "equity_withdraw_list": "Withdrawal List",
+  "menus_pfid_info": "Token Info",
+  "total": "Total",
+  "posMinted": "PoS Minted",
+  "posNotMinted": "PoS Not Minted",
+  "burned": "Burned",
+  "circulating": "Circulating"
 }

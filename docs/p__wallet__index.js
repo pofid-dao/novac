@@ -1,14 +1,14 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
   [18],
   {
-    '99K9': function(n, e, t) {
+    YIGT: function(n, t, e) {},
+    tSmk: function(n, t, e) {
       'use strict';
-      t.r(e);
-      var a = t('q1tI'),
-        c = t.n(a);
-      t('YIGT');
-      e['default'] = () => c.a.createElement('div', null);
+      e.r(t);
+      var a = e('q1tI'),
+        c = e.n(a);
+      e('YIGT');
+      t['default'] = () => c.a.createElement('div', null);
     },
-    YIGT: function(n, e, t) {},
   },
 ]);

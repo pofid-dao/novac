@@ -1,7 +1,10 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
-  [8],
+  [7],
   {
-    A5gl: function(e, t, n) {
+    Fner: function(e, t, n) {
+      e.exports = { title: 'title___OR0qN' };
+    },
+    QwaY: function(e, t, n) {
       'use strict';
       n.r(t);
       var a = n('q1tI'),
@@ -14,9 +17,6 @@
           null,
           i.a.createElement('h1', { className: s.a.title }, 'Page dapps/index'),
         );
-    },
-    Fner: function(e, t, n) {
-      e.exports = { title: 'title___OR0qN' };
     },
   },
 ]);

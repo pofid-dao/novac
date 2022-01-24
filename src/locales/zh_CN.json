@@ -120,5 +120,11 @@
   "addExchange": "增加交易所",
 
   "countdownFormat": "D 天 HH:mm:ss",
-  "equity_withdraw_list": "提现列表"
+  "equity_withdraw_list": "提现列表",
+  "menus_pfid_info": "代币详情",
+  "total": "总发行",
+  "posMinted": "PoS产出",
+  "posNotMinted": "PoS未产出",
+  "burned": "已销毁",
+  "circulating": "流通"
 }

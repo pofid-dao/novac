@@ -242,14 +242,14 @@ class MyPfid extends Component {
             >
               {i18n.t('button_withdraw')}
             </Button>
-            <Button
-              type={'link'}
-              onClick={() =>
-                that.onReStaking(data.shareIndex, reStakingAmount.toString(10))
-              }
-            >
-              {i18n.t('button_reinvet')}
-            </Button>
+            {/*<Button*/}
+            {/*  type={'link'}*/}
+            {/*  onClick={() =>*/}
+            {/*    that.onReStaking(data.shareIndex, reStakingAmount.toString(10))*/}
+            {/*  }*/}
+            {/*>*/}
+            {/*  {i18n.t('button_reinvet')}*/}
+            {/*</Button>*/}
           </div>
         );
 
@@ -325,22 +325,22 @@ class MyPfid extends Component {
   }
 
   onStaking() {
-    const that = this;
-    that.setState({
-      editAmount: false,
-      amount: 0,
-      visible: true,
-    });
+    // const that = this;
+    // that.setState({
+    //   editAmount: false,
+    //   amount: 0,
+    //   visible: true,
+    // });
   }
 
   onReStaking(index: number, amount: any) {
-    const that = this;
-    that.setState({
-      editAmount: true,
-      amount: amount,
-      index: index,
-      visible: true,
-    });
+    // const that = this;
+    // that.setState({
+    //   editAmount: true,
+    //   amount: amount,
+    //   index: index,
+    //   visible: true,
+    // });
   }
 
   onWithdraw(index: number) {
@@ -507,17 +507,17 @@ class MyPfid extends Component {
           <Divider dashed />
           <Card
             title={i18n.t('pages_pfid_my_stakingRecord')}
-            extra={
-              <Button
-                type={'primary'}
-                onClick={() => {
-                  this.onStaking();
-                }}
-              >
-                <PlusOutlined />
-                {i18n.t('button_goStaking')}
-              </Button>
-            }
+            // extra={
+            //   <Button
+            //     type={'primary'}
+            //     onClick={() => {
+            //       this.onStaking();
+            //     }}
+            //   >
+            //     <PlusOutlined />
+            //     {i18n.t('button_goStaking')}
+            //   </Button>
+            // }
             style={{ width: '100%' }}
           >
             <Table

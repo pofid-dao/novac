@@ -1,7 +1,7 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
-  [22],
+  [20],
   {
-    DkwI: function(e, t, n) {
+    Gmul: function(e, t, n) {
       'use strict';
       n.r(t);
       var l = n('q1tI');
