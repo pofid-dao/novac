@@ -164,12 +164,12 @@
                         (a = t.sent),
                           (s = new m.a(
                             new m.a(S)
-                              .minus(4928055)
+                              .minus(5008055)
                               .minus(new m.a(a))
                               .toFixed(0),
                           ).toNumber()),
                           (_ = [
-                            { type: y['a'].t('posNotMinted'), value: 4928055 },
+                            { type: y['a'].t('posNotMinted'), value: 5008055 },
                             { type: y['a'].t('burned'), value: a },
                             { type: y['a'].t('circulating'), value: s },
                           ]),
@@ -226,7 +226,7 @@
                   { span: 8 },
                   u.a.createElement(i['a'], {
                     title: y['a'].t('posNotMinted'),
-                    value: 4928055,
+                    value: 5008055,
                     suffix: 'PFID',
                   }),
                 ),

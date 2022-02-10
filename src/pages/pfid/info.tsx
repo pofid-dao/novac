@@ -136,7 +136,7 @@ class PofidInfo extends Component<any, any> {
     const burnValue = await burned.getTotalBurned('PFID');
     const data = new BigNumber(
       new BigNumber(total)
-        .minus(4928055)
+        .minus(5008055)
         .minus(new BigNumber(burnValue))
         .toFixed(0),
     ).toNumber();
@@ -144,7 +144,7 @@ class PofidInfo extends Component<any, any> {
     const chartData = [
       {
         type: i18n.t('posNotMinted'),
-        value: 4928055,
+        value: 5008055,
       },
       {
         type: i18n.t('burned'),
@@ -183,7 +183,7 @@ class PofidInfo extends Component<any, any> {
             <Col span={8}>
               <Statistic
                 title={i18n.t('posNotMinted')}
-                value={4928055}
+                value={5008055}
                 suffix="PFID"
               />
             </Col>
