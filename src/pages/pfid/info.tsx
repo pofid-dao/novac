@@ -134,10 +134,11 @@ class PofidInfo extends Component<any, any> {
 
   init = async () => {
     const burnValue = await burned.getTotalBurned('PFID');
+    const bv = new BigNumber(burnValue).plus(2e5).toNumber();
     const data = new BigNumber(
       new BigNumber(total)
         .minus(5008055)
-        .minus(new BigNumber(burnValue))
+        .minus(new BigNumber(bv))
         .toFixed(0),
     ).toNumber();
 
@@ -148,7 +149,7 @@ class PofidInfo extends Component<any, any> {
       },
       {
         type: i18n.t('burned'),
-        value: burnValue,
+        value: bv,
       },
       {
         type: i18n.t('circulating'),
@@ -156,7 +157,7 @@ class PofidInfo extends Component<any, any> {
       },
     ];
     this.setState({
-      burned: burnValue,
+      burned: bv,
       data: data,
       chartData: chartData,
     });

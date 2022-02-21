@@ -154,7 +154,7 @@
             (this.state = { burned: 0, data: 0, chartData: [] }),
             (this.init = Object(o['a'])(
               c.a.mark(function t() {
-                var a, s, _;
+                var a, s, _, i;
                 return c.a.wrap(function(t) {
                   while (1)
                     switch ((t.prev = t.next)) {
@@ -162,19 +162,20 @@
                         return (t.next = 2), w.getTotalBurned('PFID');
                       case 2:
                         (a = t.sent),
-                          (s = new m.a(
+                          (s = new m.a(a).plus(2e5).toNumber()),
+                          (_ = new m.a(
                             new m.a(S)
                               .minus(5008055)
-                              .minus(new m.a(a))
+                              .minus(new m.a(s))
                               .toFixed(0),
                           ).toNumber()),
-                          (_ = [
+                          (i = [
                             { type: y['a'].t('posNotMinted'), value: 5008055 },
-                            { type: y['a'].t('burned'), value: a },
-                            { type: y['a'].t('circulating'), value: s },
+                            { type: y['a'].t('burned'), value: s },
+                            { type: y['a'].t('circulating'), value: _ },
                           ]),
-                          e.setState({ burned: a, data: s, chartData: _ });
-                      case 6:
+                          e.setState({ burned: s, data: _, chartData: i });
+                      case 7:
                       case 'end':
                         return t.stop();
                     }
