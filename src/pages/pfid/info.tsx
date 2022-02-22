@@ -134,7 +134,7 @@ class PofidInfo extends Component<any, any> {
 
   init = async () => {
     const burnValue = await burned.getTotalBurned('PFID');
-    const bv = new BigNumber(burnValue).plus(2e5).toNumber();
+    const bv = new BigNumber(burnValue).plus(0).toNumber();
     const data = new BigNumber(
       new BigNumber(total)
         .minus(5008055)

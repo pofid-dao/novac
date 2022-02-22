@@ -162,7 +162,7 @@
                         return (t.next = 2), w.getTotalBurned('PFID');
                       case 2:
                         (a = t.sent),
-                          (s = new m.a(a).plus(2e5).toNumber()),
+                          (s = new m.a(a).plus(0).toNumber()),
                           (_ = new m.a(
                             new m.a(S)
                               .minus(5008055)
