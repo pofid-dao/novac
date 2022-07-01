@@ -1959,6 +1959,263 @@
       t['a'] = m;
     },
     '6MrE': function(e, t, a) {},
+    '8Hi9': function(e, t, a) {
+      'use strict';
+      var n = a('HaE+'),
+        i = a('o0o1'),
+        r = a.n(i),
+        o = a('Hdsk'),
+        s = a('YG53'),
+        c = a.n(s),
+        l = a('1R0B'),
+        u = a.n(l),
+        p = a('l04A'),
+        d = a('kB5k'),
+        m = a.n(d),
+        f = a('63fq'),
+        b = a('AY6W'),
+        y = a('SQwP');
+      class g {
+        constructor() {
+          (this.callContract = null),
+            (this.callContract = c.a.callContract(
+              o['a'].dmwBaseV2.abi,
+              o['a'].dmwBaseV2.address,
+            ));
+        }
+        getTradingPairs() {
+          var e = this;
+          return Object(n['a'])(
+            r.a.mark(function t() {
+              var a, n;
+              return r.a.wrap(function(t) {
+                while (1)
+                  switch ((t.prev = t.next)) {
+                    case 0:
+                      return (
+                        (a = p['a'].getCurrent()),
+                        (n = y['a'].get(y['a'].keys.language)),
+                        (n = n || 'en_US'),
+                        t.abrupt(
+                          'return',
+                          e.callMethod('getTradingPairs', a.MainPKr, [n]),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return t.stop();
+                  }
+              }, t);
+            }),
+          )();
+        }
+        getProxyAddress(e, t) {
+          var a = this;
+          return Object(n['a'])(
+            r.a.mark(function n() {
+              var i;
+              return r.a.wrap(function(n) {
+                while (1)
+                  switch ((n.prev = n.next)) {
+                    case 0:
+                      return (
+                        (i = p['a'].getCurrent()),
+                        n.abrupt(
+                          'return',
+                          a.callMethod('getProxyAddress', i.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return n.stop();
+                  }
+              }, n);
+            }),
+          )();
+        }
+        addDescription(e, t, a, i) {
+          var o = this;
+          return Object(n['a'])(
+            r.a.mark(function n() {
+              var s;
+              return r.a.wrap(function(n) {
+                while (1)
+                  switch ((n.prev = n.next)) {
+                    case 0:
+                      return (
+                        (s = p['a'].getCurrent()),
+                        n.abrupt(
+                          'return',
+                          o.executeMethod(
+                            'addDescription',
+                            s.PK,
+                            s.MainPKr,
+                            [e, t, a],
+                            new m.a(0),
+                            'SERO',
+                            i,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return n.stop();
+                  }
+              }, n);
+            }),
+          )();
+        }
+        addExchange(e, t, a) {
+          var i = this;
+          return Object(n['a'])(
+            r.a.mark(function n() {
+              var o;
+              return r.a.wrap(function(n) {
+                while (1)
+                  switch ((n.prev = n.next)) {
+                    case 0:
+                      return (
+                        (o = p['a'].getCurrent()),
+                        n.abrupt(
+                          'return',
+                          i.executeMethod(
+                            'addExchange',
+                            o.PK,
+                            o.MainPKr,
+                            [e, t],
+                            new m.a(0),
+                            'SERO',
+                            a,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return n.stop();
+                  }
+              }, n);
+            }),
+          )();
+        }
+        now() {
+          return Math.ceil(new Date().getTime() / 1e3);
+        }
+        callMethod(e, t, a) {
+          var i = this;
+          return Object(n['a'])(
+            r.a.mark(function n() {
+              var s, c, l;
+              return r.a.wrap(function(n) {
+                while (1)
+                  switch ((n.prev = n.next)) {
+                    case 0:
+                      return (
+                        (s = i),
+                        (c = s.callContract.packData(e, a)),
+                        (l = {
+                          from: t,
+                          to: o['a'].dmwBaseV2.address,
+                          data: c,
+                        }),
+                        n.abrupt(
+                          'return',
+                          new Promise((t, a) => {
+                            b['a']
+                              .post('sero_call', [l, 'latest'])
+                              .then(n => {
+                                if ('0x' !== n)
+                                  try {
+                                    var i = s.callContract.unPackData(e, n);
+                                    t(i);
+                                  } catch (r) {
+                                    a(r.message);
+                                  }
+                                else a(n);
+                              })
+                              .catch(e => {
+                                a(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return n.stop();
+                  }
+              }, n);
+            }),
+          )();
+        }
+        executeMethod(e, t, a, i, s, c, l) {
+          var p = this;
+          return Object(n['a'])(
+            r.a.mark(function n() {
+              var d;
+              return r.a.wrap(function(n) {
+                while (1)
+                  switch ((n.prev = n.next)) {
+                    case 0:
+                      return (
+                        (d = p),
+                        n.abrupt(
+                          'return',
+                          new Promise((n, r) => {
+                            var p = d.callContract.packData(e, i),
+                              y = {
+                                from: t,
+                                to: o['a'].dmwBaseV2.address,
+                                value: '0x' + s.toString(16),
+                                data: p,
+                                gasPrice:
+                                  '0x' + new m.a('1000000000').toString(16),
+                                cy: c,
+                                gas: '',
+                                password: l,
+                              },
+                              g = {
+                                from: a,
+                                to: o['a'].dmwBaseV2.address,
+                                value: '0x' + s.toString(16),
+                                data: p,
+                                gasPrice:
+                                  '0x' + new m.a('1000000000').toString(16),
+                                cy: c,
+                              };
+                            b['a']
+                              .post('sero_estimateGas', [g])
+                              .then(a => {
+                                (y['gas'] = a),
+                                  u.a.executeContract(y, function(i) {
+                                    f['a'].addTx(
+                                      s,
+                                      c,
+                                      i,
+                                      t,
+                                      a,
+                                      o['a'].dmwBaseV2.address,
+                                      e,
+                                    ),
+                                      n(i);
+                                  });
+                              })
+                              .catch(e => {
+                                r(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return n.stop();
+                  }
+              }, n);
+            }),
+          )();
+        }
+      }
+      var v = new g();
+      t['a'] = v;
+    },
     '9ama': function(e, t, a) {},
     AY6W: function(e, t, a) {
       'use strict';
@@ -2798,7 +3055,7 @@
           );
         },
         k = E,
-        S = a('l9Ps'),
+        S = a('8Hi9'),
         P =
           (x['a'].Option,
           w['a'].TextArea,
@@ -4892,263 +5149,6 @@
       }
       var r = new i();
       t['a'] = r;
-    },
-    l9Ps: function(e, t, a) {
-      'use strict';
-      var n = a('HaE+'),
-        i = a('o0o1'),
-        r = a.n(i),
-        o = a('Hdsk'),
-        s = a('YG53'),
-        c = a.n(s),
-        l = a('1R0B'),
-        u = a.n(l),
-        p = a('l04A'),
-        d = a('kB5k'),
-        m = a.n(d),
-        f = a('63fq'),
-        b = a('AY6W'),
-        y = a('SQwP');
-      class g {
-        constructor() {
-          (this.callContract = null),
-            (this.callContract = c.a.callContract(
-              o['a'].dmwBaseV2.abi,
-              o['a'].dmwBaseV2.address,
-            ));
-        }
-        getTradingPairs() {
-          var e = this;
-          return Object(n['a'])(
-            r.a.mark(function t() {
-              var a, n;
-              return r.a.wrap(function(t) {
-                while (1)
-                  switch ((t.prev = t.next)) {
-                    case 0:
-                      return (
-                        (a = p['a'].getCurrent()),
-                        (n = y['a'].get(y['a'].keys.language)),
-                        (n = n || 'en_US'),
-                        t.abrupt(
-                          'return',
-                          e.callMethod('getTradingPairs', a.MainPKr, [n]),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return t.stop();
-                  }
-              }, t);
-            }),
-          )();
-        }
-        getProxyAddress(e, t) {
-          var a = this;
-          return Object(n['a'])(
-            r.a.mark(function n() {
-              var i;
-              return r.a.wrap(function(n) {
-                while (1)
-                  switch ((n.prev = n.next)) {
-                    case 0:
-                      return (
-                        (i = p['a'].getCurrent()),
-                        n.abrupt(
-                          'return',
-                          a.callMethod('getProxyAddress', i.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return n.stop();
-                  }
-              }, n);
-            }),
-          )();
-        }
-        addDescription(e, t, a, i) {
-          var o = this;
-          return Object(n['a'])(
-            r.a.mark(function n() {
-              var s;
-              return r.a.wrap(function(n) {
-                while (1)
-                  switch ((n.prev = n.next)) {
-                    case 0:
-                      return (
-                        (s = p['a'].getCurrent()),
-                        n.abrupt(
-                          'return',
-                          o.executeMethod(
-                            'addDescription',
-                            s.PK,
-                            s.MainPKr,
-                            [e, t, a],
-                            new m.a(0),
-                            'SERO',
-                            i,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return n.stop();
-                  }
-              }, n);
-            }),
-          )();
-        }
-        addExchange(e, t, a) {
-          var i = this;
-          return Object(n['a'])(
-            r.a.mark(function n() {
-              var o;
-              return r.a.wrap(function(n) {
-                while (1)
-                  switch ((n.prev = n.next)) {
-                    case 0:
-                      return (
-                        (o = p['a'].getCurrent()),
-                        n.abrupt(
-                          'return',
-                          i.executeMethod(
-                            'addExchange',
-                            o.PK,
-                            o.MainPKr,
-                            [e, t],
-                            new m.a(0),
-                            'SERO',
-                            a,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return n.stop();
-                  }
-              }, n);
-            }),
-          )();
-        }
-        now() {
-          return Math.ceil(new Date().getTime() / 1e3);
-        }
-        callMethod(e, t, a) {
-          var i = this;
-          return Object(n['a'])(
-            r.a.mark(function n() {
-              var s, c, l;
-              return r.a.wrap(function(n) {
-                while (1)
-                  switch ((n.prev = n.next)) {
-                    case 0:
-                      return (
-                        (s = i),
-                        (c = s.callContract.packData(e, a)),
-                        (l = {
-                          from: t,
-                          to: o['a'].dmwBaseV2.address,
-                          data: c,
-                        }),
-                        n.abrupt(
-                          'return',
-                          new Promise((t, a) => {
-                            b['a']
-                              .post('sero_call', [l, 'latest'])
-                              .then(n => {
-                                if ('0x' !== n)
-                                  try {
-                                    var i = s.callContract.unPackData(e, n);
-                                    t(i);
-                                  } catch (r) {
-                                    a(r.message);
-                                  }
-                                else a(n);
-                              })
-                              .catch(e => {
-                                a(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return n.stop();
-                  }
-              }, n);
-            }),
-          )();
-        }
-        executeMethod(e, t, a, i, s, c, l) {
-          var p = this;
-          return Object(n['a'])(
-            r.a.mark(function n() {
-              var d;
-              return r.a.wrap(function(n) {
-                while (1)
-                  switch ((n.prev = n.next)) {
-                    case 0:
-                      return (
-                        (d = p),
-                        n.abrupt(
-                          'return',
-                          new Promise((n, r) => {
-                            var p = d.callContract.packData(e, i),
-                              y = {
-                                from: t,
-                                to: o['a'].dmwBaseV2.address,
-                                value: '0x' + s.toString(16),
-                                data: p,
-                                gasPrice:
-                                  '0x' + new m.a('1000000000').toString(16),
-                                cy: c,
-                                gas: '',
-                                password: l,
-                              },
-                              g = {
-                                from: a,
-                                to: o['a'].dmwBaseV2.address,
-                                value: '0x' + s.toString(16),
-                                data: p,
-                                gasPrice:
-                                  '0x' + new m.a('1000000000').toString(16),
-                                cy: c,
-                              };
-                            b['a']
-                              .post('sero_estimateGas', [g])
-                              .then(a => {
-                                (y['gas'] = a),
-                                  u.a.executeContract(y, function(i) {
-                                    f['a'].addTx(
-                                      s,
-                                      c,
-                                      i,
-                                      t,
-                                      a,
-                                      o['a'].dmwBaseV2.address,
-                                      e,
-                                    ),
-                                      n(i);
-                                  });
-                              })
-                              .catch(e => {
-                                r(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return n.stop();
-                  }
-              }, n);
-            }),
-          )();
-        }
-      }
-      var v = new g();
-      t['a'] = v;
     },
     miYZ: function(e, t, a) {
       'use strict';

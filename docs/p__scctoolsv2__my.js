@@ -5,10 +5,1270 @@
       'use strict';
       n('EFp3'), n('6MrE');
     },
+    '/4fg': function(e, t, n) {
+      'use strict';
+      n.r(t);
+      n('T2oS');
+      var a = n('W9HT'),
+        r = (n('14J3'), n('BMrR')),
+        o = (n('jCWc'), n('kPKH')),
+        i = n('uFwe'),
+        c = (n('+BJd'), n('mr32')),
+        l = (n('DjyN'), n('NUBc')),
+        s = (n('g9YV'), n('wCAj')),
+        u = (n('+L6B'), n('2/Rp')),
+        d = (n('bP8k'), n('gFTJ')),
+        p = n('HaE+'),
+        f = (n('/xke'), n('TeRw')),
+        m = (n('Znn+'), n('ZTPi')),
+        v = n('o0o1'),
+        b = n.n(v),
+        h = n('q1tI'),
+        y = n.n(h),
+        g = (n('0n2j'), n('t06s')),
+        O = n('15wx'),
+        x = n('8Hi9'),
+        w = n('3O7G'),
+        C = n('lKAH'),
+        j = n('UwGO'),
+        E = n('ZTSi'),
+        k = n('kB5k'),
+        N = n.n(k),
+        S = n('iMMW'),
+        _ = m['a'].TabPane,
+        P = (e, t, n) => {
+          var a = 4.5;
+          'success' == e &&
+            n &&
+            !n.startsWith('0x') &&
+            ((e = 'error'), (t = 'Error')),
+            f['a'][e]({
+              message: t,
+              description: y.a.createElement(
+                'p',
+                {
+                  style: {
+                    wordBreak: 'normal',
+                    whiteSpace: 'pre-wrap',
+                    wordWrap: 'break-word',
+                  },
+                },
+                n,
+              ),
+              duration: a,
+            });
+        },
+        I = [
+          {
+            title: S['a'].t('pages_myssc_pledged'),
+            dataIndex: 'backedValue',
+            key: 'backedValue',
+            width: '20%',
+          },
+          {
+            title: S['a'].t('pages_myssc_canClaimtValue'),
+            dataIndex: 'canClaimtValue',
+            key: 'canClaimtValue',
+            width: '15%',
+          },
+          {
+            title: S['a'].t('pages_myssc_fee'),
+            dataIndex: 'fee',
+            key: 'fee',
+            width: '15%',
+          },
+          {
+            title: S['a'].t('pages_myssc_currentRatio'),
+            dataIndex: 'currentratio',
+            key: 'currentratio',
+            width: '10%',
+          },
+          {
+            title: S['a'].t('pages_myssc_status'),
+            dataIndex: 'status',
+            key: 'status',
+            width: '10%',
+          },
+          {
+            title: S['a'].t('pages_equity_time'),
+            dataIndex: 'time',
+            key: 'time',
+            width: '20%',
+          },
+          {
+            title: S['a'].t('pages_myssc_operation'),
+            dataIndex: 'operator',
+            key: 'operator',
+            width: '10%',
+          },
+        ];
+      function K(e) {
+        return 1 === e
+          ? S['a'].t('pages_myssc_normal')
+          : 2 === e
+          ? S['a'].t('pages_myssc_biding')
+          : 3 === e
+          ? 'UnKnow'
+          : 4 === e
+          ? 'Unsold'
+          : 0 === e
+          ? 'Finished'
+          : void 0;
+      }
+      class M extends h['Component'] {
+        constructor() {
+          super(...arguments),
+            (this.state = {
+              visible: !1,
+              visibleDeal: !1,
+              visibleAuction: !1,
+              visibleAuctionPrice: !1,
+              pageNo: 1,
+              pageSize: 10,
+              tabs: [],
+              backedCoin: '',
+              mintCoin: '',
+              amount: '',
+              fee: '',
+              contractIndex: 0,
+              loading: !1,
+              queryOwn: !1,
+              mintValue: 0,
+              subPanes: {},
+              panes: {},
+              decimals: {},
+              selectBackedCoin: '',
+              selectMintCoin: '',
+              proxy: !1,
+              minBorrowValue: 0,
+              estimatAddDepositAmount: [],
+              lastIndex: 0,
+            }),
+            (this.setVisible = e => {
+              this.setState({ visible: e });
+            }),
+            (this.setVisibleDeal = e => {
+              this.setState({ visibleDeal: e });
+            }),
+            (this.setVisibleAuction = e => {
+              this.setState({ visibleAuction: e });
+            }),
+            (this.setVisibleAuctionPrice = e => {
+              this.setState({ visibleAuctionPrice: e });
+            }),
+            (this.estimate = e => {
+              var t = this,
+                n = t.state,
+                a = n.backedCoin,
+                r = n.mintCoin;
+              O['a']
+                .estimatMintAmount(a, r, g['a'].fromValue(e, 18).toString(10))
+                .then(e => {
+                  console.log('estimatMintAmount>>', e),
+                    g['a'].getDecimal(r).then(n => {
+                      var a = g['a'].toValue(e[0].toString(10), n).toFixed(8),
+                        r = g['a'].toValue(e[1].toString(10), n).toFixed(8);
+                      t.setState({ amount: a, fee: r });
+                    });
+                });
+            }),
+            (this.onBorrow = e => {
+              var t = this;
+              t.setState({ visible: !1, loading: !0 });
+              var n = e['amountes'],
+                a = t.state,
+                r = a.proxy,
+                o = a.mintCoin,
+                i = a.backedCoin;
+              O['a']
+                .issue(
+                  o,
+                  i,
+                  g['a'].fromValue(n, 18).toString(10),
+                  e['password'],
+                  r,
+                )
+                .then(e => {
+                  P('success', 'SUCCESS', e),
+                    t.setState({ loading: !1, visible: !1 });
+                })
+                .catch(e => {
+                  t.setState({ loading: !1 });
+                  var n = 'string' === typeof e ? e : e.message;
+                  P('error', 'Error', n);
+                });
+            }),
+            (this.onDeal = e => {
+              var t = this;
+              t.setState({ visibleDeal: !1, loading: !0 });
+              var n = e['amountes'],
+                a = t.state,
+                r = a.contractIndex,
+                o = a.mintCoin;
+              O['a']
+                .claim(
+                  r,
+                  o,
+                  g['a'].fromValue(n, 18).toString(10),
+                  e['password'],
+                )
+                .then(e => {
+                  P('success', 'SUCCESS', e),
+                    t.setState({ loading: !1, visibleDeal: !1 });
+                })
+                .catch(e => {
+                  t.setState({ loading: !1 });
+                  var n = 'string' === typeof e ? e : e.message;
+                  P('error', 'Error', n);
+                });
+            }),
+            (this.onDeposit = e => {
+              var t = this,
+                n = this.state,
+                a = n.estimatAddDepositAmount,
+                r = n.selectBackedCoin;
+              t.setState({ visibleAuction: !1, loading: !0 });
+              var o = t.state.contractIndex;
+              O['a']
+                .deposit(o, e['password'], a[0], r)
+                .then(e => {
+                  P('success', 'SUCCESS', e),
+                    t.setState({ loading: !1, visibleAuction: !1 });
+                })
+                .catch(e => {
+                  t.setState({ loading: !1 });
+                  var n = 'string' === typeof e ? e : e.message;
+                  P('error', 'Error', n);
+                });
+            }),
+            (this.getRecords = () => {
+              var e = this,
+                t = this.state,
+                n = t.pageNo,
+                a = t.pageSize,
+                r = t.selectBackedCoin,
+                o = t.selectMintCoin,
+                i = t.subPanes,
+                c = (t.lastIndex, i);
+              w['a']
+                .myPageKeyContracts(r, o, (n - 1) * a, a)
+                .then(t => {
+                  var n = JSON.parse(t);
+                  console.log('datas==', n),
+                    (c[D(r, o)] = n),
+                    e.setState({
+                      subPanes: c,
+                      loading: !1,
+                      lastIndex: n.lastIndex,
+                    });
+                })
+                .catch(t => {
+                  e.setState({ loading: !1 });
+                });
+            }),
+            (this.pageChange = e => {
+              var t = this;
+              console.log('OONNNNNNNNNNNNNNNNNNNNNNNNNNNNNN'),
+                t.setState({ pageNo: e, loading: !0 }),
+                setTimeout(function() {
+                  t.getRecords();
+                }, 10);
+            }),
+            (this.onShowSizeChange = (e, t) => {
+              var n = this;
+              n.setState({ pageSize: t, loading: !0 }),
+                setTimeout(function() {
+                  n.getRecords();
+                }, 10);
+            }),
+            (this.setSelectTap = (e, t) => {
+              this.setState({ selectBackedCoin: e, selectMintCoin: t });
+            });
+        }
+        componentDidMount() {
+          console.log('FFFFFFFFFFFFF componentDidMount');
+          var e = this;
+          e.setState({ loading: !0 }),
+            e
+              .list(e)
+              .then(() => {
+                e.setState({ loading: !1 });
+              })
+              .catch(t => {
+                e.setState({ loading: !1 });
+                var n = 'string' === typeof t ? t : t.message;
+                P('error', 'Error', n);
+              });
+        }
+        borrow(e, t, n) {
+          var a = this,
+            r = g['a'].getDecimalCache(e);
+          O['a'].getMinBackedAmount(e, t).then(o => {
+            a.setState({
+              backedCoin: e,
+              mintCoin: t,
+              proxy: n,
+              minBorrowValue: g['a']
+                .toValue(new N.a(o).toString(10), r)
+                .toString(10),
+            }),
+              a.setVisible(!0);
+          });
+        }
+        deal(e, t, n, a) {
+          var r = this;
+          r.setState({
+            backedCoin: e,
+            mintCoin: t,
+            mintValue: n,
+            contractIndex: a,
+          }),
+            r.setVisibleDeal(!0);
+        }
+        deposit(e) {
+          var t = this;
+          O['a']
+            .estimatAddDepositAmount(e)
+            .then(n => {
+              console.log(n, '>>>>>>>>>>>>>>>>>>>>>>estimatAddDepositAmount'),
+                t.setState({ contractIndex: e, estimatAddDepositAmount: n }),
+                t.setVisibleAuction(!0);
+            })
+            .catch(e => {});
+        }
+        setAuctionPrice(e) {
+          var t = this;
+          t.setState({ contractIndex: e }), t.setVisibleAuctionPrice(!0);
+        }
+        list(e) {
+          return Object(p['a'])(
+            b.a.mark(function t() {
+              var n, a, r, o, i, c, l, s, u, d, p, f, m, v, h, y, O, C;
+              return b.a.wrap(function(t) {
+                while (1)
+                  switch ((t.prev = t.next)) {
+                    case 0:
+                      return (
+                        (n = e.state),
+                        n.pageNo,
+                        (a = n.pageSize),
+                        (t.next = 3),
+                        x['a'].getTradingPairs()
+                      );
+                    case 3:
+                      if (
+                        ((r = t.sent),
+                        (o = JSON.parse(r)),
+                        (i = {}),
+                        console.log('getTradingPairs', o),
+                        !(o.length > 0))
+                      ) {
+                        t.next = 36;
+                        break;
+                      }
+                      (c = {}), (l = {}), (d = 0);
+                    case 11:
+                      if (!(d < o.length)) {
+                        t.next = 34;
+                        break;
+                      }
+                      return (
+                        (p = o[d]),
+                        (f = p.backeCoin),
+                        (m = p.mintCoin),
+                        0 == d && ((s = f), (u = m)),
+                        (t.next = 18),
+                        g['a'].getDecimal(f)
+                      );
+                    case 18:
+                      return (v = t.sent), (t.next = 21), g['a'].getDecimal(m);
+                    case 21:
+                      return (
+                        (h = t.sent),
+                        (i[f] = v),
+                        (i[m] = h),
+                        (t.next = 26),
+                        w['a'].myPageKeyContracts(f, m, 0, a)
+                      );
+                    case 26:
+                      (y = t.sent),
+                        (O = JSON.parse(y)),
+                        console.log('datas>>', O),
+                        l[f]
+                          ? ((C = l[f]), (l[f] = C.concat([p])))
+                          : (l[f] = [p]),
+                        (c[D(f, m)] = O);
+                    case 31:
+                      d++, (t.next = 11);
+                      break;
+                    case 34:
+                      console.log('subPanes>>>> ', c),
+                        e.setState({
+                          panes: l,
+                          decimals: i,
+                          subPanes: c,
+                          selectBackedCoin: s,
+                          selectMintCoin: u,
+                        });
+                    case 36:
+                    case 'end':
+                      return t.stop();
+                  }
+              }, t);
+            }),
+          )();
+        }
+        renderSubPane(e, t) {
+          console.log(e, t, 'mypage>>>>>>>>>>>');
+          var n = this,
+            a = n.state,
+            r = a.pageNo,
+            o = a.pageSize,
+            i = a.decimals,
+            p = e.thresholdRate,
+            f = e.collateralRate,
+            m = e.currentRateNumerator,
+            v = e.currentRateDenominator,
+            b = e.backeCoin,
+            h = e.mintCoin,
+            O = [];
+          if (t && t.total > 0) {
+            for (
+              var x = function(a) {
+                  var r = [],
+                    o = t.data[a],
+                    l = new N.a(o.backedValue)
+                      .multipliedBy(new N.a(v))
+                      .dividedBy(new N.a(m))
+                      .dividedBy(new N.a(o.mintValue))
+                      .multipliedBy(100),
+                    s = l.toFixed(4, 1);
+                  (1 != o.status && 2 != o.status) ||
+                    (o.owns &&
+                      r.push(
+                        y.a.createElement(
+                          u['a'],
+                          {
+                            type: 'primary',
+                            onClick: () => {
+                              var e = i[h];
+                              n.deal(
+                                b,
+                                h,
+                                g['a'].toValue(o.mintValue, e).toString(10),
+                                o.contractIndex,
+                              );
+                            },
+                            block: !0,
+                            style: { marginTop: '5px' },
+                          },
+                          S['a'].t('button_repay'),
+                        ),
+                      ),
+                    -1 == l.comparedTo(f) && o.owns
+                      ? r.push(
+                          y.a.createElement(
+                            u['a'],
+                            {
+                              type: 'primary',
+                              onClick: () => {
+                                console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>111'),
+                                  n.deposit(o.contractIndex);
+                              },
+                              block: !0,
+                              style: { marginTop: '5px' },
+                            },
+                            S['a'].t('button_deposit'),
+                          ),
+                        )
+                      : l.comparedTo(p) < 0 &&
+                        r.push(
+                          y.a.createElement(
+                            u['a'],
+                            {
+                              type: 'primary',
+                              onClick: () => {
+                                console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>22'),
+                                  n.deposit(o.contractIndex);
+                              },
+                              block: !0,
+                              style: { marginTop: '5px' },
+                            },
+                            S['a'].t('button_deposit'),
+                          ),
+                        ));
+                  var d = i[e.backeCoin],
+                    x = i[e.mintCoin];
+                  O.push({
+                    index: y.a.createElement(
+                      'div',
+                      null,
+                      a + 1,
+                      ' ',
+                      o.owns
+                        ? y.a.createElement(
+                            c['a'],
+                            { color: 'volcano' },
+                            'Owner',
+                          )
+                        : '',
+                    ),
+                    no: y.a.createElement(
+                      'div',
+                      null,
+                      o.contractIndex + 1e5,
+                      ' ',
+                      o.owns
+                        ? y.a.createElement(
+                            c['a'],
+                            { color: 'volcano' },
+                            'Owner',
+                          )
+                        : '',
+                    ),
+                    backedValue:
+                      g['a'].toValue(o.backedValue, d).toFixed(4) +
+                      ' ' +
+                      e.backeCoin,
+                    mintValue:
+                      g['a'].toValue(o.mintValue, x).toFixed(4) +
+                      ' ' +
+                      e.mintCoin,
+                    canClaimtValue:
+                      g['a'].toValue(o.canClaimtValue, d).toFixed(4) +
+                      ' ' +
+                      e.backeCoin,
+                    fee: g['a'].toValue(o.fee, x).toFixed(4) + ' ' + e.mintCoin,
+                    currentratio: s + '%',
+                    status: K(o.status),
+                    time: g['a'].formatTime(1e3 * o.createTime),
+                    operator: r,
+                  });
+                },
+                w = 0;
+              w < t.data.length;
+              w++
+            )
+              x(w);
+            var C = y.a.createElement(
+              _,
+              {
+                tab: h,
+                key: h,
+                style: {
+                  maxHeight: 0.6 * document.documentElement.clientHeight,
+                  overflowY: 'scroll',
+                },
+              },
+              y.a.createElement(
+                d['b'],
+                { column: 4 },
+                y.a.createElement(
+                  d['b'].Item,
+                  {
+                    label: S['a'].t(
+                      'pages_ssctools_list_collateralizationRatio',
+                    ),
+                  },
+                  f,
+                  '%',
+                ),
+                y.a.createElement(
+                  d['b'].Item,
+                  { label: S['a'].t('pages_ssctools_list_exchangeRatio') },
+                  g['a'].toValue(e.currentRateNumerator, 8).toString(10),
+                  ' ',
+                  e.backeCoin,
+                  ' =',
+                  ' ',
+                  g['a'].toValue(e.currentRateDenominator, 8).toString(10),
+                  ' ',
+                  h,
+                ),
+                y.a.createElement(
+                  d['b'].Item,
+                  { label: S['a'].t('pages_ssctools_list_liquidationRatio') },
+                  p,
+                  '%',
+                ),
+                y.a.createElement(
+                  d['b'].Item,
+                  { label: '' },
+                  y.a.createElement(
+                    u['a'],
+                    {
+                      type: 'primary',
+                      onClick: () => {
+                        n.borrow(b, h, e.proxy);
+                      },
+                      block: !0,
+                      style: { marginTop: '5px' },
+                    },
+                    S['a'].t('button_borrow'),
+                  ),
+                ),
+              ),
+              y.a.createElement('p', null),
+              y.a.createElement(s['a'], {
+                columns: I,
+                dataSource: O,
+                pagination: !1,
+              }),
+              y.a.createElement(
+                'div',
+                {
+                  style: {
+                    position: 'relative',
+                    float: 'right',
+                    padding: '15px',
+                  },
+                },
+                y.a.createElement(l['a'], {
+                  size: 'small',
+                  total: t.total,
+                  defaultCurrent: 1,
+                  current: r,
+                  pageSize: o,
+                  onChange: this.pageChange,
+                  showTotal: T,
+                  onShowSizeChange: this.onShowSizeChange,
+                }),
+              ),
+            );
+            return C;
+          }
+          return y.a.createElement(
+            _,
+            {
+              tab: h,
+              key: h,
+              style: {
+                maxHeight: 0.6 * document.documentElement.clientHeight,
+                overflowY: 'scroll',
+              },
+            },
+            y.a.createElement(
+              d['b'],
+              { column: 4 },
+              y.a.createElement(
+                d['b'].Item,
+                {
+                  label: S['a'].t('pages_ssctools_list_collateralizationRatio'),
+                },
+                f,
+                '%',
+              ),
+              y.a.createElement(
+                d['b'].Item,
+                { label: S['a'].t('pages_ssctools_list_exchangeRatio') },
+                g['a'].toValue(e.currentRateNumerator, 8).toString(10),
+                ' ',
+                e.backeCoin,
+                ' =',
+                ' ',
+                g['a'].toValue(e.currentRateDenominator, 8).toString(10),
+                ' ',
+                h,
+              ),
+              y.a.createElement(
+                d['b'].Item,
+                { label: S['a'].t('pages_ssctools_list_liquidationRatio') },
+                p,
+                '%',
+              ),
+              y.a.createElement(
+                d['b'].Item,
+                { label: '' },
+                y.a.createElement(
+                  u['a'],
+                  {
+                    type: 'primary',
+                    onClick: () => {
+                      n.borrow(b, h, e.proxy);
+                    },
+                    block: !0,
+                    style: { marginTop: '5px' },
+                  },
+                  S['a'].t('button_borrow'),
+                ),
+              ),
+            ),
+            y.a.createElement('p', null),
+            y.a.createElement(s['a'], {
+              columns: I,
+              dataSource: [],
+              pagination: !1,
+            }),
+          );
+        }
+        render() {
+          var e = this,
+            t = this,
+            n = this.state,
+            c = n.visible,
+            l = n.backedCoin,
+            s = n.visibleDeal,
+            u = n.mintCoin,
+            d = n.amount,
+            p = n.fee,
+            f = n.visibleAuction,
+            v = n.mintValue,
+            b = n.subPanes,
+            h = n.panes,
+            O = n.minBorrowValue,
+            x = n.estimatAddDepositAmount,
+            w = n.selectBackedCoin,
+            k = { mintCoin: u, mintValue: v },
+            N = [];
+          if (x && x.length > 0) {
+            var P = g['a'].getDecimalCache(w);
+            N.push(
+              'Deposit '
+                .concat(g['a'].toValue(x[0], P).toFixed(4), ' ')
+                .concat(w, ' , Possible Receive ')
+                .concat(g['a'].toValue(x[1], P).toFixed(4), ' ')
+                .concat(w),
+            );
+          }
+          var I = Object.keys(h),
+            K = [];
+          if (I.length > 0) {
+            var M,
+              T = Object(i['a'])(I);
+            try {
+              var R = function() {
+                var n,
+                  a = M.value,
+                  r = h[a],
+                  o = [],
+                  c = Object(i['a'])(r);
+                try {
+                  for (c.s(); !(n = c.n()).done; ) {
+                    var l = n.value,
+                      s = b[D(a, l.mintCoin)],
+                      u = t.renderSubPane(l, s);
+                    o.push(u);
+                  }
+                } catch (d) {
+                  c.e(d);
+                } finally {
+                  c.f();
+                }
+                K.push(
+                  y.a.createElement(
+                    _,
+                    { tab: a, key: a },
+                    y.a.createElement(
+                      m['a'],
+                      {
+                        type: 'card',
+                        tabPosition: 'left',
+                        onTabClick: t => {
+                          e.setSelectTap(a, t);
+                        },
+                      },
+                      o,
+                    ),
+                  ),
+                );
+              };
+              for (T.s(); !(M = T.n()).done; ) R();
+            } catch (A) {
+              T.e(A);
+            } finally {
+              T.f();
+            }
+          }
+          return y.a.createElement(
+            'div',
+            null,
+            y.a.createElement(
+              a['a'],
+              { spinning: this.state.loading },
+              y.a.createElement(
+                r['a'],
+                { className: 'pfid-title' },
+                y.a.createElement(
+                  o['a'],
+                  { span: 12 },
+                  y.a.createElement(
+                    'span',
+                    null,
+                    S['a'].t('pages_myssc_title'),
+                  ),
+                ),
+                y.a.createElement(o['a'], {
+                  span: 12,
+                  style: { textAlign: 'right' },
+                }),
+              ),
+              y.a.createElement('p', null),
+              y.a.createElement(
+                m['a'],
+                {
+                  type: 'card',
+                  onTabClick: e => {
+                    this.setSelectTap(e, 'SUSD');
+                  },
+                  animated: !0,
+                },
+                K,
+              ),
+              y.a.createElement('p', null),
+            ),
+            y.a.createElement(C['a'], {
+              visible: c,
+              onCreate: this.onBorrow,
+              onCancel: () => {
+                this.setVisible(!1);
+              },
+              mintCoin: u,
+              amountEstimate: d,
+              fee: p,
+              backedCoin: l,
+              estimate: this.estimate,
+              params: { minBorrowValue: O },
+            }),
+            y.a.createElement(j['a'], {
+              visible: s,
+              onCreate: this.onDeal,
+              onCancel: () => {
+                this.setVisibleDeal(!1);
+              },
+              params: k,
+            }),
+            y.a.createElement(E['a'], {
+              visible: f,
+              onCreate: this.onDeposit,
+              onCancel: () => {
+                this.setVisibleAuction(!1);
+              },
+              title: S['a'].t('button_deposit'),
+              desc: N,
+            }),
+          );
+        }
+      }
+      function D(e, t) {
+        return ['subPanes', e, t].join('_');
+      }
+      function T(e) {
+        return 'Total '.concat(e, ' items');
+      }
+      t['default'] = M;
+    },
     '0n2j': function(e, t, n) {},
     '14J3': function(e, t, n) {
       'use strict';
       n('EFp3'), n('1GLa');
+    },
+    '15wx': function(e, t, n) {
+      'use strict';
+      var a = n('HaE+'),
+        r = n('o0o1'),
+        o = n.n(r),
+        i = n('Hdsk'),
+        c = n('YG53'),
+        l = n.n(c),
+        s = n('1R0B'),
+        u = n.n(s),
+        d = n('l04A'),
+        p = n('kB5k'),
+        f = n.n(p),
+        m = n('t06s'),
+        v = n('63fq'),
+        b = n('AY6W'),
+        h = n('gFjB'),
+        y = n('8Hi9');
+      class g {
+        constructor() {
+          (this.callContract = null),
+            (this.callContract = l.a.callContract(
+              i['a'].dmwV2.abi,
+              i['a'].dmwV2.address,
+            ));
+        }
+        claim(e, t, n, r) {
+          var i = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          i.executeMethod(
+                            'claim',
+                            c.PK,
+                            c.MainPKr,
+                            [e],
+                            new f.a(n),
+                            t,
+                            r,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        issue(e, t, n, r, i) {
+          var c = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var l;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (l = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          c.executeMethod(
+                            'issue',
+                            l.PK,
+                            l.MainPKr,
+                            [e],
+                            new f.a(n),
+                            t,
+                            r,
+                            i,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        estimatMintAmount(e, t, n) {
+          var r = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var i;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (i = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          r.callMethod('estimatMintAmount', i.MainPKr, [
+                            e,
+                            t,
+                            m['a'].toHex(n),
+                          ]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        currentRate(e, t) {
+          var n = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var r;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (r = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('currentRate', r.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        collateralRate(e, t) {
+          var n = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var r;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (r = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('collateralRate', r.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        thresholdRate(e, t) {
+          var n = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var r;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (r = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('thresholdRate', r.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        getMinBackedAmount(e, t) {
+          var n = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var r;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (r = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('getMinBackedAmount', r.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        estimatAddDepositAmount(e) {
+          var t = this;
+          return Object(a['a'])(
+            o.a.mark(function n() {
+              var a;
+              return o.a.wrap(function(n) {
+                while (1)
+                  switch ((n.prev = n.next)) {
+                    case 0:
+                      return (
+                        (a = d['a'].getCurrent()),
+                        n.abrupt(
+                          'return',
+                          t.callMethod('estimatAddDepositAmount', a.MainPKr, [
+                            e,
+                          ]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return n.stop();
+                  }
+              }, n);
+            }),
+          )();
+        }
+        deposit(e, t, n, r) {
+          var i = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          i.executeMethod(
+                            'deposit',
+                            c.PK,
+                            c.MainPKr,
+                            [e],
+                            new f.a(n),
+                            r,
+                            t,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        now() {
+          return Math.ceil(new Date().getTime() / 1e3);
+        }
+        callMethod(e, t, n) {
+          var r = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c, l, s;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = r),
+                        (l = c.callContract.packData(e, n)),
+                        (s = { from: t, to: i['a'].dmwV2.address, data: l }),
+                        a.abrupt(
+                          'return',
+                          new Promise((t, n) => {
+                            b['a']
+                              .post('sero_call', [s, 'latest'])
+                              .then(a => {
+                                if ('0x' !== a)
+                                  try {
+                                    var r = c.callContract.unPackData(e, a);
+                                    t(r);
+                                  } catch (o) {
+                                    n(o.message);
+                                  }
+                                else n(a);
+                              })
+                              .catch(e => {
+                                n(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        executeMethod(e, t, n, r, c, l, s, d) {
+          var p = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var m, g, O, x, w, C, j, E, k, N, S, _;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      if (
+                        ((m = p),
+                        (g = m.callContract.packData(e, r)),
+                        (O = {
+                          from: t,
+                          to: i['a'].dmwV2.address,
+                          value: '0x' + c.toString(16),
+                          data: g,
+                          gasPrice: '0x' + new f.a('1000000000').toString(16),
+                          cy: l,
+                          gas: '',
+                          password: s,
+                          feeCy: 'SERO',
+                        }),
+                        (x = {
+                          from: n,
+                          to: i['a'].dmwV2.address,
+                          value: '0x' + c.toString(16),
+                          data: g,
+                          gasPrice: '0x' + new f.a('1000000000').toString(16),
+                          cy: l,
+                        }),
+                        (w = i['a'].dmwV2.address),
+                        1 != d || 'issue' != e)
+                      ) {
+                        a.next = 14;
+                        break;
+                      }
+                      return (a.next = 8), y['a'].getProxyAddress(l, r[0]);
+                    case 8:
+                      return (
+                        (C = a.sent),
+                        (a.next = 11),
+                        b['a'].post('sero_getFullAddress', [[C]])
+                      );
+                    case 11:
+                      (j = a.sent), (w = j[C]), (x.to = w);
+                    case 14:
+                      return (
+                        (a.next = 16), b['a'].post('sero_estimateGas', [x])
+                      );
+                    case 16:
+                      if (
+                        ((E = a.sent),
+                        (O.gas = E),
+                        (k = i['a'].dmwV2.address),
+                        1 != d || 'issue' != e)
+                      ) {
+                        a.next = 31;
+                        break;
+                      }
+                      return (N = new h['a'](w)), (a.next = 23), N.feeCoin();
+                    case 23:
+                      return (S = a.sent), (a.next = 26), N.estimateGas(E);
+                    case 26:
+                      (_ = a.sent),
+                        (O.feeCy = S),
+                        (k = w),
+                        (O.to = w),
+                        (O.gas = '0x' + new f.a(_).toString(16));
+                    case 31:
+                      return a.abrupt(
+                        'return',
+                        new Promise((n, a) => {
+                          u.a.executeContract(O, function(a) {
+                            v['a'].addTx(c, l, a, t, E, k, e), n(a);
+                          });
+                        }),
+                      );
+                    case 32:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+      }
+      var O = new g();
+      t['a'] = O;
     },
     '1C8T': function(e) {
       e.exports = JSON.parse(
@@ -22,6 +1282,231 @@
         'undefined' === typeof window.seropp &&
         (window.seropp = r),
         (e.exports = r);
+    },
+    '3O7G': function(e, t, n) {
+      'use strict';
+      var a = n('HaE+'),
+        r = n('o0o1'),
+        o = n.n(r),
+        i = n('Hdsk'),
+        c = n('YG53'),
+        l = n.n(c),
+        s = n('1R0B'),
+        u = n.n(s),
+        d = n('l04A'),
+        p = n('kB5k'),
+        f = n.n(p),
+        m = n('63fq'),
+        v = n('AY6W');
+      class b {
+        constructor() {
+          (this.callContract = null),
+            console.log('dwmInfo>>>>>>>>>>>>>>>>,', i['a'].dmwInfoV2),
+            (this.callContract = l.a.callContract(
+              i['a'].dmwInfoV2.abi,
+              i['a'].dmwInfoV2.address,
+            ));
+        }
+        myPageContracts(e, t) {
+          var n = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var r;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (r = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('myPageContracts', r.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        keyPageContracts(e, t, n, r) {
+          var i = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          i.callMethod('keyPageContracts', c.MainPKr, [
+                            e,
+                            t,
+                            n,
+                            r,
+                          ]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        myPageKeyContracts(e, t, n, r) {
+          var i = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          i.callMethod('myPageKeyContracts', c.MainPKr, [
+                            e,
+                            t,
+                            n,
+                            r,
+                          ]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        now() {
+          return Math.ceil(new Date().getTime() / 1e3);
+        }
+        callMethod(e, t, n) {
+          var r = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c, l, s;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = r),
+                        (l = c.callContract.packData(e, n)),
+                        (s = {
+                          from: t,
+                          to: i['a'].dmwInfoV2.address,
+                          data: l,
+                        }),
+                        a.abrupt(
+                          'return',
+                          new Promise((t, n) => {
+                            v['a']
+                              .post('sero_call', [s, 'latest'])
+                              .then(a => {
+                                if ('0x' !== a)
+                                  try {
+                                    var r = c.callContract.unPackData(e, a);
+                                    t(r);
+                                  } catch (o) {
+                                    '0x' === a ? t(null) : n(o.message);
+                                  }
+                                else n(a);
+                              })
+                              .catch(e => {
+                                n(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        executeMethod(e, t, n, r, c, l, s) {
+          var d = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var p;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (p = d),
+                        a.abrupt(
+                          'return',
+                          new Promise((a, o) => {
+                            var d = p.callContract.packData(e, r),
+                              b = {
+                                from: t,
+                                to: i['a'].dmwInfoV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: l,
+                                gas: '',
+                                password: s,
+                              },
+                              h = {
+                                from: n,
+                                to: i['a'].dmwInfoV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: l,
+                              };
+                            v['a']
+                              .post('sero_estimateGas', [h])
+                              .then(n => {
+                                (b['gas'] = n),
+                                  u.a.executeContract(b, function(r) {
+                                    m['a'].addTx(
+                                      c,
+                                      l,
+                                      r,
+                                      t,
+                                      n,
+                                      i['a'].dmwInfoV2.address,
+                                      e,
+                                    ),
+                                      a(r);
+                                  });
+                              })
+                              .catch(e => {
+                                o(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+      }
+      var h = new b();
+      t['a'] = h;
     },
     '5NDa': function(e, t, n) {
       'use strict';
@@ -2012,6 +3497,263 @@
       t['a'] = f;
     },
     '6MrE': function(e, t, n) {},
+    '8Hi9': function(e, t, n) {
+      'use strict';
+      var a = n('HaE+'),
+        r = n('o0o1'),
+        o = n.n(r),
+        i = n('Hdsk'),
+        c = n('YG53'),
+        l = n.n(c),
+        s = n('1R0B'),
+        u = n.n(s),
+        d = n('l04A'),
+        p = n('kB5k'),
+        f = n.n(p),
+        m = n('63fq'),
+        v = n('AY6W'),
+        b = n('SQwP');
+      class h {
+        constructor() {
+          (this.callContract = null),
+            (this.callContract = l.a.callContract(
+              i['a'].dmwBaseV2.abi,
+              i['a'].dmwBaseV2.address,
+            ));
+        }
+        getTradingPairs() {
+          var e = this;
+          return Object(a['a'])(
+            o.a.mark(function t() {
+              var n, a;
+              return o.a.wrap(function(t) {
+                while (1)
+                  switch ((t.prev = t.next)) {
+                    case 0:
+                      return (
+                        (n = d['a'].getCurrent()),
+                        (a = b['a'].get(b['a'].keys.language)),
+                        (a = a || 'en_US'),
+                        t.abrupt(
+                          'return',
+                          e.callMethod('getTradingPairs', n.MainPKr, [a]),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return t.stop();
+                  }
+              }, t);
+            }),
+          )();
+        }
+        getProxyAddress(e, t) {
+          var n = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var r;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (r = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          n.callMethod('getProxyAddress', r.MainPKr, [e, t]),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        addDescription(e, t, n, r) {
+          var i = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          i.executeMethod(
+                            'addDescription',
+                            c.PK,
+                            c.MainPKr,
+                            [e, t, n],
+                            new f.a(0),
+                            'SERO',
+                            r,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        addExchange(e, t, n) {
+          var r = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var i;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (i = d['a'].getCurrent()),
+                        a.abrupt(
+                          'return',
+                          r.executeMethod(
+                            'addExchange',
+                            i.PK,
+                            i.MainPKr,
+                            [e, t],
+                            new f.a(0),
+                            'SERO',
+                            n,
+                          ),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        now() {
+          return Math.ceil(new Date().getTime() / 1e3);
+        }
+        callMethod(e, t, n) {
+          var r = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var c, l, s;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (c = r),
+                        (l = c.callContract.packData(e, n)),
+                        (s = {
+                          from: t,
+                          to: i['a'].dmwBaseV2.address,
+                          data: l,
+                        }),
+                        a.abrupt(
+                          'return',
+                          new Promise((t, n) => {
+                            v['a']
+                              .post('sero_call', [s, 'latest'])
+                              .then(a => {
+                                if ('0x' !== a)
+                                  try {
+                                    var r = c.callContract.unPackData(e, a);
+                                    t(r);
+                                  } catch (o) {
+                                    n(o.message);
+                                  }
+                                else n(a);
+                              })
+                              .catch(e => {
+                                n(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 4:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+        executeMethod(e, t, n, r, c, l, s) {
+          var d = this;
+          return Object(a['a'])(
+            o.a.mark(function a() {
+              var p;
+              return o.a.wrap(function(a) {
+                while (1)
+                  switch ((a.prev = a.next)) {
+                    case 0:
+                      return (
+                        (p = d),
+                        a.abrupt(
+                          'return',
+                          new Promise((a, o) => {
+                            var d = p.callContract.packData(e, r),
+                              b = {
+                                from: t,
+                                to: i['a'].dmwBaseV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: l,
+                                gas: '',
+                                password: s,
+                              },
+                              h = {
+                                from: n,
+                                to: i['a'].dmwBaseV2.address,
+                                value: '0x' + c.toString(16),
+                                data: d,
+                                gasPrice:
+                                  '0x' + new f.a('1000000000').toString(16),
+                                cy: l,
+                              };
+                            v['a']
+                              .post('sero_estimateGas', [h])
+                              .then(n => {
+                                (b['gas'] = n),
+                                  u.a.executeContract(b, function(r) {
+                                    m['a'].addTx(
+                                      c,
+                                      l,
+                                      r,
+                                      t,
+                                      n,
+                                      i['a'].dmwBaseV2.address,
+                                      e,
+                                    ),
+                                      a(r);
+                                  });
+                              })
+                              .catch(e => {
+                                o(e);
+                              });
+                          }),
+                        )
+                      );
+                    case 2:
+                    case 'end':
+                      return a.stop();
+                  }
+              }, a);
+            }),
+          )();
+        }
+      }
+      var y = new h();
+      t['a'] = y;
+    },
     '9ama': function(e, t, n) {},
     AY6W: function(e, t, n) {
       'use strict';
@@ -4465,647 +6207,7 @@
         })(m);
       t['e'] = b;
     },
-    QR79: function(e, t, n) {
-      'use strict';
-      var a = n('HaE+'),
-        r = n('o0o1'),
-        o = n.n(r),
-        i = n('Hdsk'),
-        c = n('YG53'),
-        l = n.n(c),
-        s = n('1R0B'),
-        u = n.n(s),
-        d = n('l04A'),
-        p = n('kB5k'),
-        f = n.n(p),
-        m = n('t06s'),
-        v = n('63fq'),
-        b = n('AY6W'),
-        h = n('gFjB'),
-        y = n('l9Ps');
-      class g {
-        constructor() {
-          (this.callContract = null),
-            (this.callContract = l.a.callContract(
-              i['a'].dmwV2.abi,
-              i['a'].dmwV2.address,
-            ));
-        }
-        claim(e, t, n, r) {
-          var i = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (c = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          i.executeMethod(
-                            'claim',
-                            c.PK,
-                            c.MainPKr,
-                            [e],
-                            new f.a(n),
-                            t,
-                            r,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        issue(e, t, n, r, i) {
-          var c = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var l;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (l = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          c.executeMethod(
-                            'issue',
-                            l.PK,
-                            l.MainPKr,
-                            [e],
-                            new f.a(n),
-                            t,
-                            r,
-                            i,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        estimatMintAmount(e, t, n) {
-          var r = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var i;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (i = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          r.callMethod('estimatMintAmount', i.MainPKr, [
-                            e,
-                            t,
-                            m['a'].toHex(n),
-                          ]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        currentRate(e, t) {
-          var n = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var r;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (r = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('currentRate', r.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        collateralRate(e, t) {
-          var n = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var r;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (r = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('collateralRate', r.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        thresholdRate(e, t) {
-          var n = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var r;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (r = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('thresholdRate', r.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        getMinBackedAmount(e, t) {
-          var n = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var r;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (r = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('getMinBackedAmount', r.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        estimatAddDepositAmount(e) {
-          var t = this;
-          return Object(a['a'])(
-            o.a.mark(function n() {
-              var a;
-              return o.a.wrap(function(n) {
-                while (1)
-                  switch ((n.prev = n.next)) {
-                    case 0:
-                      return (
-                        (a = d['a'].getCurrent()),
-                        n.abrupt(
-                          'return',
-                          t.callMethod('estimatAddDepositAmount', a.MainPKr, [
-                            e,
-                          ]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return n.stop();
-                  }
-              }, n);
-            }),
-          )();
-        }
-        deposit(e, t, n, r) {
-          var i = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (c = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          i.executeMethod(
-                            'deposit',
-                            c.PK,
-                            c.MainPKr,
-                            [e],
-                            new f.a(n),
-                            r,
-                            t,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        now() {
-          return Math.ceil(new Date().getTime() / 1e3);
-        }
-        callMethod(e, t, n) {
-          var r = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c, l, s;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (c = r),
-                        (l = c.callContract.packData(e, n)),
-                        (s = { from: t, to: i['a'].dmwV2.address, data: l }),
-                        a.abrupt(
-                          'return',
-                          new Promise((t, n) => {
-                            b['a']
-                              .post('sero_call', [s, 'latest'])
-                              .then(a => {
-                                if ('0x' !== a)
-                                  try {
-                                    var r = c.callContract.unPackData(e, a);
-                                    t(r);
-                                  } catch (o) {
-                                    n(o.message);
-                                  }
-                                else n(a);
-                              })
-                              .catch(e => {
-                                n(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        executeMethod(e, t, n, r, c, l, s, d) {
-          var p = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var m, g, O, x, w, C, j, E, k, N, S, _;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      if (
-                        ((m = p),
-                        (g = m.callContract.packData(e, r)),
-                        (O = {
-                          from: t,
-                          to: i['a'].dmwV2.address,
-                          value: '0x' + c.toString(16),
-                          data: g,
-                          gasPrice: '0x' + new f.a('1000000000').toString(16),
-                          cy: l,
-                          gas: '',
-                          password: s,
-                          feeCy: 'SERO',
-                        }),
-                        (x = {
-                          from: n,
-                          to: i['a'].dmwV2.address,
-                          value: '0x' + c.toString(16),
-                          data: g,
-                          gasPrice: '0x' + new f.a('1000000000').toString(16),
-                          cy: l,
-                        }),
-                        (w = i['a'].dmwV2.address),
-                        1 != d || 'issue' != e)
-                      ) {
-                        a.next = 14;
-                        break;
-                      }
-                      return (a.next = 8), y['a'].getProxyAddress(l, r[0]);
-                    case 8:
-                      return (
-                        (C = a.sent),
-                        (a.next = 11),
-                        b['a'].post('sero_getFullAddress', [[C]])
-                      );
-                    case 11:
-                      (j = a.sent), (w = j[C]), (x.to = w);
-                    case 14:
-                      return (
-                        (a.next = 16), b['a'].post('sero_estimateGas', [x])
-                      );
-                    case 16:
-                      if (
-                        ((E = a.sent),
-                        (O.gas = E),
-                        (k = i['a'].dmwV2.address),
-                        1 != d || 'issue' != e)
-                      ) {
-                        a.next = 31;
-                        break;
-                      }
-                      return (N = new h['a'](w)), (a.next = 23), N.feeCoin();
-                    case 23:
-                      return (S = a.sent), (a.next = 26), N.estimateGas(E);
-                    case 26:
-                      (_ = a.sent),
-                        (O.feeCy = S),
-                        (k = w),
-                        (O.to = w),
-                        (O.gas = '0x' + new f.a(_).toString(16));
-                    case 31:
-                      return a.abrupt(
-                        'return',
-                        new Promise((n, a) => {
-                          u.a.executeContract(O, function(a) {
-                            v['a'].addTx(c, l, a, t, E, k, e), n(a);
-                          });
-                        }),
-                      );
-                    case 32:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-      }
-      var O = new g();
-      t['a'] = O;
-    },
     QbM5: function(e, t, n) {},
-    S9ZI: function(e, t, n) {
-      'use strict';
-      var a = n('HaE+'),
-        r = n('o0o1'),
-        o = n.n(r),
-        i = n('Hdsk'),
-        c = n('YG53'),
-        l = n.n(c),
-        s = n('1R0B'),
-        u = n.n(s),
-        d = n('l04A'),
-        p = n('kB5k'),
-        f = n.n(p),
-        m = n('63fq'),
-        v = n('AY6W');
-      class b {
-        constructor() {
-          (this.callContract = null),
-            console.log('dwmInfo>>>>>>>>>>>>>>>>,', i['a'].dmwInfoV2),
-            (this.callContract = l.a.callContract(
-              i['a'].dmwInfoV2.abi,
-              i['a'].dmwInfoV2.address,
-            ));
-        }
-        myPageContracts(e, t) {
-          var n = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var r;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (r = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('myPageContracts', r.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        keyPageContracts(e, t, n, r) {
-          var i = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        console.log('keyPageContracts', e, t, n, r),
-                        console.log(i.callContract),
-                        (c = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          i.callMethod('keyPageContracts', c.MainPKr, [
-                            e,
-                            t,
-                            n,
-                            r,
-                          ]),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        myPageKeyContracts(e, t, n, r) {
-          var i = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (c = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          i.callMethod('myPageKeyContracts', c.MainPKr, [
-                            e,
-                            t,
-                            n,
-                            r,
-                          ]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        now() {
-          return Math.ceil(new Date().getTime() / 1e3);
-        }
-        callMethod(e, t, n) {
-          var r = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c, l, s;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (c = r),
-                        (l = c.callContract.packData(e, n)),
-                        (s = {
-                          from: t,
-                          to: i['a'].dmwInfoV2.address,
-                          data: l,
-                        }),
-                        a.abrupt(
-                          'return',
-                          new Promise((t, n) => {
-                            v['a']
-                              .post('sero_call', [s, 'latest'])
-                              .then(a => {
-                                if ('0x' !== a)
-                                  try {
-                                    var r = c.callContract.unPackData(e, a);
-                                    console.log(
-                                      'SSSSSSSSSSSSSS',
-                                      r,
-                                      c.callContract,
-                                    ),
-                                      t(r);
-                                  } catch (o) {
-                                    '0x' === a ? t(null) : n(o.message);
-                                  }
-                                else n(a);
-                              })
-                              .catch(e => {
-                                n(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        executeMethod(e, t, n, r, c, l, s) {
-          var d = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var p;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (p = d),
-                        a.abrupt(
-                          'return',
-                          new Promise((a, o) => {
-                            var d = p.callContract.packData(e, r),
-                              b = {
-                                from: t,
-                                to: i['a'].dmwInfoV2.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: l,
-                                gas: '',
-                                password: s,
-                              },
-                              h = {
-                                from: n,
-                                to: i['a'].dmwInfoV2.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: l,
-                              };
-                            v['a']
-                              .post('sero_estimateGas', [h])
-                              .then(n => {
-                                (b['gas'] = n),
-                                  u.a.executeContract(b, function(r) {
-                                    m['a'].addTx(
-                                      c,
-                                      l,
-                                      r,
-                                      t,
-                                      n,
-                                      i['a'].dmwInfoV2.address,
-                                      e,
-                                    ),
-                                      a(r);
-                                  });
-                              })
-                              .catch(e => {
-                                o(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-      }
-      var h = new b();
-      t['a'] = h;
-    },
     SQwP: function(e, t, n) {
       'use strict';
       n.d(t, 'a', function() {
@@ -9072,263 +10174,6 @@
       var o = new r();
       t['a'] = o;
     },
-    l9Ps: function(e, t, n) {
-      'use strict';
-      var a = n('HaE+'),
-        r = n('o0o1'),
-        o = n.n(r),
-        i = n('Hdsk'),
-        c = n('YG53'),
-        l = n.n(c),
-        s = n('1R0B'),
-        u = n.n(s),
-        d = n('l04A'),
-        p = n('kB5k'),
-        f = n.n(p),
-        m = n('63fq'),
-        v = n('AY6W'),
-        b = n('SQwP');
-      class h {
-        constructor() {
-          (this.callContract = null),
-            (this.callContract = l.a.callContract(
-              i['a'].dmwBaseV2.abi,
-              i['a'].dmwBaseV2.address,
-            ));
-        }
-        getTradingPairs() {
-          var e = this;
-          return Object(a['a'])(
-            o.a.mark(function t() {
-              var n, a;
-              return o.a.wrap(function(t) {
-                while (1)
-                  switch ((t.prev = t.next)) {
-                    case 0:
-                      return (
-                        (n = d['a'].getCurrent()),
-                        (a = b['a'].get(b['a'].keys.language)),
-                        (a = a || 'en_US'),
-                        t.abrupt(
-                          'return',
-                          e.callMethod('getTradingPairs', n.MainPKr, [a]),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return t.stop();
-                  }
-              }, t);
-            }),
-          )();
-        }
-        getProxyAddress(e, t) {
-          var n = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var r;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (r = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          n.callMethod('getProxyAddress', r.MainPKr, [e, t]),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        addDescription(e, t, n, r) {
-          var i = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (c = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          i.executeMethod(
-                            'addDescription',
-                            c.PK,
-                            c.MainPKr,
-                            [e, t, n],
-                            new f.a(0),
-                            'SERO',
-                            r,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        addExchange(e, t, n) {
-          var r = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var i;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (i = d['a'].getCurrent()),
-                        a.abrupt(
-                          'return',
-                          r.executeMethod(
-                            'addExchange',
-                            i.PK,
-                            i.MainPKr,
-                            [e, t],
-                            new f.a(0),
-                            'SERO',
-                            n,
-                          ),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        now() {
-          return Math.ceil(new Date().getTime() / 1e3);
-        }
-        callMethod(e, t, n) {
-          var r = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var c, l, s;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (c = r),
-                        (l = c.callContract.packData(e, n)),
-                        (s = {
-                          from: t,
-                          to: i['a'].dmwBaseV2.address,
-                          data: l,
-                        }),
-                        a.abrupt(
-                          'return',
-                          new Promise((t, n) => {
-                            v['a']
-                              .post('sero_call', [s, 'latest'])
-                              .then(a => {
-                                if ('0x' !== a)
-                                  try {
-                                    var r = c.callContract.unPackData(e, a);
-                                    t(r);
-                                  } catch (o) {
-                                    n(o.message);
-                                  }
-                                else n(a);
-                              })
-                              .catch(e => {
-                                n(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 4:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-        executeMethod(e, t, n, r, c, l, s) {
-          var d = this;
-          return Object(a['a'])(
-            o.a.mark(function a() {
-              var p;
-              return o.a.wrap(function(a) {
-                while (1)
-                  switch ((a.prev = a.next)) {
-                    case 0:
-                      return (
-                        (p = d),
-                        a.abrupt(
-                          'return',
-                          new Promise((a, o) => {
-                            var d = p.callContract.packData(e, r),
-                              b = {
-                                from: t,
-                                to: i['a'].dmwBaseV2.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: l,
-                                gas: '',
-                                password: s,
-                              },
-                              h = {
-                                from: n,
-                                to: i['a'].dmwBaseV2.address,
-                                value: '0x' + c.toString(16),
-                                data: d,
-                                gasPrice:
-                                  '0x' + new f.a('1000000000').toString(16),
-                                cy: l,
-                              };
-                            v['a']
-                              .post('sero_estimateGas', [h])
-                              .then(n => {
-                                (b['gas'] = n),
-                                  u.a.executeContract(b, function(r) {
-                                    m['a'].addTx(
-                                      c,
-                                      l,
-                                      r,
-                                      t,
-                                      n,
-                                      i['a'].dmwBaseV2.address,
-                                      e,
-                                    ),
-                                      a(r);
-                                  });
-                              })
-                              .catch(e => {
-                                o(e);
-                              });
-                          }),
-                        )
-                      );
-                    case 2:
-                    case 'end':
-                      return a.stop();
-                  }
-              }, a);
-            }),
-          )();
-        }
-      }
-      var y = new h();
-      t['a'] = y;
-    },
     lKAH: function(e, t, n) {
       'use strict';
       n('2qtc');
@@ -9626,858 +10471,6 @@
         x = i['forwardRef'](O);
       (x.displayName = 'Tag'), (x.CheckableTag = m);
       t['a'] = x;
-    },
-    nOEG: function(e, t, n) {
-      'use strict';
-      n.r(t);
-      n('jCWc');
-      var a = n('kPKH'),
-        r = (n('14J3'), n('BMrR')),
-        o = (n('T2oS'), n('W9HT')),
-        i = n('uFwe'),
-        c = (n('+BJd'), n('mr32')),
-        l = (n('DjyN'), n('NUBc')),
-        s = (n('g9YV'), n('wCAj')),
-        u = (n('+L6B'), n('2/Rp')),
-        d = (n('bP8k'), n('gFTJ')),
-        p = n('HaE+'),
-        f = (n('/xke'), n('TeRw')),
-        m = (n('Znn+'), n('ZTPi')),
-        v = n('o0o1'),
-        b = n.n(v),
-        h = n('q1tI'),
-        y = n.n(h),
-        g = (n('0n2j'), n('t06s')),
-        O = n('QR79'),
-        x = n('l9Ps'),
-        w = n('S9ZI'),
-        C = n('lKAH'),
-        j = n('UwGO'),
-        E = n('ZTSi'),
-        k = n('kB5k'),
-        N = n.n(k),
-        S = n('iMMW'),
-        _ = m['a'].TabPane,
-        P = (e, t, n) => {
-          var a = 4.5;
-          'success' == e &&
-            n &&
-            !n.startsWith('0x') &&
-            ((e = 'error'), (t = 'Error')),
-            f['a'][e]({
-              message: t,
-              description: y.a.createElement(
-                'p',
-                {
-                  style: {
-                    wordBreak: 'normal',
-                    whiteSpace: 'pre-wrap',
-                    wordWrap: 'break-word',
-                  },
-                },
-                n,
-              ),
-              duration: a,
-            });
-        },
-        I = [
-          {
-            title: S['a'].t('pages_myssc_pledged'),
-            dataIndex: 'backedValue',
-            key: 'backedValue',
-            width: '20%',
-          },
-          {
-            title: S['a'].t('pages_myssc_canClaimtValue'),
-            dataIndex: 'canClaimtValue',
-            key: 'canClaimtValue',
-            width: '15%',
-          },
-          {
-            title: S['a'].t('pages_myssc_fee'),
-            dataIndex: 'fee',
-            key: 'fee',
-            width: '15%',
-          },
-          {
-            title: S['a'].t('pages_myssc_currentRatio'),
-            dataIndex: 'currentratio',
-            key: 'currentratio',
-            width: '10%',
-          },
-          {
-            title: S['a'].t('pages_myssc_status'),
-            dataIndex: 'status',
-            key: 'status',
-            width: '10%',
-          },
-          {
-            title: S['a'].t('pages_equity_time'),
-            dataIndex: 'time',
-            key: 'time',
-            width: '20%',
-          },
-          {
-            title: S['a'].t('pages_myssc_operation'),
-            dataIndex: 'operator',
-            key: 'operator',
-            width: '10%',
-          },
-        ];
-      function K(e) {
-        return 1 === e
-          ? S['a'].t('pages_myssc_normal')
-          : 2 === e
-          ? S['a'].t('pages_myssc_biding')
-          : 3 === e
-          ? 'UnKnow'
-          : 4 === e
-          ? 'Unsold'
-          : 0 === e
-          ? 'Finished'
-          : void 0;
-      }
-      class M extends h['Component'] {
-        constructor() {
-          super(...arguments),
-            (this.state = {
-              visible: !1,
-              visibleDeal: !1,
-              visibleAuction: !1,
-              visibleAuctionPrice: !1,
-              pageNo: 1,
-              pageSize: 10,
-              tabs: [],
-              backedCoin: '',
-              mintCoin: '',
-              amount: '',
-              fee: '',
-              contractIndex: 0,
-              loading: !1,
-              queryOwn: !1,
-              mintValue: 0,
-              subPanes: {},
-              panes: {},
-              decimals: {},
-              selectBackedCoin: '',
-              selectMintCoin: '',
-              proxy: !1,
-              minBorrowValue: 0,
-              estimatAddDepositAmount: [],
-              lastIndex: 0,
-            }),
-            (this.setVisible = e => {
-              this.setState({ visible: e });
-            }),
-            (this.setVisibleDeal = e => {
-              this.setState({ visibleDeal: e });
-            }),
-            (this.setVisibleAuction = e => {
-              this.setState({ visibleAuction: e });
-            }),
-            (this.setVisibleAuctionPrice = e => {
-              this.setState({ visibleAuctionPrice: e });
-            }),
-            (this.estimate = e => {
-              var t = this,
-                n = t.state,
-                a = n.backedCoin,
-                r = n.mintCoin;
-              O['a']
-                .estimatMintAmount(a, r, g['a'].fromValue(e, 18).toString(10))
-                .then(e => {
-                  console.log('estimatMintAmount>>', e),
-                    g['a'].getDecimal(r).then(n => {
-                      var a = g['a'].toValue(e[0].toString(10), n).toFixed(8),
-                        r = g['a'].toValue(e[1].toString(10), n).toFixed(8);
-                      t.setState({ amount: a, fee: r });
-                    });
-                });
-            }),
-            (this.onBorrow = e => {
-              var t = this;
-              t.setState({ visible: !1, loading: !0 });
-              var n = e['amountes'],
-                a = t.state,
-                r = a.proxy,
-                o = a.mintCoin,
-                i = a.backedCoin;
-              O['a']
-                .issue(
-                  o,
-                  i,
-                  g['a'].fromValue(n, 18).toString(10),
-                  e['password'],
-                  r,
-                )
-                .then(e => {
-                  P('success', 'SUCCESS', e),
-                    t.setState({ loading: !1, visible: !1 });
-                })
-                .catch(e => {
-                  t.setState({ loading: !1 });
-                  var n = 'string' === typeof e ? e : e.message;
-                  P('error', 'Error', n);
-                });
-            }),
-            (this.onDeal = e => {
-              var t = this;
-              t.setState({ visibleDeal: !1, loading: !0 });
-              var n = e['amountes'],
-                a = t.state,
-                r = a.contractIndex,
-                o = a.mintCoin;
-              O['a']
-                .claim(
-                  r,
-                  o,
-                  g['a'].fromValue(n, 18).toString(10),
-                  e['password'],
-                )
-                .then(e => {
-                  P('success', 'SUCCESS', e),
-                    t.setState({ loading: !1, visibleDeal: !1 });
-                })
-                .catch(e => {
-                  t.setState({ loading: !1 });
-                  var n = 'string' === typeof e ? e : e.message;
-                  P('error', 'Error', n);
-                });
-            }),
-            (this.onDeposit = e => {
-              var t = this,
-                n = this.state,
-                a = n.estimatAddDepositAmount,
-                r = n.selectBackedCoin;
-              t.setState({ visibleAuction: !1, loading: !0 });
-              var o = t.state.contractIndex;
-              O['a']
-                .deposit(o, e['password'], a[0], r)
-                .then(e => {
-                  P('success', 'SUCCESS', e),
-                    t.setState({ loading: !1, visibleAuction: !1 });
-                })
-                .catch(e => {
-                  t.setState({ loading: !1 });
-                  var n = 'string' === typeof e ? e : e.message;
-                  P('error', 'Error', n);
-                });
-            }),
-            (this.getRecords = () => {
-              var e = this,
-                t = this.state,
-                n = t.pageNo,
-                a = t.pageSize,
-                r = t.selectBackedCoin,
-                o = t.selectMintCoin,
-                i = t.subPanes,
-                c = (t.lastIndex, i);
-              w['a']
-                .myPageKeyContracts(r, o, (n - 1) * a, a)
-                .then(t => {
-                  var n = JSON.parse(t);
-                  console.log('datas==', n),
-                    (c[D(r, o)] = n),
-                    e.setState({
-                      subPanes: c,
-                      loading: !1,
-                      lastIndex: n.lastIndex,
-                    });
-                })
-                .catch(t => {
-                  e.setState({ loading: !1 });
-                });
-            }),
-            (this.pageChange = e => {
-              var t = this;
-              console.log('OONNNNNNNNNNNNNNNNNNNNNNNNNNNNNN'),
-                t.setState({ pageNo: e, loading: !0 }),
-                setTimeout(function() {
-                  t.getRecords();
-                }, 10);
-            }),
-            (this.onShowSizeChange = (e, t) => {
-              var n = this;
-              n.setState({ pageSize: t, loading: !0 }),
-                setTimeout(function() {
-                  n.getRecords();
-                }, 10);
-            }),
-            (this.setSelectTap = (e, t) => {
-              this.setState({ selectBackedCoin: e, selectMintCoin: t });
-            });
-        }
-        componentDidMount() {
-          console.log('FFFFFFFFFFFFF componentDidMount');
-          var e = this;
-          e.setState({ loading: !0 }),
-            e
-              .list(e)
-              .then(() => {
-                e.setState({ loading: !1 });
-              })
-              .catch(t => {
-                e.setState({ loading: !1 });
-                var n = 'string' === typeof t ? t : t.message;
-                P('error', 'Error', n);
-              });
-        }
-        borrow(e, t, n) {
-          var a = this,
-            r = g['a'].getDecimalCache(e);
-          O['a'].getMinBackedAmount(e, t).then(o => {
-            a.setState({
-              backedCoin: e,
-              mintCoin: t,
-              proxy: n,
-              minBorrowValue: g['a']
-                .toValue(new N.a(o).toString(10), r)
-                .toString(10),
-            }),
-              a.setVisible(!0);
-          });
-        }
-        deal(e, t, n, a) {
-          var r = this;
-          r.setState({
-            backedCoin: e,
-            mintCoin: t,
-            mintValue: n,
-            contractIndex: a,
-          }),
-            r.setVisibleDeal(!0);
-        }
-        deposit(e) {
-          var t = this;
-          O['a']
-            .estimatAddDepositAmount(e)
-            .then(n => {
-              console.log(n, '>>>>>>>>>>>>>>>>>>>>>>estimatAddDepositAmount'),
-                t.setState({ contractIndex: e, estimatAddDepositAmount: n }),
-                t.setVisibleAuction(!0);
-            })
-            .catch(e => {});
-        }
-        setAuctionPrice(e) {
-          var t = this;
-          t.setState({ contractIndex: e }), t.setVisibleAuctionPrice(!0);
-        }
-        list(e) {
-          return Object(p['a'])(
-            b.a.mark(function t() {
-              var n, a, r, o, i, c, l, s, u, d, p, f, m, v, h, y, O, C;
-              return b.a.wrap(function(t) {
-                while (1)
-                  switch ((t.prev = t.next)) {
-                    case 0:
-                      return (
-                        (n = e.state),
-                        n.pageNo,
-                        (a = n.pageSize),
-                        (t.next = 3),
-                        x['a'].getTradingPairs()
-                      );
-                    case 3:
-                      if (
-                        ((r = t.sent),
-                        (o = JSON.parse(r)),
-                        (i = {}),
-                        console.log('getTradingPairs', o),
-                        !(o.length > 0))
-                      ) {
-                        t.next = 36;
-                        break;
-                      }
-                      (c = {}), (l = {}), (d = 0);
-                    case 11:
-                      if (!(d < o.length)) {
-                        t.next = 34;
-                        break;
-                      }
-                      return (
-                        (p = o[d]),
-                        (f = p.backeCoin),
-                        (m = p.mintCoin),
-                        0 == d && ((s = f), (u = m)),
-                        (t.next = 18),
-                        g['a'].getDecimal(f)
-                      );
-                    case 18:
-                      return (v = t.sent), (t.next = 21), g['a'].getDecimal(m);
-                    case 21:
-                      return (
-                        (h = t.sent),
-                        (i[f] = v),
-                        (i[m] = h),
-                        (t.next = 26),
-                        w['a'].myPageKeyContracts(f, m, 0, a)
-                      );
-                    case 26:
-                      (y = t.sent),
-                        (O = JSON.parse(y)),
-                        console.log('datas>>', O),
-                        l[f]
-                          ? ((C = l[f]), (l[f] = C.concat([p])))
-                          : (l[f] = [p]),
-                        (c[D(f, m)] = O);
-                    case 31:
-                      d++, (t.next = 11);
-                      break;
-                    case 34:
-                      console.log('subPanes>>>> ', c),
-                        e.setState({
-                          panes: l,
-                          decimals: i,
-                          subPanes: c,
-                          selectBackedCoin: s,
-                          selectMintCoin: u,
-                        });
-                    case 36:
-                    case 'end':
-                      return t.stop();
-                  }
-              }, t);
-            }),
-          )();
-        }
-        renderSubPane(e, t) {
-          console.log(e, t, 'mypage>>>>>>>>>>>');
-          var n = this,
-            a = n.state,
-            r = a.pageNo,
-            o = a.pageSize,
-            i = a.decimals,
-            p = e.thresholdRate,
-            f = e.collateralRate,
-            m = e.currentRateNumerator,
-            v = e.currentRateDenominator,
-            b = e.backeCoin,
-            h = e.mintCoin,
-            O = [];
-          if (t && t.total > 0) {
-            for (
-              var x = function(a) {
-                  var r = [],
-                    o = t.data[a],
-                    l = new N.a(o.backedValue)
-                      .multipliedBy(new N.a(v))
-                      .dividedBy(new N.a(m))
-                      .dividedBy(new N.a(o.mintValue))
-                      .multipliedBy(100),
-                    s = l.toFixed(4, 1);
-                  (1 != o.status && 2 != o.status) ||
-                    (o.owns &&
-                      r.push(
-                        y.a.createElement(
-                          u['a'],
-                          {
-                            type: 'primary',
-                            onClick: () => {
-                              var e = i[h];
-                              n.deal(
-                                b,
-                                h,
-                                g['a'].toValue(o.mintValue, e).toString(10),
-                                o.contractIndex,
-                              );
-                            },
-                            block: !0,
-                            style: { marginTop: '5px' },
-                          },
-                          S['a'].t('button_repay'),
-                        ),
-                      ),
-                    -1 == l.comparedTo(f) && o.owns
-                      ? r.push(
-                          y.a.createElement(
-                            u['a'],
-                            {
-                              type: 'primary',
-                              onClick: () => {
-                                console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>111'),
-                                  n.deposit(o.contractIndex);
-                              },
-                              block: !0,
-                              style: { marginTop: '5px' },
-                            },
-                            S['a'].t('button_deposit'),
-                          ),
-                        )
-                      : l.comparedTo(p) < 0 &&
-                        r.push(
-                          y.a.createElement(
-                            u['a'],
-                            {
-                              type: 'primary',
-                              onClick: () => {
-                                console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>22'),
-                                  n.deposit(o.contractIndex);
-                              },
-                              block: !0,
-                              style: { marginTop: '5px' },
-                            },
-                            S['a'].t('button_deposit'),
-                          ),
-                        ));
-                  var d = i[e.backeCoin],
-                    x = i[e.mintCoin];
-                  O.push({
-                    index: y.a.createElement(
-                      'div',
-                      null,
-                      a + 1,
-                      ' ',
-                      o.owns
-                        ? y.a.createElement(
-                            c['a'],
-                            { color: 'volcano' },
-                            'Owner',
-                          )
-                        : '',
-                    ),
-                    no: y.a.createElement(
-                      'div',
-                      null,
-                      o.contractIndex + 1e5,
-                      ' ',
-                      o.owns
-                        ? y.a.createElement(
-                            c['a'],
-                            { color: 'volcano' },
-                            'Owner',
-                          )
-                        : '',
-                    ),
-                    backedValue:
-                      g['a'].toValue(o.backedValue, d).toFixed(4) +
-                      ' ' +
-                      e.backeCoin,
-                    mintValue:
-                      g['a'].toValue(o.mintValue, x).toFixed(4) +
-                      ' ' +
-                      e.mintCoin,
-                    canClaimtValue:
-                      g['a'].toValue(o.canClaimtValue, d).toFixed(4) +
-                      ' ' +
-                      e.backeCoin,
-                    fee: g['a'].toValue(o.fee, x).toFixed(4) + ' ' + e.mintCoin,
-                    currentratio: s + '%',
-                    status: K(o.status),
-                    time: g['a'].formatTime(1e3 * o.createTime),
-                    operator: r,
-                  });
-                },
-                w = 0;
-              w < t.data.length;
-              w++
-            )
-              x(w);
-            var C = y.a.createElement(
-              _,
-              {
-                tab: h,
-                key: h,
-                style: {
-                  maxHeight: 0.6 * document.documentElement.clientHeight,
-                  overflowY: 'scroll',
-                },
-              },
-              y.a.createElement(
-                d['b'],
-                { column: 4 },
-                y.a.createElement(
-                  d['b'].Item,
-                  {
-                    label: S['a'].t(
-                      'pages_ssctools_list_collateralizationRatio',
-                    ),
-                  },
-                  f,
-                  '%',
-                ),
-                y.a.createElement(
-                  d['b'].Item,
-                  { label: S['a'].t('pages_ssctools_list_exchangeRatio') },
-                  g['a'].toValue(e.currentRateNumerator, 8).toString(10),
-                  ' ',
-                  e.backeCoin,
-                  ' =',
-                  ' ',
-                  g['a'].toValue(e.currentRateDenominator, 8).toString(10),
-                  ' ',
-                  h,
-                ),
-                y.a.createElement(
-                  d['b'].Item,
-                  { label: S['a'].t('pages_ssctools_list_liquidationRatio') },
-                  p,
-                  '%',
-                ),
-                y.a.createElement(
-                  d['b'].Item,
-                  { label: '' },
-                  y.a.createElement(
-                    u['a'],
-                    {
-                      type: 'primary',
-                      onClick: () => {
-                        n.borrow(b, h, e.proxy);
-                      },
-                      block: !0,
-                      style: { marginTop: '5px' },
-                    },
-                    S['a'].t('button_borrow'),
-                  ),
-                ),
-              ),
-              y.a.createElement('p', null),
-              y.a.createElement(s['a'], {
-                columns: I,
-                dataSource: O,
-                pagination: !1,
-              }),
-              y.a.createElement(
-                'div',
-                {
-                  style: {
-                    position: 'relative',
-                    float: 'right',
-                    padding: '15px',
-                  },
-                },
-                y.a.createElement(l['a'], {
-                  size: 'small',
-                  total: t.total,
-                  defaultCurrent: 1,
-                  current: r,
-                  pageSize: o,
-                  onChange: this.pageChange,
-                  showTotal: T,
-                  onShowSizeChange: this.onShowSizeChange,
-                }),
-              ),
-            );
-            return C;
-          }
-          return y.a.createElement(
-            _,
-            {
-              tab: h,
-              key: h,
-              style: {
-                maxHeight: 0.6 * document.documentElement.clientHeight,
-                overflowY: 'scroll',
-              },
-            },
-            y.a.createElement(
-              d['b'],
-              { column: 4 },
-              y.a.createElement(
-                d['b'].Item,
-                {
-                  label: S['a'].t('pages_ssctools_list_collateralizationRatio'),
-                },
-                f,
-                '%',
-              ),
-              y.a.createElement(
-                d['b'].Item,
-                { label: S['a'].t('pages_ssctools_list_exchangeRatio') },
-                g['a'].toValue(e.currentRateNumerator, 8).toString(10),
-                ' ',
-                e.backeCoin,
-                ' =',
-                ' ',
-                g['a'].toValue(e.currentRateDenominator, 8).toString(10),
-                ' ',
-                h,
-              ),
-              y.a.createElement(
-                d['b'].Item,
-                { label: S['a'].t('pages_ssctools_list_liquidationRatio') },
-                p,
-                '%',
-              ),
-              y.a.createElement(
-                d['b'].Item,
-                { label: '' },
-                y.a.createElement(
-                  u['a'],
-                  {
-                    type: 'primary',
-                    onClick: () => {
-                      n.borrow(b, h, e.proxy);
-                    },
-                    block: !0,
-                    style: { marginTop: '5px' },
-                  },
-                  S['a'].t('button_borrow'),
-                ),
-              ),
-            ),
-            y.a.createElement('p', null),
-            y.a.createElement(s['a'], {
-              columns: I,
-              dataSource: [],
-              pagination: !1,
-            }),
-          );
-        }
-        render() {
-          var e = this,
-            t = this,
-            n = this.state,
-            c = n.visible,
-            l = n.backedCoin,
-            s = n.visibleDeal,
-            u = n.mintCoin,
-            d = n.amount,
-            p = n.fee,
-            f = n.visibleAuction,
-            v = n.mintValue,
-            b = n.subPanes,
-            h = n.panes,
-            O = n.minBorrowValue,
-            x = n.estimatAddDepositAmount,
-            w = n.selectBackedCoin,
-            k = { mintCoin: u, mintValue: v },
-            N = [];
-          if (x && x.length > 0) {
-            var P = g['a'].getDecimalCache(w);
-            N.push(
-              'Deposit '
-                .concat(g['a'].toValue(x[0], P).toFixed(4), ' ')
-                .concat(w, ' , Possible Receive ')
-                .concat(g['a'].toValue(x[1], P).toFixed(4), ' ')
-                .concat(w),
-            );
-          }
-          var I = Object.keys(h),
-            K = [];
-          if (I.length > 0) {
-            var M,
-              T = Object(i['a'])(I);
-            try {
-              var R = function() {
-                var n,
-                  a = M.value,
-                  r = h[a],
-                  o = [],
-                  c = Object(i['a'])(r);
-                try {
-                  for (c.s(); !(n = c.n()).done; ) {
-                    var l = n.value,
-                      s = b[D(a, l.mintCoin)],
-                      u = t.renderSubPane(l, s);
-                    o.push(u);
-                  }
-                } catch (d) {
-                  c.e(d);
-                } finally {
-                  c.f();
-                }
-                K.push(
-                  y.a.createElement(
-                    _,
-                    { tab: a, key: a },
-                    y.a.createElement(
-                      m['a'],
-                      {
-                        type: 'card',
-                        tabPosition: 'left',
-                        onTabClick: t => {
-                          e.setSelectTap(a, t);
-                        },
-                      },
-                      o,
-                    ),
-                  ),
-                );
-              };
-              for (T.s(); !(M = T.n()).done; ) R();
-            } catch (A) {
-              T.e(A);
-            } finally {
-              T.f();
-            }
-          }
-          return y.a.createElement(
-            'div',
-            null,
-            y.a.createElement(
-              o['a'],
-              { spinning: this.state.loading },
-              y.a.createElement(
-                r['a'],
-                { className: 'pfid-title' },
-                y.a.createElement(
-                  a['a'],
-                  { span: 12 },
-                  y.a.createElement(
-                    'span',
-                    null,
-                    S['a'].t('pages_myssc_title'),
-                  ),
-                ),
-                y.a.createElement(a['a'], {
-                  span: 12,
-                  style: { textAlign: 'right' },
-                }),
-              ),
-              y.a.createElement('p', null),
-              y.a.createElement(
-                m['a'],
-                {
-                  type: 'card',
-                  onTabClick: e => {
-                    this.setSelectTap(e, 'SUSD');
-                  },
-                  animated: !0,
-                },
-                K,
-              ),
-              y.a.createElement('p', null),
-            ),
-            y.a.createElement(C['a'], {
-              visible: c,
-              onCreate: this.onBorrow,
-              onCancel: () => {
-                this.setVisible(!1);
-              },
-              mintCoin: u,
-              amountEstimate: d,
-              fee: p,
-              backedCoin: l,
-              estimate: this.estimate,
-              params: { minBorrowValue: O },
-            }),
-            y.a.createElement(j['a'], {
-              visible: s,
-              onCreate: this.onDeal,
-              onCancel: () => {
-                this.setVisibleDeal(!1);
-              },
-              params: k,
-            }),
-            y.a.createElement(E['a'], {
-              visible: f,
-              onCreate: this.onDeposit,
-              onCancel: () => {
-                this.setVisibleAuction(!1);
-              },
-              title: S['a'].t('button_deposit'),
-              desc: N,
-            }),
-          );
-        }
-      }
-      function D(e, t) {
-        return ['subPanes', e, t].join('_');
-      }
-      function T(e) {
-        return 'Total '.concat(e, ' items');
-      }
-      t['default'] = M;
     },
     'pED+': function(e, t, n) {},
     pJZp: function(e, t) {

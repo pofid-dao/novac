@@ -29,10 +29,6 @@ class DmwInfo {
     offset: number,
     pageSize: number,
   ): Promise<any> {
-    console.log('keyPageContracts', _backedCoin, _mintCoin, offset, pageSize);
-
-    console.log(this.callContract);
-
     const act: AccountInfo = account.getCurrent();
     return this.callMethod('keyPageContracts', act.MainPKr, [
       _backedCoin,
@@ -76,7 +72,6 @@ class DmwInfo {
           if (callData !== '0x') {
             try {
               let rest = that.callContract.unPackData(_method, callData);
-              console.log('SSSSSSSSSSSSSS', rest, that.callContract);
               resolve(rest);
             } catch (e) {
               if (callData === '0x') {

@@ -23,7 +23,6 @@ import PasswordForm from '@/components/Password';
 import BigNumber from 'bignumber.js';
 import i18n from '@/i18n';
 import coinFactory from '@/service/coinFactory';
-import { util } from 'prettier';
 
 const { TabPane } = Tabs;
 
@@ -532,7 +531,7 @@ class SSCTools extends Component {
   };
 
   renderSubPane(data: any, datas: any) {
-    console.log('data>>> ', data);
+    console.log('data>>>222 ', data);
     const that = this;
     const { pageNo, pageSize, decimals, totalSupply } = that.state;
     const thresholdRate: number = data.thresholdRate;
@@ -542,10 +541,15 @@ class SSCTools extends Component {
     const backeCoin = data.backeCoin;
     const mintCoin = data.mintCoin;
     let datasource = [];
+    let rmCount = 0;
     if (datas && datas.total > 0) {
       for (let i = 0; i < datas.data.length; i++) {
         let buttons = [];
         const d = datas.data[i];
+        if (d.createTime == 1606313479 || d.createTime == 1606311104) {
+          rmCount++;
+          continue;
+        }
 
         const currentRateBig = new BigNumber(d.backedValue)
           .multipliedBy(new BigNumber(currentRateDenominator))
@@ -701,7 +705,7 @@ class SSCTools extends Component {
           >
             <Pagination
               size="small"
-              total={datas.total}
+              total={datas.total - rmCount}
               defaultCurrent={1}
               current={pageNo}
               pageSize={pageSize}
